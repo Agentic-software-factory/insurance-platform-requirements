@@ -30,3 +30,16 @@ processing.
 | [UC-CLM-002](uc-fnol-processing.md)        | FNOL Processing                    | First notification of loss — online and phone |
 | [UC-CLM-003](uc-settlement-calculation.md) | Settlement Calculation and Payment | Settlement rules and payment execution        |
 | [UC-CLM-004](uc-fraud-screening.md)        | Fraud Screening and Investigation  | Automated and manual fraud detection          |
+
+## Trafikforsakring (Mandatory Third-Party Liability)
+
+The [Trafikforsakring](trafikforsakring.md) use case (UC-TF-001) describes
+the management of mandatory third-party liability insurance under
+Trafikskadelagen (1975:1410). It covers:
+
+- Transportstyrelsen registration upon policy binding
+- Coverage gap prevention at cancellation
+- Personal injury claims under strict liability (Trafikskadelagen)
+- TFF statutory reporting obligations
+- Uninsured and foreign vehicle claims handling
+- Cross-border coverage via the Green Card system
