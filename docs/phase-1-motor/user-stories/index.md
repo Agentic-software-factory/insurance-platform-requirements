@@ -66,3 +66,20 @@ claims, TFF reporting, and cross-border coverage:
 | TF-05 | Compliance Officer | Generate TFF statutory reports                           |
 | TF-06 | Claims Handler     | Route uninsured/foreign vehicle claims to TFF            |
 | TF-07 | Customer           | Cross-border coverage via Green Card system              |
+
+## Renewals
+
+Annual policy renewal lifecycle — see [Renewal User Stories](renewals.md).
+
+| ID        | Title                                        | Actor              |
+| --------- | -------------------------------------------- | ------------------ |
+| US-RN-001 | Receive Renewal Notice                       | Customer           |
+| US-RN-002 | View Premium Change Explanation              | Customer           |
+| US-RN-003 | Recalculate Renewal Premium                  | Underwriter        |
+| US-RN-004 | Update Bonus Class at Renewal                | System             |
+| US-RN-005 | Automatically Renew Policy                   | System             |
+| US-RN-006 | Cancel Policy Before Renewal                 | Customer           |
+| US-RN-007 | Update Payment Schedule for Renewed Policy   | System             |
+| US-RN-008 | Handle Inbound Insurer Switch (Flyttanmälan) | System             |
+| US-RN-009 | Offer Retention Pricing                      | Underwriter        |
+| US-RN-010 | Reassess Demands and Needs at Renewal        | Compliance Officer |
