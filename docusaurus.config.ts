@@ -1,0 +1,92 @@
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
+
+const config: Config = {
+  title: "TryggFörsäkring Requirements",
+  tagline: "Insurance Platform Business Requirements",
+  favicon: "img/favicon.ico",
+
+  future: {
+    v4: true,
+  },
+
+  url: "https://agentic-software-factory.github.io",
+  baseUrl: "/insurance-platform-requirements/",
+
+  organizationName: "Agentic-software-factory",
+  projectName: "insurance-platform-requirements",
+
+  onBrokenLinks: "throw",
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "throw",
+    },
+  },
+
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+  },
+
+  presets: [
+    [
+      "classic",
+      {
+        docs: {
+          sidebarPath: "./sidebars.ts",
+          editUrl:
+            "https://github.com/Agentic-software-factory/insurance-platform-requirements/edit/main/",
+        },
+        blog: false,
+        theme: {
+          customCss: "./src/css/custom.css",
+        },
+      } satisfies Preset.Options,
+    ],
+  ],
+
+  themeConfig: {
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
+    navbar: {
+      title: "TryggFörsäkring",
+      items: [
+        {
+          type: "docSidebar",
+          sidebarId: "requirementsSidebar",
+          position: "left",
+          label: "Requirements",
+        },
+        {
+          href: "https://github.com/Agentic-software-factory/insurance-platform-requirements",
+          label: "GitHub",
+          position: "right",
+        },
+      ],
+    },
+    footer: {
+      style: "dark",
+      links: [
+        {
+          title: "Documentation",
+          items: [
+            {
+              label: "Requirements",
+              to: "/docs/intro",
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} TryggFörsäkring AB. Built with Docusaurus.`,
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+  } satisfies Preset.ThemeConfig,
+};
+
+export default config;

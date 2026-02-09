@@ -1,0 +1,11 @@
+{
+  "default": true,
+  // Allow long lines in docs (prose)
+  "MD013": false,
+  // Allow duplicate headings in different sections
+  "MD024": { "siblings_only": true },
+  // Allow HTML in markdown (Docusaurus uses HTML/JSX)
+  "MD033": false,
+  // Allow bare URLs
+  "MD034": false,
+}
