@@ -39,8 +39,14 @@ const config: Config = {
           editUrl:
             "https://github.com/Agentic-software-factory/insurance-platform-requirements/edit/main/",
           lastVersion: "phase-1",
-          includeCurrentVersion: false,
+          includeCurrentVersion: true,
           versions: {
+            current: {
+              label: "Phase 2 — Home & Property (Draft)",
+              path: "next",
+              banner: "unreleased",
+              badge: true,
+            },
             "phase-1": {
               label: "Phase 1 — Motor Insurance",
               path: "",
