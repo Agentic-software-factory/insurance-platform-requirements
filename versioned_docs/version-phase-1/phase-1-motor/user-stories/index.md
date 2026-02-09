@@ -68,3 +68,19 @@ notification of loss through settlement and closure.
 | [US-CLM-013](claims-tracking.md)              | Track Claim Status                                   | Should Have |
 | [US-CLM-014](claims-repair-authorization.md)  | Authorize Repairs at Network Shops                   | Should Have |
 | [US-CLM-015](claims-closure.md)               | Close and Review Claims                              | Must Have   |
+
+## Underwriting Rules and Bonus System
+
+The [underwriting and bonus user stories](underwriting-bonus.md) cover
+underwriting rules, the bonus class system, premium calculation, and risk
+acceptance criteria:
+
+| ID     | Actor              | Summary                                         |
+| ------ | ------------------ | ----------------------------------------------- |
+| UWB-01 | Underwriter        | Manage bonus class table and progression rules  |
+| UWB-02 | Private Customer   | Transfer bonus class from another insurer       |
+| UWB-03 | System             | Calculate premium using rating factors          |
+| UWB-04 | Underwriter        | Define risk acceptance and referral rules       |
+| UWB-05 | Private Customer   | Understand premium calculation breakdown        |
+| UWB-06 | Actuary            | Review documented underwriting rules            |
+| UWB-07 | Compliance Officer | Verify non-discriminatory underwriting practice |
