@@ -74,7 +74,7 @@ test locally → commit → push → PR → wait for CI green → merge
 
 | Technology | Command |
 |------------|---------|
-| Markdown | `npx markdownlint docs/` |
+| Markdown | `npx markdownlint docs/ versioned_docs/` |
 | Formatting | `npx prettier --check .` |
 | Build validation | `npm run build` |
 
@@ -124,9 +124,9 @@ Business requirements documentation for TryggFörsäkring AB, a mid-size Swedish
 ### Build & Test
 
 ```bash
-npm run build          # Validates links, frontmatter, broken references
-npx markdownlint docs/ # Lint markdown files
-npx prettier --check . # Check formatting
+npm run build                          # Validates links, frontmatter, broken references
+npx markdownlint docs/ versioned_docs/ # Lint markdown files
+npx prettier --check .                 # Check formatting
 ```
 
 ### Run Locally
@@ -139,25 +139,27 @@ npm start              # Start Docusaurus dev server
 
 ## Structure
 
+Each delivery phase is a Docusaurus version. The `versioned_docs/` directory holds frozen
+snapshots; `docs/` is the working directory for the next phase (hidden until that phase starts).
+
 ```
-docs/
-├── intro.md
-├── actors/
-├── personas/
-├── phase-1-motor/
-│   ├── user-stories/
-│   └── use-cases/
-├── phase-2-home-property/
-│   ├── user-stories/
-│   └── use-cases/
-├── phase-3-commercial/
-│   ├── user-stories/
-│   └── use-cases/
-├── regulatory/
-│   ├── fsa-requirements.md
-│   ├── gdpr-mapping.md
-│   └── idd-compliance.md
-└── glossary.md
+versioned_docs/
+└── version-phase-1/          # Frozen Phase 1 snapshot (served by default)
+    ├── intro.md
+    ├── actors/
+    ├── personas/
+    ├── phase-1-motor/
+    │   ├── user-stories/
+    │   └── use-cases/
+    ├── regulatory/
+    │   ├── fsa-requirements.md
+    │   ├── gdpr-mapping.md
+    │   └── idd-compliance.md
+    └── glossary.md
+versioned_sidebars/
+└── version-phase-1-sidebars.json
+versions.json                 # ["phase-1"]
+docs/                         # WIP for next phase (includeCurrentVersion: false)
 ```
 
 ---

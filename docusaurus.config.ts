@@ -38,6 +38,16 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           editUrl:
             "https://github.com/Agentic-software-factory/insurance-platform-requirements/edit/main/",
+          lastVersion: "phase-1",
+          includeCurrentVersion: false,
+          versions: {
+            "phase-1": {
+              label: "Phase 1 — Motor Insurance",
+              path: "",
+              banner: "none",
+              badge: true,
+            },
+          },
         },
         blog: false,
         theme: {
@@ -59,6 +69,10 @@ const config: Config = {
           sidebarId: "requirementsSidebar",
           position: "left",
           label: "Requirements",
+        },
+        {
+          type: "docsVersionDropdown",
+          position: "left",
         },
         {
           href: "https://github.com/Agentic-software-factory/insurance-platform-requirements",

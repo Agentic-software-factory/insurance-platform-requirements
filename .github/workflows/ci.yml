@@ -36,7 +36,7 @@ jobs:
         run: npm run build
 
       - name: Lint Markdown
-        run: npx markdownlint docs/
+        run: npx markdownlint docs/ versioned_docs/
 
       - name: Check formatting
         run: npx prettier --check .
