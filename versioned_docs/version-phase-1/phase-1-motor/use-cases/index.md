@@ -34,3 +34,15 @@ Mid-term adjustment and policy lifecycle use cases — see [Policy Administratio
 | UC-PA-004 | Manage Policy Status Transitions          | System        |
 | UC-PA-005 | Recalculate Premium After Amendment       | System        |
 | UC-PA-006 | Underwriter Review of High-Risk Amendment | Underwriter   |
+
+## Claims Handling
+
+Use cases describing the detailed workflows for motor insurance claims
+processing.
+
+| ID                                         | Title                              | Scope                                         |
+| ------------------------------------------ | ---------------------------------- | --------------------------------------------- |
+| [UC-CLM-001](uc-claims-lifecycle.md)       | Claims Lifecycle                   | End-to-end claims flow from FNOL to closure   |
+| [UC-CLM-002](uc-fnol-processing.md)        | FNOL Processing                    | First notification of loss — online and phone |
+| [UC-CLM-003](uc-settlement-calculation.md) | Settlement Calculation and Payment | Settlement rules and payment execution        |
+| [UC-CLM-004](uc-fraud-screening.md)        | Fraud Screening and Investigation  | Automated and manual fraud detection          |
