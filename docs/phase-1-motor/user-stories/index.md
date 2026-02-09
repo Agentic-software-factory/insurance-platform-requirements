@@ -45,7 +45,24 @@ notification of loss through settlement and closure.
 | [US-CLM-009](claims-subrogation.md)           | Recover Costs Through Subrogation                    | Should Have |
 | [US-CLM-010](claims-bonus-impact.md)          | Update Bonus Class After Claim                       | Must Have   |
 | [US-CLM-011](claims-tff.md)                   | Process TFF Claims                                   | Should Have |
-| [US-CLM-012](claims-personal-injury.md)       | Handle Personal Injury Claims Under Trafikförsäkring | Must Have   |
+| [US-CLM-012](claims-personal-injury.md)       | Handle Personal Injury Claims Under Trafikforsakring | Must Have   |
 | [US-CLM-013](claims-tracking.md)              | Track Claim Status                                   | Should Have |
 | [US-CLM-014](claims-repair-authorization.md)  | Authorize Repairs at Network Shops                   | Should Have |
 | [US-CLM-015](claims-closure.md)               | Close and Review Claims                              | Must Have   |
+
+## Trafikforsakring (Mandatory Third-Party Liability)
+
+The [trafikforsakring user stories](trafikforsakring.md) cover mandatory
+third-party liability insurance under Trafikskadelagen (1975:1410), including
+Transportstyrelsen registration, coverage gap prevention, personal injury
+claims, TFF reporting, and cross-border coverage:
+
+| ID    | Actor              | Summary                                                  |
+| ----- | ------------------ | -------------------------------------------------------- |
+| TF-01 | System             | Register trafikforsakring with Transportstyrelsen        |
+| TF-02 | Customer           | Automatic trafikforsakring inclusion in any motor policy |
+| TF-03 | Claims Handler     | Process personal injury claims under Trafikskadelagen    |
+| TF-04 | System             | Prevent policy cancellation without replacement coverage |
+| TF-05 | Compliance Officer | Generate TFF statutory reports                           |
+| TF-06 | Claims Handler     | Route uninsured/foreign vehicle claims to TFF            |
+| TF-07 | Customer           | Cross-border coverage via Green Card system              |
