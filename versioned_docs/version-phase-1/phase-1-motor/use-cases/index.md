@@ -46,3 +46,16 @@ processing.
 | [UC-CLM-002](uc-fnol-processing.md)        | FNOL Processing                    | First notification of loss — online and phone |
 | [UC-CLM-003](uc-settlement-calculation.md) | Settlement Calculation and Payment | Settlement rules and payment execution        |
 | [UC-CLM-004](uc-fraud-screening.md)        | Fraud Screening and Investigation  | Automated and manual fraud detection          |
+
+## Underwriting and Bonus Assessment
+
+The [Motor Underwriting and Bonus Assessment](underwriting-bonus.md) use case
+(UC-UWB-001) describes the risk evaluation, premium calculation, and bonus class
+management process. It covers:
+
+- Bonus class determination and transfer verification
+- Risk evaluation using vehicle, customer, and usage factors
+- Risk acceptance, referral, and decline decisions
+- Premium calculation with rating factor application
+- Bonus class progression and regression rules
+- Referral handling for non-standard risks
