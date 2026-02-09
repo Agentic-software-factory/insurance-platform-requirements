@@ -43,3 +43,13 @@ Trafikskadelagen (1975:1410). It covers:
 - TFF statutory reporting obligations
 - Uninsured and foreign vehicle claims handling
 - Cross-border coverage via the Green Card system
+
+## Renewals
+
+Annual policy renewal lifecycle use cases — see [Renewal Use Cases](renewals.md).
+
+| ID        | Title                                         | Primary Actor |
+| --------- | --------------------------------------------- | ------------- |
+| UC-RN-001 | Process Annual Policy Renewal                 | System        |
+| UC-RN-002 | Process Flyttanmälan (Insurer Switch Request) | System        |
+| UC-RN-003 | Manage Bonus Class Progression                | System        |
