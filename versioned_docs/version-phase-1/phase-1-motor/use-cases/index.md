@@ -35,6 +35,16 @@ Mid-term adjustment and policy lifecycle use cases — see [Policy Administratio
 | UC-PA-005 | Recalculate Premium After Amendment       | System        |
 | UC-PA-006 | Underwriter Review of High-Risk Amendment | Underwriter   |
 
+## Policy Cancellations
+
+Use cases describing the detailed workflows for motor insurance policy cancellation
+processing and premium refund calculation.
+
+| ID                                          | Title                          | Scope                                                   |
+| ------------------------------------------- | ------------------------------ | ------------------------------------------------------- |
+| [UC-CAN-001](uc-cancellation-processing.md) | Policy Cancellation Processing | End-to-end cancellation flow for all cancellation types |
+| [UC-CAN-002](uc-refund-calculation.md)      | Premium Refund Calculation     | Refund rules, calculation, and payment processing       |
+
 ## Claims Handling
 
 Use cases describing the detailed workflows for motor insurance claims

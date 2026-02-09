@@ -46,6 +46,25 @@ Mid-term adjustments and policy lifecycle management — see [Policy Administrat
 | US-PA-013 | Manage Policy Status                        | Underwriter    |
 | US-PA-014 | Review High-Risk Amendments                 | Underwriter    |
 
+## Policy Cancellations
+
+User stories covering motor insurance policy cancellation scenarios, including cooling-off
+(ångerrätt), renewal cancellation, vehicle ownership changes, and regulatory notifications.
+
+| ID                                                 | Title                                                   | Priority    |
+| -------------------------------------------------- | ------------------------------------------------------- | ----------- |
+| [US-CAN-001](cancellation-cooling-off.md)          | Cancel Policy Within Cooling-Off Period (Ångerrätt)     | Must Have   |
+| [US-CAN-002](cancellation-huvudforfallodag.md)     | Cancel at Huvudförfallodag                              | Must Have   |
+| [US-CAN-003](cancellation-vehicle-sold.md)         | Cancel Due to Vehicle Sold                              | Must Have   |
+| [US-CAN-004](cancellation-vehicle-deregistered.md) | Cancel Due to Vehicle Scrapped or Deregistered          | Must Have   |
+| [US-CAN-005](cancellation-replacement-coverage.md) | Verify Replacement Trafikförsäkring Before Cancellation | Must Have   |
+| [US-CAN-006](cancellation-transportstyrelsen.md)   | Notify Transportstyrelsen of Policy Cancellation        | Must Have   |
+| [US-CAN-007](cancellation-refund.md)               | Calculate and Process Premium Refund                    | Must Have   |
+| [US-CAN-008](cancellation-emigration.md)           | Cancel Due to Emigration                                | Should Have |
+| [US-CAN-009](cancellation-death.md)                | Cancel Due to Death of Policyholder                     | Must Have   |
+| [US-CAN-010](cancellation-insurer-initiated.md)    | Insurer-Initiated Cancellation                          | Must Have   |
+| [US-CAN-011](cancellation-eu-online-button.md)     | EU Online Cancellation Button (EU 2023/2673)            | Must Have   |
+
 ## Claims Handling
 
 User stories covering the full motor insurance claims lifecycle, from first
