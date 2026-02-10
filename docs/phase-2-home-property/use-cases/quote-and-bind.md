@@ -39,27 +39,59 @@ villahemförsäkring, bostadsrättsförsäkring, and fritidshusförsäkring.
 
 ```mermaid
 flowchart TD
-    A[Customer enters address + product type] --> B[Lantmäteriet property lookup]
-    B --> C{Property found?}
-    C -->|No| D[Manual property entry]
-    D --> E[Flag for underwriter review]
-    C -->|Yes| F[Automated risk assessment]
-    F --> G{Standard risk?}
-    G -->|No| H[Route to underwriter review]
-    G -->|Yes| I[Demands-and-needs assessment]
+    subgraph Customer ["Customer (Privatkund)"]
+        A[Enter address + product type]
+        N[Select coverage and accept]
+        O[Pre-contractual review]
+        P[BankID signing]
+    end
+
+    subgraph Lantmäteriet
+        B[Property lookup]
+    end
+
+    subgraph System ["System (TryggFörsäkring)"]
+        C{Property found?}
+        D[Manual property entry]
+        F[Automated risk assessment]
+        G{Standard risk?}
+        I[Demands-and-needs assessment]
+        J{BRF product?}
+        K[BRF coverage gap analysis]
+        L[Premium calculation]
+        M[Coverage tier comparison with add-ons]
+        Q{BankID verified?}
+        R[Retry or save quote for later]
+        S[Policy issuance + payment setup]
+        T[Confirmation sent to customer]
+    end
+
+    subgraph Underwriter ["Underwriter (Försäkringsgivare)"]
+        E[Review flagged property]
+        H[Review high-risk quote]
+    end
+
+    A --> B
+    B --> C
+    C -->|No| D
+    D --> E
+    C -->|Yes| F
+    F --> G
+    G -->|No| H
+    G -->|Yes| I
     H --> I
-    I --> J{BRF product?}
-    J -->|Yes| K[BRF coverage gap analysis]
-    J -->|No| L[Premium calculation]
+    I --> J
+    J -->|Yes| K
+    J -->|No| L
     K --> L
-    L --> M[Coverage tier comparison with add-ons]
-    M --> N[Customer selects coverage and accepts]
-    N --> O[Pre-contractual review]
-    O --> P[BankID signing]
-    P --> Q{BankID verified?}
-    Q -->|No| R[Retry or save quote for later]
-    Q -->|Yes| S[Policy issuance + payment setup]
-    S --> T[Confirmation sent to customer]
+    L --> M
+    M --> N
+    N --> O
+    O --> P
+    P --> Q
+    Q -->|No| R
+    Q -->|Yes| S
+    S --> T
 
     style A fill:#e1f5fe
     style T fill:#e8f5e9

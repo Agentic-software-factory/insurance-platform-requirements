@@ -72,42 +72,80 @@ record entity provides a complete audit trail of every policy change.
 
 ```mermaid
 flowchart TD
-    A[Customer requests policy change] --> B{Change type?}
-    B -->|Address| C[Enter new address]
-    B -->|Coverage tier| D[Select new tier]
-    B -->|Add-on| E[Select add/remove]
-    B -->|Deductible| F[Select new level]
+    subgraph Customer ["Customer (Privatkund)"]
+        A[Request policy change]
+        B{Change type?}
+        C[Enter new address]
+        D[Select new tier]
+        E[Select add/remove add-on]
+        F[Select new deductible level]
+        U[Confirm change]
+    end
 
-    C --> G[Lantmäteriet property lookup]
-    G --> H{Same property type?}
-    H -->|No| I[Redirect to new quote flow]
-    H -->|Yes| J[Display property details]
-    J --> K[Recalculate premium]
+    subgraph Lantmäteriet
+        G[Property lookup]
+    end
 
-    D --> L[Show tier comparison]
-    L --> M{D&N update needed?}
-    M -->|Yes| N[Collect updated D&N]
+    subgraph System ["System (TryggFörsäkring)"]
+        H{Same property type?}
+        I[Redirect to new quote flow]
+        J[Display property details]
+        K[Recalculate premium]
+        L[Show tier comparison]
+        M{D&N update needed?}
+        N[Collect updated D&N]
+        O[Show add-on details and pricing]
+        P[Show deductible options with premiums]
+        Q{Underwriter review needed?}
+        V[Process amendment]
+        W[Adjust premium pro-rata]
+        X[Trigger payment adjustment]
+        Y[Generate updated documents]
+        Z[Send confirmation]
+    end
+
+    subgraph Underwriter ["Underwriter (Försäkringsgivare)"]
+        R[Review flagged change]
+        S{Approved?}
+        T[Notify customer — declined]
+    end
+
+    A --> B
+    B -->|Address| C
+    B -->|Coverage tier| D
+    B -->|Add-on| E
+    B -->|Deductible| F
+
+    C --> G
+    G --> H
+    H -->|No| I
+    H -->|Yes| J
+    J --> K
+
+    D --> L
+    L --> M
+    M -->|Yes| N
     N --> K
     M -->|No| K
 
-    E --> O[Show add-on details and pricing]
+    E --> O
     O --> K
 
-    F --> P[Show deductible options with premiums]
+    F --> P
     P --> K
 
-    K --> Q{Underwriter review needed?}
-    Q -->|Yes| R[Route to underwriter]
-    R --> S{Approved?}
-    S -->|No| T[Notify customer - declined]
-    S -->|Yes| U[Customer confirms change]
+    K --> Q
+    Q -->|Yes| R
+    R --> S
+    S -->|No| T
+    S -->|Yes| U
     Q -->|No| U
 
-    U --> V[Process amendment]
-    V --> W[Adjust premium pro-rata]
-    W --> X[Trigger payment adjustment]
-    X --> Y[Generate updated documents]
-    Y --> Z[Send confirmation]
+    U --> V
+    V --> W
+    W --> X
+    X --> Y
+    Y --> Z
 
     style A fill:#e1f5fe
     style Z fill:#e8f5e9
@@ -342,33 +380,61 @@ sequenceDiagram
 
 ```mermaid
 flowchart TD
-    A[Board chair logs in] --> B[Select BRF building policy]
-    B --> C{Change type?}
-    C -->|Renovation| D[Enter renovation details]
-    C -->|Facility change| E[Add/remove facility]
-    C -->|Valuation update| F[Request revaluation]
+    subgraph BRFBoard ["BRF Board Chair (Ordförande)"]
+        A[Log in and authenticate]
+        B[Select BRF building policy]
+        C{Change type?}
+        D[Enter renovation details]
+        E[Add/remove facility]
+        F[Request revaluation]
+        O[Confirm changes]
+    end
 
-    D --> G[Building valuation recalculation]
-    E --> H[Update facility list and risk]
+    subgraph System ["System (TryggFörsäkring)"]
+        G[Building valuation recalculation]
+        H[Update facility list and risk]
+        I{Valuation anomaly?}
+        K[Show updated sum insured and premium]
+        L{High-risk facility?}
+        P[Process amendment]
+        Q[Adjust premium]
+        R[Reissue building insurance certificate]
+        S[Send confirmation to board]
+    end
+
+    subgraph Underwriter ["Underwriter (Försäkringsgivare)"]
+        J[Review flagged change]
+        M{Approved?}
+        N[Decline with explanation]
+    end
+
+    A --> B
+    B --> C
+    C -->|Renovation| D
+    C -->|Facility change| E
+    C -->|Valuation update| F
+
+    D --> G
+    E --> H
     F --> G
 
-    G --> I{Valuation anomaly?}
-    I -->|Yes| J[Underwriter review]
-    I -->|No| K[Show updated sum insured and premium]
+    G --> I
+    I -->|Yes| J
+    I -->|No| K
 
-    H --> L{High-risk facility?}
+    H --> L
     L -->|Yes| J
     L -->|No| K
 
-    J --> M{Approved?}
-    M -->|No| N[Decline with explanation]
+    J --> M
+    M -->|No| N
     M -->|Yes| K
 
-    K --> O[Board chair confirms]
-    O --> P[Process amendment]
-    P --> Q[Adjust premium]
-    Q --> R[Reissue building insurance certificate]
-    R --> S[Send confirmation to board]
+    K --> O
+    O --> P
+    P --> Q
+    Q --> R
+    R --> S
 
     style A fill:#e1f5fe
     style S fill:#e8f5e9
@@ -551,27 +617,48 @@ sequenceDiagram
 
 ```mermaid
 flowchart TD
-    A[Policyholder requests family change] --> B{Add or remove?}
-    B -->|Add| C[Enter family member details]
-    B -->|Remove| D[Select member to remove]
+    subgraph Policyholder ["Policyholder (Privatkund)"]
+        A[Request family change]
+        B{Add or remove?}
+        C[Enter family member details]
+        D[Select member to remove]
+        H[Confirm removal]
+        L[Confirm changes]
+    end
 
-    C --> E[Validate personnummer/DOB]
-    E --> F[Confirm relationship]
-    F --> G[Review household size]
+    subgraph System ["System (TryggFörsäkring)"]
+        E[Validate personnummer/DOB]
+        F[Confirm relationship]
+        G[Review household size]
+        I{Sum insured adequate?}
+        J[Suggest updated sum insured]
+        K[Show summary and premium impact]
+        M[Process amendment]
+        N[Update policy documents]
+        O[Send confirmation]
+    end
 
-    D --> H[Confirm removal]
+    A --> B
+    B -->|Add| C
+    B -->|Remove| D
+
+    C --> E
+    E --> F
+    F --> G
+
+    D --> H
     H --> G
 
-    G --> I{Sum insured adequate?}
-    I -->|No| J[Suggest updated sum insured]
-    I -->|Yes| K[Show summary and premium impact]
+    G --> I
+    I -->|No| J
+    I -->|Yes| K
 
     J --> K
 
-    K --> L[Policyholder confirms]
-    L --> M[Process amendment]
-    M --> N[Update policy documents]
-    N --> O[Send confirmation]
+    K --> L
+    L --> M
+    M --> N
+    N --> O
 
     style A fill:#e1f5fe
     style O fill:#e8f5e9

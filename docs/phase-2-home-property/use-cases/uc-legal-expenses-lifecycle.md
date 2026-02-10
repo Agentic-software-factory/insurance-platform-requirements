@@ -46,24 +46,50 @@ hemförsäkring.
 
 ```mermaid
 flowchart TD
-    A[1. Customer applies for rättsskydd] --> B[2. Register application]
-    B --> C{3. Verify eligibility}
-    C -->|Eligible| D[4. Customer submits lawyer and fee estimate]
-    C -->|Not eligible| E[3a. Deny application with explanation]
-    C -->|Waiting period| F[3b. Check waiting period status]
+    subgraph Customer ["Customer (Privatkund)"]
+        A[1. Apply for rättsskydd]
+        D[4. Submit lawyer and fee estimate]
+    end
+
+    subgraph ClaimsHandler ["Claims Handler (Skadereglerare)"]
+        B[2. Register application]
+        C{3. Verify eligibility}
+        E[3a. Deny application with explanation]
+        F[3b. Check waiting period status]
+        G{5. Approve lawyer and fees?}
+        I[5a. Negotiate fee adjustment]
+        J[7. Track costs and process invoices]
+        K{Costs near cap?}
+        L[7a. Notify customer of cap approach]
+    end
+
+    subgraph Lawyer ["Lawyer (Advokat)"]
+        H[6. Active legal proceedings]
+        M[8. Dispute resolved]
+    end
+
+    subgraph System ["System (TryggFörsäkring)"]
+        N[9. Final settlement and closure]
+    end
+
+    A --> B
+    B --> C
+    C -->|Eligible| D
+    C -->|Not eligible| E
+    C -->|Waiting period| F
     F -->|Passed| D
     F -->|Not passed| E
-    D --> G{5. Approve lawyer and fees?}
-    G -->|Approved| H[6. Active legal proceedings]
-    G -->|Fees too high| I[5a. Negotiate fee adjustment]
+    D --> G
+    G -->|Approved| H
+    G -->|Fees too high| I
     I --> G
-    H --> J[7. Track costs and process invoices]
-    J --> K{Costs near cap?}
-    K -->|Yes| L[7a. Notify customer of cap approach]
+    H --> J
+    J --> K
+    K -->|Yes| L
     K -->|No| J
     L --> J
-    J --> M[8. Dispute resolved]
-    M --> N[9. Final settlement and closure]
+    J --> M
+    M --> N
 
     style A fill:#e1f5fe
     style N fill:#e8f5e9

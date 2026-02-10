@@ -40,27 +40,60 @@ flagged renewals, and IDD demands-and-needs reassessment.
 
 ```mermaid
 flowchart TD
-    A[T-60: Identify policies approaching huvudförfallodag] --> B[Retrieve index data from SCB]
-    B --> C[Recalculate building sum using byggkostnadsindex]
-    C --> D[Recalculate contents sum using KPI]
-    D --> E[Recalculate premium with updated risk factors]
-    E --> F{Premium increase > 15% or multiple claims?}
-    F -->|Yes| G[Route to underwriter review]
-    F -->|No| H[Approve renewal automatically]
-    G --> I{Underwriter decision?}
+    subgraph System ["System (Automated Batch Process)"]
+        A[T-60: Identify policies approaching huvudförfallodag]
+        C[Recalculate building sum using byggkostnadsindex]
+        D[Recalculate contents sum using KPI]
+        E[Recalculate premium with updated risk factors]
+        F{Premium increase > 15% or multiple claims?}
+        H[Approve renewal automatically]
+        L[T-30: Generate and send förnyelseavisering]
+        M{Customer response before T-0?}
+        N[Recalculate with new terms]
+        O[Process cancellation]
+        P[T-0: Automatic renewal on huvudförfallodag]
+        Q[Generate renewed policy documents]
+        R[Update payment schedule]
+        S[Send renewal confirmation]
+    end
+
+    subgraph SCB ["SCB (Statistiska Centralbyrån)"]
+        B[Retrieve index data: byggkostnadsindex + KPI]
+    end
+
+    subgraph Underwriter ["Underwriter (Försäkringsgivare)"]
+        G[Review flagged renewal]
+        I{Underwriter decision?}
+        J[Add conditions to renewal terms]
+        K[Generate non-renewal notice at T-30]
+    end
+
+    subgraph Customer ["Customer (Privatkund)"]
+        CUST_RESP[Review renewal notice and respond]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F -->|Yes| G
+    F -->|No| H
+    G --> I
     I -->|Approve| H
-    I -->|Conditional| J[Add conditions to renewal terms]
-    I -->|Non-renewal| K[Generate non-renewal notice at T-30]
+    I -->|Conditional| J
+    I -->|Non-renewal| K
     J --> H
-    H --> L[T-30: Generate and send förnyelseavisering]
-    L --> M{Customer response before T-0?}
-    M -->|Modify coverage| N[Recalculate with new terms]
-    M -->|Cancel / Flyttanmälan| O[Process cancellation]
-    M -->|No response / Accept| P[T-0: Automatic renewal on huvudförfallodag]
+    H --> L
+    L --> CUST_RESP
+    CUST_RESP --> M
+    M -->|Modify coverage| N
+    M -->|Cancel / Flyttanmälan| O
+    M -->|No response / Accept| P
     N --> P
-    P --> Q[Generate renewed policy documents]
-    Q --> R[Update payment schedule]
-    R --> S[Send renewal confirmation]
+    P --> Q
+    Q --> R
+    R --> S
 
     style A fill:#e1f5fe
     style S fill:#e8f5e9
