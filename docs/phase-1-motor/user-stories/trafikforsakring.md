@@ -11,25 +11,40 @@ motor insurance policy.
 
 ## Overview
 
-| ID    | Actor              | Summary                                                  |
-| ----- | ------------------ | -------------------------------------------------------- |
-| TF-01 | System             | Register trafikforsakring with Transportstyrelsen        |
-| TF-02 | Customer           | Automatic trafikforsakring inclusion in any motor policy |
-| TF-03 | Claims Handler     | Process personal injury claims under Trafikskadelagen    |
-| TF-04 | System             | Prevent policy cancellation without replacement coverage |
-| TF-05 | Compliance Officer | Generate TFF statutory reports                           |
-| TF-06 | Claims Handler     | Route uninsured/foreign vehicle claims to TFF            |
-| TF-07 | Customer           | Cross-border coverage via Green Card system              |
+| ID         | Actor              | Summary                                        |
+| ---------- | ------------------ | ---------------------------------------------- |
+| US-TRF-001 | System             | Ensure continuous mandatory coverage           |
+| US-TRF-002 | System             | Report to TFF                                  |
+| US-TRF-003 | System             | Handle TFF data exchange                       |
+| US-TRF-004 | Claims Handler     | Process personal injury under Trafikskadelagen |
+| US-TRF-005 | Customer           | Issue Green Card for EU travel                 |
+| US-TRF-006 | System             | Handle trafikforsakringsavgift notification    |
+| US-TRF-007 | Compliance Officer | Verify TFF membership compliance               |
+
+For trafikforsakring content in other epics, see the
+[cross-reference index](trafikforsakring-cross-references.md).
 
 ---
 
-## TF-01: Register Trafikforsakring with Transportstyrelsen
+## US-TRF-001: Ensure Continuous Mandatory Coverage
+
+### User Story
 
 **As the** system,
-**I want to** register new trafikforsakring with Transportstyrelsen immediately
-upon binding,
-**so that** the vehicle is legally covered and the vehicle registry reflects
-the current insurance status.
+**I want to** monitor that no insured vehicle has a gap in trafikforsakring
+coverage,
+**so that** TryggForsakring fulfils its regulatory obligation to prevent
+uninsured periods.
+
+### Actors
+
+- **Primary:** System (automated processes)
+- **Supporting:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund), [Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen)
+
+### Priority
+
+**Must Have** — Preventing coverage gaps is a core regulatory obligation under
+Trafikskadelagen.
 
 ### Acceptance Criteria
 
@@ -55,194 +70,6 @@ the current insurance status.
   backoff, and an alert is raised for operations staff after 3 consecutive
   failures
 
-- **GIVEN** a policy is modified (e.g., coverage tier change from halv to hel)
-  **WHEN** the modification is processed
-  **THEN** no new trafikforsakring notification is required because the
-  mandatory base coverage has not changed
-
-- **GIVEN** a vehicle changes ownership
-  **WHEN** the new owner binds a policy with TryggForsakring
-  **THEN** the system sends a new registration notification to
-  Transportstyrelsen linking the new policy to the vehicle
-
-### Data Requirements
-
-| Data Element              | Source             | Required |
-| ------------------------- | ------------------ | -------- |
-| Registreringsnummer       | Policy data        | Yes      |
-| Policy number             | System             | Yes      |
-| Insurance company ID      | System config      | Yes      |
-| Coverage start date/time  | Policy data        | Yes      |
-| Coverage type             | Policy data        | Yes      |
-| Acknowledgement reference | Transportstyrelsen | Yes      |
-
-### External Integrations
-
-- **Transportstyrelsen** — Insurance status registration API (real-time)
-
-### Regulatory
-
-- **FSA-009** — Insurers must notify Transportstyrelsen of policy changes
-  within regulated timeframes
-- **FSA-007** — Every registered vehicle must have valid trafikforsakring;
-  notification ensures the registry reflects this
-- **GDPR-004** — Data sharing with Transportstyrelsen is based on legal
-  obligation under Trafikskadelagen
-
----
-
-## TF-02: Automatic Trafikforsakring Inclusion
-
-**As a** private customer (privatkund),
-**I want** my trafikforsakring to be automatically included in any motor
-insurance policy,
-**so that** I always meet the legal requirement without having to select it
-separately.
-
-### Acceptance Criteria
-
-- **GIVEN** a customer initiates a motor insurance quote
-  **WHEN** the system presents coverage tier options
-  **THEN** trafikforsakring is always included as the base coverage in every
-  tier (trafik, halv, hel) and cannot be removed or deselected
-
-- **GIVEN** a customer selects halvforsakring or helforsakring
-  **WHEN** the policy is bound
-  **THEN** the policy record explicitly includes trafikforsakring as the
-  mandatory base component of the selected tier
-
-- **GIVEN** a customer selects trafikforsakring only (mandatory minimum)
-  **WHEN** the system presents the binding summary
-  **THEN** the system displays a clear explanation that this provides
-  third-party liability coverage only (personal injury to all parties and
-  property damage to third parties) and does not cover damage to the
-  policyholder's own vehicle
-
-- **GIVEN** any motor policy is created in the system
-  **WHEN** the system validates the policy configuration
-  **THEN** the system rejects any motor policy that does not include
-  trafikforsakring as a base coverage component
-
-- **GIVEN** the IPID for trafikforsakring has been generated
-  **WHEN** a customer is presented with coverage options
-  **THEN** the trafikforsakring IPID is accessible from all tier options,
-  clearly explaining mandatory coverage scope
-
-### Data Requirements
-
-| Data Element              | Source          | Required |
-| ------------------------- | --------------- | -------- |
-| Coverage tier             | Customer choice | Yes      |
-| Trafikforsakring included | System (forced) | Yes      |
-| IPID per tier             | Document store  | Yes      |
-
-### Regulatory
-
-- **FSA-007** — Trafikforsakring is mandatory for all registered vehicles;
-  the platform must enforce this
-- **IDD-002** — IPID must be available for trafikforsakring specifically
-- **IDD-001** — Demands-and-needs assessment must explain the mandatory
-  nature of trafikforsakring
-- **FSA-004** — Clear communication about coverage scope supports fair
-  treatment
-- **FSA-012** — Mandatory coverage disclosure is part of pre-contractual
-  information
-
----
-
-## TF-03: Process Personal Injury Claims Under Trafikskadelagen
-
-**As a** claims handler (skadereglerare),
-**I want to** process personal injury claims under trafikforsakring separately
-from property damage claims,
-**so that** compensation follows the strict liability rules of
-Trafikskadelagen.
-
-### Acceptance Criteria
-
-- **GIVEN** a traffic accident has been reported
-  **WHEN** the claims handler registers the claim
-  **THEN** the system allows the claim to be classified as:
-  - Personal injury claim (personskada) — under Trafikskadelagen strict
-    liability
-  - Property damage claim (sakskada) — standard liability rules
-  - Combined claim (both personal injury and property damage)
-
-- **GIVEN** a personal injury claim is registered
-  **WHEN** the system processes the claim
-  **THEN** the system applies strict liability rules (trafikskadelagen):
-  - The vehicle owner/driver is liable for personal injuries regardless of
-    fault
-  - All persons injured in or by the vehicle are covered, including the
-    driver
-  - Compensation covers medical costs, lost income, pain and suffering, and
-    permanent disability
-
-- **GIVEN** a personal injury claim requires medical documentation
-  **WHEN** the claims handler requests medical records
-  **THEN** the system supports:
-  - Requesting medical certificates from healthcare providers
-  - Recording injury severity classification
-  - Tracking treatment progress and expected recovery timeline
-  - Documenting permanent disability assessments
-
-- **GIVEN** a personal injury claim involves multiple injured persons
-  **WHEN** the claims handler processes the claim
-  **THEN** the system creates a separate compensation record for each
-  injured person, each with their own medical documentation and settlement
-  calculation
-
-- **GIVEN** a personal injury claim is under trafikforsakring
-  **WHEN** the claims handler determines liability
-  **THEN** the system enforces that strict liability applies to personal
-  injuries (no fault determination required for personal injury
-  compensation under Trafikskadelagen)
-
-- **GIVEN** a personal injury claim exceeds the insurer's retention limit
-  **WHEN** the claims handler reviews the claim
-  **THEN** the system flags the claim for reinsurance notification
-
-### Data Requirements
-
-| Data Element             | Source            | Required |
-| ------------------------ | ----------------- | -------- |
-| Claim type               | Claims handler    | Yes      |
-| Injured person(s)        | Claimant/police   | Yes      |
-| Medical certificates     | Medical providers | Yes      |
-| Injury severity          | Medical providers | Yes      |
-| Police report reference  | Police            | No       |
-| Treatment timeline       | Medical providers | No       |
-| Disability assessment    | Medical providers | No       |
-| Compensation calculation | System/handler    | Yes      |
-
-### External Integrations
-
-- **Medical Provider** — Injury documentation and medical certificates
-- **Police** — Accident reports for multi-vehicle incidents
-- **TFF** — Claims data reporting for industry statistics
-
-### Regulatory
-
-- **FSA-007** — Trafikforsakring must cover personal injuries per
-  Trafikskadelagen
-- **FSA-010** — Claims must be handled fairly and promptly; personal injury
-  claims require particular care due to vulnerability of injured parties
-- **GDPR-003** — Claims processing involves personal data; medical data is
-  special category data requiring legal obligation basis under
-  Trafikskadelagen
-- **GDPR-004** — Claims data shared with TFF under legal obligation
-
----
-
-## TF-04: Prevent Coverage Gaps
-
-**As the** system,
-**I want to** prevent policy cancellation without verified replacement
-trafikforsakring,
-**so that** no vehicle is left without mandatory insurance coverage.
-
-### Acceptance Criteria
-
 - **GIVEN** a policyholder requests cancellation of their motor insurance
   **WHEN** the system processes the cancellation request
   **THEN** the system checks whether replacement trafikforsakring is in
@@ -262,62 +89,72 @@ trafikforsakring,
   **THEN** the cancellation is approved and the coverage end date is aligned
   with the replacement policy's start date to prevent any gap
 
-- **GIVEN** a policyholder's motor insurance is being cancelled by the
-  insurer (e.g., non-payment of premium)
-  **WHEN** the cancellation takes effect
-  **THEN** the system:
-  - Notifies Transportstyrelsen of the coverage end date
-  - Sends a warning to the policyholder that the vehicle will be uninsured
-  - The system records the insurer-initiated cancellation reason
-
 - **GIVEN** a vehicle is being scrapped or exported
   **WHEN** the policyholder provides proof of deregistration
   **THEN** the system allows cancellation without replacement coverage,
   provided Transportstyrelsen confirms the vehicle is deregistered
 
-- **GIVEN** the 14-day cooling-off period (angerratt) applies
-  **WHEN** the policyholder exercises angerratt within the first 14 days
-  **THEN** the system processes the cancellation but still warns about
-  coverage gap consequences and checks for replacement insurance
+- **GIVEN** any motor policy is created in the system
+  **WHEN** the system validates the policy configuration
+  **THEN** the system rejects any motor policy that does not include
+  trafikforsakring as a base coverage component
 
 ### Data Requirements
 
-| Data Element                 | Source             | Required |
-| ---------------------------- | ------------------ | -------- |
-| Cancellation reason          | Policyholder       | Yes      |
-| Replacement insurance flag   | Transportstyrelsen | Yes      |
-| Vehicle deregistration       | Transportstyrelsen | No       |
-| Policyholder acknowledgement | System             | Yes      |
-| Coverage end date            | System             | Yes      |
+| Data Element              | Source             | Required |
+| ------------------------- | ------------------ | -------- |
+| Registreringsnummer       | Policy data        | Yes      |
+| Policy number             | System             | Yes      |
+| Insurance company ID      | System config      | Yes      |
+| Coverage start date/time  | Policy data        | Yes      |
+| Coverage type             | Policy data        | Yes      |
+| Acknowledgement reference | Transportstyrelsen | Yes      |
+| Replacement insurance     | Transportstyrelsen | Yes      |
+| Vehicle deregistration    | Transportstyrelsen | No       |
 
 ### External Integrations
 
-- **Transportstyrelsen** — Verify replacement insurance status and vehicle
-  registration status
+- **Transportstyrelsen** — Insurance status registration API (real-time) and
+  vehicle registry verification
 - **TFF** — Uninsured vehicle reporting
 
 ### Regulatory
 
-- **FSA-007** — Every registered vehicle must have trafikforsakring; the
-  platform must prevent coverage gaps where possible
-- **FSA-009** — Transportstyrelsen must be notified of coverage end dates
+- **FSA-007** — Every registered vehicle must have valid trafikforsakring;
+  the platform must enforce continuous coverage
+- **FSA-009** — Insurers must notify Transportstyrelsen of policy changes
+  within regulated timeframes
 - **FSA-013** — Cooling-off cancellations must still follow coverage gap
   prevention rules
-- **GDPR-004** — Cancellation data shared with Transportstyrelsen under
-  legal obligation
+- **GDPR-004** — Data sharing with Transportstyrelsen is based on legal
+  obligation under Trafikskadelagen
 
 ---
 
-## TF-05: Generate TFF Statutory Reports
+## US-TRF-002: Report to TFF
 
-**As a** compliance officer (regelefterlevnadsansvarig),
-**I want to** generate statutory reports for Trafikforsakringsforeningen (TFF),
-**so that** TryggForsakring meets its TFF membership obligations.
+### User Story
+
+**As the** system,
+**I want to** submit statutory reports to TFF (new policies, cancellations,
+claims data) per membership obligations,
+**so that** TryggForsakring maintains compliance with TFF membership
+requirements.
+
+### Actors
+
+- **Primary:** System (automated processes)
+- **Supporting:** [Compliance Officer](../../actors/internal-actors.md#compliance-officer)
+
+### Priority
+
+**Must Have** — TFF reporting is a mandatory condition of selling
+trafikforsakring in Sweden.
 
 ### Acceptance Criteria
 
 - **GIVEN** the reporting period end date has been reached
-  **WHEN** the compliance officer initiates TFF report generation
+  **WHEN** the system initiates TFF report generation
   **THEN** the system produces the required TFF reports covering:
   - Number of active trafikforsakring policies
   - Premium income from trafikforsakring
@@ -358,7 +195,8 @@ trafikforsakring,
 
 ### External Integrations
 
-- **TFF** — Data exchange for statutory reporting
+- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+  Data exchange for statutory reporting
 
 ### Regulatory
 
@@ -371,24 +209,31 @@ trafikforsakring,
 
 ---
 
-## TF-06: Route Uninsured and Foreign Vehicle Claims to TFF
+## US-TRF-003: Handle TFF Data Exchange
 
-**As a** claims handler (skadereglerare),
-**I want to** identify and route claims involving uninsured or foreign vehicles
-to TFF,
-**so that** victims are compensated even when the responsible vehicle lacks
-valid Swedish trafikforsakring.
+### User Story
+
+**As the** system,
+**I want to** exchange claims data with TFF in the required format for
+uninsured, unknown, and foreign vehicle claims,
+**so that** victims are compensated and TryggForsakring meets its cooperative
+obligations.
+
+### Actors
+
+- **Primary:** System (automated processes)
+- **Supporting:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare), [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)
+
+### Priority
+
+**Must Have** — TFF data exchange is required for handling uninsured vehicle
+claims under Trafikskadelagen.
 
 ### Acceptance Criteria
 
-- **GIVEN** a traffic accident claim is reported
-  **WHEN** the claims handler looks up the responsible vehicle's insurance
-  status
-  **THEN** the system queries Transportstyrelsen to verify whether the
-  vehicle has valid trafikforsakring
-
-- **GIVEN** the responsible vehicle has no valid trafikforsakring
-  **WHEN** the system confirms the vehicle is uninsured
+- **GIVEN** a traffic accident claim involves an uninsured vehicle
+  **WHEN** the claims handler confirms the vehicle is uninsured via
+  Transportstyrelsen
   **THEN** the system:
   - Flags the claim as an uninsured vehicle claim
   - Generates a TFF referral with all required claim details
@@ -396,7 +241,7 @@ valid Swedish trafikforsakring.
   - Notifies the claims handler that TFF will handle the claim against
     the uninsured vehicle
 
-- **GIVEN** the responsible vehicle is registered in another country
+- **GIVEN** a claim involves a foreign-registered vehicle
   **WHEN** the claims handler identifies the vehicle as foreign-registered
   **THEN** the system:
   - Checks whether the vehicle has a valid Green Card or equivalent
@@ -416,22 +261,31 @@ valid Swedish trafikforsakring.
   **THEN** the system tracks the TFF claim progress and records any
   compensation received by the victim through TFF
 
+- **GIVEN** TFF has settled a claim
+  **WHEN** TFF communicates the settlement decision
+  **THEN** the system records the TFF settlement details and closes the
+  claim accordingly
+
 ### Data Requirements
 
-| Data Element              | Source             | Required |
-| ------------------------- | ------------------ | -------- |
-| Responsible vehicle reg.  | Claimant/police    | Yes      |
-| Insurance status          | Transportstyrelsen | Yes      |
-| Vehicle country of origin | Claimant/police    | No       |
-| Green Card details        | Claimant           | No       |
-| Police report reference   | Police             | Yes      |
-| TFF referral reference    | TFF                | Yes      |
+| Data Element              | Source             | Required    |
+| ------------------------- | ------------------ | ----------- |
+| Responsible vehicle reg.  | Claimant/police    | Yes         |
+| Insurance status          | Transportstyrelsen | Yes         |
+| Vehicle country of origin | Claimant/police    | Conditional |
+| Green Card details        | Claimant           | Conditional |
+| Police report reference   | Police             | Yes         |
+| TFF referral reference    | TFF                | Yes         |
+| TFF settlement details    | TFF                | Yes         |
 
 ### External Integrations
 
-- **Transportstyrelsen** — Vehicle insurance status verification
-- **TFF** — Uninsured and foreign vehicle claim referral
-- **Police** — Accident reports for hit-and-run and liability determination
+- **[Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen)** —
+  Vehicle insurance status verification
+- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+  Uninsured and foreign vehicle claim referral and settlement
+- **[Police (Polis)](../../actors/external-actors.md#police-polis)** — Accident
+  reports for hit-and-run and liability determination
 
 ### Regulatory
 
@@ -447,12 +301,133 @@ valid Swedish trafikforsakring.
 
 ---
 
-## TF-07: Cross-Border Coverage via Green Card System
+## US-TRF-004: Process Personal Injury Under Trafikskadelagen
 
-**As a** customer (privatkund),
-**I want** my trafikforsakring to provide coverage when I travel in the EU and
-Green Card countries,
-**so that** I am legally insured while driving abroad.
+### User Story
+
+**As a** claims handler (skadereglerare),
+**I want to** process personal injury claims following Trafikskadelagen strict
+liability rules (driver liable regardless of fault),
+**so that** all injured persons receive fair compensation as required by law.
+
+### Actors
+
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
+- **Supporting:** [Medical Provider (Vardgivare)](../../actors/external-actors.md#medical-provider-vårdgivare), [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
+
+### Priority
+
+**Must Have** — Personal injury under strict liability is the core purpose of
+trafikforsakring.
+
+### Acceptance Criteria
+
+- **GIVEN** a traffic accident has been reported
+  **WHEN** the claims handler registers the claim
+  **THEN** the system allows the claim to be classified as:
+  - Personal injury claim (personskada) — under Trafikskadelagen strict
+    liability
+  - Property damage claim (sakskada) — standard liability rules
+  - Combined claim (both personal injury and property damage)
+
+- **GIVEN** a personal injury claim is registered
+  **WHEN** the system processes the claim
+  **THEN** the system applies strict liability rules (Trafikskadelagen):
+  - The vehicle owner/driver is liable for personal injuries regardless of
+    fault
+  - All persons injured in or by the vehicle are covered, including the
+    driver
+  - Compensation covers medical costs, lost income, pain and suffering, and
+    permanent disability
+
+- **GIVEN** a personal injury claim requires medical documentation
+  **WHEN** the claims handler requests medical records
+  **THEN** the system supports:
+  - Requesting medical certificates from healthcare providers
+  - Recording injury severity classification
+  - Tracking treatment progress and expected recovery timeline
+  - Documenting permanent disability assessments
+
+- **GIVEN** a personal injury claim involves multiple injured persons
+  **WHEN** the claims handler processes the claim
+  **THEN** the system creates a separate compensation record for each
+  injured person, each with their own medical documentation and settlement
+  calculation
+
+- **GIVEN** a personal injury claim is under trafikforsakring
+  **WHEN** the claims handler determines liability
+  **THEN** the system enforces that strict liability applies to personal
+  injuries (no fault determination required for personal injury
+  compensation under Trafikskadelagen)
+
+- **GIVEN** a personal injury claim exceeds the insurer's retention limit
+  **WHEN** the claims handler reviews the claim
+  **THEN** the system flags the claim for reinsurance notification
+
+### Compensation Components
+
+| Component            | Swedish Term            | Calculation Basis                                          |
+| -------------------- | ----------------------- | ---------------------------------------------------------- |
+| Medical costs        | Sjukvardskostnader      | Receipts and invoices from healthcare providers            |
+| Income loss          | Inkomstforlust          | Employer certificate of absence; tax records               |
+| Pain and suffering   | Sveda och vark          | Trafikskadenamden tables based on injury type and duration |
+| Permanent disability | Invaliditet             | Medical certificate of permanent impairment percentage     |
+| Loss of amenity      | Lyte och men            | Medical assessment of functional limitations               |
+| Future income loss   | Framtida inkomstforlust | Actuarial calculation based on age, profession, disability |
+
+### Data Requirements
+
+| Data Element             | Source            | Required |
+| ------------------------ | ----------------- | -------- |
+| Claim type               | Claims handler    | Yes      |
+| Injured person(s)        | Claimant/police   | Yes      |
+| Medical certificates     | Medical providers | Yes      |
+| Injury severity          | Medical providers | Yes      |
+| Police report reference  | Police            | No       |
+| Treatment timeline       | Medical providers | No       |
+| Disability assessment    | Medical providers | No       |
+| Compensation calculation | System/handler    | Yes      |
+
+### External Integrations
+
+- **[Medical Provider (Vardgivare)](../../actors/external-actors.md#medical-provider-vårdgivare)** —
+  Injury documentation and medical certificates
+- **[Police (Polis)](../../actors/external-actors.md#police-polis)** — Accident
+  reports for multi-vehicle incidents
+- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+  Claims data reporting for industry statistics
+
+### Regulatory
+
+- **FSA-007** — Trafikforsakring must cover personal injuries per
+  Trafikskadelagen
+- **FSA-010** — Claims must be handled fairly and promptly; personal injury
+  claims require particular care due to vulnerability of injured parties
+- **GDPR-003** — Claims processing involves personal data; medical data is
+  special category data requiring legal obligation basis under
+  Trafikskadelagen
+- **GDPR-004** — Claims data shared with TFF under legal obligation
+
+---
+
+## US-TRF-005: Issue Green Card for EU Travel
+
+### User Story
+
+**As a** customer traveling in the EU,
+**I want to** receive a Green Card certificate proving my trafikforsakring is
+valid abroad,
+**so that** I can drive legally in other EU/EEA and Green Card countries.
+
+### Actors
+
+- **Primary:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
+- **Supporting:** System (automated processes), [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)
+
+### Priority
+
+**Should Have** — Cross-border coverage is included automatically, but the
+physical Green Card document is needed for proof in some countries.
 
 ### Acceptance Criteria
 
@@ -494,18 +469,19 @@ Green Card countries,
 
 ### Data Requirements
 
-| Data Element             | Source         | Required |
-| ------------------------ | -------------- | -------- |
-| Policy validity period   | Policy data    | Yes      |
-| Green Card document      | System         | Yes      |
-| Countries covered        | System config  | Yes      |
-| Foreign accident details | Customer input | No       |
-| Foreign police report    | Customer       | No       |
-| Green Card bureau claim  | TFF/bureau     | No       |
+| Data Element             | Source         | Required    |
+| ------------------------ | -------------- | ----------- |
+| Policy validity period   | Policy data    | Yes         |
+| Green Card document      | System         | Yes         |
+| Countries covered        | System config  | Yes         |
+| Foreign accident details | Customer input | Conditional |
+| Foreign police report    | Customer       | Conditional |
+| Green Card bureau claim  | TFF/bureau     | Conditional |
 
 ### External Integrations
 
-- **TFF** — Green Card coordination and bureau network
+- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+  Green Card coordination and bureau network
 - **Foreign insurers/bureaus** — Cross-border claim handling via the Green
   Card system
 
@@ -521,6 +497,166 @@ Green Card countries,
   EU/EEA transfers are permitted under GDPR
 - **EU Motor Insurance Directive** — Mandates mutual recognition of motor
   insurance across EU member states
+
+---
+
+## US-TRF-006: Handle Trafikforsakringsavgift Notification
+
+### User Story
+
+**As the** system,
+**I want to** notify vehicle owners about the uninsured vehicle fee
+(trafikforsakringsavgift) when coverage lapses,
+**so that** policyholders understand the financial consequences of being
+uninsured.
+
+### Actors
+
+- **Primary:** System (automated processes)
+- **Supporting:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund), [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)
+
+### Priority
+
+**Must Have** — Notifying vehicle owners about penalty fees is required to
+support the mandatory insurance regime.
+
+### Acceptance Criteria
+
+- **GIVEN** a policyholder's motor insurance has been cancelled
+  **WHEN** no replacement trafikforsakring is detected
+  **THEN** the system sends a notification to the vehicle owner warning
+  that TFF will charge a trafikforsakringsavgift for each day the vehicle
+  remains uninsured
+
+- **GIVEN** the system detects that a vehicle has been uninsured for more
+  than 24 hours
+  **WHEN** the system queries Transportstyrelsen for the vehicle's
+  insurance status
+  **THEN** the system records the uninsured period start date and sends a
+  reminder notification to the vehicle owner
+
+- **GIVEN** the vehicle owner has received a trafikforsakringsavgift
+  warning
+  **WHEN** the owner contacts TryggForsakring to reinstate coverage
+  **THEN** the system supports immediate policy issuance and sends a new
+  registration notification to Transportstyrelsen
+
+- **GIVEN** a previously uninsured vehicle obtains new trafikforsakring
+  **WHEN** the system processes the new policy binding
+  **THEN** the system notifies Transportstyrelsen and records the coverage
+  start date, ending the uninsured period
+
+- **GIVEN** TFF has levied a trafikforsakringsavgift
+  **WHEN** the vehicle owner inquires about the fee
+  **THEN** the system displays information about TFF's fee structure and
+  directs the owner to TFF for fee-related inquiries (the fee is TFF's
+  responsibility, not TryggForsakring's)
+
+### Data Requirements
+
+| Data Element           | Source             | Required |
+| ---------------------- | ------------------ | -------- |
+| Policy cancellation    | System             | Yes      |
+| Replacement insurance  | Transportstyrelsen | Yes      |
+| Uninsured period start | System             | Yes      |
+| Notification history   | System             | Yes      |
+| Reinstatement date     | System             | Yes      |
+
+### External Integrations
+
+- **[Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen)** —
+  Insurance status verification and registration
+- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+  Uninsured vehicle fee administration (external to TryggForsakring)
+
+### Regulatory
+
+- **FSA-007** — Every registered vehicle must have trafikforsakring; the
+  system must actively support coverage reinstatement
+- **FSA-009** — Transportstyrelsen must be notified of all insurance
+  status changes
+- **GDPR-004** — Data sharing with Transportstyrelsen under legal
+  obligation
+- **FSA-004** — Fair treatment of customers includes clear communication
+  about financial consequences of being uninsured
+
+---
+
+## US-TRF-007: Verify TFF Membership Compliance
+
+### User Story
+
+**As a** compliance officer (regelefterlevnadsansvarig),
+**I want to** verify that TryggForsakring maintains its TFF membership and
+meets all reporting obligations,
+**so that** we remain authorized to sell trafikforsakring.
+
+### Actors
+
+- **Primary:** [Compliance Officer](../../actors/internal-actors.md#compliance-officer)
+- **Supporting:** System (automated processes)
+
+### Priority
+
+**Must Have** — TFF membership is a prerequisite for selling trafikforsakring
+in Sweden.
+
+### Acceptance Criteria
+
+- **GIVEN** TryggForsakring is a TFF member
+  **WHEN** the compliance officer reviews the membership status
+  **THEN** the system displays:
+  - Current TFF membership status and renewal date
+  - List of all mandatory reporting obligations and their deadlines
+  - Status of each reporting obligation (submitted, pending, overdue)
+  - History of past submissions with TFF acknowledgement references
+
+- **GIVEN** a TFF reporting deadline is approaching
+  **WHEN** the system detects that a report is due within 30 days
+  **THEN** the system sends an automated reminder to the compliance team
+  with the reporting type, deadline, and data readiness status
+
+- **GIVEN** a TFF report has not been submitted by the deadline
+  **WHEN** the system detects the overdue report
+  **THEN** the system escalates the alert to the compliance officer and
+  the head of operations, recording the overdue event for audit purposes
+
+- **GIVEN** TFF updates its reporting requirements or data exchange format
+  **WHEN** the compliance officer is notified of the change
+  **THEN** the system supports updating the report templates and data
+  mappings to match the new TFF specifications
+
+- **GIVEN** a compliance audit is conducted
+  **WHEN** the auditor requests evidence of TFF compliance
+  **THEN** the system generates a compliance report showing all TFF
+  interactions, submissions, acknowledgements, and any overdue events
+  for the audit period
+
+### Data Requirements
+
+| Data Element             | Source         | Required |
+| ------------------------ | -------------- | -------- |
+| TFF membership status    | TFF            | Yes      |
+| Reporting obligations    | TFF/regulatory | Yes      |
+| Submission history       | System         | Yes      |
+| Acknowledgement refs     | TFF            | Yes      |
+| Overdue event records    | System         | Yes      |
+| Compliance audit reports | System         | Yes      |
+
+### External Integrations
+
+- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+  Membership verification and reporting obligation management
+
+### Regulatory
+
+- **FSA-008** — TFF membership is mandatory for all insurers selling
+  trafikforsakring; compliance must be continuously monitored
+- **FSA-006** — Supervisory reporting obligations include demonstrating
+  TFF compliance
+- **FSA-014** — All TFF compliance evidence must be retained for audit
+  purposes
+- **GDPR-004** — TFF data exchange under legal obligation
 
 ---
 
@@ -616,7 +752,7 @@ The following data entities are central to the trafikforsakring process.
 2. **Validation** — System confirms trafikforsakring is included as base
    coverage
 3. **Notification** — System sends registration to Transportstyrelsen
-   (TF-01)
+   (US-TRF-001)
 4. **Acknowledgement** — System receives and records Transportstyrelsen
    confirmation
 5. **Monitoring** — System monitors for failed notifications and retries
@@ -625,10 +761,11 @@ The following data entities are central to the trafikforsakring process.
 
 1. **Cancellation request** — Policyholder or insurer initiates cancellation
 2. **Replacement check** — System queries Transportstyrelsen for replacement
-   coverage (TF-04)
+   coverage (US-TRF-001)
 3. **Decision point:**
    - Replacement confirmed: proceed with cancellation, align dates
    - No replacement: warn policyholder, require acknowledgement
+     (US-TRF-006)
    - Vehicle deregistered: proceed with cancellation
 4. **Notification** — System notifies Transportstyrelsen of coverage end
    date
@@ -638,47 +775,47 @@ The following data entities are central to the trafikforsakring process.
 ### Personal Injury Claims Flow
 
 1. **Claim registration** — Claims handler classifies the claim type
-   (TF-03)
+   (US-TRF-004)
 2. **Liability determination** — System applies strict liability for
    personal injuries under Trafikskadelagen
 3. **Medical documentation** — Claims handler obtains medical evidence
 4. **Compensation calculation** — System calculates compensation per
    Trafikskadelagen rules
 5. **Settlement** — Claims handler approves and processes payment
-6. **TFF reporting** — System includes claim data in TFF reports (TF-05)
+6. **TFF reporting** — System includes claim data in TFF reports
+   (US-TRF-002)
 
 ---
 
 ## Regulatory Traceability Matrix
 
-| Requirement             | TF-01 | TF-02 | TF-03 | TF-04 | TF-05 | TF-06 | TF-07 |
-| ----------------------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| FSA-004                 |       | X     |       |       |       |       |       |
-| FSA-006                 |       |       |       |       | X     |       |       |
-| FSA-007                 | X     | X     | X     | X     |       | X     | X     |
-| FSA-008                 |       |       |       |       | X     | X     | X     |
-| FSA-009                 | X     |       |       | X     |       |       |       |
-| FSA-010                 |       |       | X     |       |       | X     |       |
-| FSA-012                 |       | X     |       |       |       |       |       |
-| FSA-013                 |       |       |       | X     |       |       |       |
-| FSA-014                 |       |       |       |       | X     |       |       |
-| GDPR-003                |       |       | X     |       |       | X     | X     |
-| GDPR-004                | X     |       | X     | X     | X     | X     |       |
-| IDD-001                 |       | X     |       |       |       |       |       |
-| IDD-002                 |       | X     |       |       |       |       | X     |
-| EU Motor Insurance Dir. |       |       |       |       |       |       | X     |
+| Requirement             | US-TRF-001 | US-TRF-002 | US-TRF-003 | US-TRF-004 | US-TRF-005 | US-TRF-006 | US-TRF-007 |
+| ----------------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
+| FSA-004                 |            |            |            |            |            | X          |            |
+| FSA-006                 |            | X          |            |            |            |            | X          |
+| FSA-007                 | X          |            | X          | X          | X          | X          |            |
+| FSA-008                 |            | X          | X          |            | X          |            | X          |
+| FSA-009                 | X          |            |            |            |            | X          |            |
+| FSA-010                 |            |            | X          | X          |            |            |            |
+| FSA-013                 | X          |            |            |            |            |            |            |
+| FSA-014                 |            | X          |            |            |            |            | X          |
+| GDPR-003                |            |            | X          | X          | X          |            |            |
+| GDPR-004                | X          | X          | X          | X          |            | X          | X          |
+| IDD-002                 |            |            |            |            | X          |            |            |
+| EU Motor Insurance Dir. |            |            |            |            | X          |            |            |
 
 ---
 
 ## External System Integration Summary
 
-| System             | Integration Point                   | Stories      |
-| ------------------ | ----------------------------------- | ------------ |
-| Transportstyrelsen | Insurance registration notification | TF-01, TF-04 |
-| Transportstyrelsen | Insurance status verification       | TF-04, TF-06 |
-| TFF                | Statutory reporting                 | TF-05        |
-| TFF                | Uninsured vehicle claim referral    | TF-06        |
-| TFF                | Green Card coordination             | TF-07        |
-| Medical Providers  | Injury documentation                | TF-03        |
-| Police             | Accident reports                    | TF-03, TF-06 |
-| Foreign Bureaus    | Cross-border claims via Green Card  | TF-07        |
+| System             | Integration Point                   | Stories                |
+| ------------------ | ----------------------------------- | ---------------------- |
+| Transportstyrelsen | Insurance registration notification | US-TRF-001, US-TRF-006 |
+| Transportstyrelsen | Insurance status verification       | US-TRF-001, US-TRF-003 |
+| TFF                | Statutory reporting                 | US-TRF-002, US-TRF-007 |
+| TFF                | Uninsured vehicle claim referral    | US-TRF-003             |
+| TFF                | Green Card coordination             | US-TRF-005             |
+| TFF                | Membership compliance               | US-TRF-007             |
+| Medical Providers  | Injury documentation                | US-TRF-004             |
+| Police             | Accident reports                    | US-TRF-003, US-TRF-004 |
+| Foreign Bureaus    | Cross-border claims via Green Card  | US-TRF-005             |

@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Use Case: Trafikforsakring (Mandatory Third-Party Liability)
+# Use Case: Trafikforsakring Compliance Lifecycle
 
 End-to-end use case for managing mandatory third-party liability insurance
 (trafikforsakring) at TryggForsakring. Covers Transportstyrelsen registration,
@@ -14,8 +14,8 @@ via the Green Card system.
 
 | Field                | Value                                                                                 |
 | -------------------- | ------------------------------------------------------------------------------------- |
-| **Use Case ID**      | UC-TF-001                                                                             |
-| **Name**             | Manage Trafikforsakring (Mandatory Third-Party Liability)                             |
+| **Use Case ID**      | UC-TRF-001                                                                            |
+| **Name**             | Trafikforsakring Compliance Lifecycle                                                 |
 | **Primary Actor**    | System (automated processes)                                                          |
 | **Secondary Actors** | Claims Handler, Compliance Officer, Private Customer                                  |
 | **Goal**             | Ensure continuous mandatory coverage, compliant reporting, and proper claims handling |
@@ -25,19 +25,19 @@ via the Green Card system.
 
 ## Stakeholders and Interests
 
-| Stakeholder        | Interest                                                                 |
-| ------------------ | ------------------------------------------------------------------------ |
-| Private Customer   | Continuous legal coverage; clear information about mandatory obligations |
-| Claims Handler     | Correct claim classification; clear personal injury process              |
-| Compliance Officer | Timely TFF reporting; regulatory compliance evidence                     |
-| Underwriter        | Accurate trafikforsakring pricing within product tiers                   |
-| Transportstyrelsen | Timely and accurate insurance status notifications                       |
-| TFF                | Membership reporting compliance; uninsured vehicle claims cooperation    |
-| FSA                | Regulatory oversight of mandatory insurance obligations                  |
+| Stakeholder                                                                                      | Interest                                                                 |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)                     | Continuous legal coverage; clear information about mandatory obligations |
+| [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare) | Correct claim classification; clear personal injury process              |
+| [Compliance Officer](../../actors/internal-actors.md#compliance-officer)                         | Timely TFF reporting; regulatory compliance evidence                     |
+| Underwriter                                                                                      | Accurate trafikforsakring pricing within product tiers                   |
+| [Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen)                         | Timely and accurate insurance status notifications                       |
+| [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)                           | Membership reporting compliance; uninsured vehicle claims cooperation    |
+| FSA                                                                                              | Regulatory oversight of mandatory insurance obligations                  |
 
 ## Main Success Scenario
 
-### 1. Trafikforsakring Registration at Binding
+### 1. Policy Issuance — Mandatory Coverage Check and Registration
 
 1. A motor insurance policy is bound (any tier: trafik, halv, or hel)
 2. System validates that trafikforsakring is included as mandatory base
@@ -54,16 +54,20 @@ via the Green Card system.
 6. Vehicle registry now reflects valid trafikforsakring with
    TryggForsakring
 
-### 2. Continuous Coverage Enforcement
+### 2. Ongoing Monitoring — Coverage Gap Detection and TFF Reporting
 
-1. When a cancellation request is received, system queries
+1. System continuously monitors for vehicles where trafikforsakring
+   coverage is about to end without confirmed replacement
+2. When a cancellation request is received, system queries
    Transportstyrelsen for replacement coverage status
-2. If replacement coverage is confirmed, system processes the cancellation
+3. If replacement coverage is confirmed, system processes the cancellation
    with aligned coverage dates
-3. System notifies Transportstyrelsen of the coverage end date
-4. System records the cancellation details and replacement policy reference
+4. System notifies Transportstyrelsen of the coverage end date
+5. System records the cancellation details and replacement policy reference
+6. At each reporting period, system generates TFF statutory reports
+7. Compliance officer reviews and submits reports to TFF
 
-### 3. Personal Injury Claim Processing
+### 3. Claims — Personal Injury Processing Under Strict Liability
 
 1. A traffic accident is reported and a claim is registered
 2. Claims handler classifies the claim type (personal injury, property
@@ -80,19 +84,16 @@ via the Green Card system.
 7. System processes the payment to the injured person
 8. Claim data is included in TFF reporting
 
-### 4. TFF Statutory Reporting
+### 4. Claims — TFF Claims Coordination
 
-1. Reporting period end date is reached
-2. System generates the TFF report with:
-   - Active trafikforsakring policy count
-   - Premium income
-   - Claims paid and reserved
-   - Uninsured vehicle claims data
-3. Compliance officer reviews and validates the report
-4. Report is submitted to TFF in the required format
-5. System records the submission and any acknowledgement
+1. Claims handler identifies a claim involving an uninsured, unidentified,
+   or foreign vehicle
+2. System verifies the vehicle's insurance status via Transportstyrelsen
+3. System generates a TFF referral with all required claim documentation
+4. TFF processes the claim and provides settlement decision
+5. System records the TFF settlement and closes the claim
 
-### 5. Cross-Border Coverage
+### 5. Cross-Border — Green Card Issuance and EU Compliance
 
 1. Customer requests a Green Card for international travel
 2. System generates a Green Card document with policy details and
@@ -231,10 +232,10 @@ via the Green Card system.
 
 ## Related User Stories
 
-- [TF-01: Register Trafikforsakring with Transportstyrelsen](../user-stories/trafikforsakring.md#tf-01-register-trafikforsakring-with-transportstyrelsen)
-- [TF-02: Automatic Trafikforsakring Inclusion](../user-stories/trafikforsakring.md#tf-02-automatic-trafikforsakring-inclusion)
-- [TF-03: Process Personal Injury Claims Under Trafikskadelagen](../user-stories/trafikforsakring.md#tf-03-process-personal-injury-claims-under-trafikskadelagen)
-- [TF-04: Prevent Coverage Gaps](../user-stories/trafikforsakring.md#tf-04-prevent-coverage-gaps)
-- [TF-05: Generate TFF Statutory Reports](../user-stories/trafikforsakring.md#tf-05-generate-tff-statutory-reports)
-- [TF-06: Route Uninsured and Foreign Vehicle Claims to TFF](../user-stories/trafikforsakring.md#tf-06-route-uninsured-and-foreign-vehicle-claims-to-tff)
-- [TF-07: Cross-Border Coverage via Green Card System](../user-stories/trafikforsakring.md#tf-07-cross-border-coverage-via-green-card-system)
+- [US-TRF-001: Ensure Continuous Mandatory Coverage](../user-stories/trafikforsakring.md#us-trf-001-ensure-continuous-mandatory-coverage)
+- [US-TRF-002: Report to TFF](../user-stories/trafikforsakring.md#us-trf-002-report-to-tff)
+- [US-TRF-003: Handle TFF Data Exchange](../user-stories/trafikforsakring.md#us-trf-003-handle-tff-data-exchange)
+- [US-TRF-004: Process Personal Injury Under Trafikskadelagen](../user-stories/trafikforsakring.md#us-trf-004-process-personal-injury-under-trafikskadelagen)
+- [US-TRF-005: Issue Green Card for EU Travel](../user-stories/trafikforsakring.md#us-trf-005-issue-green-card-for-eu-travel)
+- [US-TRF-006: Handle Trafikforsakringsavgift Notification](../user-stories/trafikforsakring.md#us-trf-006-handle-trafikforsakringsavgift-notification)
+- [US-TRF-007: Verify TFF Membership Compliance](../user-stories/trafikforsakring.md#us-trf-007-verify-tff-membership-compliance)
