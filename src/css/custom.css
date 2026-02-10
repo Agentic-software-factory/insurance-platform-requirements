@@ -1,30 +1,168 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * TryggFörsäkring brand theme — navy blue + gold/amber
+ *
+ * Professional insurance palette inspired by established Swedish insurers.
+ * Navy blue conveys trust and reliability; gold/amber adds a premium accent.
  */
 
-/* You can override the default Infima variables here. */
+/* ── Light mode ── */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #1b365d;
+  --ifm-color-primary-dark: #172f52;
+  --ifm-color-primary-darker: #152c4d;
+  --ifm-color-primary-darkest: #11243f;
+  --ifm-color-primary-light: #1f3d68;
+  --ifm-color-primary-lighter: #21406d;
+  --ifm-color-primary-lightest: #274b7e;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(27, 54, 93, 0.1);
+
+  /* Brand accent — gold/amber */
+  --trygg-accent: #d4a843;
+  --trygg-accent-light: #e5c36b;
+  --trygg-accent-dark: #b8922e;
+
+  /* Heading color */
+  --ifm-heading-color: #1b365d;
+
+  /* Link hover */
+  --ifm-link-hover-color: #b8922e;
+
+  /* Footer */
+  --ifm-footer-background-color: #11243f;
+  --ifm-footer-color: #dce4ed;
+  --ifm-footer-link-color: #e5c36b;
+  --ifm-footer-link-hover-color: #ffffff;
+  --ifm-footer-title-color: #e5c36b;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* ── Dark mode ── */
 [data-theme="dark"] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #5b9bd5;
+  --ifm-color-primary-dark: #4a8fcc;
+  --ifm-color-primary-darker: #4289c8;
+  --ifm-color-primary-darkest: #2e74b5;
+  --ifm-color-primary-light: #6ca7de;
+  --ifm-color-primary-lighter: #74abe0;
+  --ifm-color-primary-lightest: #93bfe8;
+  --docusaurus-highlighted-code-line-bg: rgba(91, 155, 213, 0.15);
+
+  --trygg-accent: #e5c36b;
+  --trygg-accent-light: #f0d78f;
+  --trygg-accent-dark: #d4a843;
+
+  --ifm-heading-color: #dce4ed;
+  --ifm-link-hover-color: #e5c36b;
+
+  --ifm-footer-background-color: #0d1b2a;
+  --ifm-footer-color: #c3cdd9;
+  --ifm-footer-link-color: #e5c36b;
+  --ifm-footer-link-hover-color: #ffffff;
+  --ifm-footer-title-color: #e5c36b;
+}
+
+/* ── Navbar ── */
+.navbar {
+  background-color: #1b365d;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.navbar__title,
+.navbar__link {
+  color: #ffffff;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: #e5c36b;
+}
+
+[data-theme="dark"] .navbar {
+  background-color: #0d1b2a;
+}
+
+[data-theme="dark"] .navbar__title,
+[data-theme="dark"] .navbar__link {
+  color: #dce4ed;
+}
+
+[data-theme="dark"] .navbar__link:hover,
+[data-theme="dark"] .navbar__link--active {
+  color: #e5c36b;
+}
+
+/* ── Sidebar ── */
+.menu__link--active:not(.menu__link--sublist) {
+  border-left: 3px solid var(--trygg-accent);
+  padding-left: calc(var(--ifm-menu-link-padding-horizontal) - 3px);
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.menu__link:hover {
+  color: var(--trygg-accent-dark);
+}
+
+[data-theme="dark"] .menu__link--active:not(.menu__link--sublist) {
+  color: var(--trygg-accent);
+}
+
+[data-theme="dark"] .menu__link:hover {
+  color: var(--trygg-accent-light);
+}
+
+/* ── Version badge ── */
+.theme-doc-version-badge {
+  background-color: var(--trygg-accent);
+  color: #1b365d;
+  border: none;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .theme-doc-version-badge {
+  background-color: var(--trygg-accent-dark);
+  color: #ffffff;
+}
+
+/* ── Tables ── */
+table thead tr {
+  background-color: #1b365d;
+  color: #ffffff;
+}
+
+table thead th {
+  color: #ffffff;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: rgba(27, 54, 93, 0.04);
+}
+
+[data-theme="dark"] table thead tr {
+  background-color: #172f52;
+}
+
+[data-theme="dark"] table tbody tr:nth-child(even) {
+  background-color: rgba(91, 155, 213, 0.06);
+}
+
+/* ── Admonitions ── */
+.admonition.admonition-note {
+  --ifm-alert-background-color: rgba(27, 54, 93, 0.08);
+  --ifm-alert-border-color: #1b365d;
+}
+
+.admonition.admonition-tip {
+  --ifm-alert-background-color: rgba(212, 168, 67, 0.1);
+  --ifm-alert-border-color: var(--trygg-accent);
+}
+
+[data-theme="dark"] .admonition.admonition-note {
+  --ifm-alert-background-color: rgba(91, 155, 213, 0.1);
+  --ifm-alert-border-color: #5b9bd5;
+}
+
+[data-theme="dark"] .admonition.admonition-tip {
+  --ifm-alert-background-color: rgba(229, 195, 107, 0.1);
+  --ifm-alert-border-color: var(--trygg-accent);
 }

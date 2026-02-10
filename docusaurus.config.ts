@@ -82,6 +82,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
+      style: "dark",
       title: "TryggFörsäkring",
       items: [
         {
