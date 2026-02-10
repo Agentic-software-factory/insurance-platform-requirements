@@ -73,6 +73,77 @@ flowchart TD
     style L fill:#fff3e0
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer (Privatkund)
+    participant S as System
+    participant CH as Claims Handler (Skadereglerare)
+    participant SF as Saneringsfirma
+    participant BI as Besiktningsman
+    participant BRF as BRF Board (BRF-styrelse)
+    participant CO as Contractor
+
+    rect rgb(230, 245, 255)
+        Note over C, CH: FNOL and Emergency Response
+        C->>S: Report water damage (web/app/phone 24/7)
+        S->>C: Confirm FNOL with claim number
+        CH->>S: Register FNOL with damage type and cause
+        S->>SF: Dispatch nearest saneringsfirma
+        S->>C: Notify expected arrival time
+    end
+
+    rect rgb(255, 243, 224)
+        Note over SF, SF: Emergency and Drying
+        SF->>SF: Leak detection and water source stop
+        SF->>S: Update status to "Emergency Response"
+        opt Property uninhabitable
+            CH->>S: Arrange temporary housing
+            S->>C: Confirm accommodation details
+        end
+        SF->>S: Install drying equipment, start torkprotokoll
+    end
+
+    rect rgb(232, 245, 233)
+        Note over CH, BRF: Assessment and Responsibility
+        CH->>S: Assess damage scope from moisture report
+        opt Complex damage
+            CH->>BI: Request property inspection
+            BI->>S: Submit inspection report
+        end
+        opt BRF property (bostadsrätt)
+            CH->>S: Determine BRF vs individual responsibility
+            CH->>BRF: Coordinate cross-claim if split responsibility
+            BRF-->>CH: Confirm responsibility boundary
+        end
+    end
+
+    rect rgb(243, 229, 245)
+        Note over SF, CO: Drying and Repair
+        loop Until drying complete
+            SF->>S: Submit torkprotokoll with moisture measurements
+            S->>CH: Update drying progress
+            S->>C: Notify drying status
+        end
+        CH->>S: Approve repair scope and select contractor
+        S->>C: Notify approved scope and budget
+        CO->>CO: Perform repairs per approved scope
+        CH->>S: Final inspection or customer sign-off
+        alt Restoration unsatisfactory
+            CH->>CO: Request rework
+        end
+    end
+
+    rect rgb(255, 253, 231)
+        Note over CH, C: Settlement and Closure
+        CH->>S: Calculate settlement (replacement cost − age deduction − deductible)
+        S->>C: Present settlement breakdown for review
+        S->>C: Process payment (customer/contractor/saneringsfirma)
+        S->>S: Close claim and record data for risk assessment
+    end
+```
+
 ## Main Flow (Water Damage Claim Lifecycle)
 
 | Step | Actor          | Action                                                                       | System Response                                                       | Reference                                                        |

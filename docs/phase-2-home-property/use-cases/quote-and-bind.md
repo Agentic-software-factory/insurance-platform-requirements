@@ -69,6 +69,64 @@ flowchart TD
     style R fill:#fff3e0
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer (Privatkund)
+    participant S as System
+    participant LM as Lantmäteriet
+    participant BID as BankID
+    participant UW as Underwriter (Försäkringsgivare)
+    participant PP as Payment Provider
+
+    rect rgb(230, 245, 255)
+        Note over C, LM: Property Verification
+        C->>S: Enter address + product type + personnummer
+        S->>LM: Query property registry
+        LM-->>S: Property data (type, year, area, coordinates)
+        S->>S: Validate building type matches product
+    end
+
+    rect rgb(255, 243, 224)
+        Note over S, UW: Risk Assessment
+        S->>S: Automated risk assessment (flood, subsidence, crime)
+        alt High-risk property
+            S->>UW: Route to underwriter review
+            UW-->>S: Accept / accept with conditions / decline
+        end
+    end
+
+    rect rgb(232, 245, 233)
+        Note over C, S: Demands-and-Needs & Quote
+        S->>C: Present demands-and-needs assessment (krav- och behovsanalys)
+        C->>S: Complete assessment (household, belongings, deductible)
+        S->>S: Generate coverage recommendation
+        opt BRF product (bostadsrättsförsäkring)
+            S->>C: Present BRF coverage gap analysis
+            C->>S: Confirm understanding of coverage boundary
+        end
+        S->>S: Calculate premiums for all tiers
+        S->>C: Present tier comparison with add-ons and IPID links
+        C->>S: Select coverage tier, deductible, and add-ons
+    end
+
+    rect rgb(243, 229, 245)
+        Note over C, PP: Binding and Issuance
+        S->>C: Present binding summary + pre-contractual info (IDD-003)
+        C->>BID: Initiate BankID signing
+        BID-->>S: Verification result + transaction reference
+        alt BankID verified
+            S->>S: Generate policy number and documents
+            S->>PP: Initiate payment setup (autogiro/invoice)
+            PP-->>S: Payment confirmation
+            S->>C: Send confirmation (policy, IPID, payment instructions)
+        else BankID failed
+            S->>C: Offer retry or save quote for later
+        end
+    end
+```
+
 ## Main Success Scenario
 
 ### 1. Address Entry and Product Selection

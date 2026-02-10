@@ -80,6 +80,75 @@ flowchart TD
     style M fill:#fce4ec
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer (Privatkund)
+    participant S as System
+    participant CH as Claims Handler (Skadereglerare)
+    participant BI as Besiktningsman
+    participant IP as Injured Party (Skadelidande)
+    participant OI as Opposing Insurer
+    participant LC as Legal Counsel
+
+    rect rgb(230, 245, 255)
+        Note over C, CH: Report and Registration
+        C->>S: Report accidental damage to third party
+        S->>C: Confirm liability claim with claim number
+        CH->>S: Register FNOL, verify ansvarsskydd coverage
+        S->>C: Confirm coverage status
+    end
+
+    rect rgb(255, 243, 224)
+        Note over CH, BI: Evidence and Liability Assessment
+        CH->>CH: Gather evidence (photos, witness statements, damage reports)
+        opt Expert investigation needed
+            CH->>BI: Commission property inspection
+            BI->>S: Submit expert report
+        end
+        CH->>S: Assess liability (negligence, causation, legal basis)
+    end
+
+    alt Policyholder liable
+        rect rgb(232, 245, 233)
+            Note over CH, IP: Settlement Negotiation
+            CH->>IP: Present liability acceptance and settlement offer
+            alt Settlement agreed
+                IP-->>CH: Accept settlement amount
+                S->>IP: Process settlement payment
+                S->>C: Deduct deductible from policyholder
+            else Settlement disputed
+                CH->>IP: Escalate to mediation or legal proceedings
+                S->>IP: Process final settlement payment
+            end
+        end
+    else Policyholder not liable
+        rect rgb(243, 229, 245)
+            Note over CH, LC: Defense
+            CH->>IP: Send written denial with rationale
+            CH->>C: Inform policyholder of defense
+            alt Injured party disputes denial
+                IP->>CH: Dispute the denial
+                CH->>LC: Engage legal counsel for defense
+                LC->>LC: Defend in mediation/arbitration/court
+                LC-->>S: Report outcome (judgment/settlement/withdrawal)
+            else Injured party accepts
+                Note over IP: Claim closed
+            end
+        end
+    end
+
+    rect rgb(255, 253, 231)
+        Note over CH, OI: Cross-Insurer Coordination and Closure
+        opt Cross-insurer coordination needed
+            CH->>OI: Coordinate subrogation or split settlement
+            OI-->>CH: Confirm inter-insurer settlement
+        end
+        CH->>S: Close claim and archive documentation
+    end
+```
+
 ## Main Flow (Liability Claim Assessment and Settlement)
 
 | Step | Actor          | Action                                                                         | System Response                                                              | Reference                                                                                                          |

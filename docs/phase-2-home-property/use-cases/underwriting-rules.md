@@ -69,6 +69,69 @@ flowchart TD
     style J fill:#ffebee
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer (Privatkund)
+    participant S as System
+    participant LM as Lantmäteriet
+    participant SMHI as SMHI
+    participant MSB as MSB
+    participant BRA as BRÅ
+    participant UW as Underwriter (Försäkringsgivare)
+
+    rect rgb(230, 245, 255)
+        Note over S, LM: Property Data Collection
+        S->>LM: Query property registry (address, type, material, year)
+        LM-->>S: Property data + geocoordinates
+    end
+
+    rect rgb(255, 243, 224)
+        Note over S, BRA: Geographic Risk Zone Determination
+        S->>SMHI: Query flood risk zone
+        SMHI-->>S: Flood risk classification
+        S->>MSB: Query subsidence risk + flood data
+        MSB-->>S: Geological risk data
+        S->>BRA: Query area crime rate
+        BRA-->>S: Crime rate classification
+        S->>S: Assign composite geographic risk score
+    end
+
+    rect rgb(232, 245, 233)
+        Note over S, S: Construction and Security Assessment
+        S->>S: Evaluate fire risk (trä/sten/betong)
+        S->>S: Evaluate building age risk (age bands)
+        S->>S: Apply security feature discounts (alarm, water shutoff, sprinkler)
+        S->>S: Check claims history (past 5 years)
+    end
+
+    rect rgb(243, 229, 245)
+        Note over S, UW: Risk Acceptance Evaluation
+        S->>S: Evaluate combined risk against acceptance criteria
+        alt Auto-accept
+            S->>S: Proceed to coverage selection
+        else Borderline risk
+            S->>UW: Route to underwriter review queue
+            UW->>UW: Review risk factors and claims history
+            UW-->>S: Accept / accept with conditions / decline
+        else Decline
+            S->>S: Record declination with documented reason
+            S->>C: Notify with decline reason
+        end
+    end
+
+    rect rgb(255, 253, 231)
+        Note over C, S: Premium Calculation
+        S->>C: Present coverage tiers (bas/standard/premium)
+        C->>S: Select coverage tier
+        S->>C: Present deductible options (låg/standard/hög/mycket hög)
+        C->>S: Select deductible level
+        S->>S: Calculate final premium (all rating factors)
+        S->>C: Present quote with premium breakdown
+    end
+```
+
 ## Main Success Scenario
 
 ### 1. Property Data Collection
