@@ -41,6 +41,9 @@ jobs:
       - name: Check formatting
         run: npx prettier --check .
 
+      - name: Validate regulatory traceability
+        run: node scripts/validate-regulatory.mjs
+
   deploy:
     name: Deploy to GitHub Pages
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
