@@ -30,6 +30,12 @@ covers:
 | ------------------------------------------ | ---------------------------- | --------------------------------------------------------------------------------------------- |
 | [UC-HCW-001](uc-water-damage-lifecycle.md) | Water Damage Claim Lifecycle | End-to-end flow from FNOL through emergency response, drying, repair, settlement, and closure |
 
+## Fire & Natural Events (Brand/Naturhändelser)
+
+| ID                                               | Title                              | Scope                                                                                                                         |
+| ------------------------------------------------ | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| [UC-HCF-001](uc-fire-natural-event-lifecycle.md) | Fire/Natural Event Claim Lifecycle | End-to-end flow from emergency FNOL through structural assessment, total/partial loss determination, restoration, and closure |
+
 ## Burglary and Theft
 
 The [Burglary Claim Processing](burglary-and-theft.md) use case (UC-HCB-001)

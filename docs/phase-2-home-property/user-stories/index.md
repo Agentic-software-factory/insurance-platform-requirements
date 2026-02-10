@@ -73,6 +73,46 @@ emergency FNOL through restoration and settlement.
 | [US-HCW-014](water-damage-final-inspection.md) | Verify Restoration via Final Inspection    | Should Have |
 | [US-HCW-015](water-damage-closure.md)          | Close Claim and Record for Risk Assessment | Must Have   |
 
+## Fire & Natural Events (Brand/Naturhändelser)
+
+Fire, storm, flood, lightning, and other natural event claims are low-frequency but
+high-severity. These user stories cover the complete fire/natural event claim
+lifecycle including emergency FNOL, structural inspection, total/partial loss
+assessment, environmental hazard remediation, rebuild or repair coordination,
+temporary housing, multi-unit coordination, and subrogation.
+
+### Emergency & FNOL
+
+| ID                                                 | Title                                    | Priority  |
+| -------------------------------------------------- | ---------------------------------------- | --------- |
+| [US-HCF-001](fire-natural-fnol.md)                 | Report Fire or Natural Event Emergency   | Must Have |
+| [US-HCF-002](fire-natural-incident-report.md)      | Obtain Räddningstjänsten Incident Report | Must Have |
+| [US-HCF-003](fire-natural-event-classification.md) | Classify Event Type and Coverage         | Must Have |
+
+### Assessment
+
+| ID                                                  | Title                                     | Priority    |
+| --------------------------------------------------- | ----------------------------------------- | ----------- |
+| [US-HCF-004](fire-natural-total-loss-assessment.md) | Assess Total Loss vs Partial Loss         | Must Have   |
+| [US-HCF-005](fire-natural-structural-inspection.md) | Inspect Property for Structural Integrity | Must Have   |
+| [US-HCF-006](fire-natural-environmental-hazards.md) | Check for Environmental Hazards           | Should Have |
+
+### Settlement & Restoration
+
+| ID                                                    | Title                                              | Priority  |
+| ----------------------------------------------------- | -------------------------------------------------- | --------- |
+| [US-HCF-007](fire-natural-valuation.md)               | Explain Rebuild Cost vs Market Value Settlement    | Must Have |
+| [US-HCF-008](fire-natural-contractor-coordination.md) | Coordinate Contractors for Rebuild or Repair       | Must Have |
+| [US-HCF-009](fire-natural-temporary-housing.md)       | Provide Continued Temporary Housing During Rebuild | Must Have |
+| [US-HCF-010](fire-natural-multi-unit.md)              | Manage Multi-Unit Claims                           | Must Have |
+
+### Closure
+
+| ID                                        | Title                                               | Priority    |
+| ----------------------------------------- | --------------------------------------------------- | ----------- |
+| [US-HCF-011](fire-natural-subrogation.md) | Process Subrogation Against Responsible Third Party | Should Have |
+| [US-HCF-012](fire-natural-risk-update.md) | Flag Property for Updated Risk Assessment           | Must Have   |
+
 ## Burglary and Theft
 
 The [burglary-and-theft user stories](burglary-and-theft.md) cover claims
