@@ -72,16 +72,15 @@ management process. It covers:
 
 ## Trafikforsakring (Mandatory Third-Party Liability)
 
-The [Trafikforsakring](trafikforsakring.md) use case (UC-TF-001) describes
-the management of mandatory third-party liability insurance under
-Trafikskadelagen (1975:1410). It covers:
+The [Trafikforsakring Compliance Lifecycle](trafikforsakring.md) use case
+(UC-TRF-001) describes the end-to-end management of mandatory third-party
+liability insurance under Trafikskadelagen (1975:1410). It covers:
 
-- Transportstyrelsen registration upon policy binding
-- Coverage gap prevention at cancellation
-- Personal injury claims under strict liability (Trafikskadelagen)
-- TFF statutory reporting obligations
-- Uninsured and foreign vehicle claims handling
-- Cross-border coverage via the Green Card system
+- Policy issuance: mandatory coverage check and Transportstyrelsen registration
+- Ongoing monitoring: coverage gap detection and TFF reporting
+- Claims: personal injury processing under strict liability and TFF coordination
+- Cross-border: Green Card issuance and EU motor insurance directive compliance
+- Cancellation: replacement coverage verification and TFF notification
 
 ## Renewals
 

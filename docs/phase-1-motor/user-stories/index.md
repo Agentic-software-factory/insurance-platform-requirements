@@ -74,18 +74,20 @@ notification of loss through settlement and closure.
 
 The [trafikforsakring user stories](trafikforsakring.md) cover mandatory
 third-party liability insurance under Trafikskadelagen (1975:1410), including
-Transportstyrelsen registration, coverage gap prevention, personal injury
-claims, TFF reporting, and cross-border coverage:
+continuous coverage monitoring, TFF reporting and data exchange, personal injury
+claims, Green Card issuance, and TFF membership compliance. See also the
+[cross-reference index](trafikforsakring-cross-references.md) for
+trafikforsakring content in other epics.
 
-| ID    | Actor              | Summary                                                  |
-| ----- | ------------------ | -------------------------------------------------------- |
-| TF-01 | System             | Register trafikforsakring with Transportstyrelsen        |
-| TF-02 | Customer           | Automatic trafikforsakring inclusion in any motor policy |
-| TF-03 | Claims Handler     | Process personal injury claims under Trafikskadelagen    |
-| TF-04 | System             | Prevent policy cancellation without replacement coverage |
-| TF-05 | Compliance Officer | Generate TFF statutory reports                           |
-| TF-06 | Claims Handler     | Route uninsured/foreign vehicle claims to TFF            |
-| TF-07 | Customer           | Cross-border coverage via Green Card system              |
+| ID         | Actor              | Summary                                        |
+| ---------- | ------------------ | ---------------------------------------------- |
+| US-TRF-001 | System             | Ensure continuous mandatory coverage           |
+| US-TRF-002 | System             | Report to TFF                                  |
+| US-TRF-003 | System             | Handle TFF data exchange                       |
+| US-TRF-004 | Claims Handler     | Process personal injury under Trafikskadelagen |
+| US-TRF-005 | Customer           | Issue Green Card for EU travel                 |
+| US-TRF-006 | System             | Handle trafikforsakringsavgift notification    |
+| US-TRF-007 | Compliance Officer | Verify TFF membership compliance               |
 
 ## Renewals
 
