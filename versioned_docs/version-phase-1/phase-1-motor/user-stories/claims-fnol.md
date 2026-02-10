@@ -81,6 +81,7 @@ The FNOL form must support the following motor claim types:
 - **GDPR-003** — Claims processing: personal data collected at FNOL must follow data minimization principles; collect only what is necessary for the claim
 - **GDPR-001** — Customer identity verification via BankID before claim submission
 - **IDD-005** — Claims handling disclosure: the IPID must have informed the customer about how to make a claim (pre-purchase)
+- **IDD-008** — Claims registration interactions are distribution records and must be retained for 5+ years
 
 ## Dependencies
 

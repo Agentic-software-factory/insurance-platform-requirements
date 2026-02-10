@@ -142,6 +142,7 @@ User stories for the motor insurance renewal lifecycle, covering pre-renewal pre
 - **FSA-006** — Premium data must be available for supervisory reporting
 - **GDPR-002** — Renewal calculation data stored as part of policy administration
 - **IDD-001** — Significant premium changes may trigger a demands-and-needs reassessment
+- **IDD-004** — Renewal pricing must be reviewed as part of product monitoring to ensure continued alignment with target market
 
 ---
 
@@ -242,6 +243,7 @@ User stories for the motor insurance renewal lifecycle, covering pre-renewal pre
 - **FSA-012** — The renewed policy terms must be disclosed to the customer via the renewal notice and updated policy document
 - **FSA-013** — Försäkringsavtalslagen governs automatic renewal rules and customer's right to cancel
 - **FSA-014** — Renewal records must be retained for the record-keeping period
+- **IDD-004** — Automatic renewal must use product terms that are consistent with the defined target market and subject to ongoing governance review
 - **GDPR-002** — Renewal data stored as part of policy administration
 
 ---
@@ -432,6 +434,8 @@ User stories for the motor insurance renewal lifecycle, covering pre-renewal pre
 - **FSA-004** — Retention offers must be transparent and not misleading; standard and discounted prices both shown
 - **FSA-005** — Retention pricing must be monitored as part of product governance to ensure fair treatment
 - **IDD-001** — Retention offers should align with the customer's demands and needs
+- **IDD-006** — When a retention offer includes a coverage recommendation, it constitutes advice and must be documented with rationale
+- **IDD-010** — Complaints about renewal terms or pricing follow the distribution complaints process
 - **GDPR-002** — Retention offer data stored as part of policy administration
 
 ---
@@ -477,6 +481,7 @@ User stories for the motor insurance renewal lifecycle, covering pre-renewal pre
 
 - **IDD-001** — Demands-and-needs assessment must be performed when significant changes occur at renewal
 - **IDD-002** — If coverage changes as a result of the reassessment, an updated IPID must be provided
+- **IDD-006** — Demands-and-needs reassessment at renewal that results in a coverage recommendation constitutes advice
 - **FSA-004** — Reassessment communications must be clear and help the customer make an informed decision
 - **GDPR-002** — Reassessment data stored as part of policy administration
 
@@ -547,3 +552,6 @@ User stories for the motor insurance renewal lifecycle, covering pre-renewal pre
 | IDD-001     |           | X         | X         |           |           |           |           |           | X         | X         |
 | IDD-002     |           |           |           |           |           |           |           |           |           | X         |
 | IDD-003     | X         |           |           |           |           |           |           |           |           |           |
+| IDD-004     |           |           | X         |           | X         |           |           |           |           |           |
+| IDD-006     |           |           |           |           |           |           |           |           | X         | X         |
+| IDD-010     |           |           |           |           |           |           |           |           | X         |           |

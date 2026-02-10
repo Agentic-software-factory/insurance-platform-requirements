@@ -85,6 +85,7 @@ sidebar_position: 24
 - **FSA-014** — Record keeping: closed claim records must be retained for 10 years after closure; the record must be complete and auditable
 - **FSA-006** — Supervisory reporting: closed claims data feeds into regulatory reports (claims frequency, severity, reserves)
 - **GDPR-003** — Claims processing: closed claim data remains subject to GDPR retention rules; data must be deleted after the retention period expires
+- **IDD-010** — If customer disputes claim decision, distribution-related complaints must follow IDD complaints procedure
 
 ## Dependencies
 
