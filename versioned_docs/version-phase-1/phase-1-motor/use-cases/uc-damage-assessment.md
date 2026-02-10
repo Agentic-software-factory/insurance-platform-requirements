@@ -80,6 +80,38 @@ flowchart TD
     style T fill:#ffebee
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Pending : Claim assigned for assessment
+    Pending --> Inspected : Vehicle inspected (on-site, remote, or shop)
+    Inspected --> Estimated : Repair estimate prepared
+    Estimated --> Approved : Handler accepts assessment
+    Estimated --> TotalLoss : Repair cost > 75% market value
+    TotalLoss --> Approved : Total loss valuation confirmed
+    Inspected --> FraudReview : Damage inconsistent with incident
+    Pending --> OnHold : Vehicle inaccessible
+    OnHold --> Pending : Access arranged
+    Approved --> [*]
+    FraudReview --> [*]
+
+    note right of Inspected
+        Damage documented with photos.
+        Components and costs recorded.
+    end note
+
+    note right of TotalLoss
+        Market value and salvage
+        value assessed.
+    end note
+
+    note right of Approved
+        Assessment accepted.
+        Claim ready for settlement.
+    end note
+```
+
 ## Main Success Scenario: On-Site Inspection
 
 | Step | Actor           | Action                                                                   | System Response                                                          |

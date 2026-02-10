@@ -63,6 +63,35 @@ flowchart TD
     style M fill:#fff3e0
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Calculated : Settlement amount determined
+    Calculated --> Approved : Handler confirms (or senior approves)
+    Calculated --> SeniorReview : Amount exceeds handler authority
+    SeniorReview --> Approved : Senior handler approves
+    Approved --> Paid : Payment confirmed by provider
+    Approved --> RepairAuthorized : Direct billing to repair shop
+    RepairAuthorized --> Paid : Shop invoice settled
+    Paid --> [*]
+
+    note right of Calculated
+        Damage, liability, and deductible
+        applied to compute net amount.
+    end note
+
+    note right of Approved
+        Settlement breakdown sent
+        to customer before payment.
+    end note
+
+    note right of Paid
+        Claim status updated to Settled.
+        Payment records stored for audit.
+    end note
+```
+
 ## Main Flow: Vehicle Repair Settlement
 
 | Step | Actor          | Action                                              | System Response                                                                      |

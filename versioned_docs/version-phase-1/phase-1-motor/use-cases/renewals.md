@@ -37,6 +37,40 @@ flowchart LR
     style D fill:#fff3e0
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Upcoming : T-60 days before huvudforfallodag
+    Upcoming --> Notified : Renewal notice sent (T-30)
+    Notified --> Reviewed : Customer reviews terms
+    Notified --> Renewed : No action — auto-renewal at T-0
+    Reviewed --> Renewed : Customer accepts or modifies
+    Reviewed --> Lapsed : Customer cancels before T-0
+    Renewed --> [*]
+    Lapsed --> [*]
+
+    note right of Upcoming
+        Premium recalculated.
+        Bonus class updated.
+    end note
+
+    note right of Notified
+        Customer response window open.
+        30-day notice period per FAL.
+    end note
+
+    note right of Renewed
+        New policy period begins.
+        Payment schedule updated.
+    end note
+
+    note right of Lapsed
+        Coverage ends at huvudforfallodag.
+        Transportstyrelsen notified.
+    end note
+```
+
 ## UC-RN-001: Process Annual Policy Renewal
 
 Handles the end-to-end renewal flow from pre-renewal premium recalculation through automatic renewal or customer cancellation.
