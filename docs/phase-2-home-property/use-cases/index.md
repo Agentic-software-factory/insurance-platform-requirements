@@ -23,3 +23,9 @@ covers:
 - BankID digital signing
 - Policy issuance and confirmation delivery
 - Agent-assisted and high-risk alternative flows
+
+## Water Damage Claims (Vattenskada)
+
+| ID                                         | Title                        | Scope                                                                                         |
+| ------------------------------------------ | ---------------------------- | --------------------------------------------------------------------------------------------- |
+| [UC-HCW-001](uc-water-damage-lifecycle.md) | Water Damage Claim Lifecycle | End-to-end flow from FNOL through emergency response, drying, repair, settlement, and closure |

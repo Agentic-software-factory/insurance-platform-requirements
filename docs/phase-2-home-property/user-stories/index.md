@@ -26,3 +26,49 @@ flow from initial customer inquiry through policy issuance:
 | HQB-08 | Underwriter            | Review flagged high-risk quotes                                     |
 | HQB-09 | System                 | Verify property address via Lantmäteriet                            |
 | HQB-10 | System                 | Calculate premium based on rating factors                           |
+
+## Water Damage Claims (Vattenskada)
+
+Water damage is the most common home insurance claim in Sweden (~100,000 per
+year). These user stories cover the complete water damage claim lifecycle from
+emergency FNOL through restoration and settlement.
+
+### FNOL and Emergency
+
+| ID                                         | Title                                         | Priority  |
+| ------------------------------------------ | --------------------------------------------- | --------- |
+| [US-HCW-001](water-damage-fnol.md)         | Report Water Damage Emergency (24/7)          | Must Have |
+| [US-HCW-002](water-damage-dispatch.md)     | Dispatch Restoration Company (Saneringsfirma) | Must Have |
+| [US-HCW-003](water-damage-registration.md) | Register FNOL With Damage Classification      | Must Have |
+
+### Investigation and Assessment
+
+| ID                                               | Title                                      | Priority    |
+| ------------------------------------------------ | ------------------------------------------ | ----------- |
+| [US-HCW-004](water-damage-moisture-report.md)    | Receive Moisture Measurement Report        | Must Have   |
+| [US-HCW-005](water-damage-brf-responsibility.md) | Determine BRF vs Individual Responsibility | Must Have   |
+| [US-HCW-006](water-damage-inspection.md)         | Document Damage With Inspection            | Should Have |
+
+### Restoration Process
+
+| ID                                              | Title                                         | Priority    |
+| ----------------------------------------------- | --------------------------------------------- | ----------- |
+| [US-HCW-007](water-damage-drying-progress.md)   | Track Drying Progress                         | Should Have |
+| [US-HCW-008](water-damage-drying-protocol.md)   | Submit Drying Protocol (Torkprotokoll)        | Must Have   |
+| [US-HCW-009](water-damage-repair-approval.md)   | Approve Repair Scope and Contractor           | Must Have   |
+| [US-HCW-010](water-damage-temporary-housing.md) | Arrange Temporary Housing (Evakueringsboende) | Must Have   |
+
+### Settlement
+
+| ID                                        | Title                                           | Priority  |
+| ----------------------------------------- | ----------------------------------------------- | --------- |
+| [US-HCW-011](water-damage-settlement.md)  | Calculate Settlement With Age Deduction         | Must Have |
+| [US-HCW-012](water-damage-deductible.md)  | View Deductible (Självrisk) for Claim           | Must Have |
+| [US-HCW-013](water-damage-cross-claim.md) | Coordinate Cross-Claim Payment (BRF/Individual) | Must Have |
+
+### Closure
+
+| ID                                             | Title                                      | Priority    |
+| ---------------------------------------------- | ------------------------------------------ | ----------- |
+| [US-HCW-014](water-damage-final-inspection.md) | Verify Restoration via Final Inspection    | Should Have |
+| [US-HCW-015](water-damage-closure.md)          | Close Claim and Record for Risk Assessment | Must Have   |
