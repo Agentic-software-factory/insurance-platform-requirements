@@ -27,6 +27,26 @@ flow from initial customer inquiry through policy issuance:
 | HQB-09 | System                 | Verify property address via Lantmäteriet                            |
 | HQB-10 | System                 | Calculate premium based on rating factors                           |
 
+## Policy Administration (MTAs)
+
+Mid-term adjustments and policy lifecycle management — see
+[Policy Administration User Stories](policy-administration.md).
+
+| ID     | Actor                  | Summary                                               |
+| ------ | ---------------------- | ----------------------------------------------------- |
+| HPA-01 | Customer               | Update address when moving within same property type  |
+| HPA-02 | Customer               | Report villa renovation or extension                  |
+| HPA-03 | BRF Member             | Update bostadsrättstillägg after apartment renovation |
+| HPA-04 | Customer               | Upgrade coverage tier                                 |
+| HPA-05 | Customer               | Add or remove allrisk coverage                        |
+| HPA-06 | Customer               | Add a family member to the policy                     |
+| HPA-07 | Customer               | Adjust deductible (självrisk)                         |
+| HPA-08 | BRF Board Chair        | Update building insurance after renovation            |
+| HPA-09 | BRF Board Chair        | Add or remove shared facilities                       |
+| HPA-10 | Customer Service Agent | Process a mid-term policy change                      |
+| HPA-11 | System                 | Recalculate premium after policy change               |
+| HPA-12 | Customer               | View policy documents digitally                       |
+
 ## Water Damage Claims (Vattenskada)
 
 Water damage is the most common home insurance claim in Sweden (~100,000 per
