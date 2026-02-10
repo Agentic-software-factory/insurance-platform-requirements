@@ -6,6 +6,22 @@ sidebar_position: 1
 
 User stories for Phase 1 — Motor Insurance. Each user story follows the format _"As a \<role\>, I want \<goal\> so that \<benefit\>"_ and includes acceptance criteria in Given/When/Then format, business rules, data requirements, and regulatory traceability.
 
+## Quote and Bind
+
+The [quote-and-bind user stories](quote-and-bind.md) cover the primary sales
+flow from initial customer inquiry through policy issuance:
+
+| ID     | Actor            | Summary                                   |
+| ------ | ---------------- | ----------------------------------------- |
+| QNB-01 | Private Customer | Get a quick quote by registration number  |
+| QNB-02 | Insurance Agent  | Create a quote on behalf of a customer    |
+| QNB-03 | System           | Perform demands-and-needs assessment      |
+| QNB-04 | Private Customer | Compare coverage tiers side by side       |
+| QNB-05 | Private Customer | Sign policy with BankID                   |
+| QNB-06 | Private Customer | Receive insurance certificate immediately |
+| QNB-07 | Underwriter      | Apply bonus class rules automatically     |
+| QNB-08 | System           | Notify Transportstyrelsen of new policy   |
+
 ## Policy Administration (MTAs)
 
 Mid-term adjustments and policy lifecycle management — see [Policy Administration User Stories](policy-administration.md).
@@ -69,6 +85,22 @@ notification of loss through settlement and closure.
 | [US-CLM-013](claims-tracking.md)              | Track Claim Status                                   | Should Have |
 | [US-CLM-014](claims-repair-authorization.md)  | Authorize Repairs at Network Shops                   | Should Have |
 | [US-CLM-015](claims-closure.md)               | Close and Review Claims                              | Must Have   |
+
+## Underwriting Rules and Bonus System
+
+The [underwriting and bonus user stories](underwriting-bonus.md) cover
+underwriting rules, the bonus class system, premium calculation, and risk
+acceptance criteria:
+
+| ID     | Actor              | Summary                                         |
+| ------ | ------------------ | ----------------------------------------------- |
+| UWB-01 | Underwriter        | Manage bonus class table and progression rules  |
+| UWB-02 | Private Customer   | Transfer bonus class from another insurer       |
+| UWB-03 | System             | Calculate premium using rating factors          |
+| UWB-04 | Underwriter        | Define risk acceptance and referral rules       |
+| UWB-05 | Private Customer   | Understand premium calculation breakdown        |
+| UWB-06 | Actuary            | Review documented underwriting rules            |
+| UWB-07 | Compliance Officer | Verify non-discriminatory underwriting practice |
 
 ## Trafikforsakring (Mandatory Third-Party Liability)
 
