@@ -10,26 +10,42 @@ Detailed interaction flows for the motor insurance renewal lifecycle. Each use c
 
 ```mermaid
 flowchart LR
-    A["T-60: Flag upcoming
-    renewals"] --> B["T-45: Recalculate premium
-    (bonus + rating factors)"]
-    B --> C{"Significant
-    premium change?"}
-    C -->|Yes| D["IDD reassessment
-    triggered"]
-    C -->|No| E["T-30: Send renewal
-    notice to customer"]
+    subgraph System
+        A["T-60: Flag upcoming
+        renewals"]
+        B["T-45: Recalculate premium
+        (bonus + rating factors)"]
+        C{"Significant
+        premium change?"}
+        D["IDD reassessment
+        triggered"]
+        E["T-30: Send renewal
+        notice to customer"]
+        H["T-0: Auto-renew policy"]
+        K["T+1: New policy period
+        begins, update payments"]
+    end
+    subgraph Customer
+        F["T-30 to T-0:
+        Customer response window"]
+        G{Customer action}
+        J["Adjust coverage
+        and recalculate"]
+        I["Process cancellation"]
+    end
+
+    A --> B
+    B --> C
+    C -->|Yes| D
+    C -->|No| E
     D --> E
-    E --> F["T-30 to T-0:
-    Customer response window"]
-    F --> G{Customer action}
-    G -->|No action| H["T-0: Auto-renew policy"]
-    G -->|Cancel| I["Process cancellation"]
-    G -->|Modify| J["Adjust coverage
-    and recalculate"]
+    E --> F
+    F --> G
+    G -->|No action| H
+    G -->|Cancel| I
+    G -->|Modify| J
     J --> H
-    H --> K["T+1: New policy period
-    begins, update payments"]
+    H --> K
 
     style A fill:#e1f5fe
     style K fill:#e8f5e9

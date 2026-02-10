@@ -52,28 +52,53 @@ This use case describes the claims closure process, from the final review checkl
 
 ```mermaid
 flowchart TD
-    A[Initiate claim closure] --> B{All payments confirmed?}
-    B -->|No| C[Resolve pending payments]
+    subgraph Claims Handler
+        A[Initiate claim closure]
+        C[Resolve pending payments]
+        E[Resolve subrogation cases]
+        I[Attach missing documents]
+        K[Resolve complaints first]
+        L[Handler reviews closure summary]
+        M[Confirm closure]
+    end
+    subgraph System
+        B{All payments confirmed?}
+        D{Subrogation resolved?}
+        F{Bonus class updated?}
+        G[Process bonus recalculation]
+        H{All documents attached?}
+        J{Pending disputes?}
+        N[Release outstanding reserves]
+        P[Notify customer of closure]
+        Q[Claim status: Closed]
+        R[Archive - retain 10 years]
+    end
+    subgraph Actuary
+        O[Update actuarial reporting]
+    end
+
+    A --> B
+    B -->|No| C
     C --> B
-    B -->|Yes| D{Subrogation resolved?}
-    D -->|No| E[Resolve subrogation cases]
+    B -->|Yes| D
+    D -->|No| E
     E --> D
-    D -->|Yes| F{Bonus class updated?}
-    F -->|No| G[Process bonus recalculation]
+    D -->|Yes| F
+    F -->|No| G
     G --> F
-    F -->|Yes| H{All documents attached?}
-    H -->|No| I[Attach missing documents]
+    F -->|Yes| H
+    H -->|No| I
     I --> H
-    H -->|Yes| J{Pending disputes?}
-    J -->|Yes| K[Resolve complaints first]
+    H -->|Yes| J
+    J -->|Yes| K
     K --> J
-    J -->|No| L[Handler reviews closure summary]
-    L --> M[Confirm closure]
-    M --> N[Release outstanding reserves]
-    N --> O[Update actuarial reporting]
-    O --> P[Notify customer of closure]
-    P --> Q[Claim status: Closed]
-    Q --> R[Archive - retain 10 years]
+    J -->|No| L
+    L --> M
+    M --> N
+    N --> O
+    O --> P
+    P --> Q
+    Q --> R
 
     style A fill:#e1f5fe
     style Q fill:#e8f5e9

@@ -37,24 +37,45 @@ This use case details the premium refund calculation and payment process followi
 
 ```mermaid
 flowchart TD
-    A[Cancellation confirmed] --> B{Cancellation type}
-    B -->|"Cooling-off (Angerratt)"| C[Full refund of premium paid]
-    C --> D{Early coverage start?}
-    D -->|Yes| E[Deduct days of coverage used]
-    D -->|No| F[Full amount refunded]
-    B -->|Huvudforfallodag| G[No refund - coverage runs to end]
-    B -->|Mid-term with reason| H[Calculate pro-rata refund]
-    H --> I["(Remaining days / 365) x Annual premium"]
-    I --> J{Outstanding balance?}
+    subgraph System
+        A[Cancellation confirmed]
+        B{Cancellation type}
+        C[Full refund of premium paid]
+        D{Early coverage start?}
+        E[Deduct days of coverage used]
+        F[Full amount refunded]
+        G[No refund - coverage runs to end]
+        H[Calculate pro-rata refund]
+        I["(Remaining days / 365) x Annual premium"]
+        J{Outstanding balance?}
+        K[Offset: net refund = gross - outstanding]
+        L[Net refund = gross refund]
+        M{Net refund positive?}
+        O[No refund - inform customer]
+    end
+    subgraph Payment Provider
+        N[Process refund to customer]
+        P[Send refund confirmation]
+    end
+
+    A --> B
+    B -->|"Cooling-off (Angerratt)"| C
+    C --> D
+    D -->|Yes| E
+    D -->|No| F
+    B -->|Huvudforfallodag| G
+    B -->|Mid-term with reason| H
+    H --> I
+    I --> J
     E --> J
     F --> J
-    J -->|Yes| K[Offset: net refund = gross - outstanding]
-    J -->|No| L[Net refund = gross refund]
-    K --> M{Net refund positive?}
-    M -->|Yes| N[Process refund to customer]
-    M -->|No| O[No refund - inform customer]
+    J -->|Yes| K
+    J -->|No| L
+    K --> M
+    M -->|Yes| N
+    M -->|No| O
     L --> N
-    N --> P[Send refund confirmation]
+    N --> P
 
     style A fill:#e1f5fe
     style P fill:#e8f5e9

@@ -39,29 +39,55 @@ This use case describes the end-to-end policy cancellation process — from the 
 
 ```mermaid
 flowchart TD
-    A[Customer requests cancellation] --> B{Cancellation type}
-    B -->|"Cooling-off (Angerratt)"| C{Within 14 days?}
-    C -->|Yes| D[Full refund]
-    C -->|No| E[Reject: cooling-off expired]
-    B -->|Huvudforfallodag| F{At renewal date?}
-    F -->|Yes| G[No penalty - cancel at renewal]
-    F -->|No| H[Wait for huvudforfallodag]
-    B -->|Mid-term| I{Valid reason?}
-    I -->|Vehicle sold/scrapped| J[Pro-rata refund]
+    subgraph Customer
+        A[Request cancellation]
+    end
+    subgraph System
+        B{Cancellation type}
+        C{Within 14 days?}
+        D[Full refund]
+        E[Reject: cooling-off expired]
+        F{At renewal date?}
+        G[No penalty - cancel at renewal]
+        H[Wait for huvudforfallodag]
+        I{Valid reason?}
+        J[Pro-rata refund]
+        K[Reject or wait for renewal]
+        L{Trafikforsakring?}
+        M[Verify replacement coverage]
+        N{Replacement confirmed?}
+        O[Process cancellation]
+        P[Block: coverage required]
+        R[Process refund if applicable]
+        S[Send confirmation to customer]
+    end
+    subgraph External["External Systems"]
+        Q[Notify Transportstyrelsen]
+    end
+
+    A --> B
+    B -->|"Cooling-off (Angerratt)"| C
+    C -->|Yes| D
+    C -->|No| E
+    B -->|Huvudforfallodag| F
+    F -->|Yes| G
+    F -->|No| H
+    B -->|Mid-term| I
+    I -->|Vehicle sold/scrapped| J
     I -->|Emigration| J
     I -->|Death| J
-    I -->|No valid reason| K[Reject or wait for renewal]
-    D --> L{Trafikforsakring?}
+    I -->|No valid reason| K
+    D --> L
     G --> L
     J --> L
-    L -->|Yes| M[Verify replacement coverage]
-    M --> N{Replacement confirmed?}
-    N -->|Yes| O[Process cancellation]
-    N -->|No| P[Block: coverage required]
+    L -->|Yes| M
+    M --> N
+    N -->|Yes| O
+    N -->|No| P
     L -->|No| O
-    O --> Q[Notify Transportstyrelsen]
-    Q --> R[Process refund if applicable]
-    R --> S[Send confirmation to customer]
+    O --> Q
+    Q --> R
+    R --> S
 
     style A fill:#e1f5fe
     style S fill:#e8f5e9
@@ -74,18 +100,35 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[Non-payment detected] --> B[Send payment reminder]
-    B --> C["Grace period (14 days)"]
-    C --> D{Payment received?}
-    D -->|Yes| E[Resume normal - policy active]
-    D -->|No| F[Send cancellation warning]
-    F --> G["Statutory notice period"]
-    G --> H{Payment received?}
+    subgraph System
+        A[Non-payment detected]
+        B[Send payment reminder]
+        C["Grace period (14 days)"]
+        D{Payment received?}
+        E[Resume normal - policy active]
+        F[Send cancellation warning]
+        G["Statutory notice period"]
+        H{Payment received?}
+        I[Cancel policy]
+        J{Trafikforsakring?}
+    end
+    subgraph External["External Systems"]
+        K[Notify TFF]
+        L[Notify Transportstyrelsen]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D -->|Yes| E
+    D -->|No| F
+    F --> G
+    G --> H
     H -->|Yes| E
-    H -->|No| I[Cancel policy]
-    I --> J{Trafikforsakring?}
-    J -->|Yes| K[Notify TFF]
-    J -->|No| L[Notify Transportstyrelsen]
+    H -->|No| I
+    I --> J
+    J -->|Yes| K
+    J -->|No| L
     K --> L
 
     style A fill:#e1f5fe

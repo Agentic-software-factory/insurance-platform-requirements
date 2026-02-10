@@ -49,30 +49,60 @@ This use case describes the damage assessment process for motor insurance claims
 
 ```mermaid
 flowchart TD
-    A[Claim registered] --> B[Assign claims adjuster]
-    B --> C[Schedule inspection]
-    C --> D{Assessment type}
-    D -->|On-site| E[Inspect vehicle at location]
-    D -->|Remote| F[Request photos from customer]
-    D -->|Repair shop| G[Shop inspects and estimates]
-    E --> H[Document damage with photos]
-    F --> I{Photos sufficient?}
+    subgraph Claims Handler
+        A[Claim registered]
+        B[Assign claims adjuster]
+        U[Handler reviews and accepts]
+    end
+    subgraph Claims Adjuster
+        C[Schedule inspection]
+        D{Assessment type}
+        E[Inspect vehicle at location]
+        H[Document damage with photos]
+        I{Photos sufficient?}
+        J[Review shop estimate vs market rates]
+        K[Prepare repair estimate]
+        L{Repair cost > 75% market value?}
+        M[Total loss evaluation]
+        N[Assess market value and salvage]
+        O[Approve repair estimate]
+        P[Submit total loss report]
+        Q[Consistency check]
+        R{Damage consistent with incident?}
+        S[Submit assessment to claims handler]
+        T[Flag for fraud review]
+    end
+    subgraph Customer
+        F[Provide photos for remote assessment]
+    end
+    subgraph Repair Shop
+        G[Shop inspects and estimates]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D -->|On-site| E
+    D -->|Remote| F
+    D -->|Repair shop| G
+    E --> H
+    F --> I
     I -->|Yes| H
     I -->|No| E
-    G --> J[Review shop estimate vs market rates]
-    H --> K[Prepare repair estimate]
+    G --> J
+    H --> K
     J --> K
-    K --> L{Repair cost > 75% market value?}
-    L -->|Yes| M[Total loss evaluation]
-    M --> N[Assess market value and salvage]
-    L -->|No| O[Approve repair estimate]
-    N --> P[Submit total loss report]
-    O --> Q[Consistency check]
-    Q --> R{Damage consistent with incident?}
-    R -->|Yes| S[Submit assessment to claims handler]
-    R -->|No| T[Flag for fraud review]
+    K --> L
+    L -->|Yes| M
+    M --> N
+    L -->|No| O
+    N --> P
+    O --> Q
+    Q --> R
+    R -->|Yes| S
+    R -->|No| T
     P --> S
-    S --> U[Handler reviews and accepts]
+    S --> U
 
     style A fill:#e1f5fe
     style U fill:#e8f5e9

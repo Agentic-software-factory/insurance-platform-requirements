@@ -36,24 +36,44 @@ and referral handling.
 
 ```mermaid
 flowchart TD
-    A[New quote or renewal request] --> B[Collect rating factors]
-    B --> C[Lookup bonus class]
-    C --> D[Apply rating model]
-    D --> E["Base premium x vehicle factor
-    x age factor x location factor x ..."]
-    E --> F[Apply bonus class discount]
-    F --> G{Within acceptance criteria?}
-    G -->|Yes - auto-accept| H[Present quote to customer]
-    G -->|Referral triggered| I[Underwriter review queue]
-    I --> J{Underwriter decision}
+    subgraph System["System (Rating Engine)"]
+        A[New quote or renewal request]
+        B[Collect rating factors]
+        C[Lookup bonus class]
+        D[Apply rating model]
+        E["Base premium x vehicle factor
+        x age factor x location factor x ..."]
+        F[Apply bonus class discount]
+        G{Within acceptance criteria?}
+        H[Present quote to customer]
+        L[Notify customer with reason]
+        M{Trafikforsakring only?}
+        N[Offer mandatory minimum coverage]
+        O[Application rejected]
+    end
+    subgraph Underwriter
+        I[Underwriter review queue]
+        J{Underwriter decision}
+        K[Modify terms or premium loading]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G -->|Yes - auto-accept| H
+    G -->|Referral triggered| I
+    I --> J
     J -->|Approve| H
-    J -->|Approve with conditions| K[Modify terms or premium loading]
+    J -->|Approve with conditions| K
     K --> H
-    J -->|Decline| L[Notify customer with reason]
+    J -->|Decline| L
     G -->|Decline rule triggered| L
-    L --> M{Trafikforsakring only?}
-    M -->|Yes| N[Offer mandatory minimum coverage]
-    M -->|No| O[Application rejected]
+    L --> M
+    M -->|Yes| N
+    M -->|No| O
 
     style A fill:#e1f5fe
     style H fill:#e8f5e9

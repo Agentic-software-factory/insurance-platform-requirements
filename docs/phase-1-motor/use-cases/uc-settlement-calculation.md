@@ -37,25 +37,54 @@ This use case describes the settlement calculation and payment process for appro
 
 ```mermaid
 flowchart TD
-    A[Claim approved] --> B[Verify coverage and assessment]
-    B --> C[Determine liability %]
-    C --> D{Total loss?}
-    D -->|Yes| E[Calculate market value]
-    E --> F[Subtract salvage value]
-    F --> G[Market value - salvage - deductible]
-    D -->|No| H[Use approved repair cost]
-    H --> I[Apply liability % adjustment]
-    I --> J[Subtract deductible]
-    G --> K[Net settlement amount]
+    subgraph Claims Handler
+        A[Claim approved]
+        B[Verify coverage and assessment]
+        C[Determine liability %]
+        L{Amount > handler authority?}
+        N[Approve settlement]
+        O{Payment method}
+    end
+    subgraph System
+        D{Total loss?}
+        E[Calculate market value]
+        F[Subtract salvage value]
+        G[Market value - salvage - deductible]
+        H[Use approved repair cost]
+        I[Apply liability % adjustment]
+        J[Subtract deductible]
+        K[Net settlement amount]
+        R[Claim status: Settled]
+    end
+    subgraph Senior Claims Handler
+        M[Senior approval required]
+    end
+    subgraph Payment Provider
+        P[Bank transfer to customer]
+    end
+    subgraph Repair Shop
+        Q[Repair authorization to shop]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D -->|Yes| E
+    E --> F
+    F --> G
+    D -->|No| H
+    H --> I
+    I --> J
+    G --> K
     J --> K
-    K --> L{Amount > handler authority?}
-    L -->|Yes| M[Senior approval required]
-    M --> N[Approve settlement]
+    K --> L
+    L -->|Yes| M
+    M --> N
     L -->|No| N
-    N --> O{Payment method}
-    O -->|Direct to customer| P[Bank transfer to customer]
-    O -->|Direct billing| Q[Repair authorization to shop]
-    P --> R[Claim status: Settled]
+    N --> O
+    O -->|Direct to customer| P
+    O -->|Direct billing| Q
+    P --> R
     Q --> R
 
     style A fill:#e1f5fe

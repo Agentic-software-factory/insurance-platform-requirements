@@ -39,26 +39,54 @@ via the Green Card system.
 
 ```mermaid
 flowchart TD
-    A[Policy issued - any tier] --> B[Validate trafikforsakring included]
-    B --> C[Register with Transportstyrelsen]
-    C --> D[Ongoing: Monitor coverage continuity]
-    D --> E{Event type}
-    E -->|Coverage change| F[Vehicle or coverage change]
-    F --> G[Re-register with Transportstyrelsen]
+    subgraph System
+        A[Policy issued - any tier]
+        B[Validate trafikforsakring included]
+        D[Ongoing: Monitor coverage continuity]
+        E{Event type}
+        F[Vehicle or coverage change]
+        I[Process compensation]
+        K{Replacement coverage?}
+        L[Process cancellation]
+        Q[Issue Green Card for EU travel]
+        O[Generate statutory reports]
+    end
+    subgraph Claims Handler
+        H[Apply Trafikskadelagen strict liability]
+    end
+    subgraph Compliance Officer
+        P[Review and submit TFF reports]
+    end
+    subgraph External["External Systems"]
+        C[Register with Transportstyrelsen]
+        G[Re-register with Transportstyrelsen]
+        N[Notify Transportstyrelsen]
+        J[Report claims data to TFF]
+    end
+    subgraph Customer
+        M[Block: warn about TFF penalty]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E -->|Coverage change| F
+    F --> G
     G --> D
-    E -->|Personal injury claim| H[Apply Trafikskadelagen strict liability]
-    H --> I[Process compensation]
-    I --> J[Report claims data to TFF]
+    E -->|Personal injury claim| H
+    H --> I
+    I --> J
     J --> D
-    E -->|Cancellation| K{Replacement coverage?}
-    K -->|Yes| L[Process cancellation]
-    K -->|No - vehicle registered| M[Block: warn about TFF penalty]
+    E -->|Cancellation| K
+    K -->|Yes| L
+    K -->|No - vehicle registered| M
     K -->|Vehicle deregistered| L
-    L --> N[Notify Transportstyrelsen]
-    E -->|TFF reporting deadline| O[Generate statutory reports]
-    O --> P[Compliance officer reviews and submits]
+    L --> N
+    E -->|TFF reporting deadline| O
+    O --> P
     P --> D
-    E -->|Cross-border travel| Q[Issue Green Card for EU travel]
+    E -->|Cross-border travel| Q
     Q --> D
 
     style A fill:#e1f5fe

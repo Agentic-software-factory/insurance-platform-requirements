@@ -37,29 +37,58 @@ This use case describes the end-to-end lifecycle of a motor insurance claim, fro
 
 ```mermaid
 flowchart TD
-    A[1. FNOL - Customer reports claim] --> B[2. Claim Registration]
-    B --> C[3. Coverage Verification]
-    C --> D{Coverage confirmed?}
-    D -->|No| E[Deny claim - notify customer]
-    D -->|Yes| F[4. Fraud Screening]
-    F --> G{Fraud flag?}
-    G -->|High risk| H[Fraud Investigation]
-    H --> I{Fraud confirmed?}
+    subgraph Customer
+        A[1. FNOL - Report claim]
+    end
+    subgraph Claims Handler
+        B[2. Claim Registration]
+        C[3. Coverage Verification]
+        J[5. Liability Determination]
+        L[7. Claims Decision]
+        M{Decision?}
+        E[Deny claim - notify customer]
+        T[Record denial and close]
+        R[11. Subrogation]
+    end
+    subgraph System
+        D{Coverage confirmed?}
+        F[4. Fraud Screening]
+        G{Fraud flag?}
+        H[Fraud Investigation]
+        I{Fraud confirmed?}
+        P[10. Bonus Class Update]
+        Q{Subrogation eligible?}
+        S[12. Claim Closure]
+    end
+    subgraph Claims Adjuster
+        K[6. Damage Assessment]
+        N[8. Settlement Calculation]
+        O[9. Payment / Repair Authorization]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D -->|No| E
+    D -->|Yes| F
+    F --> G
+    G -->|High risk| H
+    H --> I
     I -->|Yes| E
-    I -->|No| J[5. Liability Determination]
+    I -->|No| J
     G -->|Low/Medium| J
-    J --> K[6. Damage Assessment]
-    K --> L[7. Claims Decision]
-    L --> M{Decision?}
+    J --> K
+    K --> L
+    L --> M
     M -->|Deny| E
-    M -->|Approve| N[8. Settlement Calculation]
-    N --> O[9. Payment / Repair Authorization]
-    O --> P[10. Bonus Class Update]
-    P --> Q{Subrogation eligible?}
-    Q -->|Yes| R[11. Subrogation]
-    Q -->|No| S[12. Claim Closure]
+    M -->|Approve| N
+    N --> O
+    O --> P
+    P --> Q
+    Q -->|Yes| R
+    Q -->|No| S
     R --> S
-    E --> T[Record denial and close]
+    E --> T
 ```
 
 ### Step-by-Step
