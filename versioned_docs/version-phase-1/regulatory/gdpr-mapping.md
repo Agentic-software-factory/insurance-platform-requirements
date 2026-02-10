@@ -4,20 +4,22 @@ sidebar_position: 2
 
 # GDPR Data Mapping
 
-GDPR compliance mapping for personal data handling within the TryggFörsäkring motor insurance platform. Each data processing activity has a unique ID (GDPR-001, GDPR-002, etc.) used for cross-referencing from user stories and use cases.
+GDPR compliance mapping for personal data handling within the TryggFörsäkring insurance platform. Each data processing activity has a unique ID (GDPR-001, GDPR-002, etc.) used for cross-referencing from user stories and use cases. GDPR-001 through GDPR-006 cover motor insurance; GDPR-007 through GDPR-009 cover home & property insurance (Phase 2).
 
 ## Key Legislation
 
 The following EU regulations and Swedish laws govern personal data processing in the insurance context:
 
-| Regulation / Law                   | Swedish Name                      | Scope                                                         |
-| ---------------------------------- | --------------------------------- | ------------------------------------------------------------- |
-| General Data Protection Regulation | EU Förordning 2016/679 (GDPR)     | Personal data processing, data subject rights, accountability |
-| Swedish Data Protection Act        | Dataskyddslagen (2018:218)        | Supplements GDPR with Swedish-specific provisions             |
-| Swedish Data Protection Ordinance  | Dataskyddsförordningen (2018:219) | Implementing provisions for Dataskyddslagen                   |
-| Motor Traffic Damage Act           | Trafikskadelagen (1975:1410)      | Legal obligation basis for claims data processing             |
-| Accounting Act                     | Bokföringslagen (1999:1078)       | Retention periods for financial records                       |
-| Insurance Contracts Act            | Försäkringsavtalslagen (2005:104) | Contract performance basis for policy data                    |
+| Regulation / Law                   | Swedish Name                       | Scope                                                         |
+| ---------------------------------- | ---------------------------------- | ------------------------------------------------------------- |
+| General Data Protection Regulation | EU Förordning 2016/679 (GDPR)      | Personal data processing, data subject rights, accountability |
+| Swedish Data Protection Act        | Dataskyddslagen (2018:218)         | Supplements GDPR with Swedish-specific provisions             |
+| Swedish Data Protection Ordinance  | Dataskyddsförordningen (2018:219)  | Implementing provisions for Dataskyddslagen                   |
+| Motor Traffic Damage Act           | Trafikskadelagen (1975:1410)       | Legal obligation basis for claims data processing             |
+| Accounting Act                     | Bokföringslagen (1999:1078)        | Retention periods for financial records                       |
+| Insurance Contracts Act            | Försäkringsavtalslagen (2005:104)  | Contract performance basis for policy data                    |
+| Housing Cooperative Act            | Bostadsrättslagen (1991:614)       | BRF governance, building insurance obligations (Phase 2)      |
+| Real Property Register Act         | Fastighetsregisterlagen (2000:224) | Property data from Lantmäteriet (Phase 2)                     |
 
 **Supervisory Authority:** Integritetsskyddsmyndigheten (IMY) is the Swedish supervisory authority for data protection.
 
@@ -33,6 +35,17 @@ The following EU regulations and Swedish laws govern personal data processing in
 | Payment         | Bank account, payment history                                | (b) Contract performance                        | 7 years (Bokföringslagen)     |
 | Location        | Parking address, accident location                           | (b) Contract performance                        | Duration of policy            |
 | Communication   | Emails, call recordings, chat logs                           | (f) Legitimate interest                         | 3 years                       |
+
+### Personal Data Categories in Home & Property Insurance (Phase 2)
+
+| Category       | Data Elements                                                      | Legal Basis (Article 6(1)) | Retention Period              |
+| -------------- | ------------------------------------------------------------------ | -------------------------- | ----------------------------- |
+| Property       | Address, property type (villa/BRF/hyresrätt), building specs, area | (b) Contract performance   | Duration of policy + 10 years |
+| BRF membership | BRF name, org. number, board member names, membership status       | (b) Contract performance   | Duration of policy + 10 years |
+| Building       | Construction year, materials, rebuilding cost, renovations         | (b) Contract performance   | Duration of policy + 10 years |
+| Contents       | Sum insured, high-value items registry, home inventory             | (b) Contract performance   | Duration of policy + 10 years |
+| Restoration    | Damage reports, contractor details, restoration progress           | (b) Contract performance   | 10 years (limitation period)  |
+| Geospatial     | Flood zone, proximity to water, terrain data, climate risk zone    | (f) Legitimate interest    | Duration of policy            |
 
 ### Swedish-Specific Data Considerations
 
@@ -101,6 +114,39 @@ The following EU regulations and Swedish laws govern personal data processing in
 - **Data minimization:** Access full claims details only for flagged cases. Automated screening should use anonymized or pseudonymized data where possible. Limit access to fraud investigation staff.
 - **Retention:** Fraud investigation records retained for 10 years from investigation closure. Cleared cases: flag removed but investigation log retained.
 - **Recipients:** Internal fraud investigation team, GSR (industry fraud register), police (when criminal referral is made), reinsurers (for material fraud cases).
+
+### GDPR-007: Property Data Processing
+
+- **Purpose:** Collect and process property-related personal data for home & property insurance underwriting, policy administration, and claims handling. This includes address, property details, BRF membership, building specifications, and rebuilding cost estimates.
+- **Legal basis:** Article 6(1)(b) — necessary for performance of the insurance contract; Article 6(1)(f) — legitimate interest for property risk assessment using publicly available data.
+- **Data categories:** Identity, property, building, BRF membership, geospatial.
+- **Data sources:** Customer input, Lantmäteriet (fastighetsregister — property registry), BRF board (building information), municipality (building permits and zoning), building valuation tools.
+- **Data minimization:** Collect only property data required for underwriting and risk assessment. Do not collect interior details beyond what is relevant to coverage (e.g., kitchen renovation status is relevant for rebuilding cost but room-by-room photographs are not). Geospatial risk data should be aggregated at zone level rather than exact-coordinate level where possible.
+- **Retention:** Policy-related property data retained for duration of policy + 10 years (FSA-014). Unconverted quotes with property data retained for 12 months, then deleted. Geospatial risk assessments retained for duration of policy.
+- **Recipients:** Internal underwriting systems, Lantmäteriet (property verification), building valuation providers (data processor agreements required), reinsurers (for catastrophe exposure assessment).
+- **Phase:** Phase 2 — Home & Property
+
+### GDPR-008: Restoration Company Data Sharing
+
+- **Purpose:** Share policyholder personal data with restoration companies (saneringsfirmor), contractors, and building inspectors during the claims handling process for home & property insurance. This is necessary to coordinate damage assessment, drying, restoration, and repair work.
+- **Legal basis:** Article 6(1)(b) — necessary for performance of the insurance contract (claims settlement); Article 6(1)(f) — legitimate interest in efficient claims resolution.
+- **Data categories:** Identity (policyholder name, contact details, address), property (damage location, building access details), claims (damage description, assessment reports, restoration scope).
+- **Data sources:** Internal claims systems, policyholder (damage notification), property inspector reports.
+- **Data minimization:** Share only the data necessary for the specific restoration task. Restoration companies receive: policyholder name and contact details (for site access coordination), property address and access instructions, damage description and scope of work. They do not receive: personnummer, policy financial details, claims history, or unrelated personal data. Each contractor receives only the information relevant to their specific role.
+- **Retention:** Data sharing logs retained for 10 years from claim closure. Contractor copies of personal data must be returned or deleted after the restoration engagement ends, as specified in the data processing agreement.
+- **Recipients:** Approved restoration companies (saneringsfirmor), plumbers, electricians, building inspectors, moisture measurement specialists. All recipients must have valid data processing agreements (Article 28).
+- **Phase:** Phase 2 — Home & Property
+
+### GDPR-009: BRF Board Data
+
+- **Purpose:** Process personal data of BRF (bostadsrättsförening) board members in connection with building insurance policies for housing cooperatives. BRF board members act as representatives of the cooperative for insurance matters including policy administration, building maintenance coordination, and claims reporting.
+- **Legal basis:** Article 6(1)(b) — necessary for performance of the insurance contract (BRF is the policyholder); Article 6(1)(f) — legitimate interest for verifying authority to act on behalf of the BRF.
+- **Data categories:** Identity (board member names, roles, contact details), BRF membership (organization number, board composition, mandate periods).
+- **Data sources:** BRF board (direct input), Bolagsverket (organization register for BRF registration verification), Lantmäteriet (property ownership records).
+- **Data minimization:** Collect only board member data necessary for insurance administration: name, role (ordförande, ledamot, suppleant), contact details, and mandate period. Do not collect personnummer of board members unless required for specific verification. Limit processing to board members who are authorized signatories or designated insurance contacts.
+- **Retention:** Board member data retained for duration of the BRF policy + 10 years (FSA-014). When board composition changes, historical board data is archived but retained for the full retention period to support claims traceability.
+- **Recipients:** Internal policy administration systems, building inspectors (for coordinating property inspections), Bolagsverket (for organization verification).
+- **Phase:** Phase 2 — Home & Property
 
 ## Data Subject Rights
 
@@ -186,11 +232,14 @@ Multiple requirements may apply to a single user story. Always list all applicab
 
 ### GDPR to FSA Cross-references
 
-| GDPR ID  | Related FSA IDs           | Relationship                                                                                        |
-| -------- | ------------------------- | --------------------------------------------------------------------------------------------------- |
-| GDPR-001 | FSA-012                   | Quote generation requires both data collection consent and pre-contractual disclosure               |
-| GDPR-002 | FSA-014                   | Policy data retention aligns with FSA record-keeping requirements                                   |
-| GDPR-003 | FSA-010                   | Claims processing must satisfy both GDPR and fair settlement requirements                           |
-| GDPR-004 | FSA-007, FSA-008, FSA-009 | Transportstyrelsen and TFF reporting is both a GDPR legal obligation and FSA regulatory requirement |
-| GDPR-005 | FSA-004                   | Marketing must respect both GDPR consent rules and FSA fair treatment principles                    |
-| GDPR-006 | FSA-010                   | Fraud detection must balance data protection with fair claims handling                              |
+| GDPR ID  | Related FSA IDs           | Relationship                                                                                                 |
+| -------- | ------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| GDPR-001 | FSA-012                   | Quote generation requires both data collection consent and pre-contractual disclosure                        |
+| GDPR-002 | FSA-014                   | Policy data retention aligns with FSA record-keeping requirements                                            |
+| GDPR-003 | FSA-010                   | Claims processing must satisfy both GDPR and fair settlement requirements                                    |
+| GDPR-004 | FSA-007, FSA-008, FSA-009 | Transportstyrelsen and TFF reporting is both a GDPR legal obligation and FSA regulatory requirement          |
+| GDPR-005 | FSA-004                   | Marketing must respect both GDPR consent rules and FSA fair treatment principles                             |
+| GDPR-006 | FSA-010                   | Fraud detection must balance data protection with fair claims handling                                       |
+| GDPR-007 | FSA-015, FSA-016          | Property data processing supports product suitability and building valuation requirements _(Phase 2)_        |
+| GDPR-008 | FSA-017                   | Restoration data sharing must comply with both GDPR and water damage claims handling obligations _(Phase 2)_ |
+| GDPR-009 | FSA-015                   | BRF board data processing supports home insurance policy administration _(Phase 2)_                          |
