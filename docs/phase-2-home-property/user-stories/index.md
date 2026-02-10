@@ -154,6 +154,40 @@ post-burglary support:
 | HCB-11 | Claims Handler | Process drulle claims with simplified assessment                 |
 | HCB-12 | Customer       | Access krisstöd (crisis support) after a burglary                |
 
+## Liability & Legal Expenses (Ansvar/Rättsskydd)
+
+Liability coverage (ansvarsskydd) handles damage the policyholder accidentally
+causes to others, while legal expenses coverage (rättsskydd) covers legal costs
+in qualifying civil disputes. These user stories cover the complete liability
+and legal expenses claim lifecycle including liability assessment, settlement
+negotiation, defense against unfounded claims, rättsskydd eligibility, lawyer
+approval, and BRF vs individual liability boundaries.
+
+### Liability (Ansvarsskydd)
+
+| ID                                                                                     | Title                                          | Priority  |
+| -------------------------------------------------------------------------------------- | ---------------------------------------------- | --------- |
+| [HCL-01](liability-and-legal.md#hcl-01-report-accidental-damage-caused-to-third-party) | Report Accidental Damage Caused to Third Party | Must Have |
+| [HCL-02](liability-and-legal.md#hcl-02-assess-policyholder-legal-liability)            | Assess Policyholder Legal Liability            | Must Have |
+| [HCL-03](liability-and-legal.md#hcl-03-negotiate-settlement-with-injured-party)        | Negotiate Settlement with Injured Party        | Must Have |
+| [HCL-04](liability-and-legal.md#hcl-04-defend-policyholder-against-unfounded-claims)   | Defend Policyholder Against Unfounded Claims   | Must Have |
+
+### Legal Expenses (Rättsskydd)
+
+| ID                                                                                 | Title                                      | Priority  |
+| ---------------------------------------------------------------------------------- | ------------------------------------------ | --------- |
+| [HCL-05](liability-and-legal.md#hcl-05-apply-for-rättsskydd-for-a-legal-dispute)   | Apply for Rättsskydd for a Legal Dispute   | Must Have |
+| [HCL-06](liability-and-legal.md#hcl-06-verify-rättsskydd-eligibility)              | Verify Rättsskydd Eligibility              | Must Have |
+| [HCL-07](liability-and-legal.md#hcl-07-approve-lawyer-and-fee-estimate)            | Approve Lawyer and Fee Estimate            | Must Have |
+| [HCL-08](liability-and-legal.md#hcl-08-understand-self-retention-and-coverage-cap) | Understand Self-Retention and Coverage Cap | Must Have |
+
+### Cross-Coverage
+
+| ID                                                                                                 | Title                                 | Priority    |
+| -------------------------------------------------------------------------------------------------- | ------------------------------------- | ----------- |
+| [HCL-09](liability-and-legal.md#hcl-09-identify-cross-insurance-coordination-for-liability-claims) | Identify Cross-Insurance Coordination | Should Have |
+| [HCL-10](liability-and-legal.md#hcl-10-determine-brf-liability-vs-individual-liability)            | Determine BRF vs Individual Liability | Should Have |
+
 ## Home Renewals (Förnyelse)
 
 The [home-renewals user stories](home-renewals.md) cover annual renewal of home
