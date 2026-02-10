@@ -367,6 +367,8 @@ unacceptable risks are declined consistently.
   law
 - **IDD-004** — Risk acceptance criteria must be consistent with target market
   definitions; products must not be sold outside their intended market
+- **IDD-009** — Underwriters reviewing referrals must meet professional competence
+  standards for motor insurance distribution
 - **GDPR-001** — Risk assessment uses personal data; processing based on Article
   6(1)(b) pre-contractual steps
 
@@ -641,6 +643,7 @@ The following data entities are central to the underwriting and bonus system.
 | GDPR-003    |        | X      |        |        |        |        |        |
 | IDD-001     |        |        |        |        | X      |        |        |
 | IDD-004     | X      | X      | X      | X      |        | X      | X      |
+| IDD-009     |        |        |        | X      |        |        |        |
 
 ---
 
