@@ -172,3 +172,22 @@ recalculation, renewal notices, and coverage modifications:
 | HRN-08 | Customer Service Agent | Process renewal modifications for phone customers                       |
 | HRN-09 | Underwriter            | Review renewals flagged for significant risk changes                    |
 | HRN-10 | System                 | Generate and send renewal notice 30 days before huvudförfallodag        |
+
+## Cancellations (Uppsägning)
+
+The [cancellation user stories](cancellations.md) cover customer-initiated and
+insurer-initiated cancellation of home insurance policies, including ångerrätt,
+property sale, insurer switching, and pro-rata refund calculation:
+
+| ID     | Actor                  | Summary                                                      |
+| ------ | ---------------------- | ------------------------------------------------------------ |
+| HCA-01 | Customer               | Cancel home insurance within 14-day ångerrätt period         |
+| HCA-02 | Customer               | Cancel when property is sold (försäljning)                   |
+| HCA-03 | Customer               | Cancel when moving to a new address                          |
+| HCA-04 | Customer               | Switch to a competitor insurer at renewal                    |
+| HCA-05 | Customer               | Cancel using the EU online cancellation button               |
+| HCA-06 | Underwriter            | Cancel a policy due to non-payment after statutory reminders |
+| HCA-07 | Underwriter            | Cancel a policy due to material misrepresentation            |
+| HCA-08 | System                 | Calculate pro-rata refund for remaining policy period        |
+| HCA-09 | System                 | Ensure no coverage gap when customer switches insurer        |
+| HCA-10 | Customer Service Agent | Preview refund amount before confirming cancellation         |
