@@ -29,3 +29,17 @@ covers:
 | ID                                         | Title                        | Scope                                                                                         |
 | ------------------------------------------ | ---------------------------- | --------------------------------------------------------------------------------------------- |
 | [UC-HCW-001](uc-water-damage-lifecycle.md) | Water Damage Claim Lifecycle | End-to-end flow from FNOL through emergency response, drying, repair, settlement, and closure |
+
+## Burglary and Theft
+
+The [Burglary Claim Processing](burglary-and-theft.md) use case (UC-HCB-001)
+describes the complete flow from burglary report through settlement. It covers:
+
+- Emergency locksmith dispatch and home security
+- Police report (polisanmälan) requirements
+- FNOL registration with fraud screening
+- Stolen property inventory and high-value item verification
+- Settlement calculation with åldersavdrag and sub-limits
+- Break-in damage repair via partner network
+- Allrisk/drulle simplified claims process
+- Crisis support (krisstöd) for burglary victims
