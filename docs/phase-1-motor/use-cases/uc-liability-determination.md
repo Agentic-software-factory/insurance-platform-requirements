@@ -50,28 +50,53 @@ This use case describes the liability determination process for motor insurance 
 
 ```mermaid
 flowchart TD
-    A[Claim registered and coverage verified] --> B{Incident type}
-    B -->|Single vehicle| C[Driver at fault - 100%]
-    C --> D[Check coverage tier]
-    B -->|Multi-vehicle| E[Review evidence]
-    E --> F[Police report + witness statements + photos]
-    F --> G{Clear fault?}
-    G -->|Yes| H[Assign liability percentages]
-    G -->|No| I[Split 50/50 or escalate]
-    B -->|Animal collision| J[No-fault determination]
-    J --> K[Bonus-neutral]
-    B -->|Hit-and-run| L[Police report mandatory]
-    L --> M[TFF eligibility check]
-    H --> N[Record rationale and evidence]
+    subgraph System
+        A[Claim registered and coverage verified]
+        B{Incident type}
+        D[Check coverage tier]
+        O{Subrogation eligible?}
+        Q[Proceed to damage assessment]
+    end
+    subgraph Claims Handler
+        C[Driver at fault - 100%]
+        E[Review evidence]
+        F[Police report + witness statements + photos]
+        G{Clear fault?}
+        H[Assign liability percentages]
+        I[Split 50/50 or escalate]
+        J[No-fault determination]
+        K[Bonus-neutral]
+        L[Police report mandatory]
+        N[Record rationale and evidence]
+        P[Identify recovery target]
+        R[Strict liability applies]
+    end
+    subgraph External["External (TFF)"]
+        M[TFF eligibility check]
+    end
+
+    A --> B
+    B -->|Single vehicle| C
+    C --> D
+    B -->|Multi-vehicle| E
+    E --> F
+    F --> G
+    G -->|Yes| H
+    G -->|No| I
+    B -->|Animal collision| J
+    J --> K
+    B -->|Hit-and-run| L
+    L --> M
+    H --> N
     I --> N
     M --> N
     D --> N
     K --> N
-    N --> O{Subrogation eligible?}
-    O -->|Yes| P[Identify recovery target]
-    O -->|No| Q[Proceed to damage assessment]
+    N --> O
+    O -->|Yes| P
+    O -->|No| Q
     P --> Q
-    B -->|Trafikforsakring PI| R[Strict liability applies]
+    B -->|Trafikforsakring PI| R
     R --> N
 
     style A fill:#e1f5fe

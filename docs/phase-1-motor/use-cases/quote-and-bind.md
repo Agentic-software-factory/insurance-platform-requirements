@@ -36,23 +36,49 @@ policy issuance and Transportstyrelsen notification.
 
 ```mermaid
 flowchart TD
-    A[Customer enters reg.nr + personnummer] --> B[Transportstyrelsen vehicle lookup]
-    B --> C{Vehicle found?}
-    C -->|No| D[Manual vehicle entry]
-    D --> E[Underwriter review required]
-    C -->|Yes| F[Retrieve bonus class]
-    F --> G[Demands-and-needs assessment]
-    G --> H[Coverage tier selection]
-    H --> I[Premium calculation]
-    I --> J[Quote presentation with tier comparison]
-    J --> K[Customer selects coverage and accepts]
-    K --> L[Pre-contractual review]
-    L --> M[BankID signing]
-    M --> N{BankID verified?}
+    subgraph Customer
+        A[Enter reg.nr + personnummer]
+        G[Complete demands-and-needs assessment]
+        H[Select coverage tier]
+        K[Select coverage and accept]
+        L[Review pre-contractual information]
+        M[Sign via BankID]
+    end
+    subgraph System
+        B[Transportstyrelsen vehicle lookup]
+        C{Vehicle found?}
+        F[Retrieve bonus class]
+        I[Premium calculation]
+        J[Quote presentation with tier comparison]
+        N{BankID verified?}
+        P[Policy issuance + payment setup]
+        R[Confirmation sent to customer]
+    end
+    subgraph Underwriter
+        D[Manual vehicle entry review]
+        E[Underwriter review required]
+    end
+    subgraph External["External Systems"]
+        Q[Transportstyrelsen notification]
+    end
+
+    A --> B
+    B --> C
+    C -->|No| D
+    D --> E
+    C -->|Yes| F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    J --> K
+    K --> L
+    L --> M
+    M --> N
     N -->|No| O[Retry or save quote for later]
-    N -->|Yes| P[Policy issuance + payment setup]
-    P --> Q[Transportstyrelsen notification]
-    Q --> R[Confirmation sent to customer]
+    N -->|Yes| P
+    P --> Q
+    Q --> R
 
     style A fill:#e1f5fe
     style R fill:#e8f5e9

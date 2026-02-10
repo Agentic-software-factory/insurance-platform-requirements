@@ -70,24 +70,51 @@ record entity provides a complete audit trail of every policy change.
 
 ```mermaid
 flowchart TD
-    A[Customer requests vehicle change] --> B[Enter new registreringsnummer]
-    B --> C[Transportstyrelsen vehicle lookup]
-    C --> D{Vehicle found?}
-    D -->|No| E[Manual entry required]
-    D -->|Yes| F[Display vehicle details for confirmation]
-    F --> G[Assess risk of new vehicle]
-    G --> H{High-risk vehicle?}
-    H -->|Yes| I[Underwriter review]
-    I --> J{Approved?}
-    J -->|No| K[Decline - notify customer]
-    J -->|Yes| L[Recalculate premium]
+    subgraph Customer
+        A[Request vehicle change]
+        B[Enter new registreringsnummer]
+        N[Confirm premium change]
+    end
+    subgraph System
+        C[Transportstyrelsen vehicle lookup]
+        D{Vehicle found?}
+        E[Manual entry required]
+        F[Display vehicle details for confirmation]
+        G[Assess risk of new vehicle]
+        H{High-risk vehicle?}
+        L[Recalculate premium]
+        M[Show premium change and pro-rata adjustment]
+        O[Update policy record]
+        Q[Trigger payment adjustment]
+        R[Reissue policy documents]
+        K[Decline - notify customer]
+    end
+    subgraph Underwriter
+        I[Underwriter review]
+        J{Approved?}
+    end
+    subgraph External["External Systems"]
+        P[Notify Transportstyrelsen - old and new vehicle]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D -->|No| E
+    D -->|Yes| F
+    F --> G
+    G --> H
+    H -->|Yes| I
+    I --> J
+    J -->|No| K
+    J -->|Yes| L
     H -->|No| L
-    L --> M[Show premium change and pro-rata adjustment]
-    M --> N[Customer confirms]
-    N --> O[Update policy record]
-    O --> P[Notify Transportstyrelsen - old and new vehicle]
-    P --> Q[Trigger payment adjustment]
-    Q --> R[Reissue policy documents]
+    L --> M
+    M --> N
+    N --> O
+    O --> P
+    P --> Q
+    Q --> R
 
     style A fill:#e1f5fe
     style R fill:#e8f5e9
@@ -829,23 +856,41 @@ stateDiagram-v2
 
 ```mermaid
 flowchart TD
-    A["Amendment submitted
-    (trigger: rating factor changed)"] --> B[Identify changed factors]
-    B --> C[Retrieve current tariff and rating tables]
-    C --> D[Calculate new annual premium]
-    D --> E["Apply: base rate x vehicle x bonus
-    x postcode x driver x mileage factors"]
-    E --> F[Calculate pro-rata adjustment]
-    F --> G["(Remaining days / 365) x
-    (new premium - old premium)"]
-    G --> H{Net adjustment}
-    H -->|Charge| I[Collect additional premium]
-    H -->|Refund| J[Process refund to customer]
-    H -->|No change| K[No payment action]
-    I --> L[Update payment schedule]
+    subgraph System
+        A["Amendment submitted
+        (trigger: rating factor changed)"]
+        B[Identify changed factors]
+        C[Retrieve current tariff and rating tables]
+        D[Calculate new annual premium]
+        E["Apply: base rate x vehicle x bonus
+        x postcode x driver x mileage factors"]
+        F[Calculate pro-rata adjustment]
+        G["(Remaining days / 365) x
+        (new premium - old premium)"]
+        H{Net adjustment}
+        K[No payment action]
+        L[Update payment schedule]
+        M[Store calculation with factor breakdown]
+    end
+    subgraph Payment Provider
+        I[Collect additional premium]
+        J[Process refund to customer]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H -->|Charge| I
+    H -->|Refund| J
+    H -->|No change| K
+    I --> L
     J --> L
     K --> L
-    L --> M[Store calculation with factor breakdown]
+    L --> M
 
     style A fill:#e1f5fe
     style L fill:#e8f5e9

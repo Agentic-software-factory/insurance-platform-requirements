@@ -37,24 +37,48 @@ This use case describes the fraud screening and investigation process for motor 
 
 ```mermaid
 flowchart TD
-    A[New claim registered] --> B[Run automated fraud indicators]
-    B --> C[Calculate fraud risk score]
-    C --> D{Risk level}
-    D -->|Low| E[Auto-clear]
-    E --> F[Normal claims processing]
-    D -->|Medium| G[Flag for handler review]
-    G --> H[Manual investigation]
-    H --> I{Finding}
+    subgraph System
+        A[New claim registered]
+        B[Run automated fraud indicators]
+        C[Calculate fraud risk score]
+        D{Risk level}
+        E[Auto-clear]
+        F[Normal claims processing]
+        K[Hold claim - pause settlement]
+    end
+    subgraph Claims Handler
+        G[Flag for handler review]
+        H[Manual investigation]
+        I{Finding}
+        J[Escalate to senior handler]
+        L[Full investigation]
+        M{Fraud confirmed?}
+        N[Deny claim]
+        O{Criminal referral?}
+        Q[Record fraud determination]
+    end
+    subgraph External["External (Police)"]
+        P[Refer to police]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D -->|Low| E
+    E --> F
+    D -->|Medium| G
+    G --> H
+    H --> I
     I -->|Cleared| F
-    I -->|Suspicious| J[Escalate to senior handler]
-    D -->|High| K[Hold claim - pause settlement]
-    K --> L[Full investigation]
-    L --> M{Fraud confirmed?}
+    I -->|Suspicious| J
+    D -->|High| K
+    K --> L
+    L --> M
     M -->|No| F
-    M -->|Yes| N[Deny claim]
-    N --> O{Criminal referral?}
-    O -->|Yes| P[Refer to police]
-    O -->|No| Q[Record fraud determination]
+    M -->|Yes| N
+    N --> O
+    O -->|Yes| P
+    O -->|No| Q
     P --> Q
     J --> L
 

@@ -38,24 +38,50 @@ This use case details the First Notification of Loss (FNOL) process — from the
 
 ```mermaid
 flowchart TD
-    A[Customer reports claim] --> B{Channel}
-    B -->|Web/App| C[Authenticate via BankID]
-    B -->|Phone| D[Claims handler verifies identity]
-    B -->|Third party| E[Handler verifies policy exists]
-    C --> F[Select policy and vehicle]
+    subgraph Customer
+        A[Report claim]
+        F[Select policy and vehicle]
+        H[Select claim type]
+        I[Capture incident details]
+        L[Upload photos and documents]
+        M[Review FNOL summary]
+        N[Submit claim report]
+    end
+    subgraph System
+        B{Channel}
+        J{Duplicate claim detected?}
+        K[Alert: possible duplicate]
+        O[Generate claim number]
+        P[Auto-assign claims handler]
+        Q[Send confirmation to customer]
+    end
+    subgraph Claims Handler
+        D[Verify identity by phone]
+        E[Verify policy for third party]
+        G[Create third-party claim record]
+    end
+    subgraph External["External Systems"]
+        C[Authenticate via BankID]
+    end
+
+    A --> B
+    B -->|Web/App| C
+    B -->|Phone| D
+    B -->|Third party| E
+    C --> F
     D --> F
-    E --> G[Create third-party claim record]
-    F --> H[Select claim type]
-    H --> I[Capture incident details]
-    I --> J{Duplicate claim detected?}
-    J -->|Yes| K[Alert: possible duplicate]
-    J -->|No| L[Upload photos and documents]
+    E --> G
+    F --> H
+    H --> I
+    I --> J
+    J -->|Yes| K
+    J -->|No| L
     K --> L
-    L --> M[Review FNOL summary]
-    M --> N[Submit claim report]
-    N --> O[Generate claim number]
-    O --> P[Auto-assign claims handler]
-    P --> Q[Send confirmation to customer]
+    L --> M
+    M --> N
+    N --> O
+    O --> P
+    P --> Q
 
     style A fill:#e1f5fe
     style Q fill:#e8f5e9
