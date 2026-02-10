@@ -85,16 +85,51 @@ This use case describes the fraud screening and investigation process for motor 
 - **Medium risk:** One or more medium-weight indicators; no high-weight indicators
 - **High risk:** One or more high-weight indicators; or three or more medium-weight indicators
 
+## Validation Rules
+
+| Rule       | Description                                                                                             |
+| ---------- | ------------------------------------------------------------------------------------------------------- |
+| VR-FRD-001 | Fraud screening must complete before the claim advances past "Registered" status                        |
+| VR-FRD-002 | High-risk claims cannot proceed to settlement without handler review                                    |
+| VR-FRD-003 | Investigation closure requires a documented finding (cleared or confirmed)                              |
+| VR-FRD-004 | Criminal referral requires a completed investigation record and senior approval                         |
+| VR-FRD-005 | GSR queries must include at minimum: policyholder personnummer, vehicle registration, and incident date |
+
+## Data Model
+
+### Fraud Screening Record
+
+| Field                    | Type      | Required       | Description                                     |
+| ------------------------ | --------- | -------------- | ----------------------------------------------- |
+| Screening ID             | String    | Auto-generated | Unique identifier for the screening             |
+| Claim number             | String    | Yes            | Link to the screened claim                      |
+| Screening date           | Timestamp | Auto-set       | When the automated screening ran                |
+| Indicators triggered     | Object[]  | Auto-set       | List of fraud indicators that matched           |
+| Risk score               | Enum      | Auto-set       | Low, Medium, High                               |
+| GSR match                | Boolean   | Auto-set       | Whether a match was found in the fraud database |
+| GSR match details        | Text      | Conditional    | Details of GSR matches (if any)                 |
+| Handler review required  | Boolean   | Auto-set       | True if risk score is Medium or High            |
+| Investigation status     | Enum      | Conditional    | Not started, In progress, Cleared, Confirmed    |
+| Investigation start date | Timestamp | Conditional    | When manual investigation began                 |
+| Investigation notes      | Text[]    | Conditional    | Handler's investigation notes and evidence      |
+| Investigation finding    | Enum      | Conditional    | Cleared, Fraud confirmed                        |
+| Investigation close date | Timestamp | Conditional    | When investigation was concluded                |
+| Criminal referral        | Boolean   | Conditional    | Whether the case was referred to police         |
+| Police reference         | String    | Conditional    | Police case reference number                    |
+| Approved by              | Reference | Conditional    | Senior handler who approved criminal referral   |
+
 ## Business Rules
 
-| Rule       | Description                                                                                  |
-| ---------- | -------------------------------------------------------------------------------------------- |
-| BR-FRD-001 | Fraud screening runs automatically on every new claim                                        |
-| BR-FRD-002 | High-risk claims must be reviewed by a claims handler before settlement                      |
-| BR-FRD-003 | Investigation details must never be disclosed to the claimant during an active investigation |
-| BR-FRD-004 | Fraud investigation must not unreasonably delay settlement of legitimate claims              |
-| BR-FRD-005 | Criminal referral requires senior claims handler or manager approval                         |
-| BR-FRD-006 | Cleared fraud flags must retain the investigation log for audit purposes                     |
+| Rule       | Description                                                                                                                              |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| BR-FRD-001 | Fraud screening runs automatically on every new claim                                                                                    |
+| BR-FRD-002 | High-risk claims must be reviewed by a claims handler before settlement                                                                  |
+| BR-FRD-003 | Investigation details must never be disclosed to the claimant during an active investigation                                             |
+| BR-FRD-004 | Fraud investigation must not unreasonably delay settlement of legitimate claims (target: investigation complete within 15 business days) |
+| BR-FRD-005 | Criminal referral requires senior claims handler or manager approval                                                                     |
+| BR-FRD-006 | Cleared fraud flags must retain the investigation log for audit purposes                                                                 |
+| BR-FRD-007 | GSR data must be refreshed at least daily to ensure up-to-date fraud pattern matching                                                    |
+| BR-FRD-008 | Fraud screening rules and indicator weights are reviewed and updated quarterly                                                           |
 
 ## Regulatory
 

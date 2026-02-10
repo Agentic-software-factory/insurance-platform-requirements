@@ -126,6 +126,56 @@ If vehicle recovered with damage:
 | Bank transfer to third party  | Third-party liability settlement       | Payment to the injured party or their insurer |
 | Interim payment               | Personal injury with ongoing treatment | Partial payments while claim remains open     |
 
+## Validation Rules
+
+| Rule       | Description                                                                       |
+| ---------- | --------------------------------------------------------------------------------- |
+| VR-SET-001 | Claim must have status "Approved" before settlement calculation begins            |
+| VR-SET-002 | Damage assessment must be complete and accepted for vehicle damage claims         |
+| VR-SET-003 | Liability determination must be recorded for multi-party claims                   |
+| VR-SET-004 | Deductible amount must match the policy terms for the claim type                  |
+| VR-SET-005 | Settlement amount cannot be negative                                              |
+| VR-SET-006 | Total loss settlement requires both market value and salvage value to be recorded |
+| VR-SET-007 | Payment recipient bank account must be verified before initiating transfer        |
+| VR-SET-008 | Repair authorization amount must match the approved repair estimate               |
+| VR-SET-009 | Personal injury compensation components must each have supporting documentation   |
+| VR-SET-010 | Settlement amounts above the handler's authority limit require senior approval    |
+
+## Data Model
+
+### Settlement Record
+
+| Field                 | Type      | Required       | Description                                                    |
+| --------------------- | --------- | -------------- | -------------------------------------------------------------- |
+| Settlement ID         | String    | Auto-generated | Unique identifier for the settlement                           |
+| Claim number          | String    | Yes            | Link to the parent claim                                       |
+| Settlement type       | Enum      | Yes            | Repair, Total loss, Glass, Theft, Personal injury, Third-party |
+| Gross damage amount   | Decimal   | Yes            | Total damage or compensation before adjustments                |
+| Liability adjustment  | Decimal   | Conditional    | Reduction based on policyholder's fault percentage             |
+| Deductible amount     | Decimal   | Yes            | Deductible subtracted (SEK 0 for personal injury)              |
+| Salvage value         | Decimal   | Conditional    | Deducted if customer retains total-loss vehicle                |
+| Net settlement amount | Decimal   | Calculated     | Final amount payable                                           |
+| Payment method        | Enum      | Yes            | Bank transfer, Direct billing, Interim payment                 |
+| Payee                 | Reference | Yes            | Customer, Repair shop, or Third party                          |
+| Payee bank account    | String    | Conditional    | Required for bank transfers                                    |
+| Payment status        | Enum      | Auto-set       | Pending, Initiated, Confirmed, Failed                          |
+| Payment reference     | String    | Conditional    | Transaction reference from payment provider                    |
+| Payment date          | Timestamp | Conditional    | When payment was confirmed                                     |
+| Approved by           | Reference | Yes            | Claims handler who approved the settlement                     |
+| Created date          | Timestamp | Auto-set       | When the settlement was calculated                             |
+
+## Business Rules
+
+| Rule       | Description                                                                                                        |
+| ---------- | ------------------------------------------------------------------------------------------------------------------ |
+| BR-SET-001 | Payment must be initiated within 5 business days of settlement approval                                            |
+| BR-SET-002 | If payment fails, the claims handler must arrange alternative payment within 2 business days                       |
+| BR-SET-003 | Settlement amounts above SEK 100,000 require senior claims handler approval                                        |
+| BR-SET-004 | VAT on repair costs must be handled according to applicable Swedish tax rules                                      |
+| BR-SET-005 | Theft claims may have a waiting period (configurable, default 30 days) before settlement to allow vehicle recovery |
+| BR-SET-006 | All payment amounts are rounded to the nearest whole SEK                                                           |
+| BR-SET-007 | The customer must receive a written settlement breakdown before payment is initiated                               |
+
 ## Regulatory
 
 - **FSA-010** — Fair and timely claims settlement: settlement must be calculated fairly and paid promptly; the customer must receive a clear explanation of the calculation
