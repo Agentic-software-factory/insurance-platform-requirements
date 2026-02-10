@@ -153,3 +153,22 @@ post-burglary support:
 | HCB-10 | Customer       | Claim for accidentally damaged or lost property (allrisk/drulle) |
 | HCB-11 | Claims Handler | Process drulle claims with simplified assessment                 |
 | HCB-12 | Customer       | Access krisstöd (crisis support) after a burglary                |
+
+## Home Renewals (Förnyelse)
+
+The [home-renewals user stories](home-renewals.md) cover annual renewal of home
+and property insurance policies, including index adjustment, premium
+recalculation, renewal notices, and coverage modifications:
+
+| ID     | Actor                  | Summary                                                                 |
+| ------ | ---------------------- | ----------------------------------------------------------------------- |
+| HRN-01 | Customer               | Receive a renewal notice showing changes in premium and coverage        |
+| HRN-02 | Customer               | View year-over-year comparison of coverage and premium                  |
+| HRN-03 | Customer               | Modify coverage at renewal (upgrade/downgrade tier, add/remove add-ons) |
+| HRN-04 | Customer               | Opt out of automatic renewal before the deadline                        |
+| HRN-05 | System                 | Recalculate building sum insured using byggkostnadsindex                |
+| HRN-06 | System                 | Recalculate contents sum insured using konsumentprisindex               |
+| HRN-07 | System                 | Apply premium adjustments based on claims history and risk changes      |
+| HRN-08 | Customer Service Agent | Process renewal modifications for phone customers                       |
+| HRN-09 | Underwriter            | Review renewals flagged for significant risk changes                    |
+| HRN-10 | System                 | Generate and send renewal notice 30 days before huvudförfallodag        |

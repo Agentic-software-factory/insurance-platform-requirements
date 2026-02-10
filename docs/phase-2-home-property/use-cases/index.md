@@ -60,3 +60,18 @@ describes the complete flow from burglary report through settlement. It covers:
 - Break-in damage repair via partner network
 - Allrisk/drulle simplified claims process
 - Crisis support (krisstöd) for burglary victims
+
+## Home Renewals (Förnyelse)
+
+The [Annual Home Insurance Renewal](home-renewals.md) use case (UC-HRN-001)
+describes the complete renewal lifecycle from policy identification through
+automatic renewal. It covers:
+
+- Index adjustment of building sum insured using byggkostnadsindex
+- Index adjustment of contents sum insured using konsumentprisindex (KPI)
+- Premium recalculation with claims history and area risk factors
+- Underwriter review of flagged renewals (significant premium increase, multiple claims)
+- Renewal notice (förnyelseavisering) dispatch at T-30 days
+- Customer response handling (accept, modify, cancel)
+- Automatic renewal on huvudförfallodag
+- Agent-assisted modifications and demands-and-needs reassessment
