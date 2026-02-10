@@ -92,7 +92,7 @@ const config: Config = {
         },
         {
           type: "docsVersionDropdown",
-          position: "left",
+          position: "right",
         },
         {
           href: "https://github.com/Agentic-software-factory/insurance-platform-requirements",
