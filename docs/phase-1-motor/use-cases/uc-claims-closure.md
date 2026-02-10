@@ -23,8 +23,8 @@ This use case describes the claims closure process, from the final review checkl
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Actuary (Aktuarie)](../../actors/internal-actors.md#actuary), [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Actuary (Aktuarie)](../../actors/internal/actuary.md), [Customer (Privatkund)](../../actors/internal/customer.md)
 
 ## Preconditions
 

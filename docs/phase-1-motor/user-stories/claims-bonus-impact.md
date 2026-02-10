@@ -13,7 +13,7 @@ sidebar_position: 19
 ## Actors
 
 - **Primary:** System (automated process)
-- **Supporting:** [Underwriter (Riskbedömare)](../../actors/internal-actors.md#underwriter-riskbedömare), [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
+- **Supporting:** [Underwriter (Riskbedömare)](../../actors/internal/underwriter.md), [Customer (Privatkund)](../../actors/internal/customer.md)
 
 ## Priority
 

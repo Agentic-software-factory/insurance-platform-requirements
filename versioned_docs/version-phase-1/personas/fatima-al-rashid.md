@@ -73,6 +73,6 @@ both personal and business matters.
 
 ## Related Actors
 
-- [Corporate Customer (Företagskund)](../actors/internal-actors#corporate-customer-företagskund)
+- [Corporate Customer (Företagskund)](../actors/internal/corporate-customer.md)
   — Fatima acts as the corporate customer managing fleet insurance for Ren &
   Fin AB.

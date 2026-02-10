@@ -10,8 +10,8 @@ This use case details the First Notification of Loss (FNOL) process — from the
 
 ## Actors
 
-- **Primary:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
-- **Supporting:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare), [BankID](../../actors/external-actors.md#bankid)
+- **Primary:** [Customer (Privatkund)](../../actors/internal/customer.md)
+- **Supporting:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md), [BankID](../../actors/external/bankid.md)
 
 ## Preconditions
 

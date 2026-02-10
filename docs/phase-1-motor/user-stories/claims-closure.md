@@ -12,8 +12,8 @@ sidebar_position: 24
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Actuary (Aktuarie)](../../actors/internal-actors.md#actuary)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Actuary (Aktuarie)](../../actors/internal/actuary.md)
 
 ## Priority
 

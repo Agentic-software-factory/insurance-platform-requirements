@@ -12,8 +12,8 @@ sidebar_position: 14
 
 ## Actors
 
-- **Primary:** [Claims Adjuster (Värderare)](../../actors/internal-actors.md#claims-adjuster-värderare)
-- **Supporting:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare), [Repair Shop (Verkstad)](../../actors/external-actors.md#repair-shop-verkstad)
+- **Primary:** [Claims Adjuster (Värderare)](../../actors/internal/claims-adjuster.md)
+- **Supporting:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md), [Repair Shop (Verkstad)](../../actors/external/repair-shop.md)
 
 ## Priority
 

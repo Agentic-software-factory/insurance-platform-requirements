@@ -12,7 +12,7 @@ sidebar_position: 41
 
 ## Actors
 
-- **Primary:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
+- **Primary:** [Customer (Privatkund)](../../actors/internal/customer.md)
 - **Supporting:** System
 
 ## Priority

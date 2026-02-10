@@ -12,8 +12,8 @@ sidebar_position: 13
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Police (Polis)](../../actors/external-actors.md#police-polis)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Police (Polis)](../../actors/external/police.md)
 
 ## Priority
 

@@ -10,8 +10,8 @@ This use case describes the fraud screening and investigation process for motor 
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Claims Adjuster (Värderare)](../../actors/internal-actors.md#claims-adjuster-värderare), [Police (Polis)](../../actors/external-actors.md#police-polis)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Claims Adjuster (Värderare)](../../actors/internal/claims-adjuster.md), [Police (Polis)](../../actors/external/police.md)
 
 ## Preconditions
 

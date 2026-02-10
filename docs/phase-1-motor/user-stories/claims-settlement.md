@@ -12,8 +12,8 @@ sidebar_position: 17
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Payment Provider (Betalningsleverantör)](../../actors/external-actors.md#payment-provider)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Payment Provider (Betalningsleverantör)](../../actors/external/payment-provider.md)
 
 ## Priority
 

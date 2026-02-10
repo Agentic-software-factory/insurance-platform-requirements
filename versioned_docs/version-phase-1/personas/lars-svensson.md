@@ -84,9 +84,9 @@ work tasks and prefers a desktop application.
 
 ## Related Actors
 
-- [Claims Handler (Skadereglerare)](../actors/internal-actors#claims-handler-skadereglerare)
+- [Claims Handler (Skadereglerare)](../actors/internal/claims-handler.md)
   — Lars is the persona representing this actor role.
-- [Claims Adjuster (Värderare)](../actors/internal-actors#claims-adjuster-värderare)
+- [Claims Adjuster (Värderare)](../actors/internal/claims-adjuster.md)
   — Lars coordinates with claims adjusters for damage assessments.
-- [Repair Shop (Verkstad)](../actors/external-actors#repair-shop-verkstad) —
+- [Repair Shop (Verkstad)](../actors/external/repair-shop.md) —
   Lars assigns repair work to authorized repair shops.

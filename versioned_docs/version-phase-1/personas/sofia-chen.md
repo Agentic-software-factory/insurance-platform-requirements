@@ -80,9 +80,9 @@ personnummer). Language toggle or English-language support is important.
 
 ## Related Actors
 
-- [Customer (Privatkund)](../actors/internal-actors#customer-privatkund) — Sofia
+- [Customer (Privatkund)](../actors/internal/customer.md) — Sofia
   is a new private customer entering the Swedish insurance market.
-- [Transportstyrelsen](../actors/external-actors#transportstyrelsen) — involved
+- [Transportstyrelsen](../actors/external/transportstyrelsen.md) — involved
   in vehicle re-registration.
-- [TFF](../actors/external-actors#trafikförsäkringsföreningen-tff) — manages
+- [TFF](../actors/external/tff.md) — manages
   cross-border bonus class transfer.

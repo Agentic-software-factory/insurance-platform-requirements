@@ -10,8 +10,8 @@ This use case describes the end-to-end lifecycle of a motor insurance claim, fro
 
 ## Actors
 
-- **Primary:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund), [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Claims Adjuster (Värderare)](../../actors/internal-actors.md#claims-adjuster-värderare), [Repair Shop (Verkstad)](../../actors/external-actors.md#repair-shop-verkstad), [Police (Polis)](../../actors/external-actors.md#police-polis), [Medical Provider (Vårdgivare)](../../actors/external-actors.md#medical-provider-vårdgivare), [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff), [Payment Provider (Betalningsleverantör)](../../actors/external-actors.md#payment-provider)
+- **Primary:** [Customer (Privatkund)](../../actors/internal/customer.md), [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Claims Adjuster (Värderare)](../../actors/internal/claims-adjuster.md), [Repair Shop (Verkstad)](../../actors/external/repair-shop.md), [Police (Polis)](../../actors/external/police.md), [Medical Provider (Vårdgivare)](../../actors/external/medical-provider.md), [TFF](../../actors/external/tff.md), [Payment Provider (Betalningsleverantör)](../../actors/external/payment-provider.md)
 
 ## Preconditions
 

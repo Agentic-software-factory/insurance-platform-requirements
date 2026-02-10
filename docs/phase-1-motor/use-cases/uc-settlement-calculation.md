@@ -10,8 +10,8 @@ This use case describes the settlement calculation and payment process for appro
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Claims Adjuster (Värderare)](../../actors/internal-actors.md#claims-adjuster-värderare), [Payment Provider (Betalningsleverantör)](../../actors/external-actors.md#payment-provider), [Repair Shop (Verkstad)](../../actors/external-actors.md#repair-shop-verkstad)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Claims Adjuster (Värderare)](../../actors/internal/claims-adjuster.md), [Payment Provider (Betalningsleverantör)](../../actors/external/payment-provider.md), [Repair Shop (Verkstad)](../../actors/external/repair-shop.md)
 
 ## Preconditions
 

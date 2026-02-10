@@ -10,8 +10,8 @@ This use case describes the end-to-end policy cancellation process — from the 
 
 ## Actors
 
-- **Primary:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
-- **Supporting:** [System Administrator](../../actors/internal-actors.md#system-administrator), [Underwriter (Riskbedömare)](../../actors/internal-actors.md#underwriter-riskbedömare), [Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen), [Trafikförsäkringsföreningen (TFF)](../../actors/external-actors.md#trafikförsäkringsföreningen-tff), [Payment Provider](../../actors/external-actors.md#payment-provider)
+- **Primary:** [Customer (Privatkund)](../../actors/internal/customer.md)
+- **Supporting:** [System Administrator](../../actors/internal/system-administrator.md), [Underwriter (Riskbedömare)](../../actors/internal/underwriter.md), [Transportstyrelsen](../../actors/external/transportstyrelsen.md), [Trafikförsäkringsföreningen (TFF)](../../actors/external/tff.md), [Payment Provider](../../actors/external/payment-provider.md)
 
 ## Preconditions
 

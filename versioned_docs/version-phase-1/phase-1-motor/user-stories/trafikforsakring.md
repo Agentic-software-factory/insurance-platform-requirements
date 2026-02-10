@@ -39,7 +39,7 @@ uninsured periods.
 ### Actors
 
 - **Primary:** System (automated processes)
-- **Supporting:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund), [Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen)
+- **Supporting:** [Customer (Privatkund)](../../actors/internal/customer.md), [Transportstyrelsen](../../actors/external/transportstyrelsen.md)
 
 ### Priority
 
@@ -144,7 +144,7 @@ requirements.
 ### Actors
 
 - **Primary:** System (automated processes)
-- **Supporting:** [Compliance Officer](../../actors/internal-actors.md#compliance-officer)
+- **Supporting:** [Compliance Officer](../../actors/internal/compliance-officer.md)
 
 ### Priority
 
@@ -195,7 +195,7 @@ trafikforsakring in Sweden.
 
 ### External Integrations
 
-- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+- **[TFF](../../actors/external/tff.md)** —
   Data exchange for statutory reporting
 
 ### Regulatory
@@ -222,7 +222,7 @@ obligations.
 ### Actors
 
 - **Primary:** System (automated processes)
-- **Supporting:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare), [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)
+- **Supporting:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md), [TFF](../../actors/external/tff.md)
 
 ### Priority
 
@@ -280,11 +280,11 @@ claims under Trafikskadelagen.
 
 ### External Integrations
 
-- **[Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen)** —
+- **[Transportstyrelsen](../../actors/external/transportstyrelsen.md)** —
   Vehicle insurance status verification
-- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+- **[TFF](../../actors/external/tff.md)** —
   Uninsured and foreign vehicle claim referral and settlement
-- **[Police (Polis)](../../actors/external-actors.md#police-polis)** — Accident
+- **[Police (Polis)](../../actors/external/police.md)** — Accident
   reports for hit-and-run and liability determination
 
 ### Regulatory
@@ -312,8 +312,8 @@ liability rules (driver liable regardless of fault),
 
 ### Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Medical Provider (Vardgivare)](../../actors/external-actors.md#medical-provider-vårdgivare), [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Medical Provider (Vardgivare)](../../actors/external/medical-provider.md), [Customer (Privatkund)](../../actors/internal/customer.md)
 
 ### Priority
 
@@ -390,11 +390,11 @@ trafikforsakring.
 
 ### External Integrations
 
-- **[Medical Provider (Vardgivare)](../../actors/external-actors.md#medical-provider-vårdgivare)** —
+- **[Medical Provider (Vardgivare)](../../actors/external/medical-provider.md)** —
   Injury documentation and medical certificates
-- **[Police (Polis)](../../actors/external-actors.md#police-polis)** — Accident
+- **[Police (Polis)](../../actors/external/police.md)** — Accident
   reports for multi-vehicle incidents
-- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+- **[TFF](../../actors/external/tff.md)** —
   Claims data reporting for industry statistics
 
 ### Regulatory
@@ -421,8 +421,8 @@ valid abroad,
 
 ### Actors
 
-- **Primary:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
-- **Supporting:** System (automated processes), [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)
+- **Primary:** [Customer (Privatkund)](../../actors/internal/customer.md)
+- **Supporting:** System (automated processes), [TFF](../../actors/external/tff.md)
 
 ### Priority
 
@@ -480,7 +480,7 @@ physical Green Card document is needed for proof in some countries.
 
 ### External Integrations
 
-- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+- **[TFF](../../actors/external/tff.md)** —
   Green Card coordination and bureau network
 - **Foreign insurers/bureaus** — Cross-border claim handling via the Green
   Card system
@@ -513,7 +513,7 @@ uninsured.
 ### Actors
 
 - **Primary:** System (automated processes)
-- **Supporting:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund), [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)
+- **Supporting:** [Customer (Privatkund)](../../actors/internal/customer.md), [TFF](../../actors/external/tff.md)
 
 ### Priority
 
@@ -564,9 +564,9 @@ support the mandatory insurance regime.
 
 ### External Integrations
 
-- **[Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen)** —
+- **[Transportstyrelsen](../../actors/external/transportstyrelsen.md)** —
   Insurance status verification and registration
-- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+- **[TFF](../../actors/external/tff.md)** —
   Uninsured vehicle fee administration (external to TryggForsakring)
 
 ### Regulatory
@@ -593,7 +593,7 @@ meets all reporting obligations,
 
 ### Actors
 
-- **Primary:** [Compliance Officer](../../actors/internal-actors.md#compliance-officer)
+- **Primary:** [Compliance Officer](../../actors/internal/compliance-officer.md)
 - **Supporting:** System (automated processes)
 
 ### Priority
@@ -645,7 +645,7 @@ in Sweden.
 
 ### External Integrations
 
-- **[TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)** —
+- **[TFF](../../actors/external/tff.md)** —
   Membership verification and reporting obligation management
 
 ### Regulatory

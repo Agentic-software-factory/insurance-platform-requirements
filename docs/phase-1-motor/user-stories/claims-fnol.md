@@ -12,8 +12,8 @@ sidebar_position: 10
 
 ## Actors
 
-- **Primary:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
-- **Supporting:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
+- **Primary:** [Customer (Privatkund)](../../actors/internal/customer.md)
+- **Supporting:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
 
 ## Priority
 
@@ -43,7 +43,7 @@ sidebar_position: 10
 
 - **GIVEN** a customer must verify their identity for the claim
   **WHEN** the customer signs in
-  **THEN** the system authenticates the customer via [BankID](../../actors/external-actors.md#bankid)
+  **THEN** the system authenticates the customer via [BankID](../../actors/external/bankid.md)
 
 ## Claim Types Supported
 

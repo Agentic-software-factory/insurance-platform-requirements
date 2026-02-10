@@ -12,8 +12,8 @@ sidebar_position: 36
 
 ## Actors
 
-- **Primary:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
-- **Supporting:** [System Administrator](../../actors/internal-actors.md#system-administrator), [Payment Provider](../../actors/external-actors.md#payment-provider)
+- **Primary:** [Customer (Privatkund)](../../actors/internal/customer.md)
+- **Supporting:** [System Administrator](../../actors/internal/system-administrator.md), [Payment Provider](../../actors/external/payment-provider.md)
 
 ## Priority
 

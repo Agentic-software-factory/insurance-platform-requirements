@@ -12,8 +12,8 @@ sidebar_position: 11
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Customer (Privatkund)](../../actors/internal/customer.md)
 
 ## Priority
 

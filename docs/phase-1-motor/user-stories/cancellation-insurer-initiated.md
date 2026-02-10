@@ -12,8 +12,8 @@ sidebar_position: 39
 
 ## Actors
 
-- **Primary:** [Operations Staff](../../actors/internal-actors.md#system-administrator)
-- **Supporting:** [Underwriter (Riskbedömare)](../../actors/internal-actors.md#underwriter-riskbedömare), [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund), [Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen)
+- **Primary:** [Operations Staff](../../actors/internal/system-administrator.md)
+- **Supporting:** [Underwriter (Riskbedömare)](../../actors/internal/underwriter.md), [Customer (Privatkund)](../../actors/internal/customer.md), [Transportstyrelsen](../../actors/external/transportstyrelsen.md)
 
 ## Priority
 

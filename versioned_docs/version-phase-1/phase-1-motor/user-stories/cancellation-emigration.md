@@ -12,8 +12,8 @@ sidebar_position: 37
 
 ## Actors
 
-- **Primary:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
-- **Supporting:** [Operations Staff](../../actors/internal-actors.md#system-administrator), [Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen)
+- **Primary:** [Customer (Privatkund)](../../actors/internal/customer.md)
+- **Supporting:** [Operations Staff](../../actors/internal/system-administrator.md), [Transportstyrelsen](../../actors/external/transportstyrelsen.md)
 
 ## Priority
 
