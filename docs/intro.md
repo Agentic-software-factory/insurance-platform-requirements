@@ -81,10 +81,12 @@ product scope.
 | Phase                         | Scope                           | Key Topics                                                                                                     |
 | ----------------------------- | ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | **Phase 1 — Motor Insurance** | Personal motor policies         | Quotes, policy administration, claims, renewals, cancellations, trafikförsäkring, underwriting and bonus rules |
-| **Phase 2 — Home & Property** | Homeowner and property policies | Property damage claims, natural disaster coverage                                                              |
+| **Phase 2 — Home & Property** | Homeowner and property policies | Quotes, policy administration, water damage, fire/natural events, burglary/theft claims                        |
 | **Phase 3 — Commercial**      | Business insurance              | Liability coverage, fleet insurance, commercial property                                                       |
 
-Phase 1 is the current focus. Phases 2 and 3 will be documented as the project
+Phase 1 is complete. Phase 2 documentation is in progress — quote and bind,
+policy administration, and claims handling (water damage, fire/natural events,
+burglary/theft) are documented. Phase 3 will be documented as the project
 progresses.
 
 ## Regulatory Traceability
@@ -106,8 +108,11 @@ that no regulatory obligation is overlooked during implementation.
 
 - **Start here** to understand the project context and documentation approach.
 - **Actors and Personas** define the people and systems involved.
-- **Phase sections** contain the user stories and use cases grouped by
-  insurance product.
+- **[Phase 1 — Motor](phase-1-motor/index.md)** covers personal motor
+  insurance policies.
+- **[Phase 2 — Home & Property](phase-2-home-property/index.md)** covers
+  hemförsäkring, villahemförsäkring, bostadsrättsförsäkring, and
+  fritidshusförsäkring.
 - **Regulatory section** provides the full compliance requirements that user
   stories reference.
 - **Glossary** defines Swedish insurance terms and domain-specific vocabulary.
