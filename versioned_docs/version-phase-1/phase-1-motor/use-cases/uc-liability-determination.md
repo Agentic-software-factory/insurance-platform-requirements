@@ -80,6 +80,36 @@ flowchart TD
     style L fill:#fff3e0
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Undetermined : Claim registered and coverage verified
+    Undetermined --> UnderReview : Evidence collection begins
+    UnderReview --> Determined : Liability percentages assigned
+    UnderReview --> OnHold : Insufficient evidence
+    OnHold --> UnderReview : Additional evidence received
+    Determined --> Disputed : Party contests liability split
+    Disputed --> Arbitrated : TFF inter-company arbitration
+    Arbitrated --> Determined : Final liability confirmed
+    Determined --> [*]
+
+    note right of UnderReview
+        Police report, witness statements,
+        and photos under assessment.
+    end note
+
+    note right of Determined
+        Liability split recorded.
+        Subrogation target identified if applicable.
+    end note
+
+    note right of Disputed
+        Insurer or policyholder
+        contests the determination.
+    end note
+```
+
 ## Main Success Scenario: Multi-Party Collision
 
 | Step | Actor          | Action                                          | System Response                                                                 |

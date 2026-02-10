@@ -65,6 +65,43 @@ flowchart TD
     style K fill:#fff3e0
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Pending : Claim registered
+    Pending --> Screened : Automated indicators evaluated
+    Screened --> Cleared : Low risk — no fraud indicators
+    Screened --> Flagged : Medium/high risk — indicators triggered
+    Flagged --> Investigated : Handler reviews evidence
+    Investigated --> Cleared : No fraud found
+    Investigated --> Confirmed : Fraud determined
+    Confirmed --> CriminalReferral : Referred to police
+    Confirmed --> [*]
+    CriminalReferral --> [*]
+    Cleared --> [*]
+
+    note right of Screened
+        Automated fraud risk score assigned.
+        GSR database checked.
+    end note
+
+    note right of Flagged
+        Settlement paused for high risk.
+        Specific indicators highlighted.
+    end note
+
+    note right of Investigated
+        Evidence gathered. GSR queried.
+        Damage consistency reviewed.
+    end note
+
+    note right of Confirmed
+        Claim denied. Fraud recorded
+        for future pattern detection.
+    end note
+```
+
 ## Main Flow: Automated Screening
 
 | Step | Actor  | Action                     | System Response                                                          |

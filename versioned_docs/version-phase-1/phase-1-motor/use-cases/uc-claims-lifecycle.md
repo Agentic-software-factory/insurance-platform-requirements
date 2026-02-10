@@ -79,6 +79,43 @@ flowchart TD
 | 11   | Subrogation initiated if third party at fault                 | Claims Handler  | Records recovery target and tracks recovery                 | [US-CLM-009](../user-stories/claims-subrogation.md)                                                              |
 | 12   | Claims handler performs final review and closes claim         | Claims Handler  | Sets status to "Closed", updates statistics                 | [US-CLM-015](../user-stories/claims-closure.md)                                                                  |
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> FNOL : Customer reports incident
+    FNOL --> Registered : Claim created and handler assigned
+    Registered --> UnderInvestigation : Coverage verified, screening complete
+    UnderInvestigation --> Decided : Liability and damage assessed
+    Decided --> Settled : Payment issued or repair authorized
+    Decided --> Denied : Claim rejected
+    Settled --> Closed : All payments confirmed, closure checklist passed
+    Denied --> Closed : Complaint window elapsed
+    Closed --> Reopened : New evidence or disputed settlement
+    Reopened --> UnderInvestigation : Re-investigation begins
+    Closed --> [*]
+
+    note right of FNOL
+        Initial report received.
+        Claim number generated.
+    end note
+
+    note right of UnderInvestigation
+        Fraud screening, liability,
+        and damage assessment in progress.
+    end note
+
+    note right of Settled
+        Settlement paid. Bonus class
+        updated. Subrogation initiated if applicable.
+    end note
+
+    note right of Denied
+        Customer notified with reason.
+        Complaints procedure available.
+    end note
+```
+
 ## Alternative Flows
 
 ### A1: Phone-Reported Claim

@@ -83,6 +83,40 @@ flowchart TD
     style K fill:#fff3e0
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Review : Closure initiated by handler
+    Review --> FinalCheck : All checklist items pass
+    Review --> Blocked : Checklist item(s) failed
+    Blocked --> Review : Blocking items resolved
+    FinalCheck --> Closed : Handler confirms closure
+    Closed --> Reopened : New evidence or worsened condition
+    Reopened --> Review : Re-investigation begins
+    Closed --> [*]
+
+    note right of Review
+        Payments, subrogation, bonus,
+        documents, and disputes validated.
+    end note
+
+    note right of FinalCheck
+        Closure summary reviewed.
+        Total claim cost calculated.
+    end note
+
+    note right of Closed
+        Reserves released. Records
+        archived for 10-year retention.
+    end note
+
+    note right of Reopened
+        Reserves re-established.
+        Senior approval required if > 1 year.
+    end note
+```
+
 ## Main Success Scenario: Standard Closure
 
 | Step | Actor          | Action                                           | System Response                                                     |

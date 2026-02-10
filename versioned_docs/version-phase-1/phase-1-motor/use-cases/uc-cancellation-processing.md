@@ -93,6 +93,39 @@ flowchart TD
     style I fill:#ffebee
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Requested : Customer or system initiates cancellation
+    Requested --> Validated : Cancellation type and rules determined
+    Validated --> Blocked : Trafikforsakring replacement missing
+    Blocked --> Validated : Replacement coverage provided
+    Validated --> Processed : Cancellation confirmed by customer
+    Processed --> Confirmed : Transportstyrelsen notified, refund issued
+    Confirmed --> [*]
+
+    note right of Requested
+        Reason determined: angerratt,
+        huvudforfallodag, vehicle sold, etc.
+    end note
+
+    note right of Validated
+        Effective date calculated.
+        Refund amount displayed.
+    end note
+
+    note right of Blocked
+        Vehicle still registered.
+        Replacement coverage required.
+    end note
+
+    note right of Confirmed
+        Policy terminated. Customer
+        receives cancellation confirmation.
+    end note
+```
+
 ## Main Flow (Customer-Initiated Online Cancellation)
 
 | Step | Actor    | Action                                                                          | System Response                                                                                |
