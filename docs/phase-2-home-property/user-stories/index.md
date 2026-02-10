@@ -72,3 +72,24 @@ emergency FNOL through restoration and settlement.
 | ---------------------------------------------- | ------------------------------------------ | ----------- |
 | [US-HCW-014](water-damage-final-inspection.md) | Verify Restoration via Final Inspection    | Should Have |
 | [US-HCW-015](water-damage-closure.md)          | Close Claim and Record for Risk Assessment | Must Have   |
+
+## Burglary and Theft
+
+The [burglary-and-theft user stories](burglary-and-theft.md) cover claims
+processing for break-ins, stolen property, allrisk/drulle claims, and
+post-burglary support:
+
+| ID     | Actor          | Summary                                                          |
+| ------ | -------------- | ---------------------------------------------------------------- |
+| HCB-01 | Customer       | Report a burglary and get emergency locksmith dispatch           |
+| HCB-02 | Customer       | Get guidance on filing a polisanmälan                            |
+| HCB-03 | Claims Handler | Register burglary FNOL with police report number                 |
+| HCB-04 | Claims Handler | Request stolen property inventory from the customer              |
+| HCB-05 | Claims Handler | Verify high-value items against prior declarations               |
+| HCB-06 | Claims Handler | Screen burglary claim for fraud indicators                       |
+| HCB-07 | Claims Handler | Calculate replacement cost with åldersavdrag                     |
+| HCB-08 | Customer       | Understand sub-limits for property categories                    |
+| HCB-09 | Claims Handler | Arrange lock replacement and window repair                       |
+| HCB-10 | Customer       | Claim for accidentally damaged or lost property (allrisk/drulle) |
+| HCB-11 | Claims Handler | Process drulle claims with simplified assessment                 |
+| HCB-12 | Customer       | Access krisstöd (crisis support) after a burglary                |
