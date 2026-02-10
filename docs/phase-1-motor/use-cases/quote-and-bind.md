@@ -32,6 +32,35 @@ policy issuance and Transportstyrelsen notification.
 | TryggFörsäkring        | New policy sale; regulatory compliance; accurate data                |
 | Transportstyrelsen     | Timely notification of insurance status changes                      |
 
+## Process Flow
+
+```mermaid
+flowchart TD
+    A[Customer enters reg.nr + personnummer] --> B[Transportstyrelsen vehicle lookup]
+    B --> C{Vehicle found?}
+    C -->|No| D[Manual vehicle entry]
+    D --> E[Underwriter review required]
+    C -->|Yes| F[Retrieve bonus class]
+    F --> G[Demands-and-needs assessment]
+    G --> H[Coverage tier selection]
+    H --> I[Premium calculation]
+    I --> J[Quote presentation with tier comparison]
+    J --> K[Customer selects coverage and accepts]
+    K --> L[Pre-contractual review]
+    L --> M[BankID signing]
+    M --> N{BankID verified?}
+    N -->|No| O[Retry or save quote for later]
+    N -->|Yes| P[Policy issuance + payment setup]
+    P --> Q[Transportstyrelsen notification]
+    Q --> R[Confirmation sent to customer]
+
+    style A fill:#e1f5fe
+    style R fill:#e8f5e9
+    style D fill:#fff3e0
+    style O fill:#fff3e0
+    style E fill:#fff3e0
+```
+
 ## Main Success Scenario
 
 ### 1. Customer Identification

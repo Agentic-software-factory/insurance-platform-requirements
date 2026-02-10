@@ -66,6 +66,35 @@ record entity provides a complete audit trail of every policy change.
 1. The customer has the registreringsnummer of the new vehicle
 1. The customer is authenticated via BankID
 
+### Vehicle Change Process Flow
+
+```mermaid
+flowchart TD
+    A[Customer requests vehicle change] --> B[Enter new registreringsnummer]
+    B --> C[Transportstyrelsen vehicle lookup]
+    C --> D{Vehicle found?}
+    D -->|No| E[Manual entry required]
+    D -->|Yes| F[Display vehicle details for confirmation]
+    F --> G[Assess risk of new vehicle]
+    G --> H{High-risk vehicle?}
+    H -->|Yes| I[Underwriter review]
+    I --> J{Approved?}
+    J -->|No| K[Decline - notify customer]
+    J -->|Yes| L[Recalculate premium]
+    H -->|No| L
+    L --> M[Show premium change and pro-rata adjustment]
+    M --> N[Customer confirms]
+    N --> O[Update policy record]
+    O --> P[Notify Transportstyrelsen - old and new vehicle]
+    P --> Q[Trigger payment adjustment]
+    Q --> R[Reissue policy documents]
+
+    style A fill:#e1f5fe
+    style R fill:#e8f5e9
+    style I fill:#fff3e0
+    style K fill:#ffebee
+```
+
 ### Main Success Scenario
 
 1. **Initiate** — Customer selects "Change vehicle" from their policy
@@ -784,6 +813,32 @@ stateDiagram-v2
 
 1. A policy amendment has been submitted that changes one or more rating factors
 1. The current premium and rating factors are known
+
+### Premium Recalculation Process Flow
+
+```mermaid
+flowchart TD
+    A["Amendment submitted
+    (trigger: rating factor changed)"] --> B[Identify changed factors]
+    B --> C[Retrieve current tariff and rating tables]
+    C --> D[Calculate new annual premium]
+    D --> E["Apply: base rate x vehicle x bonus
+    x postcode x driver x mileage factors"]
+    E --> F[Calculate pro-rata adjustment]
+    F --> G["(Remaining days / 365) x
+    (new premium - old premium)"]
+    G --> H{Net adjustment}
+    H -->|Charge| I[Collect additional premium]
+    H -->|Refund| J[Process refund to customer]
+    H -->|No change| K[No payment action]
+    I --> L[Update payment schedule]
+    J --> L
+    K --> L
+    L --> M[Store calculation with factor breakdown]
+
+    style A fill:#e1f5fe
+    style L fill:#e8f5e9
+```
 
 ### Main Success Scenario
 

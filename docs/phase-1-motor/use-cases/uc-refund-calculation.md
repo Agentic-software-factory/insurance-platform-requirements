@@ -33,6 +33,35 @@ This use case details the premium refund calculation and payment process followi
 - The refund calculation cannot be completed (e.g., missing premium data)
 - The Payment Provider rejects the refund (operations staff alerted for manual processing)
 
+## Process Flow
+
+```mermaid
+flowchart TD
+    A[Cancellation confirmed] --> B{Cancellation type}
+    B -->|"Cooling-off (Angerratt)"| C[Full refund of premium paid]
+    C --> D{Early coverage start?}
+    D -->|Yes| E[Deduct days of coverage used]
+    D -->|No| F[Full amount refunded]
+    B -->|Huvudforfallodag| G[No refund - coverage runs to end]
+    B -->|Mid-term with reason| H[Calculate pro-rata refund]
+    H --> I["(Remaining days / 365) x Annual premium"]
+    I --> J{Outstanding balance?}
+    E --> J
+    F --> J
+    J -->|Yes| K[Offset: net refund = gross - outstanding]
+    J -->|No| L[Net refund = gross refund]
+    K --> M{Net refund positive?}
+    M -->|Yes| N[Process refund to customer]
+    M -->|No| O[No refund - inform customer]
+    L --> N
+    N --> P[Send refund confirmation]
+
+    style A fill:#e1f5fe
+    style P fill:#e8f5e9
+    style G fill:#fff3e0
+    style O fill:#fff3e0
+```
+
 ## Main Flow (Pro-Rata Refund Calculation)
 
 | Step | Actor    | Action                                                                                                | System Response                                                   |

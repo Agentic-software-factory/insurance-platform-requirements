@@ -35,6 +35,38 @@ via the Green Card system.
 | [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)                           | Membership reporting compliance; uninsured vehicle claims cooperation    |
 | FSA                                                                                              | Regulatory oversight of mandatory insurance obligations                  |
 
+## Compliance Lifecycle Flow
+
+```mermaid
+flowchart TD
+    A[Policy issued - any tier] --> B[Validate trafikforsakring included]
+    B --> C[Register with Transportstyrelsen]
+    C --> D[Ongoing: Monitor coverage continuity]
+    D --> E{Event type}
+    E -->|Coverage change| F[Vehicle or coverage change]
+    F --> G[Re-register with Transportstyrelsen]
+    G --> D
+    E -->|Personal injury claim| H[Apply Trafikskadelagen strict liability]
+    H --> I[Process compensation]
+    I --> J[Report claims data to TFF]
+    J --> D
+    E -->|Cancellation| K{Replacement coverage?}
+    K -->|Yes| L[Process cancellation]
+    K -->|No - vehicle registered| M[Block: warn about TFF penalty]
+    K -->|Vehicle deregistered| L
+    L --> N[Notify Transportstyrelsen]
+    E -->|TFF reporting deadline| O[Generate statutory reports]
+    O --> P[Compliance officer reviews and submits]
+    P --> D
+    E -->|Cross-border travel| Q[Issue Green Card for EU travel]
+    Q --> D
+
+    style A fill:#e1f5fe
+    style D fill:#e8f5e9
+    style M fill:#ffebee
+    style H fill:#fff3e0
+```
+
 ## Main Success Scenario
 
 ### 1. Policy Issuance — Mandatory Coverage Check and Registration

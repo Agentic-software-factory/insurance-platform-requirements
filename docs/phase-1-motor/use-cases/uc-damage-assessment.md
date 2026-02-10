@@ -45,6 +45,41 @@ This use case describes the damage assessment process for motor insurance claims
 - The vehicle cannot be inspected (e.g., vehicle is inaccessible, customer unresponsive)
 - The assessment is placed on hold and the claims handler is notified
 
+## Process Flow
+
+```mermaid
+flowchart TD
+    A[Claim registered] --> B[Assign claims adjuster]
+    B --> C[Schedule inspection]
+    C --> D{Assessment type}
+    D -->|On-site| E[Inspect vehicle at location]
+    D -->|Remote| F[Request photos from customer]
+    D -->|Repair shop| G[Shop inspects and estimates]
+    E --> H[Document damage with photos]
+    F --> I{Photos sufficient?}
+    I -->|Yes| H
+    I -->|No| E
+    G --> J[Review shop estimate vs market rates]
+    H --> K[Prepare repair estimate]
+    J --> K
+    K --> L{Repair cost > 75% market value?}
+    L -->|Yes| M[Total loss evaluation]
+    M --> N[Assess market value and salvage]
+    L -->|No| O[Approve repair estimate]
+    N --> P[Submit total loss report]
+    O --> Q[Consistency check]
+    Q --> R{Damage consistent with incident?}
+    R -->|Yes| S[Submit assessment to claims handler]
+    R -->|No| T[Flag for fraud review]
+    P --> S
+    S --> U[Handler reviews and accepts]
+
+    style A fill:#e1f5fe
+    style U fill:#e8f5e9
+    style M fill:#fff3e0
+    style T fill:#ffebee
+```
+
 ## Main Success Scenario: On-Site Inspection
 
 | Step | Actor           | Action                                                                   | System Response                                                          |

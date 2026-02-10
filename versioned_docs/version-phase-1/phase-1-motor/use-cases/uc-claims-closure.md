@@ -48,6 +48,41 @@ This use case describes the claims closure process, from the final review checkl
 - One or more closure checklist items fail validation
 - The claims handler is informed of the blocking item and the claim remains open
 
+## Process Flow
+
+```mermaid
+flowchart TD
+    A[Initiate claim closure] --> B{All payments confirmed?}
+    B -->|No| C[Resolve pending payments]
+    C --> B
+    B -->|Yes| D{Subrogation resolved?}
+    D -->|No| E[Resolve subrogation cases]
+    E --> D
+    D -->|Yes| F{Bonus class updated?}
+    F -->|No| G[Process bonus recalculation]
+    G --> F
+    F -->|Yes| H{All documents attached?}
+    H -->|No| I[Attach missing documents]
+    I --> H
+    H -->|Yes| J{Pending disputes?}
+    J -->|Yes| K[Resolve complaints first]
+    K --> J
+    J -->|No| L[Handler reviews closure summary]
+    L --> M[Confirm closure]
+    M --> N[Release outstanding reserves]
+    N --> O[Update actuarial reporting]
+    O --> P[Notify customer of closure]
+    P --> Q[Claim status: Closed]
+    Q --> R[Archive - retain 10 years]
+
+    style A fill:#e1f5fe
+    style Q fill:#e8f5e9
+    style C fill:#fff3e0
+    style E fill:#fff3e0
+    style I fill:#fff3e0
+    style K fill:#fff3e0
+```
+
 ## Main Success Scenario: Standard Closure
 
 | Step | Actor          | Action                                           | System Response                                                     |

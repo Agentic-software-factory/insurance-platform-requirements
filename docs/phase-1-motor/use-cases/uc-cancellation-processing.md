@@ -35,6 +35,64 @@ This use case describes the end-to-end policy cancellation process — from the 
 - The cancellation is blocked due to an outstanding claim under investigation (customer informed)
 - The system is unable to complete the request (customer directed to contact customer service)
 
+## Process Flow: Customer-Initiated Cancellation
+
+```mermaid
+flowchart TD
+    A[Customer requests cancellation] --> B{Cancellation type}
+    B -->|"Cooling-off (Angerratt)"| C{Within 14 days?}
+    C -->|Yes| D[Full refund]
+    C -->|No| E[Reject: cooling-off expired]
+    B -->|Huvudforfallodag| F{At renewal date?}
+    F -->|Yes| G[No penalty - cancel at renewal]
+    F -->|No| H[Wait for huvudforfallodag]
+    B -->|Mid-term| I{Valid reason?}
+    I -->|Vehicle sold/scrapped| J[Pro-rata refund]
+    I -->|Emigration| J
+    I -->|Death| J
+    I -->|No valid reason| K[Reject or wait for renewal]
+    D --> L{Trafikforsakring?}
+    G --> L
+    J --> L
+    L -->|Yes| M[Verify replacement coverage]
+    M --> N{Replacement confirmed?}
+    N -->|Yes| O[Process cancellation]
+    N -->|No| P[Block: coverage required]
+    L -->|No| O
+    O --> Q[Notify Transportstyrelsen]
+    Q --> R[Process refund if applicable]
+    R --> S[Send confirmation to customer]
+
+    style A fill:#e1f5fe
+    style S fill:#e8f5e9
+    style E fill:#ffebee
+    style K fill:#ffebee
+    style P fill:#ffebee
+```
+
+## Process Flow: Insurer-Initiated Cancellation
+
+```mermaid
+flowchart TD
+    A[Non-payment detected] --> B[Send payment reminder]
+    B --> C["Grace period (14 days)"]
+    C --> D{Payment received?}
+    D -->|Yes| E[Resume normal - policy active]
+    D -->|No| F[Send cancellation warning]
+    F --> G["Statutory notice period"]
+    G --> H{Payment received?}
+    H -->|Yes| E
+    H -->|No| I[Cancel policy]
+    I --> J{Trafikforsakring?}
+    J -->|Yes| K[Notify TFF]
+    J -->|No| L[Notify Transportstyrelsen]
+    K --> L
+
+    style A fill:#e1f5fe
+    style E fill:#e8f5e9
+    style I fill:#ffebee
+```
+
 ## Main Flow (Customer-Initiated Online Cancellation)
 
 | Step | Actor    | Action                                                                          | System Response                                                                                |

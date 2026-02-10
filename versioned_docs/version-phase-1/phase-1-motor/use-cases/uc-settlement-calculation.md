@@ -33,6 +33,36 @@ This use case describes the settlement calculation and payment process for appro
 - Payment fails (e.g., invalid bank details, payment provider error)
 - Claims handler is notified and payment is retried or alternative payment method is used
 
+## Process Flow
+
+```mermaid
+flowchart TD
+    A[Claim approved] --> B[Verify coverage and assessment]
+    B --> C[Determine liability %]
+    C --> D{Total loss?}
+    D -->|Yes| E[Calculate market value]
+    E --> F[Subtract salvage value]
+    F --> G[Market value - salvage - deductible]
+    D -->|No| H[Use approved repair cost]
+    H --> I[Apply liability % adjustment]
+    I --> J[Subtract deductible]
+    G --> K[Net settlement amount]
+    J --> K
+    K --> L{Amount > handler authority?}
+    L -->|Yes| M[Senior approval required]
+    M --> N[Approve settlement]
+    L -->|No| N
+    N --> O{Payment method}
+    O -->|Direct to customer| P[Bank transfer to customer]
+    O -->|Direct billing| Q[Repair authorization to shop]
+    P --> R[Claim status: Settled]
+    Q --> R
+
+    style A fill:#e1f5fe
+    style R fill:#e8f5e9
+    style M fill:#fff3e0
+```
+
 ## Main Flow: Vehicle Repair Settlement
 
 | Step | Actor          | Action                                              | System Response                                                                      |
