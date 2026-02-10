@@ -98,6 +98,50 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant S as System
+    participant TS as Transportstyrelsen
+    participant CH as Claims Handler
+    participant CO as Compliance Officer
+    participant TFF as TFF
+    participant Cust as Customer
+
+    Note over S,TS: Policy Issuance - Registration
+    S->>S: Validate trafikforsakring included
+    S->>TS: Registration notification (reg.nr, policy, start date)
+    TS-->>S: Acknowledgement reference
+
+    Note over S,TS: Cancellation - Coverage Gap Prevention
+    Cust->>S: Request cancellation
+    S->>TS: Query replacement coverage status
+    alt Replacement confirmed
+        TS-->>S: Replacement coverage found
+        S->>S: Process cancellation
+        S->>TS: Notify coverage end date
+    else No replacement and vehicle registered
+        TS-->>S: No replacement coverage
+        S-->>Cust: Warn about TFF penalty (trafikforsakringsavgift)
+    end
+
+    Note over S,CH: Personal Injury Claim
+    Cust->>S: Report traffic accident
+    S->>CH: Assign claim (personal injury flagged)
+    CH->>CH: Apply strict liability (Trafikskadelagen)
+    CH->>S: Record compensation (medical, income, disability)
+    S->>TFF: Report claims data
+
+    Note over CO,TFF: TFF Reporting
+    S->>CO: Generate statutory reports
+    CO->>TFF: Review and submit reports
+
+    Note over S,Cust: Green Card Issuance
+    Cust->>S: Request Green Card for EU travel
+    S-->>Cust: Issue Green Card document
+```
+
 ## Main Success Scenario
 
 ### 1. Policy Issuance — Mandatory Coverage Check and Registration

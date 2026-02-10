@@ -102,6 +102,54 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant S as System
+    participant GSR as GSR (Fraud DB)
+    participant CH as Claims Handler
+    participant CA as Claims Adjuster
+    participant Police as Police
+
+    S->>S: New claim registered - trigger fraud screening
+    S->>S: Evaluate fraud indicators and calculate risk score
+    S->>GSR: Query for matching patterns
+    GSR-->>S: Match results
+
+    alt Low risk
+        S->>S: Auto-clear - proceed to normal processing
+    else Medium risk
+        S->>CH: Flag claim for handler review
+        CH->>S: Review flagged indicators
+        CH->>CH: Gather additional evidence
+        CH->>GSR: Check for additional pattern matches
+        alt Cleared
+            CH->>S: Clear fraud flag
+            S->>S: Resume normal claims processing
+        else Suspicious
+            CH->>S: Escalate to senior handler
+        end
+    else High risk
+        S->>S: Hold claim - pause settlement
+        S->>CH: Assign for full investigation
+        activate CH
+        CH->>CA: Request re-inspection for consistency
+        CA-->>CH: Assessment consistency report
+        CH->>CH: Complete investigation
+        alt Fraud confirmed
+            CH->>S: Deny claim with fraud determination
+            opt Criminal referral warranted
+                CH->>Police: Submit criminal referral
+                Police-->>CH: Police reference number
+            end
+        else No fraud found
+            CH->>S: Clear flag and resume processing
+        end
+        deactivate CH
+    end
+```
+
 ## Main Flow: Automated Screening
 
 | Step | Actor  | Action                     | System Response                                                          |

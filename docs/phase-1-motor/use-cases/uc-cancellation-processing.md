@@ -126,6 +126,68 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer
+    participant S as System
+    participant TS as Transportstyrelsen
+    participant TFF as TFF
+    participant PP as Payment Provider
+    participant Ops as Operations Staff
+
+    Note over C,PP: Customer-Initiated Cancellation
+    C->>S: Log in and select policy to cancel
+    C->>S: Select cancellation reason
+    S->>S: Determine cancellation type and rules
+
+    alt Cooling-off (angerratt) within 14 days
+        S->>S: Calculate full refund
+    else Huvudforfallodag
+        S->>S: No refund - coverage runs to end
+    else Mid-term (vehicle sold/scrapped/emigration)
+        S->>S: Calculate pro-rata refund
+    end
+
+    S->>S: Check if policy includes trafikforsakring
+    opt Trafikforsakring policy
+        S->>TS: Query replacement coverage
+        alt Replacement confirmed
+            TS-->>S: Replacement coverage found
+        else No replacement
+            TS-->>S: No replacement coverage
+            S-->>C: Block cancellation - coverage required
+        end
+    end
+
+    S-->>C: Display refund breakdown and effective date
+    C->>S: Confirm cancellation
+    S->>TS: Notify policy termination
+    TS-->>S: Acknowledgement
+    S->>PP: Process refund (if applicable)
+    PP-->>S: Refund confirmed
+    S-->>C: Cancellation confirmation
+
+    Note over S,Ops: Insurer-Initiated Cancellation
+    S->>C: Payment reminder (overdue premium)
+    S->>S: Grace period (14 days)
+    alt Payment received
+        S->>S: Policy remains active
+    else No payment
+        S->>C: Cancellation warning (14-day notice)
+        alt Payment received within notice period
+            S->>S: Policy remains active
+        else No payment after notice
+            Ops->>S: Approve insurer-initiated cancellation
+            S->>TS: Notify coverage termination
+            opt Trafikforsakring
+                S->>TFF: Notify uninsured vehicle
+            end
+        end
+    end
+```
+
 ## Main Flow (Customer-Initiated Online Cancellation)
 
 | Step | Actor    | Action                                                                          | System Response                                                                                |

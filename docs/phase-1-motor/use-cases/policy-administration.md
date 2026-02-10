@@ -35,6 +35,61 @@ record entity provides a complete audit trail of every policy change.
 
 ---
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer
+    participant S as System
+    participant TS as Transportstyrelsen
+    participant UW as Underwriter
+    participant PP as Payment Provider
+
+    Note over C,PP: UC-PA-001: Vehicle Change
+    C->>S: Request vehicle change
+    S->>TS: Lookup new vehicle (reg.nr)
+    TS-->>S: Vehicle data (make, model, year)
+    S-->>C: Display vehicle details for confirmation
+    C->>S: Confirm vehicle
+    S->>S: Assess risk of new vehicle
+    alt High-risk vehicle
+        S->>UW: Route for underwriter review
+        UW-->>S: Approve / decline
+    end
+    S->>S: Recalculate premium
+    S-->>C: Show premium change and pro-rata adjustment
+    C->>S: Accept premium adjustment
+    S->>TS: De-register old vehicle
+    S->>TS: Register new vehicle
+    S->>PP: Trigger payment adjustment
+    S-->>C: Updated policy document and certificate
+
+    Note over C,PP: UC-PA-002: Coverage Tier Change
+    C->>S: Request coverage change
+    S-->>C: Display tier comparison (trafik/halv/hel)
+    C->>S: Select new coverage tier
+    S-->>C: Provide updated IPID (IDD-002)
+    S->>S: Recalculate premium
+    S-->>C: Show premium change and pro-rata adjustment
+    C->>S: Acknowledge IPID and confirm change
+    S->>PP: Trigger payment adjustment
+    S-->>C: Updated policy document
+
+    Note over C,UW: UC-PA-003: Named Driver Change
+    C->>S: Add driver (enter personnummer)
+    S->>S: Validate personnummer and driving license
+    S->>S: Assess risk (age, experience)
+    alt High-risk driver
+        S->>UW: Route for underwriter review
+        UW-->>S: Approve / decline
+    end
+    S->>S: Recalculate premium with driver surcharges
+    S-->>C: Show premium impact
+    C->>S: Confirm driver addition
+    S->>PP: Trigger payment adjustment
+    S-->>C: Updated policy document
+```
+
 ## UC-PA-001: Process Mid-Term Vehicle Change
 
 ### Use Case Summary

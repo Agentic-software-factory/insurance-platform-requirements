@@ -62,6 +62,60 @@ flowchart TD
     E --> T[Record denial and close]
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer
+    participant CH as Claims Handler
+    participant S as System
+    participant CA as Claims Adjuster
+    participant RS as Repair Shop
+    participant PP as Payment Provider
+
+    C->>S: Report incident (FNOL via web/app/phone)
+    S->>S: Create claim record and assign claim number
+    S->>CH: Assign claim to handler
+
+    CH->>S: Verify coverage against policy
+    alt Coverage denied
+        S-->>C: Denial notification + complaints procedure
+    end
+
+    S->>S: Run automated fraud screening
+    alt High fraud risk
+        CH->>CH: Full investigation
+        alt Fraud confirmed
+            S-->>C: Claim denied
+        end
+    end
+
+    CH->>CH: Determine liability based on evidence
+    CH->>S: Record liability split
+
+    S->>CA: Assign damage assessment
+    CA->>CA: Inspect vehicle and document damage
+    CA-->>CH: Submit assessment report (repair estimate or total loss)
+
+    CH->>S: Approve or deny claim
+    alt Approved
+        S->>S: Calculate settlement (damage - deductible)
+        alt Direct billing
+            S->>RS: Send repair authorization
+        else Payment to customer
+            S->>PP: Initiate bank transfer
+        end
+        PP-->>S: Payment confirmed
+        S->>S: Update bonus class
+        opt Subrogation eligible
+            CH->>S: Initiate subrogation against third party
+        end
+    end
+
+    CH->>S: Final review and close claim
+    S-->>C: Closure notification with final summary
+```
+
 ### Step-by-Step
 
 | Step | Action                                                        | Actor           | System Response                                             | Reference                                                                                                        |
