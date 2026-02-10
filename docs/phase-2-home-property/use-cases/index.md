@@ -24,6 +24,17 @@ covers:
 - Policy issuance and confirmation delivery
 - Agent-assisted and high-risk alternative flows
 
+## Policy Administration (MTAs)
+
+Mid-term adjustment and policy lifecycle use cases — see
+[Policy Administration Use Cases](policy-administration.md).
+
+| ID         | Title                                 | Primary Actor   |
+| ---------- | ------------------------------------- | --------------- |
+| UC-HPA-001 | Mid-Term Policy Modification          | Customer        |
+| UC-HPA-002 | BRF Building Insurance Administration | BRF Board Chair |
+| UC-HPA-003 | Family Member Management              | Customer        |
+
 ## Water Damage Claims (Vattenskada)
 
 | ID                                         | Title                        | Scope                                                                                         |

@@ -22,7 +22,7 @@ and fritidshusförsäkring (vacation home).
 | Epic                  | Status     | Description                                    |
 | --------------------- | ---------- | ---------------------------------------------- |
 | Quote and Bind        | Documented | Customer inquiry through policy issuance       |
-| Policy Administration | Planned    | Mid-term adjustments, endorsements             |
+| Policy Administration | Documented | Mid-term adjustments, endorsements             |
 | Claims Handling       | Planned    | FNOL through settlement                        |
 | Renewals              | Planned    | Annual renewal and huvudförfallodag processing |
 | Cancellations         | Planned    | Customer and insurer-initiated cancellations   |
@@ -33,6 +33,9 @@ and fritidshusförsäkring (vacation home).
 
 - [Quote and Bind](user-stories/quote-and-bind.md) — 10 user stories covering
   the end-to-end quote and bind flow (HQB-01 through HQB-10)
+- [Policy Administration](user-stories/policy-administration.md) — 12 user
+  stories covering mid-term adjustments, BRF administration, and policy
+  lifecycle management (HPA-01 through HPA-12)
 - [Water Damage Claims](user-stories/index.md#water-damage-claims-vattenskada) —
   15 user stories covering the water damage claim lifecycle (US-HCW-001
   through US-HCW-015)
@@ -45,6 +48,9 @@ and fritidshusförsäkring (vacation home).
 - [Quote and Bind Home Insurance](use-cases/quote-and-bind.md) — Complete
   use case (UC-HQB-001) with main success scenario, alternative flows,
   business rules, and regulatory compliance mapping
+- [Policy Administration](use-cases/policy-administration.md) — 3 use cases
+  covering mid-term modifications (UC-HPA-001), BRF building administration
+  (UC-HPA-002), and family member management (UC-HPA-003)
 - [Water Damage Claim Lifecycle](use-cases/uc-water-damage-lifecycle.md) —
   Complete use case (UC-HCW-001) covering FNOL through settlement and closure
 - [Burglary Claim Processing](use-cases/burglary-and-theft.md) — Complete
