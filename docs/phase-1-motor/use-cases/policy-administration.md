@@ -616,21 +616,32 @@ flowchart TD
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Active
+    [*] --> Active : Policy issued or renewed
     Active --> Suspended : Non-payment after grace period
+    Active --> PendingCancellation : Cancellation requested
     Suspended --> Active : Payment received within reinstatement period
     Suspended --> Lapsed : Reinstatement period expires without payment
+    PendingCancellation --> Cancelled : Effective date reached
+    Cancelled --> [*]
     Lapsed --> [*]
 
     note right of Active
         Coverage in force.
         All policy functions available.
+        Mid-term amendments permitted.
     end note
 
     note right of Suspended
         Coverage inactive.
-        Reinstatement window open.
+        Reinstatement window open (90 days).
         Customer notified of consequences.
+        Transportstyrelsen notified.
+    end note
+
+    note right of PendingCancellation
+        Cancellation confirmed.
+        Awaiting effective date.
+        Refund calculated.
     end note
 
     note right of Lapsed

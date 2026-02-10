@@ -62,6 +62,35 @@ flowchart TD
     style O fill:#fff3e0
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Calculated : Refund amount determined
+    Calculated --> Approved : Customer confirms cancellation
+    Calculated --> NotApplicable : No refund due (huvudforfallodag)
+    Approved --> Disbursed : Payment provider processes refund
+    Approved --> Failed : Payment provider rejects refund
+    Failed --> Disbursed : Alternative payment method used
+    Disbursed --> [*]
+    NotApplicable --> [*]
+
+    note right of Calculated
+        Pro-rata or full refund computed.
+        Outstanding balance offset applied.
+    end note
+
+    note right of Approved
+        Refund breakdown shown to customer.
+        Confirmation received.
+    end note
+
+    note right of Disbursed
+        Refund issued within 30 days.
+        Confirmation sent to customer.
+    end note
+```
+
 ## Main Flow (Pro-Rata Refund Calculation)
 
 | Step | Actor    | Action                                                                                                | System Response                                                   |
