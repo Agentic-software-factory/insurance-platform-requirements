@@ -44,6 +44,12 @@ jobs:
       - name: Validate regulatory traceability
         run: node scripts/validate-regulatory.mjs
 
+      - name: Validate document structure
+        run: |
+          node scripts/validate-frontmatter.mjs
+          node scripts/validate-use-cases.mjs
+          node scripts/validate-user-stories.mjs
+
   deploy:
     name: Deploy to GitHub Pages
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
