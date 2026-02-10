@@ -6,6 +6,37 @@ sidebar_position: 3
 
 Detailed interaction flows for the motor insurance renewal lifecycle. Each use case describes the step-by-step process for pre-renewal processing, automatic renewal, customer-initiated cancellation at huvudförfallodag, and insurer switching via flyttanmälan.
 
+## Renewal Timeline
+
+```mermaid
+flowchart LR
+    A["T-60: Flag upcoming
+    renewals"] --> B["T-45: Recalculate premium
+    (bonus + rating factors)"]
+    B --> C{"Significant
+    premium change?"}
+    C -->|Yes| D["IDD reassessment
+    triggered"]
+    C -->|No| E["T-30: Send renewal
+    notice to customer"]
+    D --> E
+    E --> F["T-30 to T-0:
+    Customer response window"]
+    F --> G{Customer action}
+    G -->|No action| H["T-0: Auto-renew policy"]
+    G -->|Cancel| I["Process cancellation"]
+    G -->|Modify| J["Adjust coverage
+    and recalculate"]
+    J --> H
+    H --> K["T+1: New policy period
+    begins, update payments"]
+
+    style A fill:#e1f5fe
+    style K fill:#e8f5e9
+    style I fill:#ffebee
+    style D fill:#fff3e0
+```
+
 ## UC-RN-001: Process Annual Policy Renewal
 
 Handles the end-to-end renewal flow from pre-renewal premium recalculation through automatic renewal or customer cancellation.

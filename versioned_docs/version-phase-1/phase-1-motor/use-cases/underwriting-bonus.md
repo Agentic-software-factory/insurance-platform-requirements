@@ -32,6 +32,35 @@ and referral handling.
 | Compliance Officer | Non-discriminatory rating; transparent premium calculation            |
 | TryggFörsäkring    | Profitable portfolio; competitive pricing; regulatory compliance      |
 
+## Process Flow
+
+```mermaid
+flowchart TD
+    A[New quote or renewal request] --> B[Collect rating factors]
+    B --> C[Lookup bonus class]
+    C --> D[Apply rating model]
+    D --> E["Base premium x vehicle factor
+    x age factor x location factor x ..."]
+    E --> F[Apply bonus class discount]
+    F --> G{Within acceptance criteria?}
+    G -->|Yes - auto-accept| H[Present quote to customer]
+    G -->|Referral triggered| I[Underwriter review queue]
+    I --> J{Underwriter decision}
+    J -->|Approve| H
+    J -->|Approve with conditions| K[Modify terms or premium loading]
+    K --> H
+    J -->|Decline| L[Notify customer with reason]
+    G -->|Decline rule triggered| L
+    L --> M{Trafikforsakring only?}
+    M -->|Yes| N[Offer mandatory minimum coverage]
+    M -->|No| O[Application rejected]
+
+    style A fill:#e1f5fe
+    style H fill:#e8f5e9
+    style L fill:#ffebee
+    style I fill:#fff3e0
+```
+
 ## Main Success Scenario
 
 ### 1. Bonus Class Determination

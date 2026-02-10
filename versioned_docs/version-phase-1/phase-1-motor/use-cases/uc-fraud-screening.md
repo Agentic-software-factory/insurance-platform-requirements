@@ -33,6 +33,38 @@ This use case describes the fraud screening and investigation process for motor 
 - Fraud indicators are recorded for future pattern detection
 - Customer is notified of the denial (without disclosing investigation details)
 
+## Process Flow
+
+```mermaid
+flowchart TD
+    A[New claim registered] --> B[Run automated fraud indicators]
+    B --> C[Calculate fraud risk score]
+    C --> D{Risk level}
+    D -->|Low| E[Auto-clear]
+    E --> F[Normal claims processing]
+    D -->|Medium| G[Flag for handler review]
+    G --> H[Manual investigation]
+    H --> I{Finding}
+    I -->|Cleared| F
+    I -->|Suspicious| J[Escalate to senior handler]
+    D -->|High| K[Hold claim - pause settlement]
+    K --> L[Full investigation]
+    L --> M{Fraud confirmed?}
+    M -->|No| F
+    M -->|Yes| N[Deny claim]
+    N --> O{Criminal referral?}
+    O -->|Yes| P[Refer to police]
+    O -->|No| Q[Record fraud determination]
+    P --> Q
+    J --> L
+
+    style A fill:#e1f5fe
+    style F fill:#e8f5e9
+    style N fill:#ffebee
+    style P fill:#ffebee
+    style K fill:#fff3e0
+```
+
 ## Main Flow: Automated Screening
 
 | Step | Actor  | Action                     | System Response                                                          |

@@ -24,6 +24,7 @@ const config: Config = {
     hooks: {
       onBrokenMarkdownLinks: "throw",
     },
+    mermaid: true,
   },
 
   i18n: {

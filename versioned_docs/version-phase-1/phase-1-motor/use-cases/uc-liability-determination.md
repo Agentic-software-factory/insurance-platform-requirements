@@ -46,6 +46,40 @@ This use case describes the liability determination process for motor insurance 
 - Liability cannot be determined due to insufficient evidence
 - The claim is placed on hold pending additional evidence (police report, witness statements)
 
+## Process Flow
+
+```mermaid
+flowchart TD
+    A[Claim registered and coverage verified] --> B{Incident type}
+    B -->|Single vehicle| C[Driver at fault - 100%]
+    C --> D[Check coverage tier]
+    B -->|Multi-vehicle| E[Review evidence]
+    E --> F[Police report + witness statements + photos]
+    F --> G{Clear fault?}
+    G -->|Yes| H[Assign liability percentages]
+    G -->|No| I[Split 50/50 or escalate]
+    B -->|Animal collision| J[No-fault determination]
+    J --> K[Bonus-neutral]
+    B -->|Hit-and-run| L[Police report mandatory]
+    L --> M[TFF eligibility check]
+    H --> N[Record rationale and evidence]
+    I --> N
+    M --> N
+    D --> N
+    K --> N
+    N --> O{Subrogation eligible?}
+    O -->|Yes| P[Identify recovery target]
+    O -->|No| Q[Proceed to damage assessment]
+    P --> Q
+    B -->|Trafikforsakring PI| R[Strict liability applies]
+    R --> N
+
+    style A fill:#e1f5fe
+    style Q fill:#e8f5e9
+    style J fill:#fff3e0
+    style L fill:#fff3e0
+```
+
 ## Main Success Scenario: Multi-Party Collision
 
 | Step | Actor          | Action                                          | System Response                                                                 |
