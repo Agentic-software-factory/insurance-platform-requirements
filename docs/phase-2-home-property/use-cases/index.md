@@ -89,3 +89,21 @@ refund payment. It covers:
 - Pro-rata refund calculation methodology
 - Coverage gap detection and warning when switching insurer
 - Refund preview for informed customer decision-making
+
+## Home Underwriting Rules (Riskbedömning)
+
+The [Home Insurance Risk Assessment and Pricing](underwriting-rules.md) use case
+(UC-HUW-001) describes the complete underwriting flow from property data
+collection through premium calculation. It covers:
+
+- Property data collection and Lantmäteriet lookup
+- Geographic risk zone determination (flood, crime, subsidence) via SMHI, MSB,
+  BRÅ
+- Construction risk evaluation (material type, building age)
+- Security feature discount application (alarm, water shutoff, sprinkler)
+- Claims history assessment and loading
+- Risk acceptance evaluation (auto-accept, referral, decline)
+- Coverage tier selection (bas/standard/premium)
+- Self-retention (självrisk) selection and premium adjustment
+- Automatic premium calculation with full factor breakdown
+- Underwriter review for borderline and high-risk cases
