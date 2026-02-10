@@ -52,23 +52,56 @@ against unfounded claims.
 
 ```mermaid
 flowchart TD
-    A[1. Report liability incident] --> B[2. Register FNOL and verify coverage]
-    B --> C[3. Gather evidence and documentation]
-    C --> D{4. Assess liability}
-    D -->|Liable| E[5. Negotiate settlement with injured party]
-    D -->|Not liable| F[6. Defend policyholder]
-    D -->|Uncertain| G[4a. Commission expert investigation]
+    subgraph Customer ["Customer (Privatkund)"]
+        A[1. Report liability incident]
+    end
+
+    subgraph ClaimsHandler ["Claims Handler (Skadereglerare)"]
+        B[2. Register FNOL and verify coverage]
+        C[3. Gather evidence and documentation]
+        D{4. Assess liability}
+        E[5. Negotiate settlement with injured party]
+        F[6. Defend policyholder — send denial]
+    end
+
+    subgraph External ["External Parties (Besiktningsman)"]
+        G[4a. Commission expert investigation]
+    end
+
+    subgraph InjuredParty ["Injured Party / Opposing Insurer"]
+        H{Settlement agreed?}
+        K{Injured party accepts denial?}
+        O[9. Coordinate with injured party's insurer]
+    end
+
+    subgraph Legal ["Legal Counsel (Advokat)"]
+        J[5a. Escalate to mediation or legal proceedings]
+        M[6a. Engage legal counsel for defense]
+    end
+
+    subgraph System ["System (TryggFörsäkring)"]
+        I[7. Process settlement payment]
+        N{Cross-insurer coordination needed?}
+        L[8. Close claim]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D -->|Liable| E
+    D -->|Not liable| F
+    D -->|Uncertain| G
     G --> D
-    E --> H{Settlement agreed?}
-    H -->|Yes| I[7. Process settlement payment]
-    H -->|No| J[5a. Escalate to mediation or legal proceedings]
+    E --> H
+    H -->|Yes| I
+    H -->|No| J
     J --> I
-    F --> K{Injured party accepts?}
-    K -->|Yes| L[8. Close claim]
-    K -->|No| M[6a. Engage legal counsel for defense]
+    F --> K
+    K -->|Yes| L
+    K -->|No| M
     M --> L
-    I --> N{Cross-insurer coordination needed?}
-    N -->|Yes| O[9. Coordinate with injured party's insurer]
+    I --> N
+    N -->|Yes| O
     N -->|No| L
     O --> L
 

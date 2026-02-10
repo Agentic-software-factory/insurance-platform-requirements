@@ -44,24 +44,52 @@ risk data.
 
 ```mermaid
 flowchart TD
-    A[Receive property data: address, type, size, construction year, material] --> B[Lookup property via Lantmäteriet]
-    B --> C[Determine geographic risk zones]
-    C --> D[Evaluate construction risk: material + age]
-    D --> E[Apply security feature discounts]
-    E --> F[Check claims history]
-    F --> G{Risk within acceptance criteria?}
-    G -->|Auto-accept| H[Select coverage tier]
-    G -->|Borderline| I[Route to underwriter review]
-    G -->|Decline| J[Decline with documented reason]
-    I --> K{Underwriter decision?}
+    subgraph System ["System (Automated Rating Engine)"]
+        A[Receive property data]
+        C[Determine geographic risk zones]
+        D[Evaluate construction risk: material + age]
+        E[Apply security feature discounts]
+        F[Check claims history]
+        G{Risk within acceptance criteria?}
+        H[Select coverage tier]
+        N[Calculate base premium from all rating factors]
+        O[Apply deductible adjustment]
+        P[Present quote with premium breakdown]
+    end
+
+    subgraph External ["External Data Sources (Lantmäteriet, SMHI, MSB, BRÅ)"]
+        B[Lookup property and risk zone data]
+    end
+
+    subgraph Underwriter ["Underwriter (Försäkringsgivare)"]
+        I[Review borderline risk]
+        K{Underwriter decision?}
+        L[Accept with conditions]
+        J[Decline with documented reason]
+    end
+
+    subgraph Customer ["Customer (Privatkund)"]
+        M[Select deductible level]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G -->|Auto-accept| H
+    G -->|Borderline| I
+    G -->|Decline| J
+    I --> K
     K -->|Accept| H
-    K -->|Conditional| L[Accept with conditions]
+    K -->|Conditional| L
     K -->|Decline| J
     L --> H
-    H --> M[Customer selects deductible level]
-    M --> N[Calculate base premium from all rating factors]
-    N --> O[Apply deductible adjustment]
-    O --> P[Present quote with premium breakdown]
+    H --> M
+    M --> N
+    N --> O
+    O --> P
 
     style A fill:#e1f5fe
     style P fill:#e8f5e9

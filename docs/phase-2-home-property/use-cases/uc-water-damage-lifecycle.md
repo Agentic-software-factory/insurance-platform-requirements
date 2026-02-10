@@ -40,31 +40,67 @@ This use case describes the end-to-end lifecycle of a water damage (vattenskada)
 
 ```mermaid
 flowchart TD
-    A[1. Customer reports water damage] --> B[2. FNOL registration and classification]
-    B --> C[3. Dispatch saneringsfirma]
-    C --> D[4. Emergency response and leak detection]
-    D --> E{Home uninhabitable?}
-    E -->|Yes| F[4a. Arrange temporary housing]
-    E -->|No| G[5. Install drying equipment]
+    subgraph Customer ["Customer (Privatkund)"]
+        A[1. Report water damage]
+    end
+
+    subgraph ClaimsHandler ["Claims Handler (Skadereglerare)"]
+        B[2. Register FNOL and classify]
+        F[4a. Arrange temporary housing]
+        H[6. Assess damage scope]
+        L[7. Determine BRF vs individual responsibility]
+        O[9. Approve repair scope and contractor]
+        Q[11. Final inspection]
+        S[12. Calculate settlement]
+    end
+
+    subgraph Saneringsfirma
+        D[4. Emergency response and leak detection]
+        G[5. Install drying equipment]
+        M[8. Submit torkprotokoll]
+    end
+
+    subgraph External ["External Parties"]
+        J[6a. Besiktningsman property inspection]
+        P[10. Contractor performs repairs]
+    end
+
+    subgraph System ["System (TryggFörsäkring)"]
+        C[3. Dispatch saneringsfirma]
+        E{Home uninhabitable?}
+        I{Besiktningsman needed?}
+        K{BRF property?}
+        N{Drying complete?}
+        R{Restoration satisfactory?}
+        T[13. Process payment]
+        U[14. Close claim and record data]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E -->|Yes| F
+    E -->|No| G
     F --> G
-    G --> H[6. Claims handler assesses damage scope]
-    H --> I{Besiktningsman needed?}
-    I -->|Yes| J[6a. Property inspection]
-    I -->|No| K{BRF property?}
+    G --> H
+    H --> I
+    I -->|Yes| J
+    I -->|No| K
     J --> K
-    K -->|Yes| L[7. Determine BRF vs individual responsibility]
-    K -->|No| M[8. Saneringsfirma submits torkprotokoll]
+    K -->|Yes| L
+    K -->|No| M
     L --> M
-    M --> N{Drying complete?}
+    M --> N
     N -->|No| M
-    N -->|Yes| O[9. Approve repair scope and contractor]
-    O --> P[10. Contractor performs repairs]
-    P --> Q[11. Final inspection]
-    Q --> R{Restoration satisfactory?}
+    N -->|Yes| O
+    O --> P
+    P --> Q
+    Q --> R
     R -->|No| P
-    R -->|Yes| S[12. Calculate settlement]
-    S --> T[13. Process payment]
-    T --> U[14. Close claim and record data]
+    R -->|Yes| S
+    S --> T
+    T --> U
 
     style A fill:#e1f5fe
     style U fill:#e8f5e9

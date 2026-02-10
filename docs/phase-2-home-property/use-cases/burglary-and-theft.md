@@ -40,29 +40,64 @@ accidental damage and loss outside the home.
 
 ```mermaid
 flowchart TD
-    A[Customer reports burglary] --> B{Locks/entry compromised?}
-    B -->|Yes| C[Dispatch emergency locksmith]
-    B -->|No| D[Guide customer: polisanmälan]
+    subgraph Customer ["Customer (Privatkund)"]
+        A[Report burglary]
+        I[Submit property inventory]
+    end
+
+    subgraph System ["System (TryggFörsäkring)"]
+        B{Locks/entry compromised?}
+        F[Automated fraud screening]
+        G{Fraud risk?}
+        J{High-value items?}
+        M[Calculate settlement with åldersavdrag]
+        N{Items exceed sub-limits?}
+        O[Apply sub-limits and inform customer]
+        P[Apply deductible]
+        Q[Process settlement payment]
+        T[Close claim]
+    end
+
+    subgraph ClaimsHandler ["Claims Handler (Skadereglerare)"]
+        D[Guide customer: polisanmälan]
+        E[Register FNOL with police report]
+        L[Verify items against declarations]
+        S[Offer krisstöd to customer]
+    end
+
+    subgraph External ["External Parties (Låssmed, Repair Partners)"]
+        C[Dispatch emergency locksmith]
+        K[Field investigator verifies on-site]
+        R[Arrange break-in damage repair]
+    end
+
+    subgraph FraudTeam ["Fraud Investigator"]
+        H[Escalate to fraud investigation]
+    end
+
+    A --> B
+    B -->|Yes| C
+    B -->|No| D
     C --> D
-    D --> E[Claims handler registers FNOL with police report]
-    E --> F[Automated fraud screening]
-    F --> G{Fraud risk?}
-    G -->|High| H[Escalate to fraud investigation]
-    G -->|Low/Medium| I[Customer submits property inventory]
+    D --> E
+    E --> F
+    F --> G
+    G -->|High| H
+    G -->|Low/Medium| I
     H --> I
-    I --> J{High-value items?}
-    J -->|Yes >100k SEK| K[Assign field investigator]
-    J -->|No| L[Verify items against declarations]
+    I --> J
+    J -->|Yes >100k SEK| K
+    J -->|No| L
     K --> L
-    L --> M[Calculate settlement with åldersavdrag]
-    M --> N{Items exceed sub-limits?}
-    N -->|Yes| O[Apply sub-limits and inform customer]
-    N -->|No| P[Apply deductible]
+    L --> M
+    M --> N
+    N -->|Yes| O
+    N -->|No| P
     O --> P
-    P --> Q[Process settlement payment]
-    Q --> R[Arrange break-in damage repair]
-    R --> S[Offer krisstöd to customer]
-    S --> T[Close claim]
+    P --> Q
+    Q --> R
+    R --> S
+    S --> T
 
     style A fill:#e1f5fe
     style T fill:#e8f5e9

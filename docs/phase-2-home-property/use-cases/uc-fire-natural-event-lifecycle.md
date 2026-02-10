@@ -41,29 +41,64 @@ This use case describes the end-to-end lifecycle of a fire or natural event (bra
 
 ```mermaid
 flowchart TD
-    A[1. Customer reports fire/natural event] --> B[2. FNOL registration and classification]
-    B --> C{Property habitable?}
-    C -->|No| D[3a. Arrange temporary housing]
-    C -->|Yes| E[3. Obtain räddningstjänsten incident report]
+    subgraph Customer ["Customer (Privatkund)"]
+        A[1. Report fire/natural event]
+        L{Customer rebuilds?}
+    end
+
+    subgraph ClaimsHandler ["Claims Handler (Skadereglerare)"]
+        B[2. Register FNOL and classify]
+        D[3a. Arrange temporary housing]
+        I{Total loss or partial loss?}
+        J[6. Calculate total loss settlement]
+        K[7. Approve repair scope and contractors]
+        R[12. Final inspection]
+    end
+
+    subgraph External ["External Parties (Räddningstjänsten, Besiktningsman)"]
+        E[3. Obtain räddningstjänsten incident report]
+        F[4. Besiktningsman inspects property]
+        H[5a. Environmental remediation]
+    end
+
+    subgraph Contractor ["Contractor (Ramavtalspartner)"]
+        M[8a. Coordinate rebuild]
+        O[9. Perform repairs]
+    end
+
+    subgraph System ["System (TryggFörsäkring)"]
+        C{Property habitable?}
+        G{Environmental hazards?}
+        S{Restoration satisfactory?}
+        N[8b. Process cash settlement]
+        P[10. Staged payments during rebuild]
+        Q[11. Process settlement payment]
+        T[13. Close claim and update risk data]
+    end
+
+    A --> B
+    B --> C
+    C -->|No| D
+    C -->|Yes| E
     D --> E
-    E --> F[4. Besiktningsman inspects property]
-    F --> G{Environmental hazards?}
-    G -->|Yes| H[5a. Environmental remediation]
-    G -->|No| I{Total loss or partial loss?}
+    E --> F
+    F --> G
+    G -->|Yes| H
+    G -->|No| I
     H --> I
-    I -->|Total loss| J[6. Calculate total loss settlement]
-    I -->|Partial loss| K[7. Approve repair scope and contractors]
-    J --> L{Customer rebuilds?}
-    L -->|Yes| M[8a. Coordinate rebuild]
-    L -->|No| N[8b. Process cash settlement]
-    K --> O[9. Contractor performs repairs]
-    M --> P[10. Staged payments during rebuild]
-    N --> Q[11. Process settlement payment]
-    O --> R[12. Final inspection]
+    I -->|Total loss| J
+    I -->|Partial loss| K
+    J --> L
+    L -->|Yes| M
+    L -->|No| N
+    K --> O
+    M --> P
+    N --> Q
+    O --> R
     P --> R
-    R --> S{Restoration satisfactory?}
+    R --> S
     S -->|No| O
-    S -->|Yes| T[13. Close claim and update risk data]
+    S -->|Yes| T
     Q --> T
 
     style A fill:#e1f5fe

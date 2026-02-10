@@ -38,46 +38,84 @@ pro-rata refund calculation, and coverage gap prevention when switching insurers
 
 ```mermaid
 flowchart TD
-    A[Cancellation request received] --> B{Cancellation type?}
-    B -->|Ångerrätt| C[Verify within 14-day period]
-    B -->|Customer-initiated| D[Determine reason]
-    B -->|Insurer-initiated| E{Reason?}
+    subgraph Customer ["Customer (Privatkund)"]
+        A[Submit cancellation request]
+        J{Customer confirms?}
+        Q{Customer proceeds despite gap?}
+    end
 
-    C -->|Within period| F[Full refund minus claims]
+    subgraph System ["System (TryggFörsäkring)"]
+        B{Cancellation type?}
+        C[Verify within 14-day period]
+        D[Determine reason]
+        F[Full refund minus claims]
+        G[Calculate effective date]
+        H[Calculate pro-rata refund]
+        I[Preview refund to customer]
+        K{Switching insurer?}
+        L[Policy retained — log retention]
+        M[Check for coverage gap]
+        N[Process cancellation]
+        O{Gap detected?}
+        P[Warn customer about gap]
+        Z[Process refund payment]
+        AB[Send cancellation confirmation]
+        AC[Archive cancellation record]
+        R[Follow statutory reminder process]
+        T{Payment received?}
+        U[Reinstate policy]
+        V[Cancel after final grace period]
+    end
+
+    subgraph Underwriter ["Underwriter (Försäkringsgivare)"]
+        E{Insurer-initiated reason?}
+        S[Document evidence and assess intent]
+        W{Intentional?}
+        X[Immediate cancel, no refund]
+        AA[Record fraud determination]
+        Y[Offer adjustment or cancel with refund]
+    end
+
+    A --> B
+    B -->|Ångerrätt| C
+    B -->|Customer-initiated| D
+    B -->|Insurer-initiated| E
+
+    C -->|Within period| F
     C -->|Expired| D
 
-    D --> G[Calculate effective date]
-    G --> H[Calculate pro-rata refund]
-    H --> I[Preview refund to customer]
-    I --> J{Customer confirms?}
-    J -->|Yes| K{Switching insurer?}
-    J -->|No| L[Policy retained - log retention]
+    D --> G
+    G --> H
+    H --> I
+    I --> J
+    J -->|Yes| K
+    J -->|No| L
 
-    K -->|Yes| M[Check for coverage gap]
-    K -->|No| N[Process cancellation]
-    M --> O{Gap detected?}
-    O -->|Yes| P[Warn customer about gap]
+    K -->|Yes| M
+    K -->|No| N
+    M --> O
+    O -->|Yes| P
     O -->|No| N
-    P --> Q{Customer proceeds?}
+    P --> Q
     Q -->|Yes| N
     Q -->|No| L
 
-    E -->|Non-payment| R[Follow statutory reminder process]
-    E -->|Misrepresentation| S[Document evidence and assess intent]
-    R --> T{Payment received?}
-    T -->|Yes| U[Reinstate policy]
-    T -->|No| V[Cancel after final grace period]
-    S --> W{Intentional?}
-    W -->|Yes - Fraud| X[Immediate cancel, no refund]
-    W -->|No| Y[Offer adjustment or cancel with refund]
+    E -->|Non-payment| R
+    E -->|Misrepresentation| S
+    R --> T
+    T -->|Yes| U
+    T -->|No| V
+    S --> W
+    W -->|Yes — Fraud| X
+    W -->|No| Y
 
     F --> N
-    N --> Z[Process refund payment]
+    N --> Z
     V --> Z
-    X --> AA[Record fraud determination]
+    X --> AA
     Y --> Z
-    Z --> AB[Send cancellation confirmation]
-    AB --> AC[Archive cancellation record]
+    Z --> AB
+    AB --> AC
 
     style A fill:#e1f5fe
     style AC fill:#e8f5e9
