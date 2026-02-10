@@ -50,12 +50,15 @@ processing and premium refund calculation.
 Use cases describing the detailed workflows for motor insurance claims
 processing.
 
-| ID                                         | Title                              | Scope                                         |
-| ------------------------------------------ | ---------------------------------- | --------------------------------------------- |
-| [UC-CLM-001](uc-claims-lifecycle.md)       | Claims Lifecycle                   | End-to-end claims flow from FNOL to closure   |
-| [UC-CLM-002](uc-fnol-processing.md)        | FNOL Processing                    | First notification of loss — online and phone |
-| [UC-CLM-003](uc-settlement-calculation.md) | Settlement Calculation and Payment | Settlement rules and payment execution        |
-| [UC-CLM-004](uc-fraud-screening.md)        | Fraud Screening and Investigation  | Automated and manual fraud detection          |
+| ID                                          | Title                              | Scope                                         |
+| ------------------------------------------- | ---------------------------------- | --------------------------------------------- |
+| [UC-CLM-001](uc-claims-lifecycle.md)        | Claims Lifecycle                   | End-to-end claims flow from FNOL to closure   |
+| [UC-CLM-002](uc-fnol-processing.md)         | FNOL Processing                    | First notification of loss — online and phone |
+| [UC-CLM-003](uc-settlement-calculation.md)  | Settlement Calculation and Payment | Settlement rules and payment execution        |
+| [UC-CLM-004](uc-fraud-screening.md)         | Fraud Screening and Investigation  | Automated and manual fraud detection          |
+| [UC-CLM-005](uc-liability-determination.md) | Liability Determination            | Fault assessment and liability allocation     |
+| [UC-CLM-006](uc-damage-assessment.md)       | Damage Assessment                  | Vehicle damage evaluation and cost estimation |
+| [UC-CLM-007](uc-claims-closure.md)          | Claims Closure                     | Final review, closure, and archiving          |
 
 ## Underwriting and Bonus Assessment
 
