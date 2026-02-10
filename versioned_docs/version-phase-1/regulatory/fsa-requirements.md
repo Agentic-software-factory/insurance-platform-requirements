@@ -10,31 +10,37 @@ Regulatory requirements from **Finansinspektionen** (Swedish Financial Superviso
 
 The following Swedish laws and EU directives form the legal basis for FSA regulatory obligations relevant to this platform:
 
-| Law / Directive          | Swedish Name                        | Scope                                                       |
-| ------------------------ | ----------------------------------- | ----------------------------------------------------------- |
-| Insurance Business Act   | Försäkringsrörelselagen (2010:2043) | Authorization, governance, capital requirements, solvency   |
-| Motor Traffic Damage Act | Trafikskadelagen (1975:1410)        | Mandatory trafikförsäkring, liability rules, TFF membership |
-| Insurance Contracts Act  | Försäkringsavtalslagen (2005:104)   | Consumer insurance contract rules, disclosure, cancellation |
-| EU Solvency II Directive | Direktiv 2009/138/EG                | Capital adequacy, risk management, supervisory reporting    |
+| Law / Directive           | Swedish Name                        | Scope                                                                |
+| ------------------------- | ----------------------------------- | -------------------------------------------------------------------- |
+| Insurance Business Act    | Försäkringsrörelselagen (2010:2043) | Authorization, governance, capital requirements, solvency            |
+| Motor Traffic Damage Act  | Trafikskadelagen (1975:1410)        | Mandatory trafikförsäkring, liability rules, TFF membership          |
+| Insurance Contracts Act   | Försäkringsavtalslagen (2005:104)   | Consumer insurance contract rules, disclosure, cancellation          |
+| EU Solvency II Directive  | Direktiv 2009/138/EG                | Capital adequacy, risk management, supervisory reporting             |
+| Housing Cooperative Act   | Bostadsrättslagen (1991:614)        | BRF governance, building insurance obligations (Phase 2)             |
+| Planning and Building Act | Plan- och bygglagen (2010:900)      | Building standards, property valuation, construction rules (Phase 2) |
 
 ## Requirement Summary
 
-| ID                                                      | Area                | Short Description                                   |
-| ------------------------------------------------------- | ------------------- | --------------------------------------------------- |
-| [FSA-001](#fsa-001-insurance-company-authorization)     | Authorization       | Insurance company must be authorized by FSA         |
-| [FSA-002](#fsa-002-minimum-start-up-capital)            | Capital             | EUR 4M minimum start-up capital for motor insurance |
-| [FSA-003](#fsa-003-solvency-ii-compliance)              | Solvency            | Solvency II capital adequacy and risk management    |
-| [FSA-004](#fsa-004-consumer-protection--fair-treatment) | Consumer Protection | Fair treatment and clear policy terms               |
-| [FSA-005](#fsa-005-product-governance)                  | Product Governance  | Target market identification and product monitoring |
-| [FSA-006](#fsa-006-supervisory-reporting)               | Reporting           | Regular financial and supervisory reporting to FSA  |
-| [FSA-007](#fsa-007-mandatory-trafikförsäkring)          | Trafikförsäkring    | Mandatory insurance for all registered vehicles     |
-| [FSA-008](#fsa-008-tff-membership)                      | TFF Membership      | Membership in Trafikförsäkringsföreningen           |
-| [FSA-009](#fsa-009-transportstyrelsen-notification)     | Transportstyrelsen  | Policy changes reported to Transport Agency         |
-| [FSA-010](#fsa-010-fair-and-timely-claims-settlement)   | Claims Handling     | Fair and timely claims settlement                   |
-| [FSA-011](#fsa-011-complaints-handling-procedure)       | Complaints          | Complaints handling procedure                       |
-| [FSA-012](#fsa-012-insurance-contract-disclosure)       | Disclosure          | Pre-contractual and contractual information duties  |
-| [FSA-013](#fsa-013-cancellation-and-cooling-off-rights) | Cancellation        | Consumer cancellation and ångerrätt (cooling-off)   |
-| [FSA-014](#fsa-014-record-keeping)                      | Record Keeping      | Retention of policy and claims records              |
+| ID                                                      | Area                           | Short Description                                                            |
+| ------------------------------------------------------- | ------------------------------ | ---------------------------------------------------------------------------- |
+| [FSA-001](#fsa-001-insurance-company-authorization)     | Authorization                  | Insurance company must be authorized by FSA                                  |
+| [FSA-002](#fsa-002-minimum-start-up-capital)            | Capital                        | EUR 4M minimum start-up capital for motor insurance                          |
+| [FSA-003](#fsa-003-solvency-ii-compliance)              | Solvency                       | Solvency II capital adequacy and risk management                             |
+| [FSA-004](#fsa-004-consumer-protection--fair-treatment) | Consumer Protection            | Fair treatment and clear policy terms                                        |
+| [FSA-005](#fsa-005-product-governance)                  | Product Governance             | Target market identification and product monitoring                          |
+| [FSA-006](#fsa-006-supervisory-reporting)               | Reporting                      | Regular financial and supervisory reporting to FSA                           |
+| [FSA-007](#fsa-007-mandatory-trafikförsäkring)          | Trafikförsäkring               | Mandatory insurance for all registered vehicles                              |
+| [FSA-008](#fsa-008-tff-membership)                      | TFF Membership                 | Membership in Trafikförsäkringsföreningen                                    |
+| [FSA-009](#fsa-009-transportstyrelsen-notification)     | Transportstyrelsen             | Policy changes reported to Transport Agency                                  |
+| [FSA-010](#fsa-010-fair-and-timely-claims-settlement)   | Claims Handling                | Fair and timely claims settlement                                            |
+| [FSA-011](#fsa-011-complaints-handling-procedure)       | Complaints                     | Complaints handling procedure                                                |
+| [FSA-012](#fsa-012-insurance-contract-disclosure)       | Disclosure                     | Pre-contractual and contractual information duties                           |
+| [FSA-013](#fsa-013-cancellation-and-cooling-off-rights) | Cancellation                   | Consumer cancellation and ångerrätt (cooling-off)                            |
+| [FSA-014](#fsa-014-record-keeping)                      | Record Keeping                 | Retention of policy and claims records                                       |
+| [FSA-015](#fsa-015-consumer-protection--home)           | Consumer Protection — Home     | Product suitability for hemförsäkring; mandatory coverage levels _(Phase 2)_ |
+| [FSA-016](#fsa-016-building-valuation)                  | Building Valuation             | Adequate building sum insured; underinsurance rules _(Phase 2)_              |
+| [FSA-017](#fsa-017-claims-handling--water-damage)       | Claims Handling — Water Damage | Obligations for coordinating restoration (saneringsfirma) _(Phase 2)_        |
+| [FSA-018](#fsa-018-natural-disaster-reserves)           | Natural Disaster Reserves      | Reserve requirements for storm/flood/climate events _(Phase 2)_              |
 
 ## Detailed Requirements
 
@@ -135,6 +141,38 @@ The following Swedish laws and EU directives form the legal basis for FSA regula
 - **Legal basis:** Försäkringsrörelselagen (2010:2043), Chapter 10; Bokföringslagen (1999:1078)
 - **Impact on platform:** The platform must implement data retention policies. Policy records, claims files, and customer correspondence must be retained for a minimum of 10 years after the contract ends. Archival and retrieval mechanisms must be built into the system.
 - **Compliance verification:** Data retention policies are configured in the platform. Automated archival processes are operational. Retrieval from archive is tested and documented. No records are deleted before the retention period expires.
+
+### FSA-015: Consumer Protection — Home
+
+- **Description:** Insurance companies offering hemförsäkring (home insurance) must ensure product suitability for the customer's housing situation. Mandatory coverage levels for hemförsäkring include personal property (lösöre), liability protection (ansvarsförsäkring), legal expenses (rättsskydd), and assault coverage (överfallsskydd). The insurer must clearly communicate what is and is not covered, particularly the distinction between bostadsrättstillägg (housing cooperative supplement), villaförsäkring (detached house insurance), and hyresrättsförsäkring (rental apartment insurance).
+- **Legal basis:** Försäkringsavtalslagen (2005:104), Chapters 2 and 3; FSA General Guidelines (FFFS 2015:9); Bostadsrättslagen (1991:614) for BRF-related obligations
+- **Impact on platform:** The platform must enforce product configuration rules that ensure all hemförsäkring products include mandatory coverage components. The quote workflow must determine the customer's housing type (villa, bostadsrätt, hyresrätt) and present appropriate product variants. Coverage limits must be validated against minimum statutory levels.
+- **Compliance verification:** Product configuration includes all mandatory coverage components. Quote workflow captures housing type and applies the correct product variant. Coverage limit validation rules are enforced. Customer-facing documents clearly distinguish between housing types and their respective coverage.
+- **Phase:** Phase 2 — Home & Property
+
+### FSA-016: Building Valuation
+
+- **Description:** For villaförsäkring (detached house insurance) and BRF building insurance, the insurer must ensure adequate building sum insured (fullvärdesförsäkring or förstadagsbelopp) to prevent underinsurance (underförsäkring). The insurer must provide tools or guidance for the customer to determine the correct rebuilding cost (återuppbyggnadskostnad). Where the building sum insured is inadequate, the insurer must inform the customer of the risk of proportional claims settlement.
+- **Legal basis:** Försäkringsavtalslagen (2005:104), Chapter 6, Section 2 (proportional settlement); FSA General Guidelines on property insurance; Plan- och bygglagen (2010:900) for building standards affecting valuation
+- **Impact on platform:** The platform must include a building valuation tool or integration (e.g., Lantmäteriet property data, byggkostnadskalkyl) that helps determine the appropriate sum insured. The quote workflow must flag potential underinsurance when the customer-specified sum insured falls below the estimated rebuilding cost. Renewal workflows must prompt the customer to review the sum insured, accounting for building cost inflation (byggkostnadsindex).
+- **Compliance verification:** Building valuation tool produces estimates consistent with market rebuilding costs. Underinsurance warnings are triggered and documented when sum insured is below threshold. Renewal notices include building cost inflation adjustments. Proportional settlement calculations are correctly applied when underinsurance exists.
+- **Phase:** Phase 2 — Home & Property
+
+### FSA-017: Claims Handling — Water Damage
+
+- **Description:** Water damage (vattenskada) is the most common and costly home insurance claim category in Sweden. The insurer has specific obligations to coordinate with restoration companies (saneringsfirmor), plumbers (rörmokare), and building inspectors to ensure timely and adequate remediation. The insurer must ensure that policyholders are informed of their right to choose their own contractor while also maintaining quality standards through approved supplier networks.
+- **Legal basis:** Försäkringsavtalslagen (2005:104), Chapter 7; FSA General Guidelines on claims handling; Branschregler for vattenskadesanering (industry guidelines)
+- **Impact on platform:** The claims module must support water damage-specific workflows including: initial damage assessment, moisture measurement scheduling, restoration company assignment (from approved supplier network or customer-chosen contractor), progress tracking through drying and restoration phases, and final inspection sign-off. The system must track response times from first notification of loss (FNOL) through restoration completion.
+- **Compliance verification:** Water damage claims workflows include all required phases (assessment, sanering, restoration, inspection). Response time SLAs are configured and monitored. Policyholder contractor choice is documented. Approved supplier network is maintained and accessible. Restoration quality standards are tracked.
+- **Phase:** Phase 2 — Home & Property
+
+### FSA-018: Natural Disaster Reserves
+
+- **Description:** Insurance companies offering property insurance must maintain adequate technical reserves for natural disaster events (naturkatastrofreserv), including storm (storm), flooding (översvämning), and climate-related events. FSA requires insurers to model catastrophe risk exposure and hold sufficient capital buffers. This is particularly relevant given increasing climate-related claims frequency in Sweden, including cloudbursts (skyfall), rising sea levels, and extreme weather events.
+- **Legal basis:** Försäkringsrörelselagen (2010:2043), Chapter 4 (technical provisions); EU Solvency II Directive, Article 101 (SCR for natural catastrophe risk); FSA regulations (FFFS 2019:23) for reporting natural catastrophe exposure
+- **Impact on platform:** The platform must capture and categorize property claims by peril type (storm, flood, fire, water damage, etc.) to support catastrophe risk modeling. Geospatial data (property location, flood zone, proximity to water bodies) must be stored for risk assessment. The platform must support aggregate exposure reporting by geographic area and peril type for actuarial and regulatory purposes.
+- **Compliance verification:** Claims categorization includes peril type taxonomy. Property records include geospatial risk data. Aggregate exposure reports can be generated by region and peril type. Catastrophe reserve calculations are supported by accurate platform data. Reporting to FSA on natural catastrophe exposure is facilitated.
+- **Phase:** Phase 2 — Home & Property
 
 ## Cross-reference Guide
 

@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # IDD Compliance
 
-Insurance Distribution Directive (IDD) compliance requirements for the TryggFörsäkring motor insurance platform. The IDD governs how insurance products are sold and distributed, mandating demands-and-needs assessments, pre-contractual information, and product governance. Each requirement has a unique ID (IDD-001, IDD-002, etc.) used for cross-referencing from user stories and use cases.
+Insurance Distribution Directive (IDD) compliance requirements for the TryggFörsäkring insurance platform. The IDD governs how insurance products are sold and distributed, mandating demands-and-needs assessments, pre-contractual information, and product governance. Each requirement has a unique ID (IDD-001, IDD-002, etc.) used for cross-referencing from user stories and use cases. IDD-001 through IDD-010 cover motor insurance; IDD-011 through IDD-013 cover home & property insurance (Phase 2).
 
 ## Key Legislation
 
@@ -24,18 +24,21 @@ The following EU directives and Swedish laws form the legal basis for IDD compli
 
 ## Requirement Summary
 
-| ID                                                              | Area                        | Short Description                                      |
-| --------------------------------------------------------------- | --------------------------- | ------------------------------------------------------ |
-| [IDD-001](#idd-001-demands-and-needs-assessment)                | Demands and Needs           | Assess customer needs before recommending a product    |
-| [IDD-002](#idd-002-insurance-product-information-document-ipid) | IPID                        | Standardized product information document              |
-| [IDD-003](#idd-003-pre-contractual-information)                 | Pre-contractual Information | Identity, complaints, and conflict of interest details |
-| [IDD-004](#idd-004-product-oversight-and-governance)            | Product Governance          | Target market, monitoring, and distribution strategy   |
-| [IDD-005](#idd-005-disclosure-of-distribution-status)           | Disclosure                  | Registration status and remuneration transparency      |
-| [IDD-006](#idd-006-advice-and-recommendation-requirements)      | Advice                      | Personalized recommendation obligations                |
-| [IDD-007](#idd-007-cross-selling-requirements)                  | Cross-selling               | Rules for bundled and optional add-on products         |
-| [IDD-008](#idd-008-record-keeping-for-distribution)             | Record Keeping              | Retention of distribution and advisory records         |
-| [IDD-009](#idd-009-professional-competence-and-training)        | Competence                  | Staff knowledge and ongoing training requirements      |
-| [IDD-010](#idd-010-complaints-handling-for-distribution)        | Complaints                  | Distribution-specific complaints procedures            |
+| ID                                                              | Area                            | Short Description                                                      |
+| --------------------------------------------------------------- | ------------------------------- | ---------------------------------------------------------------------- |
+| [IDD-001](#idd-001-demands-and-needs-assessment)                | Demands and Needs               | Assess customer needs before recommending a product                    |
+| [IDD-002](#idd-002-insurance-product-information-document-ipid) | IPID                            | Standardized product information document                              |
+| [IDD-003](#idd-003-pre-contractual-information)                 | Pre-contractual Information     | Identity, complaints, and conflict of interest details                 |
+| [IDD-004](#idd-004-product-oversight-and-governance)            | Product Governance              | Target market, monitoring, and distribution strategy                   |
+| [IDD-005](#idd-005-disclosure-of-distribution-status)           | Disclosure                      | Registration status and remuneration transparency                      |
+| [IDD-006](#idd-006-advice-and-recommendation-requirements)      | Advice                          | Personalized recommendation obligations                                |
+| [IDD-007](#idd-007-cross-selling-requirements)                  | Cross-selling                   | Rules for bundled and optional add-on products                         |
+| [IDD-008](#idd-008-record-keeping-for-distribution)             | Record Keeping                  | Retention of distribution and advisory records                         |
+| [IDD-009](#idd-009-professional-competence-and-training)        | Competence                      | Staff knowledge and ongoing training requirements                      |
+| [IDD-010](#idd-010-complaints-handling-for-distribution)        | Complaints                      | Distribution-specific complaints procedures                            |
+| [IDD-011](#idd-011-demands-and-needs--home)                     | Demands and Needs — Home        | Needs assessment for home products: BRF vs villa vs rental _(Phase 2)_ |
+| [IDD-012](#idd-012-product-complexity-disclosure)               | Product Complexity Disclosure   | Explaining coverage gaps (allrisk, flood exclusions) _(Phase 2)_       |
+| [IDD-013](#idd-013-cross-selling-governance--home)              | Cross-selling Governance — Home | Rules for bundling home + travel + ID-skydd _(Phase 2)_                |
 
 ## Detailed Requirements
 
@@ -172,6 +175,52 @@ The following EU directives and Swedish laws form the legal basis for IDD compli
 - **Platform impact:** The complaints module must support categorization of complaints as distribution-related. The system must track complaint source (distribution channel), link complaints to the relevant distribution record, and generate reports on distribution complaint volumes and outcomes.
 - **Evidence requirements:** Retain complaint records including the nature of the complaint, the distribution channel involved, investigation findings, resolution outcome, and time to resolution. Aggregate complaint data must be available for POG product reviews (IDD-004) and FSA reporting (FSA-011).
 
+### IDD-011: Demands and Needs — Home
+
+- **Description:** Before recommending or concluding a home & property insurance contract, the distributor must perform a demands-and-needs assessment (krav- och behovsanalys) specific to the customer's housing situation. The assessment must determine the customer's housing type (villa, bostadsrätt, or hyresrätt), identify the appropriate product variant, and evaluate the need for supplementary coverage. Home insurance presents distinct assessment challenges compared to motor insurance because the product structure varies significantly by housing type.
+- **Legal basis:** IDD Article 20; Lag om försäkringsdistribution (2018:1219), Chapter 4, Section 3; FFFS 2018:10, Chapter 4
+- **Home insurance application:**
+  - Determine housing type: villa (detached house), bostadsrätt (housing cooperative apartment), or hyresrätt (rental apartment)
+  - For villa: assess building insurance needs (rebuilding cost, building age, construction materials), contents coverage level, and liability coverage
+  - For bostadsrätt: assess need for bostadsrättstillägg (BRF supplement covering interior fittings and improvements), contents coverage level, and whether the BRF's collective building insurance is adequate
+  - For hyresrätt: assess contents and liability coverage needs (no building component)
+  - Evaluate need for supplementary coverage: allriskförsäkring (accidental damage), ID-skydd (identity theft protection), bostadsrättstillägg, trädgårdsförsäkring (garden insurance for villa)
+  - Assess appropriate deductible level based on the customer's financial situation
+  - Document the assessment and the rationale for the recommendation
+- **Platform impact:** The quote workflow must include a structured demands-and-needs assessment that branches based on housing type. The assessment must capture the customer's housing situation, ownership status, property details, and coverage preferences before presenting product options. The platform must store the assessment responses, the recommended product configuration, and the rationale linking the recommendation to the customer's stated needs.
+- **Evidence requirements:** Retain the completed assessment form, the housing type determination, the recommended product variant, the rationale for the recommendation, and the customer's acceptance or deviation from the recommendation. Records must be retained for the duration of the customer relationship plus 10 years.
+- **Phase:** Phase 2 — Home & Property
+
+### IDD-012: Product Complexity Disclosure
+
+- **Description:** Home & property insurance products contain significant complexity that must be disclosed to the customer before contract conclusion. Coverage gaps between standard hemförsäkring and allriskförsäkring must be clearly explained. Common exclusions (flood from natural watercourses, subsidence, gradual damage) must be highlighted because customers frequently misunderstand what their home insurance covers. The distributor must ensure the customer understands the distinction between covered perils and excluded events.
+- **Legal basis:** IDD Article 20; Lag om försäkringsdistribution (2018:1219), Chapter 4, Sections 3-4; FFFS 2018:10, Chapters 4-5; Försäkringsavtalslagen (2005:104), Chapter 2 (disclosure)
+- **Home insurance application:**
+  - Clearly distinguish between standard hemförsäkring (named-perils coverage) and allriskförsäkring (accidental damage coverage)
+  - Disclose common exclusions that apply even under allriskförsäkring: gradual damage (smygande skador), wear and tear (slitage), damage from insects/pests, damage from poor maintenance
+  - Explain flood coverage limitations: distinguish between water damage from internal plumbing (typically covered) and flooding from natural watercourses or rising groundwater (often excluded or requiring separate coverage)
+  - For bostadsrätt: explain the boundary between the BRF's building insurance and the individual member's bostadsrättstillägg (the "ytskikt" principle — who covers what)
+  - Disclose natural disaster coverage limitations: storm damage thresholds, earthquake exclusions, and any sub-limits for specific perils
+  - Explain underinsurance consequences: if contents sum insured is inadequate, proportional settlement may apply
+- **Platform impact:** The platform must present coverage complexity disclosures as part of the quote-to-bind workflow. Product comparison views must clearly show what is covered and excluded for each product variant. The system must log that the customer was presented with coverage gap information and acknowledge understanding before binding. IPID documents for home products must address the key coverage distinctions described above.
+- **Evidence requirements:** Retain proof that coverage complexity disclosures were presented to the customer, including the specific product comparison shown, exclusion summaries presented, and the customer's acknowledgement timestamp.
+- **Phase:** Phase 2 — Home & Property
+
+### IDD-013: Cross-selling Governance — Home
+
+- **Description:** Home insurance is frequently bundled with complementary products including reseförsäkring (travel insurance), ID-skydd (identity theft protection), and tilläggsförsäkringar (supplementary coverage). The distributor must comply with cross-selling rules by presenting each product as separately available, providing individual pricing, and assessing whether the bundled package meets the customer's demands and needs. Cross-selling governance must prevent mis-selling of unnecessary add-on products.
+- **Legal basis:** IDD Article 24; Lag om försäkringsdistribution (2018:1219), Chapter 4, Section 7; FFFS 2018:10, Chapter 7; EU Commission Delegated Regulation 2017/2359, Article 13
+- **Home insurance application:**
+  - Common home insurance bundles include: hemförsäkring + reseförsäkring, hemförsäkring + ID-skydd, hemförsäkring + allriskförsäkring + ID-skydd
+  - Each component must be offered as separately purchasable where technically feasible (travel insurance and ID-skydd can be purchased independently; allriskförsäkring requires base hemförsäkring)
+  - Individual pricing must be disclosed for each component in the bundle, including any discount applied for purchasing the bundle
+  - The demands-and-needs assessment (IDD-011) must inform the bundle recommendation — do not recommend travel insurance to a customer who states they do not travel, or ID-skydd without explaining its relevance
+  - For BRF policyholders: cross-selling of bostadsrättstillägg alongside base hemförsäkring must clearly explain that the supplement covers interior fittings not covered by the BRF's building insurance
+  - Product governance (IDD-004) must include monitoring of bundle attachment rates and customer complaints related to bundled products
+- **Platform impact:** The quote workflow must present bundle components with individual pricing and clear descriptions. The system must allow customers to select or deselect individual add-on products within a bundle. Bundle recommendations must be linked to the demands-and-needs assessment. The platform must track bundle attachment rates and unbundling requests for product governance reviews. Cross-selling disclosures must be logged.
+- **Evidence requirements:** Retain the bundle composition presented to each customer, individual component pricing, the customer's selection/deselection of components, and the link between the recommendation and the demands-and-needs assessment. Bundle attachment rate reports must be available for product governance reviews.
+- **Phase:** Phase 2 — Home & Property
+
 ## Swedish Implementation Notes
 
 ### Transposition into Swedish Law
@@ -210,25 +259,30 @@ Multiple requirements may apply to a single user story. Always list all applicab
 
 ### IDD to FSA Cross-references
 
-| IDD ID  | Related FSA IDs  | Relationship                                                                         |
-| ------- | ---------------- | ------------------------------------------------------------------------------------ |
-| IDD-001 | FSA-004, FSA-012 | Demands-and-needs assessment supports fair treatment and pre-contractual disclosure  |
-| IDD-002 | FSA-012          | IPID provision is part of the broader pre-contractual disclosure obligation          |
-| IDD-003 | FSA-012          | Pre-contractual information duties overlap with FSA disclosure requirements          |
-| IDD-004 | FSA-005          | POG requirements align with FSA product governance obligations                       |
-| IDD-005 | FSA-004          | Distribution status disclosure supports fair treatment principles                    |
-| IDD-006 | FSA-004, FSA-012 | Advice requirements ensure fair treatment and adequate disclosure                    |
-| IDD-007 | FSA-004          | Cross-selling transparency supports fair treatment of customers                      |
-| IDD-008 | FSA-014          | Distribution record keeping aligns with FSA record retention requirements            |
-| IDD-009 | —                | Professional competence is an IDD-specific requirement with no direct FSA equivalent |
-| IDD-010 | FSA-011          | Distribution complaints handling complements the general FSA complaints procedure    |
+| IDD ID  | Related FSA IDs  | Relationship                                                                                      |
+| ------- | ---------------- | ------------------------------------------------------------------------------------------------- |
+| IDD-001 | FSA-004, FSA-012 | Demands-and-needs assessment supports fair treatment and pre-contractual disclosure               |
+| IDD-002 | FSA-012          | IPID provision is part of the broader pre-contractual disclosure obligation                       |
+| IDD-003 | FSA-012          | Pre-contractual information duties overlap with FSA disclosure requirements                       |
+| IDD-004 | FSA-005          | POG requirements align with FSA product governance obligations                                    |
+| IDD-005 | FSA-004          | Distribution status disclosure supports fair treatment principles                                 |
+| IDD-006 | FSA-004, FSA-012 | Advice requirements ensure fair treatment and adequate disclosure                                 |
+| IDD-007 | FSA-004          | Cross-selling transparency supports fair treatment of customers                                   |
+| IDD-008 | FSA-014          | Distribution record keeping aligns with FSA record retention requirements                         |
+| IDD-009 | —                | Professional competence is an IDD-specific requirement with no direct FSA equivalent              |
+| IDD-010 | FSA-011          | Distribution complaints handling complements the general FSA complaints procedure                 |
+| IDD-011 | FSA-004, FSA-015 | Home demands-and-needs assessment supports fair treatment and product suitability _(Phase 2)_     |
+| IDD-012 | FSA-004, FSA-012 | Product complexity disclosure supports fair treatment and pre-contractual information _(Phase 2)_ |
+| IDD-013 | FSA-004, FSA-015 | Cross-selling governance ensures fair treatment in bundled home products _(Phase 2)_              |
 
 ### IDD to GDPR Cross-references
 
-| IDD ID  | Related GDPR IDs | Relationship                                                                                  |
-| ------- | ---------------- | --------------------------------------------------------------------------------------------- |
-| IDD-001 | GDPR-001         | Demands-and-needs data collection must comply with data minimization and consent requirements |
-| IDD-002 | —                | IPID is a standardized document with no personal data processing implications                 |
-| IDD-003 | —                | Pre-contractual information is about the distributor, not personal data                       |
-| IDD-004 | GDPR-005         | Product review data (complaints, cancellations) may involve aggregated personal data          |
-| IDD-008 | GDPR-002         | Distribution record retention must comply with GDPR retention principles                      |
+| IDD ID  | Related GDPR IDs | Relationship                                                                                       |
+| ------- | ---------------- | -------------------------------------------------------------------------------------------------- |
+| IDD-001 | GDPR-001         | Demands-and-needs data collection must comply with data minimization and consent requirements      |
+| IDD-002 | —                | IPID is a standardized document with no personal data processing implications                      |
+| IDD-003 | —                | Pre-contractual information is about the distributor, not personal data                            |
+| IDD-004 | GDPR-005         | Product review data (complaints, cancellations) may involve aggregated personal data               |
+| IDD-008 | GDPR-002         | Distribution record retention must comply with GDPR retention principles                           |
+| IDD-011 | GDPR-007         | Home demands-and-needs data collection must comply with property data processing rules _(Phase 2)_ |
+| IDD-013 | GDPR-007         | Cross-selling involves property data collection subject to GDPR-007 processing rules _(Phase 2)_   |
