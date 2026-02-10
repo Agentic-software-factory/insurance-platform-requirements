@@ -75,3 +75,17 @@ automatic renewal. It covers:
 - Customer response handling (accept, modify, cancel)
 - Automatic renewal on huvudförfallodag
 - Agent-assisted modifications and demands-and-needs reassessment
+
+## Cancellations (Uppsägning)
+
+The [Home Insurance Cancellation Processing](cancellations.md) use case
+(UC-HCA-001) describes the complete flow from cancellation request through
+refund payment. It covers:
+
+- 14-day ångerrätt (cooling-off) cancellation with full refund
+- Customer-initiated cancellations: property sale, moving, insurer switch
+- EU online cancellation button (ångerknapp) compliance
+- Insurer-initiated cancellations: non-payment and material misrepresentation
+- Pro-rata refund calculation methodology
+- Coverage gap detection and warning when switching insurer
+- Refund preview for informed customer decision-making
