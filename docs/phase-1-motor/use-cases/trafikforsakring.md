@@ -67,6 +67,37 @@ flowchart TD
     style H fill:#fff3e0
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Uninsured : Vehicle registered without coverage
+    [*] --> Pending : Policy binding initiated
+    Pending --> Active : Transportstyrelsen notified
+    Active --> Active : Coverage change or renewal
+    Active --> Lapsed : Non-payment after grace period
+    Active --> Cancelled : Replacement coverage confirmed
+    Lapsed --> Active : Payment received and reinstated
+    Lapsed --> Uninsured : Reinstatement period expires
+    Uninsured --> Pending : New policy bound
+    Cancelled --> [*]
+
+    note right of Active
+        Continuous mandatory coverage in force.
+        TFF reporting obligations apply.
+    end note
+
+    note right of Lapsed
+        Coverage suspended.
+        TFF trafikforsakringsavgift risk.
+    end note
+
+    note right of Uninsured
+        Vehicle registered but no coverage.
+        TFF default coverage and penalty fees apply.
+    end note
+```
+
 ## Main Success Scenario
 
 ### 1. Policy Issuance — Mandatory Coverage Check and Registration

@@ -61,6 +61,48 @@ flowchart TD
     style I fill:#fff3e0
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Class7 : New customer default
+    Class7 --> Class8 : Claim-free year (+1)
+    Class8 --> Class9 : Claim-free year (+1)
+    Class9 --> Class10 : Claim-free year (+1)
+    Class10 --> Class11 : Claim-free year (+1)
+    Class11 --> Class12 : Claim-free year (+1)
+    Class12 --> Class13 : Claim-free year (+1)
+    Class13 --> Class14 : Claim-free year (+1)
+    Class14 --> Class15 : Claim-free year (+1)
+    Class15 --> Class15 : Claim-free year (max)
+    Class15 --> Class12 : One at-fault claim (-3)
+    Class12 --> Class9 : One at-fault claim (-3)
+    Class9 --> Class4 : Two+ at-fault claims (-5 each)
+    Class7 --> Class4 : One at-fault claim (-3)
+    Class4 --> Class1 : At-fault claim(s)
+    Class1 --> Class2 : Claim-free year (+1)
+    Class2 --> Class3 : Claim-free year (+1)
+    Class3 --> Class4 : Claim-free year (+1)
+    Class4 --> Class5 : Claim-free year (+1)
+    Class5 --> Class6 : Claim-free year (+1)
+    Class6 --> Class7 : Claim-free year (+1)
+
+    note right of Class1
+        Minimum class.
+        Highest premium.
+    end note
+
+    note right of Class15
+        Maximum class.
+        Highest discount.
+    end note
+
+    note right of Class7
+        Default starting class
+        for new customers.
+    end note
+```
+
 ## Main Success Scenario
 
 ### 1. Bonus Class Determination

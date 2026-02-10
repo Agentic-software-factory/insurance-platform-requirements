@@ -61,6 +61,35 @@ flowchart TD
     style E fill:#fff3e0
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Draft : Customer initiates quote
+    Draft --> Presented : Premium calculated
+    Presented --> Accepted : Customer selects coverage
+    Presented --> Expired : 30-day validity timeout
+    Accepted --> Bound : BankID signed and verified
+    Accepted --> Expired : Signing not completed
+    Bound --> [*]
+    Expired --> [*]
+
+    note right of Draft
+        Vehicle and customer data collected.
+        Demands-and-needs assessment in progress.
+    end note
+
+    note right of Presented
+        Quote valid for 30 days.
+        Customer may compare tiers.
+    end note
+
+    note right of Bound
+        Policy issued. Transportstyrelsen notified.
+        Payment setup initiated.
+    end note
+```
+
 ## Main Success Scenario
 
 ### 1. Customer Identification

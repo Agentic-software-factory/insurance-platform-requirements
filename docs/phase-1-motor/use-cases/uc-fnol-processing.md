@@ -63,6 +63,35 @@ flowchart TD
     style K fill:#fff3e0
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Received : Customer initiates claim report
+    Received --> Validated : Identity verified, policy matched
+    Validated --> Registered : Claim submitted with all details
+    Received --> Rejected : No active policy found
+    Validated --> Rejected : Incident not covered by tier
+    Registered --> [*]
+    Rejected --> [*]
+
+    note right of Received
+        FNOL initiated via web, app, or phone.
+        BankID authentication in progress.
+    end note
+
+    note right of Validated
+        Policy and coverage tier confirmed.
+        Incident details captured.
+    end note
+
+    note right of Registered
+        Claim number generated.
+        Claims handler assigned.
+        Customer confirmation sent.
+    end note
+```
+
 ## Main Flow (Online Self-Service)
 
 | Step | Actor    | Action                                                          | System Response                                                                                   |
