@@ -60,6 +60,10 @@ requirement details.
 - [Burglary and Theft](user-stories/burglary-and-theft.md) — 12 user stories
   covering burglary claims, stolen property, allrisk/drulle, and crisis
   support (HCB-01 through HCB-12)
+- [Liability & Legal Expenses](user-stories/liability-and-legal.md) — 10 user
+  stories covering liability claims (ansvarsskydd), legal expenses
+  (rättsskydd), settlement negotiation, defense, and BRF boundary
+  determination (HCL-01 through HCL-10)
 - [Home Renewals](user-stories/home-renewals.md) — 10 user stories covering
   annual renewal, index adjustments, premium recalculation, and coverage
   modifications (HRN-01 through HRN-10)
@@ -80,6 +84,12 @@ requirement details.
 - [Burglary Claim Processing](use-cases/burglary-and-theft.md) — Complete
   use case (UC-HCB-001) covering emergency response, FNOL, fraud screening,
   settlement with åldersavdrag, and allrisk/drulle claims
+- [Liability Claim Assessment](use-cases/uc-liability-claim-lifecycle.md) —
+  Complete use case (UC-HCL-001) covering liability assessment, settlement
+  negotiation, defense against unfounded claims, and cross-insurer coordination
+- [Legal Expenses Management](use-cases/uc-legal-expenses-lifecycle.md) —
+  Complete use case (UC-HCL-002) covering rättsskydd application, eligibility
+  verification, lawyer approval, cost tracking, and dispute resolution
 - [Annual Home Insurance Renewal](use-cases/home-renewals.md) — Complete
   use case (UC-HRN-001) covering index adjustments, premium recalculation,
   renewal notices, and customer response handling

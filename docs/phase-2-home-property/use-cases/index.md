@@ -61,6 +61,13 @@ describes the complete flow from burglary report through settlement. It covers:
 - Allrisk/drulle simplified claims process
 - Crisis support (krisstöd) for burglary victims
 
+## Liability & Legal Expenses (Ansvar/Rättsskydd)
+
+| ID                                            | Title                                                  | Scope                                                                                                                            |
+| --------------------------------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| [UC-HCL-001](uc-liability-claim-lifecycle.md) | Liability Claim Assessment and Settlement              | End-to-end flow from incident report through liability assessment, settlement negotiation or defense, cross-insurer coordination |
+| [UC-HCL-002](uc-legal-expenses-lifecycle.md)  | Legal Expenses (Rättsskydd) Application and Management | End-to-end flow from rättsskydd application through eligibility, lawyer approval, cost tracking, and dispute resolution          |
+
 ## Home Renewals (Förnyelse)
 
 The [Annual Home Insurance Renewal](home-renewals.md) use case (UC-HRN-001)
