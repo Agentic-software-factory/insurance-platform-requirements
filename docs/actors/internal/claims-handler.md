@@ -9,7 +9,9 @@ sidebar_position: 5
 - **Description:** An employee of TryggFörsäkring responsible for the end-to-end
   handling of insurance claims. Claims handlers receive first notifications of
   loss (FNOL), investigate claim circumstances, determine coverage and
-  liability, and authorize settlements.
+  liability, and authorize settlements. In the home & property domain, claims
+  handlers manage complex multi-party claims involving water damage, fire,
+  burglary, and natural events.
 - **Responsibilities:**
   - Receive and register claims (skadeanmälan)
   - Investigate claim circumstances and verify coverage
@@ -18,7 +20,16 @@ sidebar_position: 5
   - Authorize claim payments and settlements
   - Handle disputes and escalate to complaints procedures when needed
   - Detect and flag potential fraud
-- **Key interactions:** Claims handling, fraud detection, settlement processing
+  - _Home & property:_ Dispatch and coordinate restoration companies for water
+    damage drying, fire cleanup, and mold remediation
+  - _Home & property:_ Manage multi-party claims involving BRF shared areas
+    and individual member apartments
+  - _Home & property:_ Coordinate with fire department for incident reports
+    and cause-of-loss determination
+  - _Home & property:_ Arrange property inspections for building defect claims
+  - _Home & property:_ Coordinate locksmith dispatch for burglary claims
+- **Key interactions:** Claims handling, fraud detection, settlement processing,
+  restoration company coordination, fire department liaison
 - **Regulatory relevance:**
   - FSA — must ensure fair and timely claims settlement (FSA-010); adhere to
     complaints handling procedures (FSA-011)
