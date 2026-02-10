@@ -50,6 +50,12 @@ jobs:
           node scripts/validate-use-cases.mjs
           node scripts/validate-user-stories.mjs
 
+      - name: Validate cross-references and sync
+        run: |
+          node scripts/validate-links.mjs
+          node scripts/validate-glossary.mjs
+          node scripts/validate-version-sync.mjs
+
   deploy:
     name: Deploy to GitHub Pages
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
