@@ -89,6 +89,89 @@ flowchart TD
     style X fill:#ffebee
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer (Privatkund)
+    participant S as System
+    participant BID as BankID
+    participant A as Customer Service Agent
+    participant PP as Payment Provider
+    participant NI as New Insurer
+    participant UW as Underwriter (Försäkringsgivare)
+
+    rect rgb(230, 245, 255)
+        Note over C, BID: Cancellation Request
+        C->>S: Request cancellation (portal/app/phone)
+        S->>BID: Authenticate customer
+        BID-->>S: Identity verified
+        S->>S: Identify policy and cancellation type
+    end
+
+    alt Ångerrätt (within 14 days)
+        rect rgb(232, 245, 233)
+            Note over C, PP: Cooling-Off Cancellation
+            S->>S: Verify within 14-day ångerrätt period
+            S->>S: Calculate full refund (minus any claims costs)
+            S->>C: Present refund amount
+            C->>S: Confirm cancellation
+            S->>PP: Process full refund
+            PP-->>S: Refund initiated
+            S->>C: Send cancellation confirmation
+        end
+    else Customer-initiated cancellation
+        rect rgb(255, 243, 224)
+            Note over C, NI: Standard Cancellation
+            C->>S: Select reason (sale/move/switch insurer/other)
+            S->>S: Determine effective date
+            S->>S: Calculate pro-rata refund
+            S->>C: Preview refund and effective date
+            opt Switching insurer
+                C->>S: Provide new insurer details and start date
+                S->>S: Check for coverage gap
+                alt Gap detected
+                    S->>C: Warn about coverage gap risk
+                    C->>S: Acknowledge gap or adjust dates
+                end
+            end
+            C->>S: Confirm cancellation
+            S->>PP: Process pro-rata refund
+            PP-->>S: Refund initiated
+            S->>C: Send cancellation confirmation
+        end
+    else Insurer-initiated (non-payment)
+        rect rgb(255, 235, 238)
+            Note over S, C: Non-Payment Cancellation
+            S->>C: Send betalningspåminnelse (14-day grace)
+            alt Payment received
+                C->>S: Pay overdue premium
+                S->>S: Reinstate policy
+            else Still unpaid
+                S->>C: Send uppsägningsvarning (14-day final grace)
+                alt Payment received
+                    C->>S: Pay overdue premium
+                    S->>S: Reinstate policy
+                else Still unpaid
+                    S->>S: Cancel policy automatically
+                    S->>C: Send cancellation notice
+                end
+            end
+        end
+    else Insurer-initiated (misrepresentation)
+        rect rgb(252, 228, 236)
+            Note over UW, C: Misrepresentation Cancellation
+            UW->>S: Document misrepresentation and evidence
+            alt Intentional (fraud)
+                S->>S: Immediate cancellation, no refund
+                S->>C: Send formal notice with denial and ARN rights
+            else Unintentional
+                S->>C: Offer adjustment or cancellation with refund
+            end
+        end
+    end
+```
+
 ## Main Success Scenario
 
 ### 1. Cancellation Request

@@ -72,6 +72,72 @@ flowchart TD
     style L fill:#fff3e0
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer (Privatkund)
+    participant S as System
+    participant CH as Claims Handler (Skadereglerare)
+    participant L as Lawyer (Advokat)
+    participant CT as Court/Arbitration Body
+    participant PP as Payment Provider
+
+    rect rgb(230, 245, 255)
+        Note over C, CH: Application and Eligibility
+        C->>S: Apply for rättsskydd (web/app/phone)
+        S->>C: Confirm application received
+        CH->>S: Register application with dispute details
+        CH->>S: Verify eligibility (dispute type, timing, waiting period)
+        alt Eligible
+            S->>C: Confirm rättsskydd approved
+        else Not eligible
+            S->>C: Deny with explanation + right to appeal (FSA-009)
+        end
+    end
+
+    rect rgb(255, 243, 224)
+        Note over C, CH: Lawyer Approval
+        C->>S: Submit chosen lawyer, firm, and fee estimate
+        S->>CH: Present fee reasonableness guidelines
+        alt Fees within range
+            CH->>S: Approve lawyer and set budget
+            S->>C: Confirm lawyer approval and approved budget
+        else Fees too high
+            CH->>C: Discuss alternatives, request revised estimate
+            C->>S: Submit revised fee estimate
+            CH->>S: Approve revised budget
+        end
+    end
+
+    rect rgb(232, 245, 233)
+        Note over L, CT: Active Legal Proceedings
+        L->>CT: Conduct proceedings on behalf of customer
+        loop Invoice cycle
+            L->>S: Submit invoice for legal work
+            CH->>S: Review and approve invoice against budget
+            S->>PP: Process payment (75-80% of invoice)
+            PP->>L: Pay approved amount
+            S->>C: Invoice customer self-retention share
+        end
+        opt Costs near coverage cap
+            S->>C: Warn — approaching 300,000 SEK cap
+            S->>CH: Alert handler of cap approach
+            C->>S: Decide to continue at own cost or settle
+        end
+    end
+
+    rect rgb(243, 229, 245)
+        Note over L, S: Resolution and Closure
+        L->>S: Report dispute outcome (judgment/settlement/withdrawal)
+        CH->>S: Calculate final settlement and remaining payments
+        S->>PP: Process final lawyer payment
+        PP->>L: Final payment
+        S->>C: Final cost summary (total costs, coverage share, self-retention)
+        CH->>S: Close claim and archive documentation
+    end
+```
+
 ## Main Flow (Rättsskydd Application and Management)
 
 | Step | Actor          | Action                                                                  | System Response                                                                | Reference                                                                                          |

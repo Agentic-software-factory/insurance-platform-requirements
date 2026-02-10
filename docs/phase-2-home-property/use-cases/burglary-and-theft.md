@@ -72,6 +72,85 @@ flowchart TD
     style O fill:#fff3e0
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer (Privatkund)
+    participant S as System
+    participant CH as Claims Handler (Skadereglerare)
+    participant LS as Låssmed (Locksmith)
+    participant PO as Polisen (Police)
+    participant FI as Fraud Investigator
+    participant RP as Repair Partner
+
+    rect rgb(230, 245, 255)
+        Note over C, LS: Emergency Response
+        C->>S: Report burglary (web/app/phone/24h emergency line)
+        S->>S: Create preliminary claim record
+        opt Locks or entry compromised
+            S->>LS: Dispatch emergency locksmith
+            S->>C: Confirm locksmith ETA
+            LS->>S: Arrive and secure property
+        end
+        S->>C: Guidance — do not disturb scene, file polisanmälan
+    end
+
+    rect rgb(255, 243, 224)
+        Note over C, CH: FNOL Registration
+        C->>PO: File polisanmälan
+        PO-->>C: Police report number (K-nummer)
+        C->>S: Provide police report number
+        CH->>S: Register FNOL, link police report, verify coverage
+        S->>C: Confirm claim number and next steps
+    end
+
+    rect rgb(252, 228, 236)
+        Note over S, FI: Fraud Screening
+        S->>S: Automated fraud screening (forced entry, timing, history)
+        S->>S: Assign fraud risk score
+        alt High fraud risk
+            CH->>FI: Escalate to fraud investigation
+            FI->>FI: Conduct detailed investigation
+            FI-->>CH: Cleared or confirmed fraud
+        end
+    end
+
+    rect rgb(232, 245, 233)
+        Note over C, CH: Inventory and Verification
+        S->>C: Send structured property inventory form
+        C->>S: Submit stolen items with descriptions and receipts
+        opt Total claimed > 100,000 SEK
+            CH->>S: Assign field investigator for on-site verification
+        end
+        CH->>S: Verify items against prior declarations
+        CH->>S: Record verification per item (Verified/Partial/Unverified)
+    end
+
+    rect rgb(243, 229, 245)
+        Note over CH, RP: Settlement and Repair
+        S->>S: Calculate replacement value per item
+        S->>S: Apply åldersavdrag (age deduction) per category
+        S->>S: Apply sub-limits where applicable
+        S->>S: Subtract deductible (självrisk)
+        S->>C: Present settlement breakdown
+        CH->>S: Approve and initiate payment
+        S->>C: Process settlement payment
+        CH->>RP: Create repair authorization (locks, windows, doors)
+        RP->>RP: Complete break-in damage repair
+        S->>RP: Process repair payment
+    end
+
+    rect rgb(255, 253, 231)
+        Note over S, C: Crisis Support and Closure
+        S->>C: Offer krisstöd (crisis counseling)
+        opt Customer requests support
+            S->>C: Connect to licensed crisis counselor
+        end
+        CH->>S: Close claim
+    end
+```
+
 ## Main Success Scenario
 
 ### 1. Burglary Report and Emergency Response

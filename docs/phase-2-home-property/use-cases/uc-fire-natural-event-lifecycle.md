@@ -74,6 +74,84 @@ flowchart TD
     style N fill:#fce4ec
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer (Privatkund)
+    participant S as System
+    participant CH as Claims Handler (Skadereglerare)
+    participant FD as Räddningstjänsten (Brandkår)
+    participant BI as Besiktningsman
+    participant RC as Remediation Contractor
+    participant CO as Contractor
+    participant BRF as BRF Board (BRF-styrelse)
+
+    rect rgb(230, 245, 255)
+        Note over C, CH: FNOL and Emergency
+        C->>S: Report fire/natural event (web/app/phone 24/7)
+        S->>C: Confirm FNOL, flag as high-priority
+        CH->>S: Register FNOL with event type and habitability status
+        opt Property uninhabitable
+            CH->>S: Arrange temporary housing within 24 hours
+            S->>C: Confirm accommodation details
+        end
+    end
+
+    rect rgb(255, 243, 224)
+        Note over CH, BI: Investigation and Inspection
+        CH->>FD: Request räddningstjänsten incident report
+        FD-->>CH: Incident report with cause determination
+        alt Suspected arson (brandorsaksutredning pending)
+            CH->>S: Flag claim as "Pending Cause Investigation"
+            Note over CH: Continue assessment, defer final settlement
+        end
+        CH->>BI: Schedule structural inspection (within 48 hours)
+        BI->>BI: Inspect structural integrity and safety
+        BI->>S: Submit inspection report + hazard findings
+    end
+
+    rect rgb(252, 228, 236)
+        Note over CH, RC: Environmental Hazard Check
+        opt Environmental hazards (asbestos, PCB, lead)
+            CH->>RC: Order specialized remediation
+            RC->>RC: Perform remediation
+            RC->>S: Submit remediation certification
+        end
+    end
+
+    rect rgb(232, 245, 233)
+        Note over CH, CO: Loss Determination and Repair/Rebuild
+        CH->>S: Determine total loss or partial loss
+        alt Total loss (totalskada)
+            CH->>S: Calculate total loss settlement (nybyggnadsvärde)
+            S->>S: Check for underinsurance
+            alt Customer rebuilds
+                CH->>CO: Coordinate rebuild
+                S->>C: Process staged payments during rebuild
+            else Cash settlement
+                S->>C: Process lump-sum settlement payment
+            end
+        else Partial loss (delskada)
+            CH->>S: Approve repair scope and contractors
+            CO->>CO: Perform repairs per approved scope
+        end
+    end
+
+    rect rgb(243, 229, 245)
+        Note over CH, C: Final Inspection and Closure
+        CH->>S: Final inspection or customer sign-off
+        alt Restoration unsatisfactory
+            CH->>CO: Request rework
+        end
+        opt Subrogation applicable
+            CH->>S: Pursue subrogation against responsible third party
+        end
+        S->>S: Close claim and record data for risk assessment
+        S->>C: Confirm claim closure
+    end
+```
+
 ## Main Flow (Fire/Natural Event Claim Lifecycle)
 
 | Step | Actor          | Action                                                                              | System Response                                                                   | Reference                                                             |

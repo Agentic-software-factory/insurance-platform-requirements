@@ -116,6 +116,73 @@ flowchart TD
     style I fill:#fff3e0
 ```
 
+### Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer (Privatkund)
+    participant S as System
+    participant BID as BankID
+    participant LM as Lantmäteriet
+    participant UW as Underwriter (Försäkringsgivare)
+    participant PP as Payment Provider
+
+    rect rgb(230, 245, 255)
+        Note over C, BID: Authentication
+        C->>S: Select "Make a change" on policy page
+        S->>BID: Authenticate customer
+        BID-->>S: Identity verified
+        C->>S: Select change type
+    end
+
+    alt Address change
+        rect rgb(255, 243, 224)
+            Note over C, LM: Address Change
+            C->>S: Enter new address
+            S->>LM: Property lookup
+            LM-->>S: Property data (type, year, area)
+            alt Different property type
+                S->>C: Redirect to new quote flow
+            else Same property type
+                S->>S: Recalculate premium for new address
+            end
+        end
+    else Coverage tier change
+        rect rgb(232, 245, 233)
+            Note over C, S: Coverage Change
+            S->>C: Show tier comparison (bas/standard/premium)
+            C->>S: Select new tier
+            opt Significant change
+                S->>C: Request updated demands-and-needs (IDD-011)
+                C->>S: Complete updated assessment
+            end
+            S->>S: Recalculate premium
+        end
+    else Add-on or deductible change
+        rect rgb(243, 229, 245)
+            Note over C, S: Add-on / Deductible Change
+            S->>C: Show options with pricing
+            C->>S: Select new add-on or deductible level
+            S->>S: Recalculate premium
+        end
+    end
+
+    rect rgb(255, 253, 231)
+        Note over S, PP: Approval and Processing
+        alt Underwriter review needed
+            S->>UW: Route amendment for review
+            UW-->>S: Approve / decline
+        end
+        S->>C: Display old vs new premium + pro-rata adjustment
+        C->>S: Confirm change
+        S->>S: Process amendment and update policy record
+        S->>PP: Trigger premium adjustment
+        PP-->>S: Payment processed
+        S->>S: Generate updated policy documents
+        S->>C: Send confirmation with updated documents
+    end
+```
+
 ### Main Success Scenario
 
 1. **Initiate** — Customer selects "Make a change" from their policy
@@ -309,6 +376,56 @@ flowchart TD
     style N fill:#ffebee
 ```
 
+### Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant BC as BRF Board Chair (Ordförande)
+    participant S as System
+    participant BV as Building Valuation Tool
+    participant UW as Underwriter (Försäkringsgivare)
+    participant PP as Payment Provider
+
+    rect rgb(230, 245, 255)
+        Note over BC, S: Authentication and Change Request
+        BC->>S: Log in and select BRF building policy
+        S->>S: Verify BRF authorization via Bolagsverket
+        BC->>S: Select change type (renovation/facility/valuation)
+    end
+
+    alt Renovation completed
+        BC->>S: Enter renovation details (type, scope, cost, date)
+        S->>BV: Recalculate building sum insured
+        BV-->>S: Updated rebuilding cost estimate
+    else Facility change
+        BC->>S: Add/remove facility (sauna, pool, workshop)
+        S->>S: Update facility list and assess risk
+    else Valuation review
+        BC->>S: Request revaluation
+        S->>BV: Fresh rebuilding cost estimate
+        BV-->>S: Updated valuation
+    end
+
+    rect rgb(255, 243, 224)
+        Note over S, UW: Review and Approval
+        alt Valuation anomaly or high-risk facility
+            S->>UW: Route for underwriter review
+            UW-->>S: Approve / approve with conditions / decline
+        end
+    end
+
+    rect rgb(232, 245, 233)
+        Note over BC, PP: Confirmation and Processing
+        S->>BC: Show updated sum insured and premium change
+        BC->>S: Confirm change
+        S->>S: Process amendment and update policy
+        S->>PP: Adjust premium
+        PP-->>S: Payment processed
+        S->>S: Reissue building insurance certificate
+        S->>BC: Send confirmation to board
+    end
+```
+
 ### Main Success Scenario
 
 1. **Authenticate** — BRF board chair logs in and selects the BRF building
@@ -459,6 +576,53 @@ flowchart TD
     style A fill:#e1f5fe
     style O fill:#e8f5e9
     style J fill:#fff3e0
+```
+
+### Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant PH as Policyholder (Privatkund)
+    participant S as System
+    participant BID as BankID
+
+    rect rgb(230, 245, 255)
+        Note over PH, BID: Authentication
+        PH->>S: Select "Manage household members"
+        S->>BID: Authenticate policyholder
+        BID-->>S: Identity verified
+    end
+
+    alt Add family member
+        rect rgb(232, 245, 233)
+            Note over PH, S: Add Member
+            PH->>S: Enter member details (name, personnummer/DOB, relationship)
+            S->>S: Validate personnummer format
+            S->>S: Check for duplicate coverage at same address
+            opt Duplicate found
+                S->>PH: Warning — person listed on another policy
+            end
+        end
+    else Remove family member
+        rect rgb(255, 243, 224)
+            Note over PH, S: Remove Member
+            PH->>S: Select member to remove
+            S->>PH: Confirm removal and impact on coverage
+        end
+    end
+
+    rect rgb(243, 229, 245)
+        Note over PH, S: Review and Confirmation
+        S->>S: Review household size vs contents sum insured
+        opt Sum insured inadequate for household size
+            S->>PH: Suggest updated sum insured (lösöresumma)
+        end
+        S->>PH: Show updated member list and premium impact
+        PH->>S: Confirm change
+        S->>S: Process amendment and update policy
+        S->>S: Generate updated policy document
+        S->>PH: Send confirmation with updated household list
+    end
 ```
 
 ### Main Success Scenario

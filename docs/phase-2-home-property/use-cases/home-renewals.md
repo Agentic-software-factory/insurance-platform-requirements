@@ -69,6 +69,75 @@ flowchart TD
     style O fill:#ffebee
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant S as System
+    participant SCB as SCB (Statistiska centralbyrån)
+    participant UW as Underwriter (Försäkringsgivare)
+    participant C as Customer (Privatkund)
+    participant A as Customer Service Agent
+    participant PP as Payment Provider
+
+    rect rgb(230, 245, 255)
+        Note over S, SCB: T-60: Index Adjustment and Recalculation
+        S->>S: Identify policies approaching huvudförfallodag
+        S->>SCB: Retrieve byggkostnadsindex
+        SCB-->>S: Current building cost index
+        S->>SCB: Retrieve konsumentprisindex (KPI)
+        SCB-->>S: Current consumer price index
+        S->>S: Recalculate building sum (villa/fritidshus)
+        S->>S: Recalculate contents sum (all policies)
+        S->>S: Recalculate premium with updated risk factors
+    end
+
+    rect rgb(255, 243, 224)
+        Note over S, UW: T-45: Underwriter Review (If Flagged)
+        alt Premium increase > 15% or 2+ claims or index > 10%
+            S->>UW: Route to underwriter review queue
+            UW->>UW: Review claims history and risk factors
+            alt Approve
+                UW-->>S: Renewal approved
+            else Conditional
+                UW-->>S: Approve with conditions (increased deductible, exclusions)
+            else Non-renewal
+                UW-->>S: Non-renewal decision
+            end
+        end
+    end
+
+    rect rgb(232, 245, 233)
+        Note over S, C: T-30: Renewal Notice
+        S->>S: Generate förnyelseavisering
+        S->>C: Dispatch renewal notice (postal/digital/Mina Sidor)
+    end
+
+    rect rgb(243, 229, 245)
+        Note over C, PP: T-30 to T-0: Customer Response Window
+        alt Customer modifies coverage
+            C->>S: Request coverage/tier/deductible change
+            S->>S: Recalculate premium with new terms
+            S->>C: Present updated terms
+            C->>S: Confirm modified terms
+        else Customer cancels
+            C->>S: Submit cancellation
+            S->>C: Cancellation confirmation
+        else No response or accept
+            Note over C: Automatic renewal proceeds
+        end
+    end
+
+    rect rgb(255, 253, 231)
+        Note over S, PP: T-0: Automatic Renewal
+        S->>S: Create new policy period with updated terms
+        S->>S: Generate updated policy document
+        S->>PP: Update payment schedule with new premium
+        PP-->>S: Payment schedule confirmed
+        S->>C: Send renewal confirmation
+    end
+```
+
 ## Main Success Scenario
 
 ### 1. Policy Identification (T-60 Days)
