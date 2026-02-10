@@ -119,3 +119,4 @@ This use case details the premium refund calculation and payment process followi
 - [US-CAN-001](../user-stories/cancellation-cooling-off.md) — Cancel Policy Within Cooling-Off Period (Ångerrätt)
 - [US-CAN-003](../user-stories/cancellation-vehicle-sold.md) — Cancel Due to Vehicle Sold
 - [US-CAN-004](../user-stories/cancellation-vehicle-deregistered.md) — Cancel Due to Vehicle Scrapped or Deregistered
+- [US-CAN-012](../user-stories/cancellation-preview-refund.md) — View Refund Amount Before Confirming Cancellation

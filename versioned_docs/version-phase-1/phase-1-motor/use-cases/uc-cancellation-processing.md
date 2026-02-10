@@ -156,3 +156,4 @@ This use case describes the end-to-end policy cancellation process — from the 
 - [US-CAN-009](../user-stories/cancellation-death.md) — Cancel Due to Death of Policyholder
 - [US-CAN-010](../user-stories/cancellation-insurer-initiated.md) — Insurer-Initiated Cancellation
 - [US-CAN-011](../user-stories/cancellation-eu-online-button.md) — EU Online Cancellation Button (EU 2023/2673)
+- [US-CAN-012](../user-stories/cancellation-preview-refund.md) — View Refund Amount Before Confirming Cancellation

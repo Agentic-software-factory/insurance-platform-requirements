@@ -64,6 +64,7 @@ User stories covering motor insurance policy cancellation scenarios, including c
 | [US-CAN-009](cancellation-death.md)                | Cancel Due to Death of Policyholder                     | Must Have   |
 | [US-CAN-010](cancellation-insurer-initiated.md)    | Insurer-Initiated Cancellation                          | Must Have   |
 | [US-CAN-011](cancellation-eu-online-button.md)     | EU Online Cancellation Button (EU 2023/2673)            | Must Have   |
+| [US-CAN-012](cancellation-preview-refund.md)       | View Refund Amount Before Confirming Cancellation       | Must Have   |
 
 ## Claims Handling
 
