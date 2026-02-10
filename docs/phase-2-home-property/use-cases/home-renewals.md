@@ -171,6 +171,46 @@ sequenceDiagram
     end
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Upcoming : Policy within 60 days of huvudförfallodag
+    Upcoming --> IndexAdjusted : Sums recalculated via byggkostnadsindex/KPI
+    IndexAdjusted --> Recalculated : Premium recalculated with updated factors
+    Recalculated --> UnderwriterReview : Flagged — premium increase >15% or claims
+    Recalculated --> Notified : Standard renewal — förnyelseavisering sent (T-30)
+    UnderwriterReview --> Notified : Underwriter approves renewal
+    UnderwriterReview --> NonRenewal : Underwriter declines renewal (Ej förnyad)
+    Notified --> Modified : Customer requests coverage changes
+    Notified --> Cancelled : Customer cancels before huvudförfallodag (Uppsagd)
+    Notified --> Renewed : No response or explicit acceptance — auto-renewed (T-0)
+    Modified --> Renewed : Updated terms applied at renewal
+    Renewed --> [*]
+    Cancelled --> [*]
+    NonRenewal --> [*]
+
+    note right of Upcoming
+        Batch process identifies eligible policies.
+        Index data retrieved from SCB.
+    end note
+
+    note right of Notified
+        Customer has 30 days to respond.
+        Modification, cancellation, or acceptance.
+    end note
+
+    note right of Renewed
+        New policy period starts at 00:00
+        on huvudförfallodag. No coverage gap.
+    end note
+
+    note right of NonRenewal
+        Non-renewal notice sent at T-30.
+        Customer advised to seek replacement.
+    end note
+```
+
 ## Main Success Scenario
 
 ### 1. Policy Identification (T-60 Days)

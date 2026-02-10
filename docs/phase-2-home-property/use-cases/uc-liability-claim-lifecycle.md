@@ -182,6 +182,55 @@ sequenceDiagram
     end
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Reported : Liability incident reported (Ansvarsskada anmäld)
+    Reported --> Registered : FNOL registered, ansvarsskydd verified
+    Registered --> UnderInvestigation : Evidence gathered (Utredning pågår)
+    UnderInvestigation --> ExpertReview : Uncertain — expert investigation commissioned
+    ExpertReview --> UnderInvestigation : Expert report received
+    UnderInvestigation --> LiabilityDetermined : Liability assessed
+
+    LiabilityDetermined --> Negotiation : Policyholder liable — negotiating with injured party (Förhandling)
+    LiabilityDetermined --> Defense : Policyholder not liable — defending claim (Bestridande)
+
+    Negotiation --> Settled : Settlement agreed and paid (Reglerad)
+    Negotiation --> LegalProceedings : No agreement — escalated to mediation/court
+    LegalProceedings --> Settled : Court judgment or mediated settlement
+
+    Defense --> Closed : Injured party accepts denial
+    Defense --> LegalDefense : Injured party disputes — legal counsel engaged (Rättsligt försvar)
+    LegalDefense --> Closed : Defense resolved
+
+    Settled --> CrossInsurer : Cross-insurer coordination needed
+    Settled --> Closed : No coordination needed — claim closed (Stängd)
+    CrossInsurer --> Closed : Inter-insurer settlement completed
+    Closed --> [*]
+
+    note right of UnderInvestigation
+        Besiktningsman may be commissioned
+        for site inspection and expert report.
+    end note
+
+    note right of LiabilityDetermined
+        Insurer has dual obligation:
+        compensate justified claims AND
+        defend against unfounded claims.
+    end note
+
+    note right of Negotiation
+        Settlement limit: up to 5,000,000 SEK.
+        Amounts >500,000 SEK need senior approval.
+    end note
+
+    note right of Defense
+        Defense costs covered in addition
+        to settlement limit.
+    end note
+```
+
 ## Main Flow (Liability Claim Assessment and Settlement)
 
 | Step | Actor          | Action                                                                         | System Response                                                              | Reference                                                                                                          |

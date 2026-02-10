@@ -35,6 +35,45 @@ record entity provides a complete audit trail of every policy change.
 | `created_at`            | Timestamp | When the amendment was created                                                                                                            |
 | `completed_at`          | Timestamp | When the amendment was finalized                                                                                                          |
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Draft : Policy created during quote-and-bind (Utkast)
+    Draft --> Active : Policy bound and issued (Aktiv)
+    Active --> Amended : Mid-term modification processed (Ändrad)
+    Amended --> Active : Amendment completed — returns to active
+    Active --> Suspended : Non-payment after grace period (Vilande)
+    Suspended --> Active : Payment received within reinstatement period
+    Suspended --> Lapsed : Reinstatement period expires (Förfallen)
+    Active --> PendingRenewal : Approaching huvudförfallodag
+    PendingRenewal --> Active : Renewed for new period
+    PendingRenewal --> Cancelled : Customer cancels at renewal (Uppsagd)
+    Active --> Cancelled : Mid-term cancellation processed
+    Lapsed --> [*]
+    Cancelled --> [*]
+
+    note right of Active
+        Full policy functions available.
+        Mid-term amendments permitted.
+    end note
+
+    note right of Amended
+        Premium recalculated pro-rata.
+        Updated documents issued.
+    end note
+
+    note right of Suspended
+        Coverage inactive. Reinstatement
+        window open (default 90 days).
+    end note
+
+    note right of Cancelled
+        Refund processed if applicable.
+        No new claims accepted.
+    end note
+```
+
 ---
 
 ## UC-HPA-001: Mid-Term Policy Modification

@@ -159,6 +159,45 @@ sequenceDiagram
     end
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Draft : Customer initiates quote (Offertförfrågan)
+    Draft --> RiskAssessed : Property data verified and risk scored
+    RiskAssessed --> Presented : Premium calculated and tiers displayed
+    RiskAssessed --> Referred : High-risk property flagged
+    Referred --> Presented : Underwriter approves
+    Referred --> Declined : Underwriter declines
+    Presented --> Accepted : Customer selects coverage and acknowledges IPID
+    Presented --> Expired : 30-day validity timeout (Offertens giltighetstid)
+    Accepted --> Bound : BankID signed and verified (Bunden)
+    Accepted --> Expired : Signing not completed
+    Bound --> [*]
+    Expired --> [*]
+    Declined --> [*]
+
+    note right of Draft
+        Address entered, product type selected.
+        Lantmäteriet property lookup in progress.
+    end note
+
+    note right of RiskAssessed
+        Geographic, construction, and
+        security risk factors evaluated.
+    end note
+
+    note right of Presented
+        Side-by-side tier comparison shown.
+        Demands-and-needs assessment completed.
+    end note
+
+    note right of Bound
+        Policy issued, payment setup initiated.
+        14-day ångerrätt period begins.
+    end note
+```
+
 ## Main Success Scenario
 
 ### 1. Address Entry and Product Selection
