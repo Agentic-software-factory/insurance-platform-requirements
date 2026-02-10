@@ -8,9 +8,10 @@ This directory captures lessons learned during the TryggFörsäkring platform re
 
 ## Index
 
-| ID                                                          | Title                                       | Date       | Type    | Severity |
-| ----------------------------------------------------------- | ------------------------------------------- | ---------- | ------- | -------- |
-| [LESSON-001](./LESSON-001-stale-git-index-build-failure.md) | Stale Git Index Causes Local Build Failures | 2026-02-10 | Pattern | Medium   |
+| ID                                                          | Title                                        | Date       | Type    | Severity |
+| ----------------------------------------------------------- | -------------------------------------------- | ---------- | ------- | -------- |
+| [LESSON-001](./LESSON-001-stale-git-index-build-failure.md) | Stale Git Index Causes Local Build Failures  | 2026-02-10 | Pattern | Medium   |
+| [LESSON-002](./LESSON-002-intake-never-runs-next.md)        | Intake Must Never Run /next or Start Workers | 2026-02-10 | Mistake | High     |
 
 ## How to Add a Lesson
 
