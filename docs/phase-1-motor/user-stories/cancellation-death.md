@@ -12,8 +12,8 @@ sidebar_position: 38
 
 ## Actors
 
-- **Primary:** Estate Representative (via [Operations Staff](../../actors/internal-actors.md#system-administrator))
-- **Supporting:** [Operations Staff](../../actors/internal-actors.md#system-administrator), [Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen), [Payment Provider](../../actors/external-actors.md#payment-provider)
+- **Primary:** Estate Representative (via [Operations Staff](../../actors/internal/system-administrator.md))
+- **Supporting:** [Operations Staff](../../actors/internal/system-administrator.md), [Transportstyrelsen](../../actors/external/transportstyrelsen.md), [Payment Provider](../../actors/external/payment-provider.md)
 
 ## Priority
 

@@ -73,5 +73,5 @@ mobile.
 
 ## Related Actors
 
-- [Customer (Privatkund)](../actors/internal-actors#customer-privatkund) — Anna
+- [Customer (Privatkund)](../actors/internal/customer.md) — Anna
   and Marcus are private customers with multiple policies.

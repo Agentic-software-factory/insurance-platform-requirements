@@ -23,8 +23,8 @@ This use case describes the liability determination process for motor insurance 
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Police (Polis)](../../actors/external-actors.md#police-polis), [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Police (Polis)](../../actors/external/police.md), [TFF](../../actors/external/tff.md)
 
 ## Preconditions
 

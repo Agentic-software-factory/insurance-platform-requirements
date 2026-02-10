@@ -13,7 +13,7 @@ sidebar_position: 34
 ## Actors
 
 - **Primary:** System
-- **Supporting:** [Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen), [Trafikförsäkringsföreningen (TFF)](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)
+- **Supporting:** [Transportstyrelsen](../../actors/external/transportstyrelsen.md), [Trafikförsäkringsföreningen (TFF)](../../actors/external/tff.md)
 
 ## Priority
 

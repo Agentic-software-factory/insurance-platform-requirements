@@ -12,8 +12,8 @@ sidebar_position: 23
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Repair Shop (Verkstad)](../../actors/external-actors.md#repair-shop-verkstad), [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Repair Shop (Verkstad)](../../actors/external/repair-shop.md), [Customer (Privatkund)](../../actors/internal/customer.md)
 
 ## Priority
 

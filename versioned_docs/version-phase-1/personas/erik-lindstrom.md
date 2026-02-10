@@ -68,5 +68,5 @@ calling a phone line or visiting a physical office.
 
 ## Related Actors
 
-- [Customer (Privatkund)](../actors/internal-actors#customer-privatkund) — Erik
+- [Customer (Privatkund)](../actors/internal/customer.md) — Erik
   is a private customer purchasing his first policy.

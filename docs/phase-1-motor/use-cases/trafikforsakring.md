@@ -25,15 +25,15 @@ via the Green Card system.
 
 ## Stakeholders and Interests
 
-| Stakeholder                                                                                      | Interest                                                                 |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)                     | Continuous legal coverage; clear information about mandatory obligations |
-| [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare) | Correct claim classification; clear personal injury process              |
-| [Compliance Officer](../../actors/internal-actors.md#compliance-officer)                         | Timely TFF reporting; regulatory compliance evidence                     |
-| Underwriter                                                                                      | Accurate trafikforsakring pricing within product tiers                   |
-| [Transportstyrelsen](../../actors/external-actors.md#transportstyrelsen)                         | Timely and accurate insurance status notifications                       |
-| [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff)                           | Membership reporting compliance; uninsured vehicle claims cooperation    |
-| FSA                                                                                              | Regulatory oversight of mandatory insurance obligations                  |
+| Stakeholder                                                                | Interest                                                                 |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| [Customer (Privatkund)](../../actors/internal/customer.md)                 | Continuous legal coverage; clear information about mandatory obligations |
+| [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md) | Correct claim classification; clear personal injury process              |
+| [Compliance Officer](../../actors/internal/compliance-officer.md)          | Timely TFF reporting; regulatory compliance evidence                     |
+| Underwriter                                                                | Accurate trafikforsakring pricing within product tiers                   |
+| [Transportstyrelsen](../../actors/external/transportstyrelsen.md)          | Timely and accurate insurance status notifications                       |
+| [TFF](../../actors/external/tff.md)                                        | Membership reporting compliance; uninsured vehicle claims cooperation    |
+| FSA                                                                        | Regulatory oversight of mandatory insurance obligations                  |
 
 ## Main Success Scenario
 

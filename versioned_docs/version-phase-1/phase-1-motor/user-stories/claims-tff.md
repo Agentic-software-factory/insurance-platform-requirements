@@ -12,8 +12,8 @@ sidebar_position: 20
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [TFF](../../actors/external-actors.md#trafikförsäkringsföreningen-tff), [Police (Polis)](../../actors/external-actors.md#police-polis)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [TFF](../../actors/external/tff.md), [Police (Polis)](../../actors/external/police.md)
 
 ## Priority
 

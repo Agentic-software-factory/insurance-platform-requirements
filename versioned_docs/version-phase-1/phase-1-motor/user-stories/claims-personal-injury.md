@@ -12,8 +12,8 @@ sidebar_position: 21
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
-- **Supporting:** [Medical Provider (Vårdgivare)](../../actors/external-actors.md#medical-provider-vårdgivare), [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
+- **Supporting:** [Medical Provider (Vårdgivare)](../../actors/external/medical-provider.md), [Customer (Privatkund)](../../actors/internal/customer.md)
 
 ## Priority
 

@@ -11,25 +11,25 @@ term, responsibilities, key interactions, and regulatory relevance.
 
 ## Actor Summary
 
-| Actor                                                                                        | Type     | Primary Role                                          |
-| -------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------- |
-| [Customer (Privatkund)](internal-actors#customer-privatkund)                                 | Internal | Private individual seeking or holding motor insurance |
-| [Corporate Customer (Företagskund)](internal-actors#corporate-customer-företagskund)         | Internal | Business entity with fleet or commercial vehicles     |
-| [Insurance Agent (Försäkringsagent)](internal-actors#insurance-agent-försäkringsagent)       | Internal | Represents insurers and sells policies                |
-| [Insurance Broker (Försäkringsmäklare)](internal-actors#insurance-broker-försäkringsmäklare) | Internal | Independent advisor representing customer interests   |
-| [Claims Handler (Skadereglerare)](internal-actors#claims-handler-skadereglerare)             | Internal | Assesses, investigates, and settles claims            |
-| [Claims Adjuster (Värderare)](internal-actors#claims-adjuster-värderare)                     | Internal | Specialized vehicle damage assessor                   |
-| [Underwriter (Riskbedömare)](internal-actors#underwriter-riskbedömare)                       | Internal | Assesses risk, sets premiums and terms                |
-| [Actuary](internal-actors#actuary)                                                           | Internal | Develops pricing models and analyzes claims data      |
-| [Compliance Officer](internal-actors#compliance-officer)                                     | Internal | Ensures regulatory adherence                          |
-| [System Administrator](internal-actors#system-administrator)                                 | Internal | Manages platform configuration and access             |
-| [Transportstyrelsen](external-actors#transportstyrelsen)                                     | External | Swedish Transport Agency — vehicle registry           |
-| [TFF](external-actors#trafikförsäkringsföreningen-tff)                                       | External | Swedish Motor Insurers — uninsured claims             |
-| [BankID](external-actors#bankid)                                                             | External | Electronic identification and signing                 |
-| [Repair Shop (Verkstad)](external-actors#repair-shop-verkstad)                               | External | Authorized vehicle repair network                     |
-| [Police (Polis)](external-actors#police-polis)                                               | External | Accident reports and fraud investigation              |
-| [Medical Provider (Vårdgivare)](external-actors#medical-provider-vårdgivare)                 | External | Injury treatment and medical reports                  |
-| [Payment Provider](external-actors#payment-provider)                                         | External | Payment processing for premiums and claims            |
+| Actor                                                                 | Type     | Primary Role                                          |
+| --------------------------------------------------------------------- | -------- | ----------------------------------------------------- |
+| [Customer (Privatkund)](internal/customer.md)                         | Internal | Private individual seeking or holding motor insurance |
+| [Corporate Customer (Företagskund)](internal/corporate-customer.md)   | Internal | Business entity with fleet or commercial vehicles     |
+| [Insurance Agent (Försäkringsagent)](internal/insurance-agent.md)     | Internal | Represents insurers and sells policies                |
+| [Insurance Broker (Försäkringsmäklare)](internal/insurance-broker.md) | Internal | Independent advisor representing customer interests   |
+| [Claims Handler (Skadereglerare)](internal/claims-handler.md)         | Internal | Assesses, investigates, and settles claims            |
+| [Claims Adjuster (Värderare)](internal/claims-adjuster.md)            | Internal | Specialized vehicle damage assessor                   |
+| [Underwriter (Riskbedömare)](internal/underwriter.md)                 | Internal | Assesses risk, sets premiums and terms                |
+| [Actuary](internal/actuary.md)                                        | Internal | Develops pricing models and analyzes claims data      |
+| [Compliance Officer](internal/compliance-officer.md)                  | Internal | Ensures regulatory adherence                          |
+| [System Administrator](internal/system-administrator.md)              | Internal | Manages platform configuration and access             |
+| [Transportstyrelsen](external/transportstyrelsen.md)                  | External | Swedish Transport Agency — vehicle registry           |
+| [TFF](external/tff.md)                                                | External | Swedish Motor Insurers — uninsured claims             |
+| [BankID](external/bankid.md)                                          | External | Electronic identification and signing                 |
+| [Repair Shop (Verkstad)](external/repair-shop.md)                     | External | Authorized vehicle repair network                     |
+| [Police (Polis)](external/police.md)                                  | External | Accident reports and fraud investigation              |
+| [Medical Provider (Vårdgivare)](external/medical-provider.md)         | External | Injury treatment and medical reports                  |
+| [Payment Provider](external/payment-provider.md)                      | External | Payment processing for premiums and claims            |
 
 ## Internal vs External Actors
 

@@ -75,5 +75,5 @@ digital channel, he needs large text, simple navigation, and clear instructions.
 
 ## Related Actors
 
-- [Customer (Privatkund)](../actors/internal-actors#customer-privatkund) —
+- [Customer (Privatkund)](../actors/internal/customer.md) —
   Gunnar is a long-standing private customer.

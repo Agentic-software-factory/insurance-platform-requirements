@@ -11,7 +11,7 @@ This use case details the premium refund calculation and payment process followi
 ## Actors
 
 - **Primary:** System
-- **Supporting:** [Customer (Privatkund)](../../actors/internal-actors.md#customer-privatkund), [System Administrator](../../actors/internal-actors.md#system-administrator), [Payment Provider](../../actors/external-actors.md#payment-provider)
+- **Supporting:** [Customer (Privatkund)](../../actors/internal/customer.md), [System Administrator](../../actors/internal/system-administrator.md), [Payment Provider](../../actors/external/payment-provider.md)
 
 ## Preconditions
 

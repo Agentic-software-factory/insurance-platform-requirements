@@ -12,7 +12,7 @@ sidebar_position: 16
 
 ## Actors
 
-- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal-actors.md#claims-handler-skadereglerare)
+- **Primary:** [Claims Handler (Skadereglerare)](../../actors/internal/claims-handler.md)
 
 ## Priority
 
