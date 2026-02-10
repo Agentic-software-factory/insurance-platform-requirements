@@ -112,6 +112,53 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant S as System
+    participant C as Customer
+    participant PP as Payment Provider
+    participant Ops as Operations Staff
+
+    S->>S: Retrieve annual premium and payment history
+    S->>S: Determine cancellation effective date
+
+    alt Cooling-off (angerratt)
+        S->>S: Calculate full refund
+        opt Early coverage start requested
+            S->>S: Deduct proportional days of coverage used
+        end
+    else Huvudforfallodag
+        S-->>C: No refund - coverage runs to period end
+    else Mid-term (vehicle sold/scrapped/emigration)
+        S->>S: Calculate pro-rata refund
+        Note over S: (remaining days / total days) x premium
+    end
+
+    S->>S: Check for outstanding balance
+    opt Outstanding premium balance
+        S->>S: Offset: net refund = gross refund - outstanding
+    end
+
+    alt Net refund is positive
+        S-->>C: Display refund breakdown before confirmation
+        C->>S: Confirm cancellation and refund
+        S->>PP: Send refund instruction (original payment method)
+        alt Payment successful
+            PP-->>S: Refund processed
+            S-->>C: Refund confirmation with expected payment date
+        else Payment rejected
+            PP-->>S: Rejection (e.g., closed bank account)
+            S->>Ops: Alert for manual processing
+            Ops->>C: Arrange alternative refund method
+            Ops->>PP: Reprocess refund
+        end
+    else Net refund is zero or negative
+        S-->>C: Inform of remaining balance (no refund)
+    end
+```
+
 ## Main Flow (Pro-Rata Refund Calculation)
 
 | Step | Actor    | Action                                                                                                | System Response                                                   |

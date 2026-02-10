@@ -118,6 +118,45 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer
+    participant BID as BankID
+    participant S as System
+    participant CH as Claims Handler
+
+    Note over C,CH: Online Self-Service FNOL
+    C->>S: Open claims reporting page
+    C->>BID: Authenticate via BankID
+    BID-->>S: Identity verified
+    S-->>C: Display active policies
+    C->>S: Select policy and vehicle
+    S-->>C: Show eligible claim types for coverage tier
+    C->>S: Select claim type (collision, theft, glass, etc.)
+    S-->>C: Adapted FNOL form
+    C->>S: Enter incident details (date, time, location)
+    S->>S: Validate incident date against coverage period
+    C->>S: Enter other party information (if applicable)
+    C->>S: Upload damage photos and documents
+    S-->>C: Display FNOL summary for review
+    C->>S: Submit claim report
+    activate S
+    S->>S: Generate claim number (skadenummer)
+    S->>CH: Auto-assign claims handler
+    S-->>C: Confirmation with claim number
+    deactivate S
+
+    Note over C,CH: Phone-Reported FNOL
+    C->>CH: Call claims phone line
+    CH->>S: Search policy (personnummer or policy number)
+    S-->>CH: Display matching policies
+    CH->>S: Create claim and enter incident details
+    S->>S: Generate claim number
+    CH-->>C: Provide claim number
+```
+
 ## Main Flow (Online Self-Service)
 
 | Step | Actor    | Action                                                          | System Response                                                                                   |

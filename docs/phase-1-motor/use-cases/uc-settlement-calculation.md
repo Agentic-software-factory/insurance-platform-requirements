@@ -121,6 +121,56 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant CH as Claims Handler
+    participant S as System
+    participant CA as Claims Adjuster
+    participant PP as Payment Provider
+    participant RS as Repair Shop
+    participant C as Customer
+
+    CH->>S: Open approved claim for settlement
+    S-->>CH: Display damage assessment and repair estimate
+
+    alt Vehicle repair
+        S->>S: Calculate: repair cost - deductible
+        S-->>CH: Settlement amount with breakdown
+    else Total loss
+        CA->>S: Market value and salvage value
+        S->>S: Calculate: market value - salvage - deductible
+        S-->>CH: Total loss settlement breakdown
+    else Liability split (multi-party)
+        S->>S: Apply liability % to damage amount
+        S->>S: Subtract deductible from adjusted amount
+        S-->>CH: Liability-adjusted settlement
+    else Personal injury (trafikforsakring)
+        CH->>S: Enter compensation components
+        S->>S: Calculate: medical + income loss + pain + disability
+        Note over S,CH: No deductible for personal injury claims
+        S-->>CH: Total compensation amount
+    end
+
+    alt Amount exceeds handler authority (> SEK 100k)
+        CH->>S: Request senior approval
+        S-->>CH: Senior approval granted
+    end
+
+    CH->>S: Confirm settlement and select payment method
+    alt Direct billing to repair shop
+        S->>RS: Send repair authorization
+        Note over RS,C: Customer pays deductible to shop
+    else Bank transfer to customer
+        S->>PP: Initiate bank transfer
+        PP-->>S: Payment confirmed
+    end
+
+    S-->>C: Settlement breakdown notification
+    S->>S: Update claim status to Settled
+```
+
 ## Main Flow: Vehicle Repair Settlement
 
 | Step | Actor          | Action                                              | System Response                                                                      |

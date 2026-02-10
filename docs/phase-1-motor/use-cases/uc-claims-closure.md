@@ -142,6 +142,52 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant CH as Claims Handler
+    participant S as System
+    participant Acct as Accounting
+    participant Act as Actuary
+    participant C as Customer
+
+    CH->>S: Initiate claim closure
+    activate S
+    S->>S: Validate all payments confirmed
+    S->>S: Validate subrogation cases resolved
+    S->>S: Validate bonus class impact applied
+    S->>S: Validate all documents attached
+    S->>S: Validate no pending disputes
+    deactivate S
+
+    alt Checklist item fails
+        S-->>CH: Display blocking items
+        CH->>S: Resolve outstanding items
+        CH->>S: Retry closure
+    end
+
+    S-->>CH: Present closure summary (total paid, recovered, net cost)
+    CH->>S: Confirm closure
+    S->>S: Set claim status to Closed
+
+    S->>Acct: Release outstanding reserves
+    S->>Act: Update actuarial reporting data (frequency, severity, KPIs)
+    S-->>C: Closure notification with final summary
+
+    Note over S: Claim record retained for 10 years (FSA-014)
+
+    opt Claim reopening (new evidence or dispute)
+        CH->>S: Request reopening with reason
+        alt Claim less than 1 year old
+            S->>S: Reopen with standard authorization
+        else Claim more than 1 year old
+            CH->>S: Senior handler approval required
+        end
+        S->>Acct: Re-establish reserves
+    end
+```
+
 ## Main Success Scenario: Standard Closure
 
 | Step | Actor          | Action                                           | System Response                                                     |

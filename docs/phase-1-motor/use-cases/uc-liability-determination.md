@@ -135,6 +135,58 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant CH as Claims Handler
+    participant S as System
+    participant Police as Police
+    participant TPI as Third-Party Insurer
+    participant TFF as TFF
+
+    CH->>S: Open claim for liability assessment
+    S-->>CH: Display incident details and evidence
+
+    alt Single-vehicle incident
+        CH->>S: Set 100% policyholder liability
+        CH->>S: Check coverage tier (halv/hel required)
+    else Multi-vehicle collision
+        CH->>Police: Request police report
+        Police-->>CH: Police report with findings
+        CH->>CH: Review witness statements and photos
+        CH->>S: Identify all parties involved
+        S-->>CH: Suggest default liability split
+        CH->>S: Adjust and confirm liability percentages
+        Note over CH,S: VR-LIA-001: percentages must total 100%
+        opt Third-party insurer coordination
+            CH->>TPI: Contact to agree on liability split
+            alt Agreement reached
+                TPI-->>CH: Agreed split
+            else Disagreement
+                CH->>TFF: Escalate to inter-company arbitration
+                TFF-->>CH: Arbitrated liability decision
+            end
+        end
+    else Animal collision (viltskada)
+        CH->>S: Record no-fault determination
+        Note over CH,S: Bonus-neutral - no impact on bonus class
+    else Hit-and-run (smitning)
+        CH->>Police: Verify police report (mandatory)
+        Police-->>CH: Police report confirmed
+        CH->>S: Determine TFF eligibility
+        S->>TFF: Refer for unidentified vehicle claim
+    else Personal injury (trafikforsakring)
+        CH->>S: Apply strict liability (Trafikskadelagen)
+    end
+
+    CH->>S: Record liability rationale and evidence
+    opt Subrogation eligible
+        CH->>S: Identify recovery target
+    end
+    S->>S: Advance claim to damage assessment
+```
+
 ## Main Success Scenario: Multi-Party Collision
 
 | Step | Actor          | Action                                          | System Response                                                                 |

@@ -87,6 +87,59 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant S as System
+    participant UW as Underwriter
+    participant Cust as Customer
+    participant PP as Payment Provider
+    participant TS as Transportstyrelsen
+    participant CI as Competitor Insurer
+
+    Note over S,Cust: UC-RN-001: Annual Renewal
+    S->>S: Batch: identify policies within renewal window
+    S->>S: Evaluate claims history and update bonus class
+    S->>S: Recalculate premium with new tariff
+    alt Premium increase above threshold
+        S->>UW: Route renewal for review
+        UW-->>S: Approve / adjust / retention offer
+    end
+    S-->>Cust: Send renewal notice (T-30 days)
+    alt Customer takes no action
+        S->>S: Auto-renew at huvudforfallodag
+        S->>PP: Update payment schedule
+        S-->>Cust: Renewal confirmation
+    else Customer cancels
+        Cust->>S: Submit cancellation request
+        S->>TS: Notify coverage end date
+        S-->>Cust: Cancellation confirmation + bonus certificate
+    else Customer requests changes
+        Cust->>S: Request coverage modifications
+        S->>S: Recalculate premium with changes
+        S->>S: Renew with modified terms
+    end
+
+    Note over S,CI: UC-RN-002: Flyttanmalan (Insurer Switch)
+    CI->>S: Flyttanmalan request (personnummer, reg.nr)
+    S->>S: Validate policy match and huvudforfallodag
+    S->>S: Suppress auto-renewal
+    S-->>CI: Confirmation + forsakringsbesked (bonus class)
+    S->>TS: Notify coverage end date
+    S-->>Cust: Cancellation confirmation + bonus certificate
+
+    Note over S,UW: UC-RN-003: Bonus Class Progression
+    S->>S: Retrieve claims history for expiring period
+    S->>S: Apply bonus progression rules
+    alt Customer disputes bonus
+        Cust->>S: Dispute bonus class
+        S->>UW: Route dispute for review
+        UW-->>S: Correct or confirm bonus class
+        S-->>Cust: Dispute resolution
+    end
+```
+
 ## UC-RN-001: Process Annual Policy Renewal
 
 Handles the end-to-end renewal flow from pre-renewal premium recalculation through automatic renewal or customer cancellation.

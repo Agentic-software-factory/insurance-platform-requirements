@@ -116,6 +116,53 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer
+    participant S as System
+    participant TS as Transportstyrelsen
+    participant BID as BankID
+    participant PP as Payment Provider
+
+    C->>S: Enter reg.nr + personnummer
+    activate S
+    S->>TS: Vehicle lookup request
+    TS-->>S: Vehicle data (make, model, year, VIN)
+    S-->>C: Display vehicle details
+    deactivate S
+
+    S->>S: Retrieve bonus class from claims DB
+    S-->>C: Present demands-and-needs assessment form
+    C->>S: Complete assessment (usage, mileage, parking)
+    activate S
+    S-->>C: Coverage recommendation with rationale
+    deactivate S
+
+    S->>S: Calculate premiums for all three tiers
+    S-->>C: Side-by-side tier comparison with IPID links
+
+    C->>S: Select coverage tier, deductible, add-ons
+    S-->>C: Binding summary with pre-contractual info
+    Note over S,C: IDD-001/002/003 disclosures included
+
+    C->>BID: Initiate BankID signing
+    activate BID
+    S->>BID: Send policy document hash
+    BID-->>S: Authentication and signature confirmed
+    deactivate BID
+
+    activate S
+    S->>S: Generate policy number and certificate
+    S->>PP: Initiate payment setup (autogiro/invoice)
+    PP-->>S: Payment setup confirmed
+    S->>TS: Insurance notification (policy bound)
+    TS-->>S: Acknowledgement reference
+    S-->>C: Confirmation + certificate + policy documents
+    deactivate S
+```
+
 ## Main Success Scenario
 
 ### 1. Customer Identification

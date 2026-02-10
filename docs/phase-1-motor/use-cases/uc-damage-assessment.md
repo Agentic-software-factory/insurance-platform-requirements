@@ -142,6 +142,61 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant CH as Claims Handler
+    participant CA as Claims Adjuster
+    participant C as Customer
+    participant RS as Repair Shop
+    participant S as System
+
+    CH->>CA: Assign damage assessment
+    CA->>C: Contact to schedule inspection
+
+    alt On-site inspection
+        CA->>CA: Inspect vehicle at location
+        CA->>S: Document damage with photos (min 4)
+        CA->>S: Record affected components
+        CA->>S: Prepare repair estimate (parts, labor, paint)
+    else Remote assessment (minor damage)
+        S-->>C: Request photos (min 6)
+        C->>S: Upload damage photos
+        CA->>S: Review photos
+        alt Photos sufficient
+            CA->>S: Complete remote assessment
+        else Photos insufficient
+            CA->>C: Schedule on-site inspection
+        end
+    else Repair shop estimate
+        CH-->>C: Direct to authorized repair shop
+        RS->>S: Submit repair estimate
+        CA->>S: Review shop estimate vs market rates
+        alt Within acceptable range
+            CA->>S: Approve estimate
+        else Rates above market
+            CA->>S: Adjust estimate with justification
+        end
+    end
+
+    CA->>CA: Consistency check (damage vs reported incident)
+    alt Inconsistency detected
+        CA->>CH: Flag for fraud review
+    end
+
+    alt Repair cost > 75% of market value
+        S->>S: Calculate vehicle market value
+        CA->>S: Confirm market value and salvage value
+        CA->>S: Submit total loss report
+    else Repair feasible
+        CA->>S: Submit repair estimate
+    end
+
+    CA->>CH: Submit completed assessment report
+    CH->>S: Review and accept assessment
+```
+
 ## Main Success Scenario: On-Site Inspection
 
 | Step | Actor           | Action                                                                   | System Response                                                          |

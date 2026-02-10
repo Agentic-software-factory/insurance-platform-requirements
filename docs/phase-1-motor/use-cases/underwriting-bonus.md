@@ -123,6 +123,57 @@ stateDiagram-v2
     end note
 ```
 
+## Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Customer
+    participant S as System
+    participant RE as Rating Engine
+    participant TFF as TFF
+    participant UW as Underwriter
+
+    C->>S: Request motor insurance quote
+    activate S
+    S->>S: Retrieve bonus class from internal DB
+    alt New customer
+        S->>S: Assign default starting class (class 7)
+    else Transfer from another insurer
+        S->>TFF: Verify transferred bonus class
+        TFF-->>S: Verification result
+    end
+    deactivate S
+
+    S->>RE: Submit rating factors (vehicle, customer, usage)
+    activate RE
+    RE->>RE: Apply rating model (multiplicative factors)
+    RE->>RE: Apply bonus class discount
+    RE->>RE: Enforce min/max premium limits
+    RE-->>S: Premium for all three tiers
+    deactivate RE
+
+    S->>S: Evaluate acceptance criteria
+    alt Auto-accept
+        S-->>C: Present quote with premium breakdown
+    else Referral triggered
+        S->>UW: Route to underwriter queue
+        activate UW
+        UW->>UW: Review risk assessment
+        alt Approve
+            UW-->>S: Approved (standard terms)
+        else Approve with conditions
+            UW-->>S: Approved with premium loading/exclusions
+        else Decline
+            UW-->>S: Declined with reason
+        end
+        deactivate UW
+        S-->>C: Present decision to customer
+    else Decline rule triggered
+        S-->>C: Notify decline with reason
+        Note over S,C: Trafikforsakring still offered (FSA-007)
+    end
+```
+
 ## Main Success Scenario
 
 ### 1. Bonus Class Determination
