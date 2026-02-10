@@ -43,14 +43,41 @@ sidebar_position: 24
 
 ## Claim Closure Checklist
 
-| Check                  | Description                                           |
-| ---------------------- | ----------------------------------------------------- |
-| All payments confirmed | Settlement payments received by payees                |
-| Subrogation resolved   | Recovery cases closed or written off                  |
-| Documents complete     | All required documents attached to the claim          |
-| Bonus impact applied   | Policyholder's bonus class updated (if applicable)    |
-| Customer notified      | Customer informed of final settlement and closure     |
-| No pending disputes    | No active complaints or disputes related to the claim |
+| Check                  | Description                                           | System Validation                                      |
+| ---------------------- | ----------------------------------------------------- | ------------------------------------------------------ |
+| All payments confirmed | Settlement payments received by payees                | System verifies all payment statuses are "Confirmed"   |
+| Subrogation resolved   | Recovery cases closed or written off                  | System checks no open subrogation cases exist          |
+| Documents complete     | All required documents attached to the claim          | System validates minimum document set per claim type   |
+| Bonus impact applied   | Policyholder's bonus class updated (if applicable)    | System confirms bonus recalculation has been processed |
+| Customer notified      | Customer informed of final settlement and closure     | System confirms closure notification has been sent     |
+| No pending disputes    | No active complaints or disputes related to the claim | System checks complaints register for linked cases     |
+| Reserve released       | Outstanding reserves are released to accounting       | System triggers reserve release upon closure           |
+
+### Closure Conditions by Claim Type
+
+| Claim Type                         | Additional Closure Conditions                                                                          |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Standard repair                    | Repair completed and confirmed by repair shop or customer                                              |
+| Total loss                         | Salvage disposition completed (sold or retained by customer)                                           |
+| Personal injury (trafikförsäkring) | Final medical assessment received; no further treatment expected; or 10-year limitation period reached |
+| TFF claim                          | TFF settlement confirmed and recorded                                                                  |
+| Subrogation-eligible               | Recovery case closed (paid, written off, or abandoned)                                                 |
+| Glass-only                         | Repair/replacement completed; invoice received from glass shop                                         |
+
+### Reopening Rules
+
+- A closed claim may be reopened if new evidence emerges, the settlement is disputed, or the claimant's condition worsens (personal injury)
+- Reopening requires claims handler authorization (standard claims) or senior handler approval (claims older than 1 year)
+- The system records the reopening reason and creates an audit trail entry
+- Reopened claims return to "Under Review" status and follow the standard claims flow
+- Personal injury claims under trafikförsäkring may be reopened within 10 years of the original injury date
+
+### Archival Rules
+
+- Closed claim records are retained for 10 years from the closure date (FSA-014)
+- Personal injury claim records are retained for 10 years from the final closure (which may be up to 20 years from the original injury)
+- After the retention period, claim data is anonymized or deleted per GDPR requirements
+- Archived claims remain searchable for actuarial analysis and regulatory reporting
 
 ## Regulatory
 

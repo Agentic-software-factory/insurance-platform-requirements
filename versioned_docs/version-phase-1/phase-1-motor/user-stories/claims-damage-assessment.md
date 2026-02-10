@@ -45,18 +45,58 @@ sidebar_position: 14
   **WHEN** the adjuster submits the assessment report
   **THEN** the system attaches the report to the claim record and notifies the claims handler that the assessment is ready for review
 
+## Assessment Workflow
+
+| Step | Actor           | Action                                          | Next Step |
+| ---- | --------------- | ----------------------------------------------- | --------- |
+| 1    | Claims Handler  | Assigns damage assessment to adjuster           | 2         |
+| 2    | Claims Adjuster | Contacts customer to schedule inspection        | 3         |
+| 3    | Claims Adjuster | Inspects vehicle (on-site or at repair shop)    | 4         |
+| 4    | Claims Adjuster | Documents damage with photos and description    | 5         |
+| 5    | Claims Adjuster | Obtains or prepares repair estimate             | 6         |
+| 6    | Claims Adjuster | Evaluates repair vs. total loss                 | 7a or 7b  |
+| 7a   | Claims Adjuster | Approves repair estimate (if repair is viable)  | 8         |
+| 7b   | Claims Adjuster | Declares total loss and calculates market value | 8         |
+| 8    | Claims Adjuster | Submits assessment report to claims handler     | 9         |
+| 9    | Claims Handler  | Reviews and accepts or requests re-assessment   | Done      |
+
+### Total Loss Evaluation Criteria
+
+- A vehicle is declared a total loss (totalförlust) when repair cost exceeds the total loss threshold
+- Total loss threshold: repair cost > 75% of vehicle market value (configurable)
+- Market value is determined using industry valuation tools (e.g., Bilpriser.se, Glass's Guide equivalent)
+- Salvage value is assessed separately if the customer wishes to retain the vehicle
+- The customer may dispute the market valuation — an independent valuation can be requested
+
+### Remote Assessment (Minor Damage)
+
+- For claims with estimated damage below a configurable threshold (e.g., SEK 15,000), remote assessment via customer-submitted photos and video may be used
+- Remote assessment requires a minimum of 6 photos: front, rear, both sides, damage close-up, odometer
+- If the adjuster cannot determine the damage extent from photos, an in-person inspection is scheduled
+
 ## Damage Assessment Data
 
-| Field                 | Required    | Description                                             |
-| --------------------- | ----------- | ------------------------------------------------------- |
-| Damage description    | Yes         | Detailed description of damage observed                 |
-| Affected components   | Yes         | List of damaged vehicle parts                           |
-| Repair estimate       | Yes         | Cost breakdown: parts, labor, paint                     |
-| Photos                | Yes         | Minimum required photos of damage                       |
-| Repair vs. total loss | Yes         | Adjuster's recommendation                               |
-| Market value          | Conditional | Required if total loss is being considered              |
-| Salvage value         | Conditional | Required if vehicle is a total loss                     |
-| Consistency check     | Yes         | Whether damage is consistent with the reported incident |
+| Field                   | Type      | Required       | Description                                             |
+| ----------------------- | --------- | -------------- | ------------------------------------------------------- |
+| Assessment ID           | String    | Auto-generated | Unique identifier for the assessment                    |
+| Claim number            | String    | Yes            | Link to the parent claim                                |
+| Assigned adjuster       | Reference | Yes            | The claims adjuster performing the assessment           |
+| Inspection date         | Date      | Yes            | When the inspection was performed                       |
+| Inspection type         | Enum      | Yes            | On-site, repair shop, or remote                         |
+| Damage description      | Text      | Yes            | Detailed description of damage observed                 |
+| Affected components     | String[]  | Yes            | List of damaged vehicle parts                           |
+| Photos                  | File[]    | Yes            | Minimum 4 photos of damage                              |
+| Repair estimate (parts) | Decimal   | Yes            | Cost of replacement parts                               |
+| Repair estimate (labor) | Decimal   | Yes            | Cost of labor hours                                     |
+| Repair estimate (paint) | Decimal   | Yes            | Cost of paint and finishing                             |
+| Repair estimate (total) | Decimal   | Calculated     | Sum of parts + labor + paint                            |
+| Repair shop name        | String    | Conditional    | If estimate is from a repair shop                       |
+| Repair vs. total loss   | Enum      | Yes            | Adjuster's recommendation                               |
+| Vehicle market value    | Decimal   | Conditional    | Required if total loss is being considered              |
+| Salvage value           | Decimal   | Conditional    | Required if vehicle is a total loss                     |
+| Consistency check       | Boolean   | Yes            | Whether damage is consistent with the reported incident |
+| Consistency notes       | Text      | Conditional    | Required if consistency check fails                     |
+| Assessment status       | Enum      | Auto-set       | Draft, Submitted, Accepted, Rejected                    |
 
 ## Regulatory
 

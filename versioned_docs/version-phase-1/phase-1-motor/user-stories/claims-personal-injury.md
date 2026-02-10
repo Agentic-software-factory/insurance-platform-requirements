@@ -47,14 +47,43 @@ sidebar_position: 21
 
 ## Compensation Components
 
-| Component            | Swedish Term            | Description                                    |
-| -------------------- | ----------------------- | ---------------------------------------------- |
-| Medical costs        | Sjukvårdskostnader      | Actual medical treatment costs                 |
-| Income loss          | Inkomstförlust          | Lost earnings during recovery                  |
-| Pain and suffering   | Sveda och värk          | Compensation for pain during the acute phase   |
-| Permanent disability | Invaliditet             | Compensation for lasting impairment            |
-| Loss of amenity      | Lyte och men            | Compensation for reduced quality of life       |
-| Future income loss   | Framtida inkomstförlust | Long-term earnings reduction due to disability |
+| Component            | Swedish Term            | Description                                    | Calculation Basis                                                |
+| -------------------- | ----------------------- | ---------------------------------------------- | ---------------------------------------------------------------- |
+| Medical costs        | Sjukvårdskostnader      | Actual medical treatment costs                 | Receipts and invoices from healthcare providers                  |
+| Income loss          | Inkomstförlust          | Lost earnings during recovery                  | Employer's certificate of absence; tax records for self-employed |
+| Pain and suffering   | Sveda och värk          | Compensation for pain during the acute phase   | Trafikskadenämnden tables based on injury type and duration      |
+| Permanent disability | Invaliditet             | Compensation for lasting impairment            | Medical certificate of permanent impairment percentage           |
+| Loss of amenity      | Lyte och men            | Compensation for reduced quality of life       | Medical assessment of functional limitations                     |
+| Future income loss   | Framtida inkomstförlust | Long-term earnings reduction due to disability | Actuarial calculation based on age, profession, and disability   |
+
+### Medical Assessment Flow
+
+| Step | Actor            | Action                                                                    | System Response                                        |
+| ---- | ---------------- | ------------------------------------------------------------------------- | ------------------------------------------------------ |
+| 1    | Claims Handler   | Requests medical documentation from claimant (with consent)               | System sends consent-based request to medical provider |
+| 2    | Medical Provider | Provides medical records and prognosis                                    | System stores under Article 9 protection               |
+| 3    | Claims Handler   | Reviews medical documentation for completeness                            | System flags incomplete records                        |
+| 4    | Claims Handler   | Requests independent medical examination (if needed)                      | System schedules IME and tracks result                 |
+| 5    | Claims Handler   | Calculates compensation per component using Trafikskadenämnden guidelines | System supports component-by-component calculation     |
+| 6    | Claims Handler   | Determines whether interim or final payment is appropriate                | System supports both payment types                     |
+
+### Trafikskadelagen Compensation Rules
+
+- Personal injury liability under trafikförsäkring is strict -- the insurer must pay regardless of fault
+- No deductible (självrisk) applies to personal injury claims under trafikförsäkring
+- Compensation follows Trafikskadenämnden (Traffic Injury Commission) guidelines and tables
+- The claimant has the right to independent medical assessment at the insurer's expense
+- Interim payments must be offered when treatment is ongoing and final settlement cannot yet be determined
+- The 10-year limitation period runs from the date of injury, not the date of claim filing
+- Minor injuries (whiplash, soft tissue) follow standardized compensation tables
+- Severe injuries require individual assessment by a medical specialist
+
+### Medical Provider Integration
+
+- Medical records requests must include the claimant's explicit consent (GDPR Article 9)
+- Only injury-relevant medical records are requested (data minimization)
+- Medical data is stored with restricted access (authorized claims handlers only)
+- A Data Protection Impact Assessment (DPIA) is required for the medical data processing activity
 
 ## Regulatory
 

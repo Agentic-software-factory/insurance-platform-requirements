@@ -41,6 +41,43 @@ sidebar_position: 18
   **WHEN** the claims handler records the outcome
   **THEN** the system records the reason (uninsured party, disputed liability, uncollectible) and closes the subrogation case with the unrecovered amount documented
 
+## Subrogation Process Steps
+
+| Step | Actor          | Action                                                               | System Response                                 |
+| ---- | -------------- | -------------------------------------------------------------------- | ----------------------------------------------- |
+| 1    | System         | Flags settled claim as subrogation-eligible based on liability split | Displays recoverable amount and target party    |
+| 2    | Claims Handler | Reviews subrogation opportunity and confirms pursuit                 | Creates a subrogation case linked to the claim  |
+| 3    | Claims Handler | Sends demand letter to at-fault party or their insurer               | Records demand date, amount, and recipient      |
+| 4    | Claims Handler | Tracks response (accepted, disputed, or no response)                 | Updates subrogation case status                 |
+| 5a   | Claims Handler | Records payment received (full or partial)                           | Adjusts net claim cost; closes subrogation case |
+| 5b   | Claims Handler | Records dispute or non-response                                      | Escalates or writes off; documents reason       |
+| 6    | Claims Handler | Closes subrogation case                                              | Final recovery amount recorded                  |
+
+### Recovery Amount Calculation
+
+```text
+Recoverable Amount = Settlement Paid × At-Fault Party's Liability %
+```
+
+- If the policyholder's deductible was part of the settlement, the deductible amount is also included in the recovery demand
+- Recovery is pursued from the at-fault party's insurer (inter-company settlement via TFF processes) or directly from uninsured at-fault parties
+
+### Inter-Company Settlement (via TFF)
+
+- Recovery demands between Swedish insurers follow TFF-defined formats and timelines
+- Standard response time: 30 days from demand letter
+- Disputes are resolved through TFF's inter-company arbitration process
+- Foreign insurer claims follow the green card system coordination
+
+### Write-Off Criteria
+
+| Scenario                                      | Action                                         |
+| --------------------------------------------- | ---------------------------------------------- |
+| At-fault party is uninsured and uncollectible | Write off after documented collection attempts |
+| Liability is disputed and arbitration fails   | Write off the disputed portion                 |
+| Recovery cost exceeds recoverable amount      | Write off (de minimis threshold: SEK 2,000)    |
+| Statute of limitations reached                | Write off with documented reason               |
+
 ## Regulatory
 
 - **FSA-010** — Fair claims settlement: subrogation activities must not delay settlement to the policyholder; the policyholder must be made whole first

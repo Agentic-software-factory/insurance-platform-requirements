@@ -60,15 +60,51 @@ sidebar_position: 17
 | Third-party liability | Actual damage to third party (no deductible for trafikförsäkring injury claims)                                    |
 | Personal injury       | Per Trafikskadelagen compensation schedule (medical costs, income loss, pain and suffering)                        |
 
+## Settlement Formula Summary
+
+### Standard Repair
+
+```text
+Net Settlement = (Approved Repair Cost × Policyholder Non-Fault %) − Deductible
+```
+
+### Total Loss
+
+```text
+Net Settlement = (Vehicle Market Value − Salvage Value) × Policyholder Non-Fault % − Deductible
+```
+
+### Third-Party Liability (Trafikförsäkring)
+
+```text
+Net Settlement = Actual Third-Party Damage × Policyholder Fault %
+(No deductible for trafikförsäkring personal injury)
+```
+
+### Subrogation-Adjusted Net Cost
+
+```text
+Net Claim Cost = Settlement Paid − Subrogation Recovered − Salvage Proceeds
+```
+
 ## Deductible (Självrisk) Structure
 
 | Coverage                           | Typical Deductible Range | Notes                                           |
 | ---------------------------------- | ------------------------ | ----------------------------------------------- |
-| Collision (vagnskada)              | SEK 3,000–10,000         | Selected at policy purchase                     |
-| Theft (stöld)                      | SEK 1,500–3,000          | May vary by policy                              |
-| Fire (brand)                       | SEK 1,500–3,000          | May vary by policy                              |
-| Glass (glasskada)                  | SEK 500–2,000            | Often a lower deductible                        |
+| Collision (vagnskada)              | SEK 3,000 -- 10,000      | Selected at policy purchase                     |
+| Theft (stöld)                      | SEK 1,500 -- 3,000       | May vary by policy                              |
+| Fire (brand)                       | SEK 1,500 -- 3,000       | May vary by policy                              |
+| Glass (glasskada)                  | SEK 500 -- 2,000         | Often a lower deductible                        |
 | Trafikförsäkring (personal injury) | No deductible            | Mandatory coverage, no excess for injury claims |
+
+### Payment Processing Rules
+
+- Payment must be initiated within 5 business days of settlement approval
+- Bank transfer to customer: uses the customer's registered bank account (verified via BankID)
+- Direct billing to repair shop: authorization sent electronically to the network shop
+- If payment fails (invalid account, provider error), the claims handler is notified and must arrange an alternative payment method within 2 business days
+- Interim payments for personal injury claims may be issued while the claim remains open
+- All payment amounts must be rounded to the nearest whole SEK
 
 ## Regulatory
 

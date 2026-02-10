@@ -45,16 +45,38 @@ sidebar_position: 13
   **WHEN** liability is shared
   **THEN** the system records the other insurer's details (company name, claim reference) for inter-company settlement coordination
 
-## Liability Scenarios
+## Liability Decision Matrix
 
-| Scenario                     | Typical Liability Split    | Notes                                               |
-| ---------------------------- | -------------------------- | --------------------------------------------------- |
-| Rear-end collision           | 100% rear driver           | Presumption under Swedish traffic law               |
-| Intersection collision       | Varies (50/50 or assessed) | Based on right-of-way rules                         |
-| Single-vehicle accident      | 100% policyholder          | Collision coverage applies if helförsäkring         |
-| Parked vehicle hit           | 100% striking vehicle      | Third-party liability claim                         |
-| Animal collision (viltskada) | No fault                   | Covered as a natural hazard                         |
-| Unknown third party          | Special handling           | May involve TFF if the other driver is unidentified |
+| Scenario                              | Evidence Required                                         | Typical Liability Split                 | Settlement Impact                                                              | Subrogation                              |
+| ------------------------------------- | --------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------ | ---------------------------------------- |
+| Rear-end collision                    | Police report, photos, witness statements                 | 100% rear driver                        | Full settlement to front driver; rear driver's insurer pays                    | Yes — recover from rear driver's insurer |
+| Intersection collision (right-of-way) | Police report, traffic camera footage, witness statements | Varies (50/50 or assessed per evidence) | Settlement adjusted by non-fault percentage                                    | Yes — partial recovery based on split    |
+| Single-vehicle accident               | Police report (if available), photos                      | 100% policyholder                       | Covered under helförsäkring minus deductible; no coverage under halvförsäkring | No                                       |
+| Parked vehicle hit                    | Police report, photos, witness statements                 | 100% striking vehicle                   | Third-party liability claim against striking vehicle's insurer                 | Yes — full recovery                      |
+| Animal collision (viltskada)          | Police report (viltolycksrapport), photos                 | No fault                                | Covered under halvförsäkring or helförsäkring; no bonus impact                 | No                                       |
+| Unknown third party (hit-and-run)     | Police report (required), witness statements              | Special handling via TFF                | Personal injury via TFF; vehicle damage under own coverage                     | TFF pursues if vehicle identified        |
+| Multi-party collision (3+ vehicles)   | Police report, all parties' statements, photos            | Assessed per party based on evidence    | Each party's share calculated separately                                       | Yes — cross-recovery between insurers    |
+| Parking lot incident (no witnesses)   | Photos, parking lot CCTV (if available)                   | Often 50/50 if fault unclear            | Each party bears own damage minus deductible                                   | Depends on determination                 |
+
+### Liability Percentage Rules
+
+- Liability is recorded as a percentage split across all involved parties (must total 100%)
+- Minimum granularity is 10% increments
+- A liability split of 0% means the policyholder is not at fault (full recovery via subrogation)
+- A liability split of 100% means the policyholder is fully at fault (no subrogation)
+- Partial liability (e.g., 30/70) adjusts the settlement proportionally
+
+### Police Report Requirements
+
+| Incident Type                          | Police Report | Notes                                               |
+| -------------------------------------- | ------------- | --------------------------------------------------- |
+| Multi-vehicle collision with injury    | Mandatory     | Police attend the scene                             |
+| Multi-vehicle collision without injury | Recommended   | Parties may file jointly                            |
+| Hit-and-run (smitning)                 | Mandatory     | Required for TFF claims and for own-damage coverage |
+| Theft                                  | Mandatory     | Required before claim is processed                  |
+| Animal collision (viltskada)           | Mandatory     | Viltolycksrapport must be filed                     |
+| Single-vehicle, no injury              | Optional      | Supports liability determination                    |
+| Vandalism                              | Recommended   | Supports fraud screening                            |
 
 ## Regulatory
 

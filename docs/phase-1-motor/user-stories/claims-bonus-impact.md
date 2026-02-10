@@ -67,6 +67,26 @@ sidebar_position: 19
 | 6           | ~50%              | 1 claim-free year from class 5       |
 | 7 (highest) | ~60%              | 1 claim-free year from class 6       |
 
+### Recalculation Timing Rules
+
+- Bonus class recalculation is triggered when a claim status changes to "Settled" (Reglerad)
+- The new bonus class takes effect at the next renewal date (huvudförfallodag), not immediately
+- If multiple claims settle in the same policy year, each claim applies its penalty sequentially (e.g., two at-fault collisions = -6 steps total)
+- Bonus class cannot go below class 1 (floor) or above class 7 (ceiling)
+
+### Bonus Protection (Bonusskydd)
+
+- If the policyholder has purchased bonusskydd as an add-on, the first bonus-affecting claim in a policy year does not reduce the bonus class
+- Bonus protection resets at each renewal — it covers one claim per policy year
+- Bonus protection must be checked before applying any penalty
+- The system must record whether bonus protection was applied or not for audit purposes
+
+### Customer Notification Requirements
+
+- When a bonus class change is applied, the customer must be notified in writing (email or letter)
+- The notification must include: current bonus class, new bonus class, reason for change, estimated premium impact at next renewal, and information about how to dispute the change
+- Notification must be sent within 10 business days of the bonus class recalculation
+
 ## Regulatory
 
 - **FSA-004** — Consumer protection: bonus class rules must be transparent and communicated to the customer at policy inception and at renewal

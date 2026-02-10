@@ -40,6 +40,43 @@ sidebar_position: 22
   **WHEN** the customer views the claim
   **THEN** the system displays the final settlement amount, payment date, and payment method
 
+## Customer-Visible Claim Statuses
+
+| Status                 | Swedish Term        | Description                                                        | Customer Action Required                |
+| ---------------------- | ------------------- | ------------------------------------------------------------------ | --------------------------------------- |
+| Registered             | Registrerad         | Claim has been received and registered                             | None -- await handler assignment        |
+| Under Review           | Under utredning     | Claim is being investigated by the claims team                     | May be asked for additional information |
+| Additional Info Needed | Komplettering krävs | The claims team needs more information or documents                | Upload documents or provide information |
+| Approved               | Godkänd             | Claim has been approved for settlement                             | None -- settlement is being calculated  |
+| Payment Pending        | Utbetalning pågår   | Settlement has been calculated and payment is being processed      | None -- payment is in transit           |
+| Settled                | Reglerad            | Payment has been completed                                         | None -- claim is complete               |
+| Denied                 | Nekad               | Claim has been denied                                              | May file a complaint or appeal          |
+| Closed                 | Stängd              | Claim is fully closed (settled or denied, all follow-ups complete) | None                                    |
+
+### Notification Rules
+
+| Event                     | Notification Channel            | Timing                            |
+| ------------------------- | ------------------------------- | --------------------------------- |
+| Claim registered          | Email + push notification       | Immediately after registration    |
+| Handler assigned          | Email                           | Within 1 business day             |
+| Status change             | Email + push notification       | Within 1 hour of status change    |
+| Additional info requested | Email + push notification + SMS | Immediately                       |
+| Claim approved            | Email + push notification       | Immediately                       |
+| Payment initiated         | Email                           | When payment is sent              |
+| Payment confirmed         | Email + push notification       | When payment provider confirms    |
+| Claim denied              | Email + letter                  | Within 1 business day of decision |
+| Claim closed              | Email                           | At closure                        |
+
+### Customer Portal Features
+
+- Claims list with filtering by status and date range
+- Claim detail view with full timeline of status changes
+- Document upload capability for responding to information requests
+- Settlement breakdown view (when available)
+- Contact information for assigned claims handler
+- Link to complaints procedure (for denied or disputed claims)
+- Push notification preferences management
+
 ## Regulatory
 
 - **FSA-010** — Fair and timely claims settlement: customers must be kept informed of claim progress
