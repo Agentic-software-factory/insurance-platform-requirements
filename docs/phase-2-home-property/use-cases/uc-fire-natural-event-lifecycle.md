@@ -152,6 +152,70 @@ sequenceDiagram
     end
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> EmergencyReported : Customer reports fire/natural event (Brand/naturhändelse anmäld)
+
+    state "Emergency Response (Räddningsinsats)" as ER {
+        [*] --> EvacuationCheck : Property habitability assessed
+        EvacuationCheck --> HousingArranged : Temporary housing arranged (Tillfälligt boende)
+        EvacuationCheck --> IncidentReport : Property habitable — no housing needed
+        HousingArranged --> IncidentReport : Housing confirmed
+    }
+
+    EmergencyReported --> ER : High-priority claim registered
+    ER --> Investigation : Räddningstjänsten incident report obtained
+
+    state "Investigation (Utredning)" as Investigation {
+        [*] --> StructuralInspection : Besiktningsman inspects property
+        StructuralInspection --> HazardCheck : Structural assessment complete
+        HazardCheck --> Remediation : Environmental hazards found (Sanering)
+        HazardCheck --> LossDetermination : No hazards — proceed to assessment
+        Remediation --> LossDetermination : Remediation certified complete
+    }
+
+    Investigation --> TotalLoss : Total loss determined (Totalskada)
+    Investigation --> PartialLoss : Partial loss determined (Delskada)
+
+    TotalLoss --> RebuildDecision : Settlement calculated with underinsurance check
+    RebuildDecision --> Rebuild : Customer chooses to rebuild (Återuppbyggnad)
+    RebuildDecision --> CashSettlement : Customer takes cash settlement (Kontantreglering)
+    Rebuild --> StagedPayments : Staged payments during reconstruction
+    StagedPayments --> FinalInspection : Rebuild complete
+
+    PartialLoss --> RepairApproved : Repair scope approved
+    RepairApproved --> UnderRepair : Contractor performing repairs
+    UnderRepair --> FinalInspection : Repairs completed
+
+    FinalInspection --> UnderRepair : Restoration unsatisfactory
+    FinalInspection --> Closed : Restoration verified — claim closed (Stängd)
+    CashSettlement --> Closed : Payment processed
+    Closed --> [*]
+
+    note right of ER
+        Temporary housing within 24 hours.
+        Fire cause investigation may run
+        in parallel with assessment.
+    end note
+
+    note right of Investigation
+        Environmental hazards (asbest, PCB)
+        must be remediated before repair.
+    end note
+
+    note right of TotalLoss
+        Settlement based on nybyggnadsvärde.
+        Underinsurance check per FSA-016.
+    end note
+
+    note right of Closed
+        Claims data recorded for catastrophe
+        reserve reporting per FSA-018.
+    end note
+```
+
 ## Main Flow (Fire/Natural Event Claim Lifecycle)
 
 | Step | Actor          | Action                                                                              | System Response                                                                   | Reference                                                             |

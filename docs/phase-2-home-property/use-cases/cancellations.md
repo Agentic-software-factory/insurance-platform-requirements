@@ -172,6 +172,56 @@ sequenceDiagram
     end
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Requested : Cancellation request received (Uppsägning begärd)
+    Requested --> CoolingOffCheck : Ångerrätt eligibility verified
+    CoolingOffCheck --> FullRefund : Within 14-day ångerrätt period
+    CoolingOffCheck --> Validated : Outside ångerrätt — reason and date determined
+    Validated --> RefundCalculated : Pro-rata refund calculated (Återbetalning beräknad)
+    RefundCalculated --> GapChecked : Coverage gap check for insurer switch
+    GapChecked --> Confirmed : Customer confirms cancellation
+    GapChecked --> Retained : Customer changes mind — policy retained (Behållen)
+    Confirmed --> Processed : Cancellation effective, refund initiated (Genomförd)
+    FullRefund --> Processed : Full refund processed
+    Processed --> [*]
+    Retained --> [*]
+
+    state InsurerInitiated {
+        [*] --> NonPayment : Premium overdue (Obetald premie)
+        [*] --> Misrepresentation : Material misrepresentation discovered
+        NonPayment --> Reminder : First reminder sent (14-day grace)
+        Reminder --> FinalWarning : Second notice sent (14-day final grace)
+        FinalWarning --> AutoCancelled : No payment — policy cancelled
+        FinalWarning --> Reinstated : Payment received — policy reinstated
+        Misrepresentation --> FraudReview : Intent assessment
+        FraudReview --> ImmediateCancel : Intentional — no refund
+        FraudReview --> AdjustOrCancel : Unintentional — offer adjustment
+    }
+
+    note right of Requested
+        Channels: self-service portal, app,
+        phone, EU cancellation button.
+    end note
+
+    note right of CoolingOffCheck
+        14-day ångerrätt applies only to
+        distance/off-premises sales.
+    end note
+
+    note right of GapChecked
+        Mandatory warning if switching insurer
+        and coverage gap detected.
+    end note
+
+    note right of Processed
+        Refund paid within 14 business days.
+        Confirmation sent to customer.
+    end note
+```
+
 ## Main Success Scenario
 
 ### 1. Cancellation Request

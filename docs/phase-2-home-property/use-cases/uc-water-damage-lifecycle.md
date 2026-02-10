@@ -144,6 +144,55 @@ sequenceDiagram
     end
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> EmergencyReported : Customer reports water damage (Vattenskada anmäld)
+
+    state "Emergency Response (Akutåtgärder)" as ER {
+        [*] --> LeakDetection : Saneringsfirma dispatched
+        LeakDetection --> WaterStopped : Leak source identified and stopped
+        WaterStopped --> StandingWaterRemoved : Standing water extracted
+    }
+
+    EmergencyReported --> ER : Saneringsfirma dispatched within 2 hours
+    ER --> Drying : Drying equipment installed (Torkning pågår)
+
+    state "Drying Phase (Torkfas)" as Drying {
+        [*] --> ActiveDrying : Equipment running
+        ActiveDrying --> MoistureCheck : Torkprotokoll submitted
+        MoistureCheck --> ActiveDrying : Moisture above acceptable limits
+        MoistureCheck --> DryingComplete : Moisture within limits
+    }
+
+    Drying --> Inspection : Drying verified complete
+    Inspection --> RepairApproved : Repair scope and contractor approved
+    RepairApproved --> UnderRepair : Contractor performing repairs (Reparation pågår)
+    UnderRepair --> FinalInspection : Repairs completed
+    FinalInspection --> UnderRepair : Restoration unsatisfactory
+    FinalInspection --> Settlement : Restoration verified — settlement calculated (Reglering)
+    Settlement --> Closed : Payment processed, claim archived (Stängd)
+    Closed --> [*]
+
+    note right of ER
+        24/7 emergency dispatch.
+        Temporary housing arranged
+        if property uninhabitable.
+    end note
+
+    note right of Drying
+        Periodic torkprotokoll with
+        moisture readings required.
+        Drying must complete before repair.
+    end note
+
+    note right of Settlement
+        Åldersavdrag applied per material.
+        BRF/individual split if applicable.
+    end note
+```
+
 ## Main Flow (Water Damage Claim Lifecycle)
 
 | Step | Actor          | Action                                                                       | System Response                                                       | Reference                                                        |

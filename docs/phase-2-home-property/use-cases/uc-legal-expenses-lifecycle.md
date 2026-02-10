@@ -138,6 +138,56 @@ sequenceDiagram
     end
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Requested : Customer applies for rättsskydd (Ansökan mottagen)
+    Requested --> EligibilityCheck : Application registered with dispute details
+
+    EligibilityCheck --> Approved : Eligible dispute — rättsskydd granted (Godkänd)
+    EligibilityCheck --> WaitingPeriod : Waiting period check required (Karenstid)
+    EligibilityCheck --> Denied : Ineligible dispute type or excluded category (Avslagen)
+    WaitingPeriod --> Approved : Waiting period passed
+    WaitingPeriod --> Denied : Waiting period not met
+
+    Approved --> LawyerReview : Customer submits lawyer and fee estimate
+    LawyerReview --> FeeNegotiation : Fee estimate exceeds reasonable range
+    FeeNegotiation --> LawyerReview : Revised estimate submitted
+    LawyerReview --> Active : Lawyer and fees approved (Aktiv)
+
+    Active --> CostTracking : Legal proceedings in progress
+    CostTracking --> CapWarning : Costs approaching 80% of coverage cap
+    CapWarning --> CostTracking : Customer acknowledges and continues
+    CostTracking --> Resolved : Dispute resolved — judgment, settlement, or withdrawal
+
+    Resolved --> Closed : Final settlement processed, claim archived (Stängd)
+    Denied --> [*]
+    Closed --> [*]
+
+    note right of EligibilityCheck
+        Qualifying disputes only.
+        Excluded: family law, criminal,
+        business disputes.
+    end note
+
+    note right of Approved
+        Coverage: 75-80% of approved costs.
+        Base deductible: 1,500 SEK.
+        Cap: ~300,000 SEK per dispute.
+    end note
+
+    note right of Active
+        Customer chooses own lawyer.
+        Insurer assesses fee reasonableness.
+    end note
+
+    note right of CapWarning
+        Customer informed remaining costs
+        above cap are uninsured.
+    end note
+```
+
 ## Main Flow (Rättsskydd Application and Management)
 
 | Step | Actor          | Action                                                                  | System Response                                                                | Reference                                                                                          |

@@ -151,6 +151,47 @@ sequenceDiagram
     end
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Reported : Customer reports burglary (Inbrott anmält)
+    Reported --> EmergencySecured : Emergency locksmith dispatched (Akutlås)
+    EmergencySecured --> PoliceReportPending : Customer guided to file polisanmälan
+    PoliceReportPending --> Registered : FNOL registered with K-nummer
+    Registered --> FraudScreened : Automated fraud screening completed
+    FraudScreened --> FraudInvestigation : High-risk — escalated to fraud team
+    FraudScreened --> InventorySubmitted : Low/medium risk — inventory requested
+    FraudInvestigation --> InventorySubmitted : Cleared — resume assessment
+    InventorySubmitted --> ItemsVerified : Items verified against declarations (Verifierad)
+    ItemsVerified --> SettlementCalculated : Settlement calculated with åldersavdrag
+    SettlementCalculated --> Settled : Payment processed (Reglerad)
+    Settled --> RepairArranged : Break-in damage repair completed
+    RepairArranged --> CrisisSupport : Krisstöd offered to customer
+    CrisisSupport --> Closed : Claim closed (Stängd)
+    Closed --> [*]
+
+    note right of Reported
+        24/7 emergency reporting.
+        Do not disturb break-in scene.
+    end note
+
+    note right of PoliceReportPending
+        Polisanmälan required before
+        assessment. 7-day grace period.
+    end note
+
+    note right of SettlementCalculated
+        Åldersavdrag per item category.
+        Sub-limits per category apply.
+    end note
+
+    note right of CrisisSupport
+        Licensed counselor within 24 hours.
+        5-10 sessions for household members.
+    end note
+```
+
 ## Main Success Scenario
 
 ### 1. Burglary Report and Emergency Response

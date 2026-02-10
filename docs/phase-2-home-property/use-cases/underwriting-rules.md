@@ -132,6 +132,49 @@ sequenceDiagram
     end
 ```
 
+## State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> Pending : Quote request received (Offertförfrågan mottagen)
+    Pending --> DataCollected : Property and external data retrieved
+    DataCollected --> Scored : Risk score calculated (Riskpoäng beräknad)
+    Scored --> Approved : Within auto-accept criteria (Automatiskt godkänd)
+    Scored --> Referred : Borderline risk — underwriter review (Hänvisad)
+    Scored --> Declined : Outside risk appetite (Avböjd)
+    Referred --> Approved : Underwriter accepts
+    Referred --> ApprovedWithConditions : Underwriter accepts with conditions (Godkänd med villkor)
+    Referred --> Declined : Underwriter declines
+    ApprovedWithConditions --> Approved : Customer accepts conditions
+    Approved --> [*]
+    Declined --> [*]
+
+    note right of Pending
+        Customer has provided address
+        and selected product type.
+    end note
+
+    note right of DataCollected
+        Lantmäteriet, SMHI, MSB, BRÅ
+        data retrieved and validated.
+    end note
+
+    note right of Scored
+        Composite risk score assigned.
+        Rating factor breakdown recorded.
+    end note
+
+    note right of Referred
+        Underwriter review SLA: 2 business days.
+        Escalation on SLA breach.
+    end note
+
+    note right of Declined
+        Declination reason documented.
+        Retained for FSA-014 audit.
+    end note
+```
+
 ## Main Success Scenario
 
 ### 1. Property Data Collection
