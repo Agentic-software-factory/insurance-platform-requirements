@@ -191,3 +191,23 @@ property sale, insurer switching, and pro-rata refund calculation:
 | HCA-08 | System                 | Calculate pro-rata refund for remaining policy period        |
 | HCA-09 | System                 | Ensure no coverage gap when customer switches insurer        |
 | HCA-10 | Customer Service Agent | Preview refund amount before confirming cancellation         |
+
+## Home Underwriting Rules (Riskbedömning)
+
+The [underwriting-rules user stories](underwriting-rules.md) cover risk
+assessment, premium calculation, coverage tier definitions, and risk acceptance
+criteria for home & property insurance:
+
+| ID     | Actor       | Summary                                                    |
+| ------ | ----------- | ---------------------------------------------------------- |
+| HUW-01 | Underwriter | Assess risk based on geographic location                   |
+| HUW-02 | Underwriter | Evaluate construction type and building age                |
+| HUW-03 | Underwriter | Apply discounts for security features                      |
+| HUW-04 | Underwriter | Factor claims history into premium calculation             |
+| HUW-05 | Underwriter | Define coverage tiers with inclusions and exclusions       |
+| HUW-06 | Underwriter | Set self-retention (självrisk) levels                      |
+| HUW-07 | Underwriter | Define sub-limits for high-value item categories           |
+| HUW-08 | Underwriter | Define risk acceptance criteria                            |
+| HUW-09 | Underwriter | Escalate borderline cases for manual review                |
+| HUW-10 | System      | Calculate premium automatically for standard risk profiles |
+| HUW-11 | System      | Integrate with external data sources for geographic risk   |
