@@ -28,6 +28,7 @@ TryggFörsäkring platform must support.
 | [Henrik & Wilma Nilsson](henrik-wilma-nilsson)   | 48/17 | Teen Driver Family    | Safe, affordable coverage for a young driver   |
 | [David Lindgren](david-lindgren)                 | 30    | Leasing Customer      | Best price within leasing constraints          |
 | [Mohammed Hassan](mohammed-hassan)               | 42    | Insurer Switcher      | Seamless bonus transfer when switching insurer |
+| [Oscar Wallin](oscar-wallin)                     | 26    | Gig Economy Driver    | Clarity on coverage for ride-hailing use       |
 
 ## How Personas Are Used
 
