@@ -26,6 +26,7 @@ support across all product lines.
 | [Niklas Bergman](niklas-bergman)                 | 35    | Claims Reporter       | Smooth first-time claims experience           |
 | [Lina Eriksson](lina-eriksson)                   | 28    | EV Owner              | Clarity on EV-specific coverage and pricing   |
 | [Henrik & Wilma Nilsson](henrik-wilma-nilsson)   | 48/17 | Teen Driver Family    | Safe, affordable coverage for a young driver  |
+| [David Lindgren](david-lindgren)                 | 30    | Leasing Customer      | Best price within leasing constraints         |
 
 ## Phase 2 — Home & Property
 
