@@ -24,6 +24,7 @@ support across all product lines.
 | [Sofia Chen](sofia-chen)                         | 32    | Recent Immigrant      | Smooth onboarding with foreign claims history |
 | [Lars Svensson](lars-svensson)                   | 55    | Claims Handler        | Modern tools to replace legacy workarounds    |
 | [Niklas Bergman](niklas-bergman)                 | 35    | Claims Reporter       | Smooth first-time claims experience           |
+| [Lina Eriksson](lina-eriksson)                   | 28    | EV Owner              | Clarity on EV-specific coverage and pricing   |
 
 ## Phase 2 — Home & Property
 
