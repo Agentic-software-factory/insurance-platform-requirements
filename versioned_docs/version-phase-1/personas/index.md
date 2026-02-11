@@ -29,6 +29,7 @@ TryggFörsäkring platform must support.
 | [David Lindgren](david-lindgren)                 | 30    | Leasing Customer      | Best price within leasing constraints          |
 | [Mohammed Hassan](mohammed-hassan)               | 42    | Insurer Switcher      | Seamless bonus transfer when switching insurer |
 | [Oscar Wallin](oscar-wallin)                     | 26    | Gig Economy Driver    | Clarity on coverage for ride-hailing use       |
+| [Karin Ström](karin-strom)                       | 45    | Divorce Transfer      | Smooth ownership transfer with bonus history   |
 
 ## How Personas Are Used
 
