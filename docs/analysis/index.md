@@ -25,9 +25,10 @@ Key questions addressed:
 
 ## Documents
 
-| Document      | Description                                        |
-| ------------- | -------------------------------------------------- |
-| _Coming soon_ | Price sensitivity analysis across Phase 1 personas |
+| Document                                                       | Description                                         |
+| -------------------------------------------------------------- | --------------------------------------------------- |
+| [Priskonsoliderad känslighetsmatris](price-sensitivity-matrix) | Priskänslighetsanalys över samtliga 13 kundpersonas |
+| [Detaljerade prisprofiler](persona-pricing-profiles.md)        | Djupanalys av priskänslighet per persona (alla 13)  |
 
 ## How Analysis Documents Are Used
 
