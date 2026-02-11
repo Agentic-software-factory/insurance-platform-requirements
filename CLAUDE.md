@@ -1,4 +1,4 @@
-<!-- delivery-factory:v1.3.0 -->
+<!-- delivery-factory:v1.3.1 -->
 # CLAUDE.md
 
 ## ⚠️ Regulated Insurance Domain
