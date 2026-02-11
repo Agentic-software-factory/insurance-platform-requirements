@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkinsurance_platform_requirements=globalThis.webpackChunkinsurance_platform_requirements||[]).push([[4921],{41597(e){e.exports=JSON.parse('{"name":"@easyops-cn/docusaurus-search-local","id":"default"}')}}]);

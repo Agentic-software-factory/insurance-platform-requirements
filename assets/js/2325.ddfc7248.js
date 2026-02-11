@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkinsurance_platform_requirements=globalThis.webpackChunkinsurance_platform_requirements||[]).push([[2325],{2325(e,r,a){a.d(r,{createPacketServices:()=>s.$});var s=a(73858);a(87960)}}]);

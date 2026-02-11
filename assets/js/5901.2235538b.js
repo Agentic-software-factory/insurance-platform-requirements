@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkinsurance_platform_requirements=globalThis.webpackChunkinsurance_platform_requirements||[]).push([[5901],{75901(e,r,a){a.d(r,{createTreemapServices:()=>s.d});var s=a(51633);a(87960)}}]);

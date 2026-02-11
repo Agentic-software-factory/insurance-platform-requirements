@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-phase-2-home-property/user-stories/cancellations" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Home Insurance Cancellations — User Stories | TryggFörsäkring Requirements</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/cancellations"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Home Insurance Cancellations — User Stories | TryggFörsäkring Requirements"><meta data-rh="true" name="description" content="User stories for home insurance cancellation (uppsägning) processing. Covers"><meta data-rh="true" property="og:description" content="User stories for home insurance cancellation (uppsägning) processing. Covers"><link data-rh="true" rel="icon" href="/insurance-platform-requirements/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/cancellations"><link data-rh="true" rel="alternate" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/cancellations" hreflang="en"><link data-rh="true" rel="alternate" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/cancellations" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Phase 2 — Home & Property Insurance","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/"},{"@type":"ListItem","position":2,"name":"User Stories","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/"},{"@type":"ListItem","position":3,"name":"Home Insurance Cancellations — User Stories","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/cancellations"}]}</script><link rel="stylesheet" href="/insurance-platform-requirements/assets/css/styles.d44ab96b.css">
+<script src="/insurance-platform-requirements/assets/js/runtime~main.5737842f.js" defer="defer"></script>
+<script src="/insurance-platform-requirements/assets/js/main.bbdc7f69.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/insurance-platform-requirements/"><b class="navbar__title text--truncate">TryggFörsäkring</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/insurance-platform-requirements/docs/next/intro">Requirements</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/cancellations">Phase 2 — Home &amp; Property (Draft)</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/cancellations">Phase 2 — Home &amp; Property (Draft)</a></li><li><a class="dropdown__link" href="/insurance-platform-requirements/docs/intro">Phase 1 — Motor Insurance</a></li></ul></div><a href="https://github.com/Agentic-software-factory/insurance-platform-requirements" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/intro"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/actors/"><span title="Actors" class="categoryLinkLabel_W154">Actors</span></a><button aria-label="Expand sidebar category &#x27;Actors&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/personas/"><span title="Personas" class="categoryLinkLabel_W154">Personas</span></a><button aria-label="Expand sidebar category &#x27;Personas&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/insurance-platform-requirements/docs/next/regulatory/fsa-requirements"><span title="Regulatory" class="categoryLinkLabel_W154">Regulatory</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/phase-1-motor/"><span title="Phase 1 — Motor Insurance" class="categoryLinkLabel_W154">Phase 1 — Motor Insurance</span></a><button aria-label="Expand sidebar category &#x27;Phase 1 — Motor Insurance&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/insurance-platform-requirements/docs/next/phase-2-home-property/"><span title="Phase 2 — Home &amp; Property Insurance" class="categoryLinkLabel_W154">Phase 2 — Home &amp; Property Insurance</span></a><button aria-label="Collapse sidebar category &#x27;Phase 2 — Home &amp; Property Insurance&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/"><span title="User Stories" class="categoryLinkLabel_W154">User Stories</span></a><button aria-label="Collapse sidebar category &#x27;User Stories&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind"><span title="Quote and Bind — User Stories" class="linkLabel_WmDU">Quote and Bind — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/burglary-and-theft"><span title="Burglary and Theft Claims — User Stories" class="linkLabel_WmDU">Burglary and Theft Claims — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/policy-administration"><span title="Policy Administration — User Stories" class="linkLabel_WmDU">Policy Administration — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/home-renewals"><span title="Home Renewals — User Stories" class="linkLabel_WmDU">Home Renewals — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/cancellations"><span title="Home Insurance Cancellations — User Stories" class="linkLabel_WmDU">Home Insurance Cancellations — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/liability-and-legal"><span title="Liability and Legal Expenses Claims — User Stories" class="linkLabel_WmDU">Liability and Legal Expenses Claims — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/underwriting-rules"><span title="Home Underwriting Rules — User Stories" class="linkLabel_WmDU">Home Underwriting Rules — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-fnol"><span title="US-HCW-001: Report Water Damage Emergency (24/7)" class="linkLabel_WmDU">US-HCW-001: Report Water Damage Emergency (24/7)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-dispatch"><span title="US-HCW-002: Dispatch Restoration Company (Saneringsfirma)" class="linkLabel_WmDU">US-HCW-002: Dispatch Restoration Company (Saneringsfirma)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-registration"><span title="US-HCW-003: Register FNOL With Damage Classification" class="linkLabel_WmDU">US-HCW-003: Register FNOL With Damage Classification</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-moisture-report"><span title="US-HCW-004: Receive Moisture Measurement Report" class="linkLabel_WmDU">US-HCW-004: Receive Moisture Measurement Report</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-brf-responsibility"><span title="US-HCW-005: Determine BRF vs Individual Responsibility" class="linkLabel_WmDU">US-HCW-005: Determine BRF vs Individual Responsibility</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-inspection"><span title="US-HCW-006: Document Damage With Inspection" class="linkLabel_WmDU">US-HCW-006: Document Damage With Inspection</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-drying-progress"><span title="US-HCW-007: Track Drying Progress" class="linkLabel_WmDU">US-HCW-007: Track Drying Progress</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-drying-protocol"><span title="US-HCW-008: Submit Drying Protocol (Torkprotokoll)" class="linkLabel_WmDU">US-HCW-008: Submit Drying Protocol (Torkprotokoll)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-repair-approval"><span title="US-HCW-009: Approve Repair Scope and Contractor" class="linkLabel_WmDU">US-HCW-009: Approve Repair Scope and Contractor</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-temporary-housing"><span title="US-HCW-010: Arrange Temporary Housing (Evakueringsboende)" class="linkLabel_WmDU">US-HCW-010: Arrange Temporary Housing (Evakueringsboende)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-settlement"><span title="US-HCW-011: Calculate Settlement With Age Deduction" class="linkLabel_WmDU">US-HCW-011: Calculate Settlement With Age Deduction</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-deductible"><span title="US-HCW-012: View Deductible (Självrisk) for Claim" class="linkLabel_WmDU">US-HCW-012: View Deductible (Självrisk) for Claim</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-cross-claim"><span title="US-HCW-013: Coordinate Cross-Claim Payment (BRF/Individual)" class="linkLabel_WmDU">US-HCW-013: Coordinate Cross-Claim Payment (BRF/Individual)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-final-inspection"><span title="US-HCW-014: Verify Restoration via Final Inspection" class="linkLabel_WmDU">US-HCW-014: Verify Restoration via Final Inspection</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-closure"><span title="US-HCW-015: Close Claim and Record for Risk Assessment" class="linkLabel_WmDU">US-HCW-015: Close Claim and Record for Risk Assessment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-fnol"><span title="US-HCF-001: Report Fire or Natural Event Emergency" class="linkLabel_WmDU">US-HCF-001: Report Fire or Natural Event Emergency</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-incident-report"><span title="US-HCF-002: Obtain Räddningstjänsten Incident Report" class="linkLabel_WmDU">US-HCF-002: Obtain Räddningstjänsten Incident Report</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-event-classification"><span title="US-HCF-003: Classify Event Type and Coverage" class="linkLabel_WmDU">US-HCF-003: Classify Event Type and Coverage</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-total-loss-assessment"><span title="US-HCF-004: Assess Total Loss vs Partial Loss" class="linkLabel_WmDU">US-HCF-004: Assess Total Loss vs Partial Loss</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-structural-inspection"><span title="US-HCF-005: Inspect Property for Structural Integrity" class="linkLabel_WmDU">US-HCF-005: Inspect Property for Structural Integrity</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-environmental-hazards"><span title="US-HCF-006: Check for Environmental Hazards" class="linkLabel_WmDU">US-HCF-006: Check for Environmental Hazards</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-valuation"><span title="US-HCF-007: Explain Rebuild Cost vs Market Value Settlement" class="linkLabel_WmDU">US-HCF-007: Explain Rebuild Cost vs Market Value Settlement</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-contractor-coordination"><span title="US-HCF-008: Coordinate Contractors for Rebuild or Repair" class="linkLabel_WmDU">US-HCF-008: Coordinate Contractors for Rebuild or Repair</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-temporary-housing"><span title="US-HCF-009: Provide Continued Temporary Housing During Rebuild" class="linkLabel_WmDU">US-HCF-009: Provide Continued Temporary Housing During Rebuild</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-multi-unit"><span title="US-HCF-010: Manage Multi-Unit Claims" class="linkLabel_WmDU">US-HCF-010: Manage Multi-Unit Claims</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-subrogation"><span title="US-HCF-011: Process Subrogation Against Responsible Third Party" class="linkLabel_WmDU">US-HCF-011: Process Subrogation Against Responsible Third Party</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-risk-update"><span title="US-HCF-012: Flag Property for Updated Risk Assessment" class="linkLabel_WmDU">US-HCF-012: Flag Property for Updated Risk Assessment</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/"><span title="Use Cases" class="categoryLinkLabel_W154">Use Cases</span></a><button aria-label="Expand sidebar category &#x27;Use Cases&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/analysis/"><span title="Analysis" class="categoryLinkLabel_W154">Analysis</span></a><button aria-label="Expand sidebar category &#x27;Analysis&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/insurance-platform-requirements/docs/next/Architecture/ADR-TEMPLATE"><span title="Architecture" class="categoryLinkLabel_W154">Architecture</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/lessons-learned/"><span title="Lessons Learned" class="categoryLinkLabel_W154">Lessons Learned</span></a><button aria-label="Expand sidebar category &#x27;Lessons Learned&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/glossary"><span title="Glossary" class="linkLabel_WmDU">Glossary</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/evidence-package"><span title="Evidence Package" class="linkLabel_WmDU">Evidence Package</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role="alert"><div>This is unreleased documentation for <!-- -->TryggFörsäkring Requirements<!-- --> <b>Phase 2 — Home &amp; Property (Draft)</b> version.</div><div class="margin-top--md">For up-to-date documentation, see the <b><a href="/insurance-platform-requirements/docs/intro">latest version</a></b> (<!-- -->Phase 1 — Motor Insurance<!-- -->).</div></div><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/insurance-platform-requirements/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/insurance-platform-requirements/docs/next/phase-2-home-property/"><span>Phase 2 — Home &amp; Property Insurance</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/"><span>User Stories</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Home Insurance Cancellations — User Stories</span></li></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: Phase 2 — Home &amp; Property (Draft)</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Home Insurance Cancellations — User Stories</h1></header>
+<p>User stories for home insurance cancellation (uppsägning) processing. Covers
+customer-initiated cancellations (ångerrätt, property sale, address change,
+insurer switch, EU online cancellation button), insurer-initiated cancellations
+(non-payment, material misrepresentation), pro-rata refund calculation, and
+coverage gap prevention when switching insurers.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<table><thead><tr><th>ID</th><th>Actor</th><th>Summary</th></tr></thead><tbody><tr><td>HCA-01</td><td>Customer</td><td>Cancel home insurance within 14-day ångerrätt period</td></tr><tr><td>HCA-02</td><td>Customer</td><td>Cancel when property is sold (försäljning)</td></tr><tr><td>HCA-03</td><td>Customer</td><td>Cancel when moving to a new address</td></tr><tr><td>HCA-04</td><td>Customer</td><td>Switch to a competitor insurer at renewal</td></tr><tr><td>HCA-05</td><td>Customer</td><td>Cancel using the EU online cancellation button</td></tr><tr><td>HCA-06</td><td>Underwriter</td><td>Cancel a policy due to non-payment after statutory reminders</td></tr><tr><td>HCA-07</td><td>Underwriter</td><td>Cancel a policy due to material misrepresentation</td></tr><tr><td>HCA-08</td><td>System</td><td>Calculate pro-rata refund for remaining policy period</td></tr><tr><td>HCA-09</td><td>System</td><td>Ensure no coverage gap when customer switches insurer</td></tr><tr><td>HCA-10</td><td>Customer Service Agent</td><td>Preview refund amount before confirming cancellation</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hca-01-cancel-within-14-day-ångerrätt-period">HCA-01: Cancel Within 14-Day Ångerrätt Period<a href="#hca-01-cancel-within-14-day-ångerrätt-period" class="hash-link" aria-label="Direct link to HCA-01: Cancel Within 14-Day Ångerrätt Period" title="Direct link to HCA-01: Cancel Within 14-Day Ångerrätt Period" translate="no">​</a></h2>
+<p><strong>As a</strong> customer (privatkund),
+<strong>I want to</strong> cancel my home insurance within the 14-day ångerrätt
+(cooling-off) period,
+<strong>so that</strong> I receive a full refund with no penalty.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria">Acceptance Criteria<a href="#acceptance-criteria" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the customer purchased a home insurance policy via a distance
+channel (web, phone, app)
+<strong>WHEN</strong> the customer requests cancellation within 14 calendar days of the
+contract conclusion date
+<strong>THEN</strong> the system processes an immediate cancellation with a full premium
+refund and no cancellation fee</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer requests cancellation within the ångerrätt period
+<strong>WHEN</strong> the system processes the cancellation
+<strong>THEN</strong> the system records the cancellation reason as &quot;Ångerrätt&quot; and marks
+the cancellation effective immediately</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer has made a claim during the ångerrätt period
+<strong>WHEN</strong> the customer requests cancellation
+<strong>THEN</strong> the system deducts the cost of any claims paid from the refund
+amount per Försäkringsavtalslagen and informs the customer of the adjusted
+refund</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the ångerrätt period has expired (&gt;14 days from contract conclusion)
+<strong>WHEN</strong> the customer attempts to use ångerrätt cancellation
+<strong>THEN</strong> the system informs the customer that the cooling-off period has
+expired and offers ordinary cancellation with pro-rata refund instead</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer cancels within ångerrätt
+<strong>WHEN</strong> the cancellation is confirmed
+<strong>THEN</strong> the system sends a cancellation confirmation to the customer via
+email/post with the refund amount and expected payment date</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements">Data Requirements<a href="#data-requirements" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Contract conclusion date</td><td>System record</td><td>Yes</td></tr><tr><td>Cancellation request date</td><td>Customer input</td><td>Yes</td></tr><tr><td>Sales channel</td><td>System record</td><td>Yes</td></tr><tr><td>Claims paid during period</td><td>System record</td><td>Yes</td></tr><tr><td>Refund amount</td><td>System calc</td><td>Yes</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory">Regulatory<a href="#regulatory" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-013</strong> — Ångerrätt; 14-day cooling-off period for distance and
+off-premises contracts with full refund</li>
+<li class=""><strong>IDD-002</strong> — IPID must describe how to cancel the contract, including
+ångerrätt</li>
+<li class=""><strong>GDPR-007</strong> — Cancellation records retained per FSA-014 retention rules</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hca-02-cancel-when-property-is-sold">HCA-02: Cancel When Property Is Sold<a href="#hca-02-cancel-when-property-is-sold" class="hash-link" aria-label="Direct link to HCA-02: Cancel When Property Is Sold" title="Direct link to HCA-02: Cancel When Property Is Sold" translate="no">​</a></h2>
+<p><strong>As a</strong> customer (privatkund),
+<strong>I want to</strong> cancel my home insurance when I sell my property,
+<strong>so that</strong> I stop paying for coverage I no longer need and receive a refund
+for the unused period.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-1">Acceptance Criteria<a href="#acceptance-criteria-1" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the customer has sold their insured property
+<strong>WHEN</strong> the customer submits a cancellation request with proof of sale
+(överlåtelsehandling or signed purchase agreement)
+<strong>THEN</strong> the system processes cancellation effective from the property
+transfer date (tillträdesdag) and calculates a pro-rata refund</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer requests cancellation due to property sale
+<strong>WHEN</strong> the customer provides the property transfer date
+<strong>THEN</strong> the system validates that the transfer date is in the future or
+within the last 30 days and sets the cancellation effective date accordingly</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer has an active claim on the policy
+<strong>WHEN</strong> the customer requests cancellation due to property sale
+<strong>THEN</strong> the system warns the customer that the active claim will continue
+to be processed but no new claims can be filed after the cancellation
+effective date</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the property sale cancellation is processed
+<strong>WHEN</strong> the system confirms the cancellation
+<strong>THEN</strong> the system sends the customer a cancellation confirmation including
+the effective date, pro-rata refund amount, and information about active
+claim handling</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the buyer of the property wants to continue the policy
+<strong>WHEN</strong> the customer or buyer requests policy transfer
+<strong>THEN</strong> the system provides information about the buyer applying for their
+own policy (home insurance is not automatically transferable in Sweden)</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-1">Data Requirements<a href="#data-requirements-1" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Proof of sale</td><td>Customer input</td><td>Yes</td></tr><tr><td>Property transfer date</td><td>Customer input</td><td>Yes</td></tr><tr><td>Active claims status</td><td>System record</td><td>Yes</td></tr><tr><td>Pro-rata refund</td><td>System calc</td><td>Yes</td></tr><tr><td>Policy number</td><td>System record</td><td>Yes</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-1">Regulatory<a href="#regulatory-1" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-013</strong> — Cancellation rights; policyholder may cancel upon change of
+insurable interest (property sold)</li>
+<li class=""><strong>FSA-005</strong> — Fair refund calculation; pro-rata for unused coverage period</li>
+<li class=""><strong>GDPR-007</strong> — Proof of sale documents are personal data; retained per
+FSA-014 retention period</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hca-03-cancel-when-moving-to-a-new-address">HCA-03: Cancel When Moving to a New Address<a href="#hca-03-cancel-when-moving-to-a-new-address" class="hash-link" aria-label="Direct link to HCA-03: Cancel When Moving to a New Address" title="Direct link to HCA-03: Cancel When Moving to a New Address" translate="no">​</a></h2>
+<p><strong>As a</strong> customer (privatkund),
+<strong>I want to</strong> cancel my home insurance when I move to a new address,
+<strong>so that</strong> I avoid double coverage and can arrange insurance for my new home.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-2">Acceptance Criteria<a href="#acceptance-criteria-2" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the customer is moving to a new address
+<strong>WHEN</strong> the customer submits a cancellation request with the move date
+<strong>THEN</strong> the system processes cancellation effective from the move date and
+calculates a pro-rata refund for the remaining period</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer is moving to a new address within TryggFörsäkring&#x27;s
+coverage area
+<strong>WHEN</strong> the customer requests cancellation
+<strong>THEN</strong> the system offers the option to transfer the policy to the new
+address instead of cancelling, with a premium recalculation based on the
+new property&#x27;s risk profile</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer transfers the policy to a new address
+<strong>WHEN</strong> the premium changes due to the new address
+<strong>THEN</strong> the system presents the updated premium and coverage terms and
+requires the customer&#x27;s confirmation before applying the transfer</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer is moving and wants to cancel
+<strong>WHEN</strong> the system processes the cancellation
+<strong>THEN</strong> the system sends a reminder that the customer should arrange home
+insurance for their new address to avoid a coverage gap</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer moves to a BRF apartment from a villa (or vice versa)
+<strong>WHEN</strong> the customer requests a policy transfer
+<strong>THEN</strong> the system identifies that the product type must change
+(villahemförsäkring to bostadsrättsförsäkring or vice versa) and initiates
+a new quote for the appropriate product</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-2">Data Requirements<a href="#data-requirements-2" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Current address</td><td>Policy record</td><td>Yes</td></tr><tr><td>New address</td><td>Customer input</td><td>Yes</td></tr><tr><td>Move date</td><td>Customer input</td><td>Yes</td></tr><tr><td>Housing type</td><td>Customer input</td><td>Yes</td></tr><tr><td>New premium</td><td>System calc</td><td>Conditional</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-2">Regulatory<a href="#regulatory-2" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-013</strong> — Cancellation rights; address change that alters risk</li>
+<li class=""><strong>FSA-004</strong> — Fair treatment; offer policy transfer where possible</li>
+<li class=""><strong>FSA-015</strong> — Product suitability; correct product type for new housing type</li>
+<li class=""><strong>GDPR-007</strong> — Address data processed for policy administration; retained
+per FSA-014</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hca-04-switch-to-a-competitor-insurer-at-renewal">HCA-04: Switch to a Competitor Insurer at Renewal<a href="#hca-04-switch-to-a-competitor-insurer-at-renewal" class="hash-link" aria-label="Direct link to HCA-04: Switch to a Competitor Insurer at Renewal" title="Direct link to HCA-04: Switch to a Competitor Insurer at Renewal" translate="no">​</a></h2>
+<p><strong>As a</strong> customer (privatkund),
+<strong>I want to</strong> cancel my home insurance at renewal to switch to a competitor
+insurer,
+<strong>so that</strong> I can get better terms or pricing.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-3">Acceptance Criteria<a href="#acceptance-criteria-3" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the customer&#x27;s policy is approaching renewal
+<strong>WHEN</strong> the customer submits a cancellation request effective at the
+renewal date
+<strong>THEN</strong> the system processes the cancellation effective at the end of the
+current policy period with no pro-rata refund (full period served)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer wants to switch insurer mid-term
+<strong>WHEN</strong> the customer submits a cancellation request with an effective date
+before renewal
+<strong>THEN</strong> the system calculates a pro-rata refund for the remaining period
+and coordinates the cancellation effective date</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer is switching to a new insurer
+<strong>WHEN</strong> the system processes the cancellation
+<strong>THEN</strong> the system asks the customer for the new insurer&#x27;s name and the
+new policy start date to verify there is no coverage gap</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the system detects a potential coverage gap (new policy starts
+after current policy ends)
+<strong>WHEN</strong> the cancellation is being processed
+<strong>THEN</strong> the system warns the customer about the gap and recommends
+adjusting either the cancellation date or the new policy start date</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer cancels at renewal
+<strong>WHEN</strong> the renewal date arrives
+<strong>THEN</strong> the system does not auto-renew the policy and sends a final
+confirmation that coverage has ended</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-3">Data Requirements<a href="#data-requirements-3" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Renewal date</td><td>System record</td><td>Yes</td></tr><tr><td>Cancellation effective date</td><td>Customer input</td><td>Yes</td></tr><tr><td>New insurer name</td><td>Customer input</td><td>Conditional</td></tr><tr><td>New policy start date</td><td>Customer input</td><td>Conditional</td></tr><tr><td>Pro-rata refund</td><td>System calc</td><td>Conditional</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-3">Regulatory<a href="#regulatory-3" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-013</strong> — Cancellation rights; policyholder can cancel at renewal</li>
+<li class=""><strong>FSA-004</strong> — Fair treatment; customer informed about coverage gap risk</li>
+<li class=""><strong>IDD-002</strong> — IPID describes cancellation procedure including at renewal</li>
+<li class=""><strong>GDPR-007</strong> — New insurer name stored only for gap verification; deleted
+after cancellation is processed</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hca-05-cancel-using-the-eu-online-cancellation-button">HCA-05: Cancel Using the EU Online Cancellation Button<a href="#hca-05-cancel-using-the-eu-online-cancellation-button" class="hash-link" aria-label="Direct link to HCA-05: Cancel Using the EU Online Cancellation Button" title="Direct link to HCA-05: Cancel Using the EU Online Cancellation Button" translate="no">​</a></h2>
+<p><strong>As a</strong> customer (privatkund),
+<strong>I want to</strong> cancel my home insurance using the EU online cancellation button
+(ångerknapp),
+<strong>so that</strong> I can cancel digitally without needing to call or write.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-4">Acceptance Criteria<a href="#acceptance-criteria-4" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the customer is logged in to the TryggFörsäkring self-service
+portal or app
+<strong>WHEN</strong> the customer navigates to their active home insurance policy
+<strong>THEN</strong> a clearly visible cancellation button is displayed, compliant with
+the EU Consumer Rights Directive online cancellation requirement</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer clicks the cancellation button
+<strong>WHEN</strong> the system presents the cancellation flow
+<strong>THEN</strong> the system displays the cancellation terms: effective date options,
+estimated refund amount, and any impact on active claims</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer completes the online cancellation flow
+<strong>WHEN</strong> the customer confirms the cancellation
+<strong>THEN</strong> the system requires BankID authentication to verify the
+customer&#x27;s identity before processing the cancellation</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the cancellation is confirmed via BankID
+<strong>WHEN</strong> the system processes the cancellation
+<strong>THEN</strong> the system immediately sends a cancellation confirmation via email
+with the effective date, refund amount, and reference number</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer initiates cancellation via the online button
+<strong>WHEN</strong> the customer does not complete the flow (abandons before
+confirmation)
+<strong>THEN</strong> the system does not process the cancellation and the policy
+remains active</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-4">Data Requirements<a href="#data-requirements-4" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>BankID verification</td><td>BankID</td><td>Yes</td></tr><tr><td>Cancellation reason</td><td>Customer input</td><td>No</td></tr><tr><td>Effective date</td><td>Customer input</td><td>Yes</td></tr><tr><td>Confirmation email</td><td>System</td><td>Yes</td></tr><tr><td>Session audit trail</td><td>System</td><td>Yes</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="external-integrations">External Integrations<a href="#external-integrations" class="hash-link" aria-label="Direct link to External Integrations" title="Direct link to External Integrations" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>BankID</strong> — Identity verification for cancellation confirmation</li>
+<li class=""><strong>Email/SMS Gateway</strong> — Cancellation confirmation delivery</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-4">Regulatory<a href="#regulatory-4" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>EU Consumer Rights Directive</strong> — Online cancellation button requirement;
+must be clearly accessible and functional</li>
+<li class=""><strong>FSA-013</strong> — Cancellation rights; online cancellation is a valid channel</li>
+<li class=""><strong>GDPR-007</strong> — Cancellation session data retained per FSA-014 retention
+rules</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hca-06-cancel-policy-due-to-non-payment">HCA-06: Cancel Policy Due to Non-Payment<a href="#hca-06-cancel-policy-due-to-non-payment" class="hash-link" aria-label="Direct link to HCA-06: Cancel Policy Due to Non-Payment" title="Direct link to HCA-06: Cancel Policy Due to Non-Payment" translate="no">​</a></h2>
+<p><strong>As an</strong> underwriter (skadereglerare/försäkringsspecialist),
+<strong>I want to</strong> cancel a policy due to non-payment after the legally required
+reminder process,
+<strong>so that</strong> credit risk is managed and the statutory process is followed.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-5">Acceptance Criteria<a href="#acceptance-criteria-5" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a premium payment is overdue
+<strong>WHEN</strong> the system detects the missed payment
+<strong>THEN</strong> the system sends a first payment reminder (betalningspåminnelse)
+to the customer with a 14-day grace period to pay</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the first reminder grace period has expired without payment
+<strong>WHEN</strong> the system processes the overdue account
+<strong>THEN</strong> the system sends a formal cancellation warning
+(uppsägningsvarning) stating that the policy will be cancelled if payment
+is not received within 14 additional days per Försäkringsavtalslagen</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the cancellation warning period has expired without payment
+<strong>WHEN</strong> the system processes the non-payment
+<strong>THEN</strong> the system cancels the policy effective on the date stated in the
+cancellation warning and records the cancellation reason as &quot;Non-payment&quot;</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer pays the overdue premium before cancellation takes
+effect
+<strong>WHEN</strong> the payment is received
+<strong>THEN</strong> the system reinstates the policy with no gap in coverage and
+sends a confirmation to the customer</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the policy is cancelled due to non-payment
+<strong>WHEN</strong> the cancellation is processed
+<strong>THEN</strong> the system calculates any refund or outstanding balance: if
+premium was paid in advance, a pro-rata refund for the post-cancellation
+period is issued; if premium is owed, the outstanding amount is sent to
+collections</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-payment-timeline">Non-Payment Timeline<a href="#non-payment-timeline" class="hash-link" aria-label="Direct link to Non-Payment Timeline" title="Direct link to Non-Payment Timeline" translate="no">​</a></h3>
+<table><thead><tr><th>Step</th><th>Action</th><th>Deadline</th></tr></thead><tbody><tr><td>1</td><td>Payment due date passes</td><td>Day 0</td></tr><tr><td>2</td><td>First reminder (betalningspåminnelse)</td><td>Within 7 days of due date</td></tr><tr><td>3</td><td>Grace period for first reminder</td><td>14 days from reminder</td></tr><tr><td>4</td><td>Cancellation warning (uppsägningsvarning)</td><td>After grace period expires</td></tr><tr><td>5</td><td>Final grace period</td><td>14 days from warning</td></tr><tr><td>6</td><td>Policy cancellation effective</td><td>After final grace expires</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-5">Regulatory<a href="#regulatory-5" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-013</strong> — Insurer-initiated cancellation; must follow
+Försäkringsavtalslagen statutory reminder and notice requirements</li>
+<li class=""><strong>FSA-004</strong> — Fair treatment; customer must receive clear communication at
+each step of the non-payment process</li>
+<li class=""><strong>FSA-014</strong> — Record keeping; all reminders, warnings, and cancellation
+notices must be retained for 10 years</li>
+<li class=""><strong>GDPR-007</strong> — Payment and collection data processed under Article 6(1)(b)
+contract performance</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hca-07-cancel-policy-due-to-material-misrepresentation">HCA-07: Cancel Policy Due to Material Misrepresentation<a href="#hca-07-cancel-policy-due-to-material-misrepresentation" class="hash-link" aria-label="Direct link to HCA-07: Cancel Policy Due to Material Misrepresentation" title="Direct link to HCA-07: Cancel Policy Due to Material Misrepresentation" translate="no">​</a></h2>
+<p><strong>As an</strong> underwriter (försäkringsspecialist),
+<strong>I want to</strong> cancel a policy due to material misrepresentation (e.g.,
+undisclosed prior claims, incorrect property details),
+<strong>so that</strong> the risk is correctly managed and the insurance pool is protected.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-6">Acceptance Criteria<a href="#acceptance-criteria-6" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the underwriter discovers that the customer provided materially
+incorrect information at policy inception (e.g., undisclosed water damage
+history, incorrect building type, false BRF membership status)
+<strong>WHEN</strong> the underwriter reviews the policy
+<strong>THEN</strong> the system allows the underwriter to initiate cancellation for
+material misrepresentation with documented evidence</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the underwriter initiates cancellation for misrepresentation
+<strong>WHEN</strong> the system processes the cancellation
+<strong>THEN</strong> the system requires the underwriter to document: the specific
+misrepresentation, the evidence discovered, how the misrepresentation
+affected the risk assessment, and whether the policy would have been
+issued or priced differently with correct information</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the misrepresentation is determined to be intentional (fraud)
+<strong>WHEN</strong> the underwriter records the finding
+<strong>THEN</strong> the system cancels the policy immediately with no refund, records
+the fraud determination, and flags the customer for future underwriting
+review</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the misrepresentation is determined to be unintentional (honest
+mistake)
+<strong>WHEN</strong> the underwriter records the finding
+<strong>THEN</strong> the system offers two options: cancel with pro-rata refund, or
+adjust the policy terms and premium to reflect the correct information</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> a cancellation for misrepresentation is processed
+<strong>WHEN</strong> the system finalizes the cancellation
+<strong>THEN</strong> the system sends the customer a formal notice explaining the
+reason for cancellation, the effective date, any refund or outstanding
+balance, and the customer&#x27;s right to dispute the decision via
+Allmänna reklamationsnämnden (ARN)</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-5">Data Requirements<a href="#data-requirements-5" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Misrepresentation details</td><td>Underwriter</td><td>Yes</td></tr><tr><td>Evidence documentation</td><td>Underwriter</td><td>Yes</td></tr><tr><td>Risk impact assessment</td><td>Underwriter</td><td>Yes</td></tr><tr><td>Fraud determination</td><td>Underwriter</td><td>Yes</td></tr><tr><td>Customer notification</td><td>System</td><td>Yes</td></tr><tr><td>ARN dispute information</td><td>System template</td><td>Yes</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-6">Regulatory<a href="#regulatory-6" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-013</strong> — Insurer-initiated cancellation; misrepresentation grounds per
+Försäkringsavtalslagen Chapter 4</li>
+<li class=""><strong>FSA-004</strong> — Fair treatment; customer must be informed of the reason and
+their right to dispute</li>
+<li class=""><strong>FSA-014</strong> — Record keeping; all misrepresentation evidence and decisions
+retained for 10 years</li>
+<li class=""><strong>GDPR-007</strong> — Misrepresentation investigation data processed under
+Article 6(1)(f) legitimate interest (fraud prevention)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hca-08-calculate-pro-rata-refund-for-remaining-period">HCA-08: Calculate Pro-Rata Refund for Remaining Period<a href="#hca-08-calculate-pro-rata-refund-for-remaining-period" class="hash-link" aria-label="Direct link to HCA-08: Calculate Pro-Rata Refund for Remaining Period" title="Direct link to HCA-08: Calculate Pro-Rata Refund for Remaining Period" translate="no">​</a></h2>
+<p><strong>As the</strong> system,
+<strong>I want to</strong> calculate a pro-rata refund for the remaining policy period
+upon cancellation,
+<strong>so that</strong> the customer receives a fair repayment for unused coverage.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-7">Acceptance Criteria<a href="#acceptance-criteria-7" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a policy is cancelled before the end of the policy period
+<strong>WHEN</strong> the system calculates the refund
+<strong>THEN</strong> the refund is calculated as: (remaining days / total policy days)
+x annual premium, rounded to the nearest whole SEK</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the cancellation is within the ångerrätt period (HCA-01)
+<strong>WHEN</strong> the system calculates the refund
+<strong>THEN</strong> the refund is the full premium paid, minus any claims costs
+incurred during the coverage period</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the cancellation is insurer-initiated for fraud (HCA-07)
+<strong>WHEN</strong> the system calculates the refund
+<strong>THEN</strong> no refund is issued and the system records the reason</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer has paid via monthly instalments
+<strong>WHEN</strong> the system calculates the refund
+<strong>THEN</strong> the system accounts for months already paid: if overpaid, a refund
+is issued; if underpaid, the outstanding amount is collected</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the refund calculation is complete
+<strong>WHEN</strong> the system processes the refund
+<strong>THEN</strong> the refund is paid to the customer&#x27;s original payment method
+within 14 business days and the customer receives a refund confirmation
+with the calculation breakdown</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="refund-calculation-formula">Refund Calculation Formula<a href="#refund-calculation-formula" class="hash-link" aria-label="Direct link to Refund Calculation Formula" title="Direct link to Refund Calculation Formula" translate="no">​</a></h3>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Pro-Rata Refund = (Remaining Days / Total Policy Days) × Annual Premium</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Ångerrätt Refund = Full Premium Paid − Claims Costs During Period</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Monthly Payment Adjustment:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  If Total Paid &gt; Pro-Rata Premium Used → Refund = Total Paid − Premium Used</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  If Total Paid &lt; Pro-Rata Premium Used → Outstanding = Premium Used − Total Paid</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-6">Data Requirements<a href="#data-requirements-6" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Policy start date</td><td>System record</td><td>Yes</td></tr><tr><td>Cancellation date</td><td>System record</td><td>Yes</td></tr><tr><td>Policy end date</td><td>System record</td><td>Yes</td></tr><tr><td>Annual premium</td><td>System record</td><td>Yes</td></tr><tr><td>Payments made</td><td>System record</td><td>Yes</td></tr><tr><td>Claims costs</td><td>System record</td><td>Yes</td></tr><tr><td>Cancellation reason</td><td>System record</td><td>Yes</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-7">Regulatory<a href="#regulatory-7" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-005</strong> — Fair settlement; refund must be calculated transparently per
+Försäkringsavtalslagen</li>
+<li class=""><strong>FSA-013</strong> — Cancellation; refund rules depend on cancellation type
+(ångerrätt vs ordinary vs insurer-initiated)</li>
+<li class=""><strong>FSA-004</strong> — Fair treatment; refund calculation must be communicated
+clearly to the customer</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hca-09-ensure-no-coverage-gap-when-switching-insurer">HCA-09: Ensure No Coverage Gap When Switching Insurer<a href="#hca-09-ensure-no-coverage-gap-when-switching-insurer" class="hash-link" aria-label="Direct link to HCA-09: Ensure No Coverage Gap When Switching Insurer" title="Direct link to HCA-09: Ensure No Coverage Gap When Switching Insurer" translate="no">​</a></h2>
+<p><strong>As the</strong> system,
+<strong>I want to</strong> verify that the customer has replacement coverage when switching
+insurer,
+<strong>so that</strong> the customer is always protected and aware of any gap risk.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-8">Acceptance Criteria<a href="#acceptance-criteria-8" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the customer is cancelling to switch insurer (HCA-04)
+<strong>WHEN</strong> the system processes the cancellation
+<strong>THEN</strong> the system prompts the customer to enter the new insurer name and
+the new policy start date</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer provides the new policy start date
+<strong>WHEN</strong> the system compares it to the cancellation effective date
+<strong>THEN</strong> the system validates that the new policy start date is on or
+before the cancellation effective date (no gap)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> there is a gap between the cancellation effective date and the
+new policy start date
+<strong>WHEN</strong> the system detects the gap
+<strong>THEN</strong> the system displays a prominent warning explaining the risk of
+being uninsured during the gap period and recommends adjusting dates</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer acknowledges the coverage gap warning
+<strong>WHEN</strong> the customer confirms they want to proceed despite the gap
+<strong>THEN</strong> the system records the customer&#x27;s acknowledgement and proceeds
+with the cancellation, logging the gap period for audit purposes</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer is switching insurer at renewal (no gap)
+<strong>WHEN</strong> the new policy starts on the renewal date
+<strong>THEN</strong> the system confirms seamless transition and processes the
+cancellation without a gap warning</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-7">Data Requirements<a href="#data-requirements-7" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Cancellation date</td><td>System record</td><td>Yes</td></tr><tr><td>New insurer name</td><td>Customer input</td><td>Conditional</td></tr><tr><td>New policy start date</td><td>Customer input</td><td>Conditional</td></tr><tr><td>Gap warning shown</td><td>System record</td><td>Yes</td></tr><tr><td>Customer acknowledgement</td><td>System record</td><td>Conditional</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-8">Regulatory<a href="#regulatory-8" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-004</strong> — Fair treatment; customer must be informed of the risk of
+being uninsured</li>
+<li class=""><strong>FSA-013</strong> — Cancellation; system must support coordinated insurer
+switching</li>
+<li class=""><strong>IDD-002</strong> — IPID describes coverage start and end dates</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hca-10-preview-refund-amount-before-confirming-cancellation">HCA-10: Preview Refund Amount Before Confirming Cancellation<a href="#hca-10-preview-refund-amount-before-confirming-cancellation" class="hash-link" aria-label="Direct link to HCA-10: Preview Refund Amount Before Confirming Cancellation" title="Direct link to HCA-10: Preview Refund Amount Before Confirming Cancellation" translate="no">​</a></h2>
+<p><strong>As a</strong> customer service agent (kundtjänstmedarbetare),
+<strong>I want to</strong> preview the refund amount before confirming a cancellation,
+<strong>so that</strong> the customer can make an informed decision.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-9">Acceptance Criteria<a href="#acceptance-criteria-9" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a customer requests cancellation (any reason)
+<strong>WHEN</strong> the customer service agent initiates the cancellation flow
+<strong>THEN</strong> the system displays a cancellation preview showing: cancellation
+effective date, remaining coverage period, pro-rata refund amount, and any
+deductions (claims costs, outstanding payments)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the agent presents the refund preview to the customer
+<strong>WHEN</strong> the customer reviews the cancellation terms
+<strong>THEN</strong> the customer can choose to proceed with cancellation, adjust the
+effective date (and see an updated refund), or cancel the cancellation
+request and keep the policy</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer adjusts the cancellation effective date
+<strong>WHEN</strong> the agent updates the date in the system
+<strong>THEN</strong> the system recalculates the refund in real-time and displays the
+updated preview</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer confirms the cancellation after reviewing the
+preview
+<strong>WHEN</strong> the agent submits the cancellation
+<strong>THEN</strong> the system processes the cancellation with the previewed amounts
+and sends confirmation to the customer</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer decides not to cancel after reviewing the preview
+<strong>WHEN</strong> the agent cancels the cancellation request
+<strong>THEN</strong> the policy remains active with no changes and the system logs
+the retention event</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-8">Data Requirements<a href="#data-requirements-8" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Policy details</td><td>System record</td><td>Yes</td></tr><tr><td>Cancellation date</td><td>Agent input</td><td>Yes</td></tr><tr><td>Refund preview amount</td><td>System calc</td><td>Yes</td></tr><tr><td>Deductions breakdown</td><td>System calc</td><td>Yes</td></tr><tr><td>Customer decision</td><td>Agent input</td><td>Yes</td></tr><tr><td>Retention event logged</td><td>System</td><td>Conditional</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-9">Regulatory<a href="#regulatory-9" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-004</strong> — Fair treatment; customer must have complete information to
+make an informed cancellation decision</li>
+<li class=""><strong>FSA-005</strong> — Fair refund; the previewed amount must match the actual
+refund processed</li>
+<li class=""><strong>FSA-013</strong> — Cancellation; the process must be transparent and
+customer-friendly</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-model">Data Model<a href="#data-model" class="hash-link" aria-label="Direct link to Data Model" title="Direct link to Data Model" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cancellationrecord">CancellationRecord<a href="#cancellationrecord" class="hash-link" aria-label="Direct link to CancellationRecord" title="Direct link to CancellationRecord" translate="no">​</a></h3>
+<table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>Cancellation ID</td><td>String</td><td>Unique identifier for the cancellation</td></tr><tr><td>Policy number</td><td>String</td><td>Reference to the home insurance policy</td></tr><tr><td>Cancellation type</td><td>Enum</td><td>Ångerrätt / Ordinary / Non-payment / Misrepresentation / Fraud</td></tr><tr><td>Cancellation reason</td><td>Enum</td><td>Property sold / Moving / Switching insurer / Cooling-off / Non-payment / Misrepresentation / Other</td></tr><tr><td>Request date</td><td>DateTime</td><td>When the cancellation was requested</td></tr><tr><td>Effective date</td><td>DateTime</td><td>When the policy coverage ends</td></tr><tr><td>Initiator</td><td>Enum</td><td>Customer / Insurer / System</td></tr><tr><td>Channel</td><td>Enum</td><td>Web / App / Phone / EU-button / Letter</td></tr><tr><td>Refund amount</td><td>Decimal</td><td>Calculated refund (SEK)</td></tr><tr><td>Refund method</td><td>Enum</td><td>Original payment method / Bank transfer</td></tr><tr><td>Refund status</td><td>Enum</td><td>Pending / Processed / Not applicable</td></tr><tr><td>Outstanding balance</td><td>Decimal</td><td>Amount owed by customer (SEK)</td></tr><tr><td>Claims costs deducted</td><td>Decimal</td><td>Claims costs deducted from ångerrätt refund (SEK)</td></tr><tr><td>Coverage gap warning</td><td>Boolean</td><td>Whether a gap warning was shown</td></tr><tr><td>Gap acknowledged</td><td>Boolean</td><td>Whether the customer acknowledged the gap</td></tr><tr><td>New insurer name</td><td>String</td><td>Name of the replacement insurer (if switching)</td></tr><tr><td>New policy start date</td><td>Date</td><td>Start date of replacement policy (if switching)</td></tr><tr><td>Proof of sale</td><td>Boolean</td><td>Whether proof of sale was provided</td></tr><tr><td>BankID verified</td><td>Boolean</td><td>Whether cancellation was verified via BankID</td></tr><tr><td>Non-payment reminders</td><td>Integer</td><td>Number of reminders sent before cancellation</td></tr><tr><td>Misrepresentation evidence</td><td>String</td><td>Description of misrepresentation (if applicable)</td></tr><tr><td>Status</td><td>Enum</td><td>Requested / Previewed / Confirmed / Processed / Reversed</td></tr><tr><td>Processed by</td><td>String</td><td>Agent or system identifier</td></tr><tr><td>Created timestamp</td><td>DateTime</td><td>When the record was created</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-traceability-matrix">Regulatory Traceability Matrix<a href="#regulatory-traceability-matrix" class="hash-link" aria-label="Direct link to Regulatory Traceability Matrix" title="Direct link to Regulatory Traceability Matrix" translate="no">​</a></h2>
+<table><thead><tr><th>Requirement</th><th>HCA-01</th><th>HCA-02</th><th>HCA-03</th><th>HCA-04</th><th>HCA-05</th><th>HCA-06</th><th>HCA-07</th><th>HCA-08</th><th>HCA-09</th><th>HCA-10</th></tr></thead><tbody><tr><td>FSA-004</td><td></td><td></td><td>X</td><td>X</td><td></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td>FSA-005</td><td></td><td>X</td><td></td><td></td><td></td><td></td><td></td><td>X</td><td></td><td>X</td></tr><tr><td>FSA-013</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td>FSA-014</td><td></td><td></td><td></td><td></td><td></td><td>X</td><td>X</td><td></td><td></td><td></td></tr><tr><td>FSA-015</td><td></td><td></td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>GDPR-007</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td></td><td></td><td></td></tr><tr><td>IDD-002</td><td>X</td><td></td><td></td><td>X</td><td></td><td></td><td></td><td></td><td>X</td><td></td></tr><tr><td>EU CRD</td><td></td><td></td><td></td><td></td><td>X</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Agentic-software-factory/insurance-platform-requirements/edit/main/docs/phase-2-home-property/user-stories/cancellations.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/home-renewals"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Home Renewals — User Stories</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/liability-and-legal"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Liability and Legal Expenses Claims — User Stories</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#hca-01-cancel-within-14-day-ångerrätt-period" class="table-of-contents__link toc-highlight">HCA-01: Cancel Within 14-Day Ångerrätt Period</a><ul><li><a href="#acceptance-criteria" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#data-requirements" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hca-02-cancel-when-property-is-sold" class="table-of-contents__link toc-highlight">HCA-02: Cancel When Property Is Sold</a><ul><li><a href="#acceptance-criteria-1" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#data-requirements-1" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-1" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hca-03-cancel-when-moving-to-a-new-address" class="table-of-contents__link toc-highlight">HCA-03: Cancel When Moving to a New Address</a><ul><li><a href="#acceptance-criteria-2" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#data-requirements-2" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-2" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hca-04-switch-to-a-competitor-insurer-at-renewal" class="table-of-contents__link toc-highlight">HCA-04: Switch to a Competitor Insurer at Renewal</a><ul><li><a href="#acceptance-criteria-3" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#data-requirements-3" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-3" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hca-05-cancel-using-the-eu-online-cancellation-button" class="table-of-contents__link toc-highlight">HCA-05: Cancel Using the EU Online Cancellation Button</a><ul><li><a href="#acceptance-criteria-4" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#data-requirements-4" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#external-integrations" class="table-of-contents__link toc-highlight">External Integrations</a></li><li><a href="#regulatory-4" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hca-06-cancel-policy-due-to-non-payment" class="table-of-contents__link toc-highlight">HCA-06: Cancel Policy Due to Non-Payment</a><ul><li><a href="#acceptance-criteria-5" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#non-payment-timeline" class="table-of-contents__link toc-highlight">Non-Payment Timeline</a></li><li><a href="#regulatory-5" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hca-07-cancel-policy-due-to-material-misrepresentation" class="table-of-contents__link toc-highlight">HCA-07: Cancel Policy Due to Material Misrepresentation</a><ul><li><a href="#acceptance-criteria-6" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#data-requirements-5" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-6" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hca-08-calculate-pro-rata-refund-for-remaining-period" class="table-of-contents__link toc-highlight">HCA-08: Calculate Pro-Rata Refund for Remaining Period</a><ul><li><a href="#acceptance-criteria-7" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#refund-calculation-formula" class="table-of-contents__link toc-highlight">Refund Calculation Formula</a></li><li><a href="#data-requirements-6" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-7" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hca-09-ensure-no-coverage-gap-when-switching-insurer" class="table-of-contents__link toc-highlight">HCA-09: Ensure No Coverage Gap When Switching Insurer</a><ul><li><a href="#acceptance-criteria-8" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#data-requirements-7" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-8" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hca-10-preview-refund-amount-before-confirming-cancellation" class="table-of-contents__link toc-highlight">HCA-10: Preview Refund Amount Before Confirming Cancellation</a><ul><li><a href="#acceptance-criteria-9" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#data-requirements-8" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-9" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#data-model" class="table-of-contents__link toc-highlight">Data Model</a><ul><li><a href="#cancellationrecord" class="table-of-contents__link toc-highlight">CancellationRecord</a></li></ul></li><li><a href="#regulatory-traceability-matrix" class="table-of-contents__link toc-highlight">Regulatory Traceability Matrix</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/insurance-platform-requirements/docs/intro">Requirements</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 TryggFörsäkring AB. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

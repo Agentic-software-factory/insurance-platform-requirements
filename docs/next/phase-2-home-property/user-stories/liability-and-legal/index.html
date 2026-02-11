@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-phase-2-home-property/user-stories/liability-and-legal" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Liability and Legal Expenses Claims — User Stories | TryggFörsäkring Requirements</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/liability-and-legal"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Liability and Legal Expenses Claims — User Stories | TryggFörsäkring Requirements"><meta data-rh="true" name="description" content="User stories for home insurance liability (ansvarsskydd) and legal expenses"><meta data-rh="true" property="og:description" content="User stories for home insurance liability (ansvarsskydd) and legal expenses"><link data-rh="true" rel="icon" href="/insurance-platform-requirements/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/liability-and-legal"><link data-rh="true" rel="alternate" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/liability-and-legal" hreflang="en"><link data-rh="true" rel="alternate" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/liability-and-legal" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Phase 2 — Home & Property Insurance","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/"},{"@type":"ListItem","position":2,"name":"User Stories","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/"},{"@type":"ListItem","position":3,"name":"Liability and Legal Expenses Claims — User Stories","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/liability-and-legal"}]}</script><link rel="stylesheet" href="/insurance-platform-requirements/assets/css/styles.d44ab96b.css">
+<script src="/insurance-platform-requirements/assets/js/runtime~main.5737842f.js" defer="defer"></script>
+<script src="/insurance-platform-requirements/assets/js/main.bbdc7f69.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/insurance-platform-requirements/"><b class="navbar__title text--truncate">TryggFörsäkring</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/insurance-platform-requirements/docs/next/intro">Requirements</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/liability-and-legal">Phase 2 — Home &amp; Property (Draft)</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/liability-and-legal">Phase 2 — Home &amp; Property (Draft)</a></li><li><a class="dropdown__link" href="/insurance-platform-requirements/docs/intro">Phase 1 — Motor Insurance</a></li></ul></div><a href="https://github.com/Agentic-software-factory/insurance-platform-requirements" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/intro"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/actors/"><span title="Actors" class="categoryLinkLabel_W154">Actors</span></a><button aria-label="Expand sidebar category &#x27;Actors&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/personas/"><span title="Personas" class="categoryLinkLabel_W154">Personas</span></a><button aria-label="Expand sidebar category &#x27;Personas&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/insurance-platform-requirements/docs/next/regulatory/fsa-requirements"><span title="Regulatory" class="categoryLinkLabel_W154">Regulatory</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/phase-1-motor/"><span title="Phase 1 — Motor Insurance" class="categoryLinkLabel_W154">Phase 1 — Motor Insurance</span></a><button aria-label="Expand sidebar category &#x27;Phase 1 — Motor Insurance&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/insurance-platform-requirements/docs/next/phase-2-home-property/"><span title="Phase 2 — Home &amp; Property Insurance" class="categoryLinkLabel_W154">Phase 2 — Home &amp; Property Insurance</span></a><button aria-label="Collapse sidebar category &#x27;Phase 2 — Home &amp; Property Insurance&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/"><span title="User Stories" class="categoryLinkLabel_W154">User Stories</span></a><button aria-label="Collapse sidebar category &#x27;User Stories&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind"><span title="Quote and Bind — User Stories" class="linkLabel_WmDU">Quote and Bind — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/burglary-and-theft"><span title="Burglary and Theft Claims — User Stories" class="linkLabel_WmDU">Burglary and Theft Claims — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/policy-administration"><span title="Policy Administration — User Stories" class="linkLabel_WmDU">Policy Administration — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/home-renewals"><span title="Home Renewals — User Stories" class="linkLabel_WmDU">Home Renewals — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/cancellations"><span title="Home Insurance Cancellations — User Stories" class="linkLabel_WmDU">Home Insurance Cancellations — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/liability-and-legal"><span title="Liability and Legal Expenses Claims — User Stories" class="linkLabel_WmDU">Liability and Legal Expenses Claims — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/underwriting-rules"><span title="Home Underwriting Rules — User Stories" class="linkLabel_WmDU">Home Underwriting Rules — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-fnol"><span title="US-HCW-001: Report Water Damage Emergency (24/7)" class="linkLabel_WmDU">US-HCW-001: Report Water Damage Emergency (24/7)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-dispatch"><span title="US-HCW-002: Dispatch Restoration Company (Saneringsfirma)" class="linkLabel_WmDU">US-HCW-002: Dispatch Restoration Company (Saneringsfirma)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-registration"><span title="US-HCW-003: Register FNOL With Damage Classification" class="linkLabel_WmDU">US-HCW-003: Register FNOL With Damage Classification</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-moisture-report"><span title="US-HCW-004: Receive Moisture Measurement Report" class="linkLabel_WmDU">US-HCW-004: Receive Moisture Measurement Report</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-brf-responsibility"><span title="US-HCW-005: Determine BRF vs Individual Responsibility" class="linkLabel_WmDU">US-HCW-005: Determine BRF vs Individual Responsibility</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-inspection"><span title="US-HCW-006: Document Damage With Inspection" class="linkLabel_WmDU">US-HCW-006: Document Damage With Inspection</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-drying-progress"><span title="US-HCW-007: Track Drying Progress" class="linkLabel_WmDU">US-HCW-007: Track Drying Progress</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-drying-protocol"><span title="US-HCW-008: Submit Drying Protocol (Torkprotokoll)" class="linkLabel_WmDU">US-HCW-008: Submit Drying Protocol (Torkprotokoll)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-repair-approval"><span title="US-HCW-009: Approve Repair Scope and Contractor" class="linkLabel_WmDU">US-HCW-009: Approve Repair Scope and Contractor</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-temporary-housing"><span title="US-HCW-010: Arrange Temporary Housing (Evakueringsboende)" class="linkLabel_WmDU">US-HCW-010: Arrange Temporary Housing (Evakueringsboende)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-settlement"><span title="US-HCW-011: Calculate Settlement With Age Deduction" class="linkLabel_WmDU">US-HCW-011: Calculate Settlement With Age Deduction</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-deductible"><span title="US-HCW-012: View Deductible (Självrisk) for Claim" class="linkLabel_WmDU">US-HCW-012: View Deductible (Självrisk) for Claim</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-cross-claim"><span title="US-HCW-013: Coordinate Cross-Claim Payment (BRF/Individual)" class="linkLabel_WmDU">US-HCW-013: Coordinate Cross-Claim Payment (BRF/Individual)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-final-inspection"><span title="US-HCW-014: Verify Restoration via Final Inspection" class="linkLabel_WmDU">US-HCW-014: Verify Restoration via Final Inspection</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/water-damage-closure"><span title="US-HCW-015: Close Claim and Record for Risk Assessment" class="linkLabel_WmDU">US-HCW-015: Close Claim and Record for Risk Assessment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-fnol"><span title="US-HCF-001: Report Fire or Natural Event Emergency" class="linkLabel_WmDU">US-HCF-001: Report Fire or Natural Event Emergency</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-incident-report"><span title="US-HCF-002: Obtain Räddningstjänsten Incident Report" class="linkLabel_WmDU">US-HCF-002: Obtain Räddningstjänsten Incident Report</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-event-classification"><span title="US-HCF-003: Classify Event Type and Coverage" class="linkLabel_WmDU">US-HCF-003: Classify Event Type and Coverage</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-total-loss-assessment"><span title="US-HCF-004: Assess Total Loss vs Partial Loss" class="linkLabel_WmDU">US-HCF-004: Assess Total Loss vs Partial Loss</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-structural-inspection"><span title="US-HCF-005: Inspect Property for Structural Integrity" class="linkLabel_WmDU">US-HCF-005: Inspect Property for Structural Integrity</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-environmental-hazards"><span title="US-HCF-006: Check for Environmental Hazards" class="linkLabel_WmDU">US-HCF-006: Check for Environmental Hazards</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-valuation"><span title="US-HCF-007: Explain Rebuild Cost vs Market Value Settlement" class="linkLabel_WmDU">US-HCF-007: Explain Rebuild Cost vs Market Value Settlement</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-contractor-coordination"><span title="US-HCF-008: Coordinate Contractors for Rebuild or Repair" class="linkLabel_WmDU">US-HCF-008: Coordinate Contractors for Rebuild or Repair</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-temporary-housing"><span title="US-HCF-009: Provide Continued Temporary Housing During Rebuild" class="linkLabel_WmDU">US-HCF-009: Provide Continued Temporary Housing During Rebuild</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-multi-unit"><span title="US-HCF-010: Manage Multi-Unit Claims" class="linkLabel_WmDU">US-HCF-010: Manage Multi-Unit Claims</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-subrogation"><span title="US-HCF-011: Process Subrogation Against Responsible Third Party" class="linkLabel_WmDU">US-HCF-011: Process Subrogation Against Responsible Third Party</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/fire-natural-risk-update"><span title="US-HCF-012: Flag Property for Updated Risk Assessment" class="linkLabel_WmDU">US-HCF-012: Flag Property for Updated Risk Assessment</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/"><span title="Use Cases" class="categoryLinkLabel_W154">Use Cases</span></a><button aria-label="Expand sidebar category &#x27;Use Cases&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/analysis/"><span title="Analysis" class="categoryLinkLabel_W154">Analysis</span></a><button aria-label="Expand sidebar category &#x27;Analysis&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/insurance-platform-requirements/docs/next/Architecture/ADR-TEMPLATE"><span title="Architecture" class="categoryLinkLabel_W154">Architecture</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/lessons-learned/"><span title="Lessons Learned" class="categoryLinkLabel_W154">Lessons Learned</span></a><button aria-label="Expand sidebar category &#x27;Lessons Learned&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/glossary"><span title="Glossary" class="linkLabel_WmDU">Glossary</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/evidence-package"><span title="Evidence Package" class="linkLabel_WmDU">Evidence Package</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role="alert"><div>This is unreleased documentation for <!-- -->TryggFörsäkring Requirements<!-- --> <b>Phase 2 — Home &amp; Property (Draft)</b> version.</div><div class="margin-top--md">For up-to-date documentation, see the <b><a href="/insurance-platform-requirements/docs/intro">latest version</a></b> (<!-- -->Phase 1 — Motor Insurance<!-- -->).</div></div><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/insurance-platform-requirements/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/insurance-platform-requirements/docs/next/phase-2-home-property/"><span>Phase 2 — Home &amp; Property Insurance</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/"><span>User Stories</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Liability and Legal Expenses Claims — User Stories</span></li></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: Phase 2 — Home &amp; Property (Draft)</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Liability and Legal Expenses Claims — User Stories</h1></header>
+<p>User stories for home insurance liability (ansvarsskydd) and legal expenses
+(rättsskydd) claims processing. Covers accidental damage to third parties,
+liability assessment, settlement negotiation, defense against unfounded claims,
+legal dispute applications, lawyer approval, and BRF vs individual liability
+boundaries.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<table><thead><tr><th>ID</th><th>Actor</th><th>Summary</th></tr></thead><tbody><tr><td>HCL-01</td><td>Customer</td><td>Report accidental damage caused to someone else&#x27;s property</td></tr><tr><td>HCL-02</td><td>Claims Handler</td><td>Assess whether the policyholder is legally liable</td></tr><tr><td>HCL-03</td><td>Claims Handler</td><td>Negotiate settlement with the injured party</td></tr><tr><td>HCL-04</td><td>Claims Handler</td><td>Defend the policyholder against unfounded liability claims</td></tr><tr><td>HCL-05</td><td>Customer</td><td>Apply for rättsskydd for a legal dispute</td></tr><tr><td>HCL-06</td><td>Claims Handler</td><td>Verify rättsskydd eligibility (dispute type, timing, coverage)</td></tr><tr><td>HCL-07</td><td>Claims Handler</td><td>Approve the customer&#x27;s choice of lawyer and fee estimate</td></tr><tr><td>HCL-08</td><td>Customer</td><td>Understand self-retention and coverage cap for legal costs</td></tr><tr><td>HCL-09</td><td>Claims Handler</td><td>Identify when a liability claim triggers the injured party&#x27;s insurance</td></tr><tr><td>HCL-10</td><td>BRF Board Chair</td><td>Determine when BRF liability vs individual liability applies</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hcl-01-report-accidental-damage-caused-to-third-party">HCL-01: Report Accidental Damage Caused to Third Party<a href="#hcl-01-report-accidental-damage-caused-to-third-party" class="hash-link" aria-label="Direct link to HCL-01: Report Accidental Damage Caused to Third Party" title="Direct link to HCL-01: Report Accidental Damage Caused to Third Party" translate="no">​</a></h2>
+<p><strong>As a</strong> customer (privatkund),
+<strong>I want to</strong> report that I accidentally caused damage to someone else&#x27;s
+property,
+<strong>so that</strong> my liability coverage (ansvarsskydd) handles the claim.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria">Acceptance Criteria<a href="#acceptance-criteria" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the customer has an active home insurance policy with liability
+coverage (ansvarsskydd)
+<strong>WHEN</strong> the customer reports accidental damage caused to a third party via
+web, app, or phone
+<strong>THEN</strong> the system creates a liability claim record with claim type
+&quot;Ansvarsskada&quot;, records the incident date, location, and description, and
+generates a unique claim number (skadenummer)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer submits the liability report
+<strong>WHEN</strong> the system processes the initial report
+<strong>THEN</strong> the system captures: description of the incident, identity of the
+injured party (skadelidande), nature and extent of the damage, and whether a
+polisanmälan has been filed</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer has reported the liability incident
+<strong>WHEN</strong> the claim is created
+<strong>THEN</strong> the system sends a confirmation to the customer with the claim
+number, explains the next steps (liability assessment, contact from claims
+handler), and informs the customer not to admit liability or make any
+payments to the injured party</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the injured party has contacted TryggFörsäkring directly
+<strong>WHEN</strong> the injured party files a claim against the policyholder
+<strong>THEN</strong> the system creates a liability claim linked to the policyholder&#x27;s
+policy and notifies both the policyholder and the claims handler</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements">Data Requirements<a href="#data-requirements" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Incident date/time</td><td>Customer input</td><td>Yes</td></tr><tr><td>Incident location</td><td>Customer input</td><td>Yes</td></tr><tr><td>Incident description</td><td>Customer input</td><td>Yes</td></tr><tr><td>Injured party name</td><td>Customer input</td><td>Yes</td></tr><tr><td>Injured party contact</td><td>Customer input</td><td>Yes</td></tr><tr><td>Damage description</td><td>Customer input</td><td>Yes</td></tr><tr><td>Estimated damage cost</td><td>Customer input</td><td>No</td></tr><tr><td>Police report number</td><td>Customer input</td><td>No</td></tr><tr><td>Policy number</td><td>System lookup</td><td>Yes</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="external-integrations">External Integrations<a href="#external-integrations" class="hash-link" aria-label="Direct link to External Integrations" title="Direct link to External Integrations" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>SMS/Push Gateway</strong> — Customer and injured party notifications</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory">Regulatory<a href="#regulatory" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-003</strong> — Timely claims handling; liability claims must be registered
+promptly upon notification</li>
+<li class=""><strong>FSA-005</strong> — Fair settlement; liability coverage is a core component of
+hemförsäkring</li>
+<li class=""><strong>GDPR-007</strong> — Personal data of both the policyholder and injured party is
+processed; legal basis is Article 6(1)(b) contract performance and
+Article 6(1)(f) legitimate interest for the injured party&#x27;s data</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hcl-02-assess-policyholder-legal-liability">HCL-02: Assess Policyholder Legal Liability<a href="#hcl-02-assess-policyholder-legal-liability" class="hash-link" aria-label="Direct link to HCL-02: Assess Policyholder Legal Liability" title="Direct link to HCL-02: Assess Policyholder Legal Liability" translate="no">​</a></h2>
+<p><strong>As a</strong> claims handler (skadereglerare),
+<strong>I want to</strong> assess whether the policyholder is legally liable for the
+reported damage,
+<strong>so that</strong> the claim is valid and coverage applies under ansvarsskydd.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-1">Acceptance Criteria<a href="#acceptance-criteria-1" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a liability claim has been registered (HCL-01)
+<strong>WHEN</strong> the claims handler opens the claim for assessment
+<strong>THEN</strong> the system displays: the incident details, the policyholder&#x27;s
+coverage limits (typically up to 5,000,000 SEK), any relevant exclusions,
+and the injured party&#x27;s damage claim</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the claims handler assesses liability
+<strong>WHEN</strong> the handler evaluates the evidence
+<strong>THEN</strong> the handler determines one of: (a) policyholder is liable — proceed
+to settlement negotiation, (b) liability is disputed — further investigation
+needed, or (c) policyholder is not liable — reject liability and defend the
+policyholder</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the claims handler determines the policyholder is liable
+<strong>WHEN</strong> the liability assessment is recorded
+<strong>THEN</strong> the system updates the claim status to &quot;Liability Confirmed&quot;,
+records the legal basis for liability (e.g., negligence, strict liability
+under skadeståndslagen), and proceeds to settlement (HCL-03)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the claims handler determines the policyholder is not liable
+<strong>WHEN</strong> the liability denial is recorded
+<strong>THEN</strong> the system updates the claim status to &quot;Liability Denied&quot;, records
+the rationale, and triggers the defense process (HCL-04) if the injured
+party disputes the denial</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the liability assessment requires expert investigation
+<strong>WHEN</strong> the claims handler identifies the need for a field inspection or
+expert opinion
+<strong>THEN</strong> the system allows the handler to commission a besiktningsman or
+technical expert and records the referral</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="liability-assessment-factors">Liability Assessment Factors<a href="#liability-assessment-factors" class="hash-link" aria-label="Direct link to Liability Assessment Factors" title="Direct link to Liability Assessment Factors" translate="no">​</a></h3>
+<table><thead><tr><th>Factor</th><th>Description</th></tr></thead><tbody><tr><td>Negligence (vårdslöshet)</td><td>Did the policyholder fail to exercise reasonable care?</td></tr><tr><td>Causation (orsakssamband)</td><td>Is there a direct link between the act and the damage?</td></tr><tr><td>Strict liability</td><td>Does skadeståndslagen impose liability without negligence?</td></tr><tr><td>Contributory negligence</td><td>Did the injured party contribute to the damage?</td></tr><tr><td>Exclusions</td><td>Does the policy exclude this type of liability (e.g., intentional acts)?</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-1">Data Requirements<a href="#data-requirements-1" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Liability determination</td><td>Claims handler</td><td>Yes</td></tr><tr><td>Legal basis</td><td>Claims handler</td><td>Yes</td></tr><tr><td>Evidence documents</td><td>Customer/third party</td><td>No</td></tr><tr><td>Expert opinion</td><td>Besiktningsman</td><td>No</td></tr><tr><td>Coverage verification</td><td>System</td><td>Yes</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-1">Regulatory<a href="#regulatory-1" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-005</strong> — Fair settlement; liability assessment must be objective and
+well-documented</li>
+<li class=""><strong>FSA-003</strong> — Timely claims handling; assessment must not be unreasonably
+delayed</li>
+<li class=""><strong>FSA-009</strong> — Complaints handling; the policyholder must be informed of the
+right to complain if they disagree with the assessment</li>
+<li class=""><strong>IDD-011</strong> — Adequate advice on liability coverage; the customer must
+understand what ansvarsskydd covers</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hcl-03-negotiate-settlement-with-injured-party">HCL-03: Negotiate Settlement with Injured Party<a href="#hcl-03-negotiate-settlement-with-injured-party" class="hash-link" aria-label="Direct link to HCL-03: Negotiate Settlement with Injured Party" title="Direct link to HCL-03: Negotiate Settlement with Injured Party" translate="no">​</a></h2>
+<p><strong>As a</strong> claims handler (skadereglerare),
+<strong>I want to</strong> negotiate a settlement with the injured party (skadelidande),
+<strong>so that</strong> the liability claim is resolved fairly and efficiently.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-2">Acceptance Criteria<a href="#acceptance-criteria-2" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the policyholder&#x27;s liability has been confirmed (HCL-02)
+<strong>WHEN</strong> the claims handler initiates settlement negotiation
+<strong>THEN</strong> the system displays: the injured party&#x27;s damage claim, supporting
+documentation, the policyholder&#x27;s coverage limit, and any deductible
+(självrisk) applicable to the policyholder</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the claims handler evaluates the injured party&#x27;s claim
+<strong>WHEN</strong> the handler reviews the damage documentation
+<strong>THEN</strong> the handler assesses: whether the claimed amount is reasonable,
+whether supporting evidence substantiates the claim, and whether any
+deductions apply (e.g., betterment, depreciation)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the claims handler and injured party reach a settlement agreement
+<strong>WHEN</strong> the settlement amount is agreed
+<strong>THEN</strong> the system records the settlement amount, generates a settlement
+agreement document for the injured party to sign, and calculates the
+policyholder&#x27;s deductible</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the settlement amount exceeds a configured threshold (e.g.,
+500,000 SEK)
+<strong>WHEN</strong> the claims handler submits the settlement for approval
+<strong>THEN</strong> the system escalates to a senior claims handler for authorization
+before payment</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the injured party does not accept the settlement offer
+<strong>WHEN</strong> negotiation fails
+<strong>THEN</strong> the system records the impasse, and the claims handler informs both
+parties of options: further negotiation, mediation, or legal proceedings</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="coverage-limits-ansvarsskydd">Coverage Limits (Ansvarsskydd)<a href="#coverage-limits-ansvarsskydd" class="hash-link" aria-label="Direct link to Coverage Limits (Ansvarsskydd)" title="Direct link to Coverage Limits (Ansvarsskydd)" translate="no">​</a></h3>
+<table><thead><tr><th>Coverage Tier</th><th>Liability Limit (SEK)</th><th>Deductible (SEK)</th></tr></thead><tbody><tr><td>Bas</td><td>5,000,000</td><td>1,500</td></tr><tr><td>Standard</td><td>5,000,000</td><td>1,500</td></tr><tr><td>Premium</td><td>10,000,000</td><td>1,500</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-2">Data Requirements<a href="#data-requirements-2" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Damage claim amount</td><td>Injured party</td><td>Yes</td></tr><tr><td>Damage documentation</td><td>Injured party</td><td>Yes</td></tr><tr><td>Settlement amount</td><td>Claims handler</td><td>Yes</td></tr><tr><td>Settlement agreement</td><td>System generated</td><td>Yes</td></tr><tr><td>Deductible amount</td><td>System calculation</td><td>Yes</td></tr><tr><td>Senior approval</td><td>Senior handler</td><td>Conditional</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="external-integrations-1">External Integrations<a href="#external-integrations-1" class="hash-link" aria-label="Direct link to External Integrations" title="Direct link to External Integrations" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Payment Provider</strong> — Settlement payment to injured party</li>
+<li class=""><strong>Document Generation</strong> — Settlement agreement creation</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-2">Regulatory<a href="#regulatory-2" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-005</strong> — Fair settlement; the injured party must receive fair
+compensation based on documented losses</li>
+<li class=""><strong>FSA-003</strong> — Timely claims handling; settlement negotiation must not be
+unreasonably prolonged</li>
+<li class=""><strong>FSA-009</strong> — Complaints handling; the injured party must be informed of
+the complaints procedure</li>
+<li class=""><strong>GDPR-007</strong> — Injured party personal and financial data processed under
+Article 6(1)(f) legitimate interest (claims settlement)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hcl-04-defend-policyholder-against-unfounded-claims">HCL-04: Defend Policyholder Against Unfounded Claims<a href="#hcl-04-defend-policyholder-against-unfounded-claims" class="hash-link" aria-label="Direct link to HCL-04: Defend Policyholder Against Unfounded Claims" title="Direct link to HCL-04: Defend Policyholder Against Unfounded Claims" translate="no">​</a></h2>
+<p><strong>As a</strong> claims handler (skadereglerare),
+<strong>I want to</strong> defend the policyholder against unfounded or exaggerated
+liability claims,
+<strong>so that</strong> the policyholder is protected from unjustified demands.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-3">Acceptance Criteria<a href="#acceptance-criteria-3" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the liability assessment (HCL-02) determines the policyholder is
+not liable or the claim is exaggerated
+<strong>WHEN</strong> the claims handler initiates the defense process
+<strong>THEN</strong> the system records the defense rationale and sends a written denial
+to the injured party with a clear explanation of why liability is rejected</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the injured party disputes the denial of liability
+<strong>WHEN</strong> the injured party escalates the dispute
+<strong>THEN</strong> the claims handler evaluates whether to engage legal counsel on
+behalf of the policyholder, covered under the ansvarsskydd defense obligation</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the insurer decides to engage legal counsel for defense
+<strong>WHEN</strong> the defense is initiated
+<strong>THEN</strong> the system records the legal counsel appointment, tracks legal costs
+separately from any potential settlement, and informs the policyholder of the
+defense proceedings</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the dispute proceeds to court or arbitration
+<strong>WHEN</strong> a judgment or award is rendered
+<strong>THEN</strong> the system records the outcome, processes any ordered payment under
+the liability coverage, and closes the claim</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the injured party&#x27;s claim is partially valid
+<strong>WHEN</strong> the claims handler identifies exaggerated elements
+<strong>THEN</strong> the handler negotiates down to the substantiated amount and records
+the adjustment rationale</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-3">Regulatory<a href="#regulatory-3" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-005</strong> — Fair settlement; the defense obligation is a core function of
+ansvarsskydd — the insurer must defend the policyholder against unfounded
+claims</li>
+<li class=""><strong>FSA-009</strong> — Complaints handling; both the policyholder and injured party
+must have access to the complaints process</li>
+<li class=""><strong>FSA-003</strong> — Timely claims handling; defense proceedings must be conducted
+without unreasonable delay</li>
+<li class=""><strong>GDPR-007</strong> — Legal proceedings data is processed under Article 6(1)(f)
+legitimate interest</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hcl-05-apply-for-rättsskydd-for-a-legal-dispute">HCL-05: Apply for Rättsskydd for a Legal Dispute<a href="#hcl-05-apply-for-rättsskydd-for-a-legal-dispute" class="hash-link" aria-label="Direct link to HCL-05: Apply for Rättsskydd for a Legal Dispute" title="Direct link to HCL-05: Apply for Rättsskydd for a Legal Dispute" translate="no">​</a></h2>
+<p><strong>As a</strong> customer (privatkund),
+<strong>I want to</strong> apply for rättsskydd (legal expenses insurance) for a legal
+dispute,
+<strong>so that</strong> my legal costs are covered under my home insurance policy.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-4">Acceptance Criteria<a href="#acceptance-criteria-4" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the customer has an active home insurance policy with rättsskydd
+coverage
+<strong>WHEN</strong> the customer submits a rättsskydd application via web, app, or phone
+<strong>THEN</strong> the system creates a rättsskydd claim record with claim type
+&quot;Rättsskydd&quot;, records the dispute description, opposing party, and generates
+a claim number</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer submits the application
+<strong>WHEN</strong> the system processes the request
+<strong>THEN</strong> the system captures: nature of the dispute, opposing party identity,
+when the dispute arose, whether an attorney has been engaged, and the
+estimated legal costs</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer&#x27;s application is registered
+<strong>WHEN</strong> the system sends confirmation
+<strong>THEN</strong> the customer receives the claim number, an explanation of
+rättsskydd coverage (percentage covered, cap amount, deductible), and
+expected processing timeline</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer has not yet engaged an attorney
+<strong>WHEN</strong> the customer requests guidance
+<strong>THEN</strong> the system informs the customer of their right to choose their own
+attorney (advokat) and that the attorney&#x27;s fees must be reasonable and
+approved by the insurer</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-3">Data Requirements<a href="#data-requirements-3" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Dispute description</td><td>Customer input</td><td>Yes</td></tr><tr><td>Opposing party</td><td>Customer input</td><td>Yes</td></tr><tr><td>Dispute start date</td><td>Customer input</td><td>Yes</td></tr><tr><td>Attorney name</td><td>Customer input</td><td>No</td></tr><tr><td>Estimated legal costs</td><td>Customer input</td><td>No</td></tr><tr><td>Policy number</td><td>System lookup</td><td>Yes</td></tr><tr><td>Coverage verification</td><td>System</td><td>Yes</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-4">Regulatory<a href="#regulatory-4" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-003</strong> — Timely claims handling; rättsskydd applications must be
+processed promptly</li>
+<li class=""><strong>FSA-005</strong> — Fair settlement; rättsskydd is a mandatory component of
+hemförsäkring and must be administered per policy terms</li>
+<li class=""><strong>IDD-011</strong> — Adequate advice; the customer must understand the scope and
+limitations of rättsskydd coverage</li>
+<li class=""><strong>GDPR-007</strong> — Dispute details and opposing party data processed under
+Article 6(1)(b) contract performance</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hcl-06-verify-rättsskydd-eligibility">HCL-06: Verify Rättsskydd Eligibility<a href="#hcl-06-verify-rättsskydd-eligibility" class="hash-link" aria-label="Direct link to HCL-06: Verify Rättsskydd Eligibility" title="Direct link to HCL-06: Verify Rättsskydd Eligibility" translate="no">​</a></h2>
+<p><strong>As a</strong> claims handler (skadereglerare),
+<strong>I want to</strong> verify that the dispute qualifies for rättsskydd coverage
+(dispute type, timing, amount),
+<strong>so that</strong> coverage is correctly applied per the policy terms.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-5">Acceptance Criteria<a href="#acceptance-criteria-5" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a rättsskydd application has been registered (HCL-05)
+<strong>WHEN</strong> the claims handler opens the application for review
+<strong>THEN</strong> the system displays: the dispute details, policy coverage terms,
+qualifying dispute types, waiting period status, and any prior rättsskydd
+claims</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the claims handler evaluates eligibility
+<strong>WHEN</strong> the handler checks the dispute type
+<strong>THEN</strong> the system verifies that the dispute falls within covered categories
+(see Qualifying Dispute Types table below) and is not excluded (e.g.,
+disputes arising from criminal proceedings, family law, or business
+activities)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the dispute qualifies for rättsskydd
+<strong>WHEN</strong> the handler approves the application
+<strong>THEN</strong> the system updates the claim status to &quot;Rättsskydd Approved&quot;,
+records the applicable coverage terms (percentage, cap, deductible), and
+notifies the customer</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the dispute does not qualify for rättsskydd
+<strong>WHEN</strong> the handler denies the application
+<strong>THEN</strong> the system records the denial reason, sends a written explanation to
+the customer, and informs them of the right to appeal via the complaints
+process</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the dispute arose before the policy inception or during the
+waiting period (typically 2 years for certain dispute types)
+<strong>WHEN</strong> the handler checks timing
+<strong>THEN</strong> the system flags the timing issue and the handler verifies whether
+the waiting period exclusion applies</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="qualifying-dispute-types">Qualifying Dispute Types<a href="#qualifying-dispute-types" class="hash-link" aria-label="Direct link to Qualifying Dispute Types" title="Direct link to Qualifying Dispute Types" translate="no">​</a></h3>
+<table><thead><tr><th>Category</th><th>Examples</th><th>Covered</th></tr></thead><tbody><tr><td>Property disputes</td><td>Boundary disputes, dolda fel (hidden defects), renovation</td><td>Yes</td></tr><tr><td>Neighbor disputes</td><td>Noise, tree encroachment, shared facilities</td><td>Yes</td></tr><tr><td>Consumer disputes</td><td>Contractor disputes, defective goods above threshold</td><td>Yes</td></tr><tr><td>BRF disputes</td><td>Renovation disputes with BRF board, fee disagreements</td><td>Yes</td></tr><tr><td>Landlord/tenant</td><td>Eviction disputes, deposit disputes</td><td>Yes</td></tr><tr><td>Employment disputes</td><td>Wrongful termination (if not covered by union)</td><td>Conditional</td></tr><tr><td>Family law</td><td>Divorce, custody, inheritance</td><td>No</td></tr><tr><td>Criminal proceedings</td><td>Defense in criminal cases</td><td>No</td></tr><tr><td>Business/commercial</td><td>Disputes arising from business activities</td><td>No</td></tr><tr><td>Disputes under 25k SEK</td><td>Minor disputes below the qualifying threshold</td><td>No</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rättsskydd-waiting-period">Rättsskydd Waiting Period<a href="#rättsskydd-waiting-period" class="hash-link" aria-label="Direct link to Rättsskydd Waiting Period" title="Direct link to Rättsskydd Waiting Period" translate="no">​</a></h3>
+<table><thead><tr><th>Dispute Category</th><th>Waiting Period</th></tr></thead><tbody><tr><td>Property purchase</td><td>2 years</td></tr><tr><td>Neighbor disputes</td><td>None</td></tr><tr><td>Consumer disputes</td><td>None</td></tr><tr><td>Employment disputes</td><td>2 years</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-5">Regulatory<a href="#regulatory-5" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-005</strong> — Fair settlement; eligibility determination must follow
+published policy terms</li>
+<li class=""><strong>FSA-009</strong> — Complaints handling; the customer must be informed of the
+right to appeal a rättsskydd denial</li>
+<li class=""><strong>FSA-003</strong> — Timely claims handling; eligibility review must not be
+unreasonably delayed</li>
+<li class=""><strong>GDPR-007</strong> — Dispute and opposing party data processed under
+Article 6(1)(b) contract performance</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hcl-07-approve-lawyer-and-fee-estimate">HCL-07: Approve Lawyer and Fee Estimate<a href="#hcl-07-approve-lawyer-and-fee-estimate" class="hash-link" aria-label="Direct link to HCL-07: Approve Lawyer and Fee Estimate" title="Direct link to HCL-07: Approve Lawyer and Fee Estimate" translate="no">​</a></h2>
+<p><strong>As a</strong> claims handler (skadereglerare),
+<strong>I want to</strong> approve the customer&#x27;s choice of lawyer (advokat) and the fee
+estimate,
+<strong>so that</strong> legal costs are reasonable and within coverage limits.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-6">Acceptance Criteria<a href="#acceptance-criteria-6" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the rättsskydd application has been approved (HCL-06)
+<strong>WHEN</strong> the customer submits their chosen lawyer and a fee estimate
+<strong>THEN</strong> the system records the lawyer&#x27;s name, firm, contact details, and
+the estimated fees (hourly rate, estimated hours, total estimate)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the claims handler reviews the fee estimate
+<strong>WHEN</strong> the handler evaluates reasonableness
+<strong>THEN</strong> the handler checks: the hourly rate is within the market range
+(typically 1,500–3,500 SEK/hour excl. VAT), the estimated hours are
+proportionate to the dispute complexity, and the total estimate is within
+the rättsskydd coverage cap</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the fee estimate is reasonable
+<strong>WHEN</strong> the handler approves the estimate
+<strong>THEN</strong> the system records the approval, notifies the customer, and sets
+the approved budget against which invoices will be checked</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the fee estimate exceeds the coverage cap or is unreasonably high
+<strong>WHEN</strong> the handler identifies the issue
+<strong>THEN</strong> the handler contacts the customer to discuss alternatives: a
+different lawyer, reduced scope, or partial self-funding for costs exceeding
+the cap</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the lawyer submits interim invoices during the dispute
+<strong>WHEN</strong> the invoices are received
+<strong>THEN</strong> the system checks each invoice against the approved budget, tracks
+cumulative costs, and alerts the handler when costs approach 80% of the cap</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rättsskydd-coverage-terms">Rättsskydd Coverage Terms<a href="#rättsskydd-coverage-terms" class="hash-link" aria-label="Direct link to Rättsskydd Coverage Terms" title="Direct link to Rättsskydd Coverage Terms" translate="no">​</a></h3>
+<table><thead><tr><th>Term</th><th>Value</th></tr></thead><tbody><tr><td>Coverage percentage</td><td>75–80% of approved legal costs</td></tr><tr><td>Self-retention</td><td>20–25% of approved legal costs</td></tr><tr><td>Base deductible</td><td>1,500 SEK</td></tr><tr><td>Coverage cap</td><td>Up to 300,000 SEK per dispute</td></tr><tr><td>Hourly rate ceiling</td><td>Market rate (assessed per case)</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-4">Data Requirements<a href="#data-requirements-4" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Lawyer name</td><td>Customer input</td><td>Yes</td></tr><tr><td>Lawyer firm</td><td>Customer input</td><td>Yes</td></tr><tr><td>Hourly rate</td><td>Customer input</td><td>Yes</td></tr><tr><td>Estimated hours</td><td>Customer input</td><td>Yes</td></tr><tr><td>Total fee estimate</td><td>Customer input</td><td>Yes</td></tr><tr><td>Approval decision</td><td>Claims handler</td><td>Yes</td></tr><tr><td>Invoice tracking</td><td>System</td><td>Yes</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="external-integrations-2">External Integrations<a href="#external-integrations-2" class="hash-link" aria-label="Direct link to External Integrations" title="Direct link to External Integrations" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Payment Provider</strong> — Lawyer invoice payments</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-6">Regulatory<a href="#regulatory-6" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-005</strong> — Fair settlement; the insurer must assess fee reasonableness
+but cannot unreasonably restrict the customer&#x27;s choice of lawyer</li>
+<li class=""><strong>FSA-003</strong> — Timely claims handling; fee approval must not delay the
+customer&#x27;s access to legal representation</li>
+<li class=""><strong>IDD-011</strong> — The customer must understand their self-retention obligation
+and coverage cap before incurring costs</li>
+<li class=""><strong>GDPR-007</strong> — Lawyer and fee data processed under Article 6(1)(b) contract
+performance</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hcl-08-understand-self-retention-and-coverage-cap">HCL-08: Understand Self-Retention and Coverage Cap<a href="#hcl-08-understand-self-retention-and-coverage-cap" class="hash-link" aria-label="Direct link to HCL-08: Understand Self-Retention and Coverage Cap" title="Direct link to HCL-08: Understand Self-Retention and Coverage Cap" translate="no">​</a></h2>
+<p><strong>As a</strong> customer (privatkund),
+<strong>I want to</strong> understand my self-retention (självrisk) and coverage cap for
+legal costs under rättsskydd,
+<strong>so that</strong> I can budget for my share of the expenses.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-7">Acceptance Criteria<a href="#acceptance-criteria-7" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the customer has an approved rättsskydd claim (HCL-06)
+<strong>WHEN</strong> the customer views the claim details
+<strong>THEN</strong> the system displays: the coverage percentage (75–80%), the
+self-retention percentage (20–25%), the base deductible (1,500 SEK), and the
+coverage cap (up to 300,000 SEK)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer wants to understand their potential out-of-pocket cost
+<strong>WHEN</strong> the customer accesses the rättsskydd cost calculator
+<strong>THEN</strong> the system provides an estimated breakdown: total estimated legal
+costs, insurer&#x27;s share, customer&#x27;s self-retention, and base deductible</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the legal costs are accumulating during the dispute
+<strong>WHEN</strong> the customer checks the claim status
+<strong>THEN</strong> the system shows: costs incurred to date, insurer&#x27;s share paid,
+remaining coverage before the cap, and the customer&#x27;s running self-retention
+balance</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the estimated legal costs will exceed the coverage cap
+<strong>WHEN</strong> the system projects costs above the cap
+<strong>THEN</strong> the system notifies the customer that costs exceeding the cap are
+the customer&#x27;s full responsibility and recommends discussing scope with
+their lawyer</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cost-example">Cost Example<a href="#cost-example" class="hash-link" aria-label="Direct link to Cost Example" title="Direct link to Cost Example" translate="no">​</a></h3>
+<table><thead><tr><th>Element</th><th>Amount (SEK)</th></tr></thead><tbody><tr><td>Lawyer fees</td><td>150,000</td></tr><tr><td>Court fees</td><td>5,000</td></tr><tr><td><strong>Total legal costs</strong></td><td><strong>155,000</strong></td></tr><tr><td>Coverage (80%)</td><td>−124,000</td></tr><tr><td>Self-retention (20%)</td><td>31,000</td></tr><tr><td>Base deductible</td><td>1,500</td></tr><tr><td><strong>Customer pays</strong></td><td><strong>32,500</strong></td></tr><tr><td><strong>Insurer pays</strong></td><td><strong>122,500</strong></td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-7">Regulatory<a href="#regulatory-7" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-012</strong> — Coverage terms including self-retention and caps must be
+clearly disclosed to the customer</li>
+<li class=""><strong>FSA-005</strong> — Fair settlement; self-retention and cap must be applied per
+the published policy terms</li>
+<li class=""><strong>IDD-011</strong> — Demands-and-needs; the customer must understand cost-sharing
+before engaging legal representation</li>
+<li class=""><strong>FSA-004</strong> — Fair treatment; the customer must not be surprised by
+unexpected costs</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hcl-09-identify-cross-insurance-coordination-for-liability-claims">HCL-09: Identify Cross-Insurance Coordination for Liability Claims<a href="#hcl-09-identify-cross-insurance-coordination-for-liability-claims" class="hash-link" aria-label="Direct link to HCL-09: Identify Cross-Insurance Coordination for Liability Claims" title="Direct link to HCL-09: Identify Cross-Insurance Coordination for Liability Claims" translate="no">​</a></h2>
+<p><strong>As a</strong> claims handler (skadereglerare),
+<strong>I want to</strong> identify when a liability claim triggers the injured party&#x27;s own
+insurance,
+<strong>so that</strong> claims are coordinated between insurers and double payment is
+avoided.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-8">Acceptance Criteria<a href="#acceptance-criteria-8" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a liability claim has been confirmed (HCL-02)
+<strong>WHEN</strong> the claims handler assesses the injured party&#x27;s losses
+<strong>THEN</strong> the handler determines whether the injured party has their own
+insurance that covers the same damage (e.g., the injured party&#x27;s own
+hemförsäkring)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the injured party has own insurance covering the damage
+<strong>WHEN</strong> the claims handler identifies the overlap
+<strong>THEN</strong> the system records the injured party&#x27;s insurer, initiates
+cross-insurer communication, and determines whether the liability insurer
+pays the injured party directly or reimburses the injured party&#x27;s insurer
+via subrogation</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> both the liability insurer and the injured party&#x27;s insurer are
+involved
+<strong>WHEN</strong> the claims are coordinated
+<strong>THEN</strong> the system ensures the injured party receives full compensation
+without double payment and records the inter-insurer settlement</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the injured party&#x27;s insurer has already paid the injured party
+<strong>WHEN</strong> the injured party&#x27;s insurer exercises subrogation rights
+<strong>THEN</strong> the system processes the subrogation claim from the other insurer,
+verifies the amount, and settles under the policyholder&#x27;s liability coverage</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the liability claim involves multiple injured parties
+<strong>WHEN</strong> the claims handler identifies multiple claimants
+<strong>THEN</strong> the system creates linked sub-claims for each injured party and
+tracks the aggregate against the policyholder&#x27;s liability limit</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-5">Data Requirements<a href="#data-requirements-5" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Data Element</th><th>Source</th><th>Required</th></tr></thead><tbody><tr><td>Injured party insurer</td><td>Injured party/handler</td><td>Conditional</td></tr><tr><td>Injured party policy number</td><td>Injured party</td><td>Conditional</td></tr><tr><td>Subrogation claim amount</td><td>Other insurer</td><td>Conditional</td></tr><tr><td>Inter-insurer settlement</td><td>System</td><td>Conditional</td></tr><tr><td>Aggregate liability</td><td>System calculation</td><td>Yes</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="external-integrations-3">External Integrations<a href="#external-integrations-3" class="hash-link" aria-label="Direct link to External Integrations" title="Direct link to External Integrations" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Other insurers</strong> — Cross-insurer claim coordination and subrogation</li>
+<li class=""><strong>GSR (Gemensamt Skadeanmälningsregister)</strong> — Shared claims register for
+fraud prevention and claim coordination</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-8">Regulatory<a href="#regulatory-8" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-005</strong> — Fair settlement; the injured party must receive full
+compensation regardless of which insurer ultimately bears the cost</li>
+<li class=""><strong>FSA-003</strong> — Timely claims handling; cross-insurer coordination must not
+unduly delay the injured party&#x27;s compensation</li>
+<li class=""><strong>GDPR-007</strong> — Injured party data shared between insurers must be limited
+to what is necessary; legal basis is Article 6(1)(f) legitimate interest</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hcl-10-determine-brf-liability-vs-individual-liability">HCL-10: Determine BRF Liability vs Individual Liability<a href="#hcl-10-determine-brf-liability-vs-individual-liability" class="hash-link" aria-label="Direct link to HCL-10: Determine BRF Liability vs Individual Liability" title="Direct link to HCL-10: Determine BRF Liability vs Individual Liability" translate="no">​</a></h2>
+<p><strong>As a</strong> BRF board chair (BRF-styrelseordförande),
+<strong>I want to</strong> understand when BRF liability vs individual member liability
+applies,
+<strong>so that</strong> the correct insurance policy responds to a liability claim.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-9">Acceptance Criteria<a href="#acceptance-criteria-9" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a liability incident occurs in a BRF property (e.g., water leak
+from one apartment damages another)
+<strong>WHEN</strong> the claims handler assesses the claim
+<strong>THEN</strong> the system presents the BRF/individual liability boundary tool
+showing: the BRF&#x27;s responsibility for common areas and building structure,
+the individual member&#x27;s responsibility for their own apartment interior, and
+the applicable provisions from bostadsrättslagen and the BRF&#x27;s stadgar</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the claims handler uses the boundary tool
+<strong>WHEN</strong> the handler determines responsibility
+<strong>THEN</strong> the system records: which party is liable (BRF or individual), the
+legal basis (bostadsrättslagen chapter 7, BRF stadgar), and which insurance
+policy should respond (BRF&#x27;s fastighetsförsäkring or member&#x27;s
+bostadsrättsförsäkring)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the damage is caused by a defect in the BRF building structure
+(e.g., shared plumbing, roof, foundation)
+<strong>WHEN</strong> the assessment determines BRF liability
+<strong>THEN</strong> the system routes the claim to the BRF&#x27;s property insurer and
+informs the BRF board chair of the claim status</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the damage is caused by the individual member&#x27;s negligence or
+their apartment&#x27;s internal installations
+<strong>WHEN</strong> the assessment determines individual liability
+<strong>THEN</strong> the system processes the claim under the member&#x27;s
+bostadsrättsförsäkring liability coverage</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the BRF/individual boundary is ambiguous or disputed
+<strong>WHEN</strong> the claims handler cannot determine responsibility
+<strong>THEN</strong> the system escalates to a senior claims handler who reviews the
+BRF stadgar, engages a besiktningsman if needed, and records the
+determination with documented rationale</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="brf-vs-individual-liability-boundaries">BRF vs Individual Liability Boundaries<a href="#brf-vs-individual-liability-boundaries" class="hash-link" aria-label="Direct link to BRF vs Individual Liability Boundaries" title="Direct link to BRF vs Individual Liability Boundaries" translate="no">​</a></h3>
+<table><thead><tr><th>Area</th><th>BRF Responsibility</th><th>Individual Responsibility</th></tr></thead><tbody><tr><td>Building structure (stomme)</td><td>Yes</td><td>No</td></tr><tr><td>Common plumbing (stamledning)</td><td>Yes</td><td>No</td></tr><tr><td>Apartment interior</td><td>No</td><td>Yes</td></tr><tr><td>Apartment plumbing (from tap)</td><td>No</td><td>Yes</td></tr><tr><td>Balcony/patio</td><td>Shared (per stadgar)</td><td>Shared (per stadgar)</td></tr><tr><td>Facade windows</td><td>Yes (unless stadgar differ)</td><td>No (unless stadgar differ)</td></tr><tr><td>White goods (appliances)</td><td>No</td><td>Yes</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-9">Regulatory<a href="#regulatory-9" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-005</strong> — Fair settlement; the correct insurer must respond based on
+the liability determination</li>
+<li class=""><strong>FSA-009</strong> — Complaints handling; the BRF board and individual member must
+be informed of the complaints process if they disagree with the liability
+determination</li>
+<li class=""><strong>FSA-003</strong> — Timely claims handling; BRF boundary disputes must not unduly
+delay the injured party&#x27;s compensation</li>
+<li class=""><strong>GDPR-007</strong> — BRF member data shared between the BRF insurer and member&#x27;s
+insurer must be limited to what is necessary; legal basis is Article 6(1)(f)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-model">Data Model<a href="#data-model" class="hash-link" aria-label="Direct link to Data Model" title="Direct link to Data Model" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="liabilityclaimrecord">LiabilityClaimRecord<a href="#liabilityclaimrecord" class="hash-link" aria-label="Direct link to LiabilityClaimRecord" title="Direct link to LiabilityClaimRecord" translate="no">​</a></h3>
+<table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>Claim number</td><td>String</td><td>Unique skadenummer</td></tr><tr><td>Policy number</td><td>String</td><td>Reference to the home insurance policy</td></tr><tr><td>Claim type</td><td>Enum</td><td>Ansvarsskada / Rättsskydd</td></tr><tr><td>Incident date/time</td><td>DateTime</td><td>When the incident occurred</td></tr><tr><td>Incident location</td><td>String</td><td>Where the incident occurred</td></tr><tr><td>Incident description</td><td>String</td><td>Detailed description of the event</td></tr><tr><td>Injured party name</td><td>String</td><td>Name of the third-party claimant</td></tr><tr><td>Injured party contact</td><td>String</td><td>Contact details of the injured party</td></tr><tr><td>Liability determination</td><td>Enum</td><td>Confirmed / Denied / Under Investigation</td></tr><tr><td>Legal basis</td><td>String</td><td>Skadeståndslagen reference or other legal basis</td></tr><tr><td>Damage claim amount</td><td>Decimal</td><td>Amount claimed by the injured party (SEK)</td></tr><tr><td>Settlement amount</td><td>Decimal</td><td>Agreed settlement amount (SEK)</td></tr><tr><td>Deductible applied</td><td>Decimal</td><td>Självrisk amount (SEK)</td></tr><tr><td>Defense initiated</td><td>Boolean</td><td>Whether defense proceedings have been started</td></tr><tr><td>Cross-insurer flag</td><td>Boolean</td><td>Whether the injured party&#x27;s insurer is involved</td></tr><tr><td>Status</td><td>Enum</td><td>Reported / Under Assessment / Settled / Defended / Closed</td></tr><tr><td>Claims handler ID</td><td>String</td><td>Assigned handler identity</td></tr><tr><td>Created timestamp</td><td>DateTime</td><td>When the claim was created</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rättsskyddclaimrecord">RättsskyddClaimRecord<a href="#rättsskyddclaimrecord" class="hash-link" aria-label="Direct link to RättsskyddClaimRecord" title="Direct link to RättsskyddClaimRecord" translate="no">​</a></h3>
+<table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>Claim number</td><td>String</td><td>Unique skadenummer</td></tr><tr><td>Policy number</td><td>String</td><td>Reference to the home insurance policy</td></tr><tr><td>Dispute description</td><td>String</td><td>Nature of the legal dispute</td></tr><tr><td>Opposing party</td><td>String</td><td>Identity of the opposing party</td></tr><tr><td>Dispute category</td><td>Enum</td><td>Property / Neighbor / Consumer / BRF / Employment</td></tr><tr><td>Dispute start date</td><td>Date</td><td>When the dispute arose</td></tr><tr><td>Waiting period check</td><td>Boolean</td><td>Whether the waiting period has been verified</td></tr><tr><td>Eligibility status</td><td>Enum</td><td>Approved / Denied / Under Review</td></tr><tr><td>Lawyer name</td><td>String</td><td>Customer&#x27;s chosen attorney</td></tr><tr><td>Lawyer firm</td><td>String</td><td>Attorney&#x27;s firm</td></tr><tr><td>Approved fee estimate</td><td>Decimal</td><td>Approved legal cost budget (SEK)</td></tr><tr><td>Costs incurred</td><td>Decimal</td><td>Cumulative legal costs to date (SEK)</td></tr><tr><td>Coverage percentage</td><td>Decimal</td><td>Percentage covered by the insurer (75–80%)</td></tr><tr><td>Self-retention amount</td><td>Decimal</td><td>Customer&#x27;s share of costs (SEK)</td></tr><tr><td>Coverage cap</td><td>Decimal</td><td>Maximum insurer payout (SEK)</td></tr><tr><td>Base deductible</td><td>Decimal</td><td>Fixed deductible amount (SEK)</td></tr><tr><td>Status</td><td>Enum</td><td>Applied / Approved / Active / Settled / Denied / Closed</td></tr><tr><td>Claims handler ID</td><td>String</td><td>Assigned handler identity</td></tr><tr><td>Created timestamp</td><td>DateTime</td><td>When the claim was created</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-traceability-matrix">Regulatory Traceability Matrix<a href="#regulatory-traceability-matrix" class="hash-link" aria-label="Direct link to Regulatory Traceability Matrix" title="Direct link to Regulatory Traceability Matrix" translate="no">​</a></h2>
+<table><thead><tr><th>Requirement</th><th>HCL-01</th><th>HCL-02</th><th>HCL-03</th><th>HCL-04</th><th>HCL-05</th><th>HCL-06</th><th>HCL-07</th><th>HCL-08</th><th>HCL-09</th><th>HCL-10</th></tr></thead><tbody><tr><td>FSA-003</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td></td><td>X</td><td>X</td></tr><tr><td>FSA-004</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>X</td><td></td><td></td></tr><tr><td>FSA-005</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td>FSA-009</td><td></td><td>X</td><td>X</td><td>X</td><td></td><td>X</td><td></td><td></td><td></td><td>X</td></tr><tr><td>FSA-012</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>X</td><td></td><td></td></tr><tr><td>GDPR-007</td><td>X</td><td></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td></td><td>X</td><td>X</td></tr><tr><td>IDD-011</td><td></td><td>X</td><td></td><td></td><td>X</td><td></td><td>X</td><td>X</td><td></td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Agentic-software-factory/insurance-platform-requirements/edit/main/docs/phase-2-home-property/user-stories/liability-and-legal.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/cancellations"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Home Insurance Cancellations — User Stories</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/underwriting-rules"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Home Underwriting Rules — User Stories</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#hcl-01-report-accidental-damage-caused-to-third-party" class="table-of-contents__link toc-highlight">HCL-01: Report Accidental Damage Caused to Third Party</a><ul><li><a href="#acceptance-criteria" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#data-requirements" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#external-integrations" class="table-of-contents__link toc-highlight">External Integrations</a></li><li><a href="#regulatory" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hcl-02-assess-policyholder-legal-liability" class="table-of-contents__link toc-highlight">HCL-02: Assess Policyholder Legal Liability</a><ul><li><a href="#acceptance-criteria-1" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#liability-assessment-factors" class="table-of-contents__link toc-highlight">Liability Assessment Factors</a></li><li><a href="#data-requirements-1" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-1" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hcl-03-negotiate-settlement-with-injured-party" class="table-of-contents__link toc-highlight">HCL-03: Negotiate Settlement with Injured Party</a><ul><li><a href="#acceptance-criteria-2" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#coverage-limits-ansvarsskydd" class="table-of-contents__link toc-highlight">Coverage Limits (Ansvarsskydd)</a></li><li><a href="#data-requirements-2" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#external-integrations-1" class="table-of-contents__link toc-highlight">External Integrations</a></li><li><a href="#regulatory-2" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hcl-04-defend-policyholder-against-unfounded-claims" class="table-of-contents__link toc-highlight">HCL-04: Defend Policyholder Against Unfounded Claims</a><ul><li><a href="#acceptance-criteria-3" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#regulatory-3" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hcl-05-apply-for-rättsskydd-for-a-legal-dispute" class="table-of-contents__link toc-highlight">HCL-05: Apply for Rättsskydd for a Legal Dispute</a><ul><li><a href="#acceptance-criteria-4" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#data-requirements-3" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-4" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hcl-06-verify-rättsskydd-eligibility" class="table-of-contents__link toc-highlight">HCL-06: Verify Rättsskydd Eligibility</a><ul><li><a href="#acceptance-criteria-5" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#qualifying-dispute-types" class="table-of-contents__link toc-highlight">Qualifying Dispute Types</a></li><li><a href="#rättsskydd-waiting-period" class="table-of-contents__link toc-highlight">Rättsskydd Waiting Period</a></li><li><a href="#regulatory-5" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hcl-07-approve-lawyer-and-fee-estimate" class="table-of-contents__link toc-highlight">HCL-07: Approve Lawyer and Fee Estimate</a><ul><li><a href="#acceptance-criteria-6" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#rättsskydd-coverage-terms" class="table-of-contents__link toc-highlight">Rättsskydd Coverage Terms</a></li><li><a href="#data-requirements-4" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#external-integrations-2" class="table-of-contents__link toc-highlight">External Integrations</a></li><li><a href="#regulatory-6" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hcl-08-understand-self-retention-and-coverage-cap" class="table-of-contents__link toc-highlight">HCL-08: Understand Self-Retention and Coverage Cap</a><ul><li><a href="#acceptance-criteria-7" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#cost-example" class="table-of-contents__link toc-highlight">Cost Example</a></li><li><a href="#regulatory-7" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hcl-09-identify-cross-insurance-coordination-for-liability-claims" class="table-of-contents__link toc-highlight">HCL-09: Identify Cross-Insurance Coordination for Liability Claims</a><ul><li><a href="#acceptance-criteria-8" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#data-requirements-5" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#external-integrations-3" class="table-of-contents__link toc-highlight">External Integrations</a></li><li><a href="#regulatory-8" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#hcl-10-determine-brf-liability-vs-individual-liability" class="table-of-contents__link toc-highlight">HCL-10: Determine BRF Liability vs Individual Liability</a><ul><li><a href="#acceptance-criteria-9" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#brf-vs-individual-liability-boundaries" class="table-of-contents__link toc-highlight">BRF vs Individual Liability Boundaries</a></li><li><a href="#regulatory-9" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#data-model" class="table-of-contents__link toc-highlight">Data Model</a><ul><li><a href="#liabilityclaimrecord" class="table-of-contents__link toc-highlight">LiabilityClaimRecord</a></li><li><a href="#rättsskyddclaimrecord" class="table-of-contents__link toc-highlight">RättsskyddClaimRecord</a></li></ul></li><li><a href="#regulatory-traceability-matrix" class="table-of-contents__link toc-highlight">Regulatory Traceability Matrix</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/insurance-platform-requirements/docs/intro">Requirements</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 TryggFörsäkring AB. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

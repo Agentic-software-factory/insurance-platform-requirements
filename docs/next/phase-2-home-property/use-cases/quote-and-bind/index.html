@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-phase-2-home-property/use-cases/quote-and-bind" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Use Case: Quote and Bind Home Insurance | TryggFörsäkring Requirements</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/quote-and-bind"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Use Case: Quote and Bind Home Insurance | TryggFörsäkring Requirements"><meta data-rh="true" name="description" content="End-to-end use case for quoting and binding a home and property insurance policy"><meta data-rh="true" property="og:description" content="End-to-end use case for quoting and binding a home and property insurance policy"><link data-rh="true" rel="icon" href="/insurance-platform-requirements/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/quote-and-bind"><link data-rh="true" rel="alternate" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/quote-and-bind" hreflang="en"><link data-rh="true" rel="alternate" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/quote-and-bind" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Phase 2 — Home & Property Insurance","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/"},{"@type":"ListItem","position":2,"name":"Use Cases","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/"},{"@type":"ListItem","position":3,"name":"Use Case: Quote and Bind Home Insurance","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/quote-and-bind"}]}</script><link rel="stylesheet" href="/insurance-platform-requirements/assets/css/styles.d44ab96b.css">
+<script src="/insurance-platform-requirements/assets/js/runtime~main.5737842f.js" defer="defer"></script>
+<script src="/insurance-platform-requirements/assets/js/main.bbdc7f69.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/insurance-platform-requirements/"><b class="navbar__title text--truncate">TryggFörsäkring</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/insurance-platform-requirements/docs/next/intro">Requirements</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/quote-and-bind">Phase 2 — Home &amp; Property (Draft)</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/quote-and-bind">Phase 2 — Home &amp; Property (Draft)</a></li><li><a class="dropdown__link" href="/insurance-platform-requirements/docs/intro">Phase 1 — Motor Insurance</a></li></ul></div><a href="https://github.com/Agentic-software-factory/insurance-platform-requirements" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/intro"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/actors/"><span title="Actors" class="categoryLinkLabel_W154">Actors</span></a><button aria-label="Expand sidebar category &#x27;Actors&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/personas/"><span title="Personas" class="categoryLinkLabel_W154">Personas</span></a><button aria-label="Expand sidebar category &#x27;Personas&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/insurance-platform-requirements/docs/next/regulatory/fsa-requirements"><span title="Regulatory" class="categoryLinkLabel_W154">Regulatory</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/phase-1-motor/"><span title="Phase 1 — Motor Insurance" class="categoryLinkLabel_W154">Phase 1 — Motor Insurance</span></a><button aria-label="Expand sidebar category &#x27;Phase 1 — Motor Insurance&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/insurance-platform-requirements/docs/next/phase-2-home-property/"><span title="Phase 2 — Home &amp; Property Insurance" class="categoryLinkLabel_W154">Phase 2 — Home &amp; Property Insurance</span></a><button aria-label="Collapse sidebar category &#x27;Phase 2 — Home &amp; Property Insurance&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/"><span title="User Stories" class="categoryLinkLabel_W154">User Stories</span></a><button aria-label="Expand sidebar category &#x27;User Stories&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/"><span title="Use Cases" class="categoryLinkLabel_W154">Use Cases</span></a><button aria-label="Collapse sidebar category &#x27;Use Cases&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/quote-and-bind"><span title="Use Case: Quote and Bind Home Insurance" class="linkLabel_WmDU">Use Case: Quote and Bind Home Insurance</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/burglary-and-theft"><span title="Use Case: Burglary Claim Processing" class="linkLabel_WmDU">Use Case: Burglary Claim Processing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/policy-administration"><span title="Policy Administration Use Cases" class="linkLabel_WmDU">Policy Administration Use Cases</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/home-renewals"><span title="Use Case: Annual Home Insurance Renewal" class="linkLabel_WmDU">Use Case: Annual Home Insurance Renewal</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/cancellations"><span title="Use Case: Home Insurance Cancellation Processing" class="linkLabel_WmDU">Use Case: Home Insurance Cancellation Processing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/underwriting-rules"><span title="Use Case: Home Insurance Risk Assessment and Pricing" class="linkLabel_WmDU">Use Case: Home Insurance Risk Assessment and Pricing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/uc-water-damage-lifecycle"><span title="UC-HCW-001: Water Damage Claim Lifecycle" class="linkLabel_WmDU">UC-HCW-001: Water Damage Claim Lifecycle</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/uc-fire-natural-event-lifecycle"><span title="UC-HCF-001: Fire/Natural Event Claim Lifecycle" class="linkLabel_WmDU">UC-HCF-001: Fire/Natural Event Claim Lifecycle</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/uc-liability-claim-lifecycle"><span title="UC-HCL-001: Liability Claim Assessment and Settlement" class="linkLabel_WmDU">UC-HCL-001: Liability Claim Assessment and Settlement</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/uc-legal-expenses-lifecycle"><span title="UC-HCL-002: Legal Expenses (Rättsskydd) Application and Management" class="linkLabel_WmDU">UC-HCL-002: Legal Expenses (Rättsskydd) Application and Management</span></a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/analysis/"><span title="Analysis" class="categoryLinkLabel_W154">Analysis</span></a><button aria-label="Expand sidebar category &#x27;Analysis&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/insurance-platform-requirements/docs/next/Architecture/ADR-TEMPLATE"><span title="Architecture" class="categoryLinkLabel_W154">Architecture</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/lessons-learned/"><span title="Lessons Learned" class="categoryLinkLabel_W154">Lessons Learned</span></a><button aria-label="Expand sidebar category &#x27;Lessons Learned&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/glossary"><span title="Glossary" class="linkLabel_WmDU">Glossary</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/evidence-package"><span title="Evidence Package" class="linkLabel_WmDU">Evidence Package</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role="alert"><div>This is unreleased documentation for <!-- -->TryggFörsäkring Requirements<!-- --> <b>Phase 2 — Home &amp; Property (Draft)</b> version.</div><div class="margin-top--md">For up-to-date documentation, see the <b><a href="/insurance-platform-requirements/docs/intro">latest version</a></b> (<!-- -->Phase 1 — Motor Insurance<!-- -->).</div></div><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/insurance-platform-requirements/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/insurance-platform-requirements/docs/next/phase-2-home-property/"><span>Phase 2 — Home &amp; Property Insurance</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/"><span>Use Cases</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Use Case: Quote and Bind Home Insurance</span></li></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: Phase 2 — Home &amp; Property (Draft)</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Use Case: Quote and Bind Home Insurance</h1></header>
+<p>End-to-end use case for quoting and binding a home and property insurance policy
+at TryggFörsäkring. Covers the complete flow from address entry and property
+verification through premium calculation, coverage selection, and policy
+issuance. Supports all four product types: hemförsäkring,
+villahemförsäkring, bostadsrättsförsäkring, and fritidshusförsäkring.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-case-summary">Use Case Summary<a href="#use-case-summary" class="hash-link" aria-label="Direct link to Use Case Summary" title="Direct link to Use Case Summary" translate="no">​</a></h2>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td><strong>Use Case ID</strong></td><td>UC-HQB-001</td></tr><tr><td><strong>Name</strong></td><td>Quote and Bind Home Insurance</td></tr><tr><td><strong>Primary Actor</strong></td><td>Customer (Privatkund)</td></tr><tr><td><strong>Secondary Actors</strong></td><td>Customer Service Agent, Underwriter</td></tr><tr><td><strong>Goal</strong></td><td>Obtain a home insurance quote and bind a policy</td></tr><tr><td><strong>Preconditions</strong></td><td>Customer has a Swedish personnummer and a valid property address</td></tr><tr><td><strong>Postconditions</strong></td><td>Policy is bound, confirmation documents issued, payment setup initiated</td></tr><tr><td><strong>Trigger</strong></td><td>Customer initiates a home insurance quote request</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="stakeholders-and-interests">Stakeholders and Interests<a href="#stakeholders-and-interests" class="hash-link" aria-label="Direct link to Stakeholders and Interests" title="Direct link to Stakeholders and Interests" translate="no">​</a></h2>
+<table><thead><tr><th>Stakeholder</th><th>Interest</th></tr></thead><tbody><tr><td>Customer</td><td>Quick, transparent quote; fair pricing; immediate confirmation</td></tr><tr><td>BRF Member</td><td>Clear understanding of BRF vs personal coverage</td></tr><tr><td>Customer Service Agent</td><td>Efficient tool for phone-based customer advisory; compliant workflow</td></tr><tr><td>Underwriter</td><td>Correct risk assessment based on property data</td></tr><tr><td>Compliance Officer</td><td>IDD assessment completed; all records retained</td></tr><tr><td>TryggFörsäkring</td><td>New policy sale; regulatory compliance; accurate property data</td></tr><tr><td>Lantmäteriet</td><td>Accurate use of property registry data</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="process-flow">Process Flow<a href="#process-flow" class="hash-link" aria-label="Direct link to Process Flow" title="Direct link to Process Flow" translate="no">​</a></h2>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="interaction-sequence">Interaction Sequence<a href="#interaction-sequence" class="hash-link" aria-label="Direct link to Interaction Sequence" title="Direct link to Interaction Sequence" translate="no">​</a></h2>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="state-lifecycle">State Lifecycle<a href="#state-lifecycle" class="hash-link" aria-label="Direct link to State Lifecycle" title="Direct link to State Lifecycle" translate="no">​</a></h2>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-success-scenario">Main Success Scenario<a href="#main-success-scenario" class="hash-link" aria-label="Direct link to Main Success Scenario" title="Direct link to Main Success Scenario" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-address-entry-and-product-selection">1. Address Entry and Product Selection<a href="#1-address-entry-and-product-selection" class="hash-link" aria-label="Direct link to 1. Address Entry and Product Selection" title="Direct link to 1. Address Entry and Product Selection" translate="no">​</a></h3>
+<ol>
+<li class="">Customer enters their property address (street, postal code, city)</li>
+<li class="">Customer selects the product type:<!-- -->
+<ul>
+<li class="">Hemförsäkring (home contents — for renters)</li>
+<li class="">Villahemförsäkring (homeowner — for villa/house owners)</li>
+<li class="">Bostadsrättsförsäkring (tenant-owner — for BRF apartment owners)</li>
+<li class="">Fritidshusförsäkring (vacation home — for second home owners)</li>
+</ul>
+</li>
+<li class="">Customer enters personnummer for identity verification</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-property-data-retrieval">2. Property Data Retrieval<a href="#2-property-data-retrieval" class="hash-link" aria-label="Direct link to 2. Property Data Retrieval" title="Direct link to 2. Property Data Retrieval" translate="no">​</a></h3>
+<ol>
+<li class="">System queries Lantmäteriet/address registry with the entered address</li>
+<li class="">System retrieves property data:<!-- -->
+<ul>
+<li class="">Property ID (fastighetsbeteckning)</li>
+<li class="">Building type, construction year, building area</li>
+<li class="">Geographic coordinates (for risk zone mapping)</li>
+</ul>
+</li>
+<li class="">System pre-populates property details in the quote form</li>
+<li class="">System validates that the building type matches the selected product</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-automated-risk-assessment">3. Automated Risk Assessment<a href="#3-automated-risk-assessment" class="hash-link" aria-label="Direct link to 3. Automated Risk Assessment" title="Direct link to 3. Automated Risk Assessment" translate="no">​</a></h3>
+<ol>
+<li class="">System performs automated property risk assessment using:<!-- -->
+<ul>
+<li class="">Geographic risk zone (flood risk from MSB, subsidence, crime rates)</li>
+<li class="">Building construction type and materials</li>
+<li class="">Construction year</li>
+<li class="">Distance to fire station and water source</li>
+</ul>
+</li>
+<li class="">System classifies the property as standard risk or flags for review</li>
+<li class="">If flagged, the quote is routed to an underwriter (see Extension 3a)</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-demands-and-needs-assessment">4. Demands-and-Needs Assessment<a href="#4-demands-and-needs-assessment" class="hash-link" aria-label="Direct link to 4. Demands-and-Needs Assessment" title="Direct link to 4. Demands-and-Needs Assessment" translate="no">​</a></h3>
+<ol>
+<li class="">System presents the structured demands-and-needs assessment form
+(krav- och behovsanalys)</li>
+<li class="">Customer completes the assessment:<!-- -->
+<ul>
+<li class="">Household composition (adults, children)</li>
+<li class="">Value of personal belongings (lösöre)</li>
+<li class="">Need for specific coverages (allrisk/drulle, ID-skydd, travel)</li>
+<li class="">Deductible tolerance (självrisk — low, medium, high)</li>
+<li class="">Special items requiring separate valuation (jewelry, art, electronics)</li>
+<li class="">For BRF members: knowledge of BRF building insurance coverage</li>
+</ul>
+</li>
+<li class="">System generates a coverage recommendation with rationale:<!-- -->
+<ul>
+<li class="">Recommended coverage tier (bas/standard/premium)</li>
+<li class="">Recommended deductible level</li>
+<li class="">Relevant add-ons based on stated needs</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-brf-coverage-gap-analysis-bostadsrättsförsäkring-only">5. BRF Coverage Gap Analysis (Bostadsrättsförsäkring Only)<a href="#5-brf-coverage-gap-analysis-bostadsrättsförsäkring-only" class="hash-link" aria-label="Direct link to 5. BRF Coverage Gap Analysis (Bostadsrättsförsäkring Only)" title="Direct link to 5. BRF Coverage Gap Analysis (Bostadsrättsförsäkring Only)" translate="no">​</a></h3>
+<ol>
+<li class="">System presents the BRF coverage gap analysis:<!-- -->
+<ul>
+<li class="">What the BRF building insurance typically covers (structure, communal
+areas, pipes)</li>
+<li class="">What bostadsrättsförsäkring covers (interior fixtures, personal
+property, liability)</li>
+<li class="">Common coverage gaps (interior surfaces, appliances, bathroom
+renovations)</li>
+</ul>
+</li>
+<li class="">System recommends bostadsrättstillägg if applicable</li>
+<li class="">Customer confirms understanding of the coverage boundary</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-premium-calculation-and-coverage-comparison">6. Premium Calculation and Coverage Comparison<a href="#6-premium-calculation-and-coverage-comparison" class="hash-link" aria-label="Direct link to 6. Premium Calculation and Coverage Comparison" title="Direct link to 6. Premium Calculation and Coverage Comparison" translate="no">​</a></h3>
+<ol>
+<li class="">System calculates premiums for all three coverage tiers using:<!-- -->
+<ul>
+<li class="">Property risk factors (location, building type, construction year)</li>
+<li class="">Household risk factors (size, contents value)</li>
+<li class="">Security features (alarm, locks, fire protection)</li>
+<li class="">Selected deductible level</li>
+<li class="">Product type-specific factors</li>
+</ul>
+</li>
+<li class="">For villahemförsäkring/fritidshusförsäkring: building sum insured
+calculated using rebuilding cost index</li>
+<li class="">System presents a side-by-side tier comparison showing:<!-- -->
+<ul>
+<li class="">Coverage details per tier</li>
+<li class="">Premium per tier</li>
+<li class="">Deductible per tier</li>
+<li class="">IPID access link per tier</li>
+</ul>
+</li>
+<li class="">System highlights the recommended tier from the assessment</li>
+<li class="">System presents available add-ons with individual pricing:<!-- -->
+<ul>
+<li class="">Allrisk/drulle</li>
+<li class="">ID-skydd</li>
+<li class="">Bostadsrättstillägg (for BRF products)</li>
+<li class="">Extended travel insurance</li>
+<li class="">Bicycle coverage</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-coverage-selection">7. Coverage Selection<a href="#7-coverage-selection" class="hash-link" aria-label="Direct link to 7. Coverage Selection" title="Direct link to 7. Coverage Selection" translate="no">​</a></h3>
+<ol>
+<li class="">Customer selects a coverage tier</li>
+<li class="">Customer selects a deductible level</li>
+<li class="">Customer selects or declines optional add-ons</li>
+<li class="">Customer adjusts contents sum insured (lösöre) if needed</li>
+<li class="">If the customer deviates from the recommendation, system records the
+deviation</li>
+<li class="">System calculates the final premium (base + add-ons)</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-pre-contractual-review-and-signing">8. Pre-contractual Review and Signing<a href="#8-pre-contractual-review-and-signing" class="hash-link" aria-label="Direct link to 8. Pre-contractual Review and Signing" title="Direct link to 8. Pre-contractual Review and Signing" translate="no">​</a></h3>
+<ol>
+<li class="">System presents the binding summary:<!-- -->
+<ul>
+<li class="">Selected product type and coverage tier</li>
+<li class="">Coverage details and sum insured (contents and building if applicable)</li>
+<li class="">Premium amount and payment frequency</li>
+<li class="">Deductible amount</li>
+<li class="">Policy effective date and huvudförfallodag (anniversary)</li>
+<li class="">Pre-contractual information (IDD-003):<!-- -->
+<ul>
+<li class="">Insurer identity (TryggFörsäkring AB)</li>
+<li class="">FSA registration status</li>
+<li class="">Complaints handling procedures</li>
+<li class="">Dispute resolution options (ARN)</li>
+</ul>
+</li>
+<li class="">IPID delivery confirmation (IDD-002)</li>
+<li class="">Demands-and-needs assessment reference (IDD-011)</li>
+<li class="">14-day cooling-off right (ångerrätt) information (FSA-013)</li>
+</ul>
+</li>
+<li class="">Customer initiates BankID signing</li>
+<li class="">System sends the policy document hash to BankID</li>
+<li class="">Customer completes BankID authentication and signing</li>
+<li class="">System records the BankID transaction reference and timestamp</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="9-policy-issuance">9. Policy Issuance<a href="#9-policy-issuance" class="hash-link" aria-label="Direct link to 9. Policy Issuance" title="Direct link to 9. Policy Issuance" translate="no">​</a></h3>
+<ol>
+<li class="">System generates a unique policy number</li>
+<li class="">System creates the policy record with all binding details</li>
+<li class="">System generates the confirmation documents:<!-- -->
+<ul>
+<li class="">Policy document with terms and conditions</li>
+<li class="">Coverage summary</li>
+<li class="">IPID for the selected tier</li>
+</ul>
+</li>
+<li class="">System initiates payment setup with the payment provider:<!-- -->
+<ul>
+<li class="">Monthly autogiro setup, or</li>
+<li class="">Annual invoice generation</li>
+</ul>
+</li>
+<li class="">System calculates the ångerrätt (cooling-off) expiry date (14 days)</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="10-confirmation">10. Confirmation<a href="#10-confirmation" class="hash-link" aria-label="Direct link to 10. Confirmation" title="Direct link to 10. Confirmation" translate="no">​</a></h3>
+<ol>
+<li class="">System sends confirmation to the customer:<!-- -->
+<ul>
+<li class="">Policy document (PDF)</li>
+<li class="">Coverage summary</li>
+<li class="">IPID for the selected tier</li>
+<li class="">Payment instructions</li>
+<li class="">Cooling-off information</li>
+</ul>
+</li>
+<li class="">Policy documents are available in the self-service portal</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="extensions-alternative-flows">Extensions (Alternative Flows)<a href="#extensions-alternative-flows" class="hash-link" aria-label="Direct link to Extensions (Alternative Flows)" title="Direct link to Extensions (Alternative Flows)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2a-address-not-found-in-lantmäteriet">2a. Address Not Found in Lantmäteriet<a href="#2a-address-not-found-in-lantmäteriet" class="hash-link" aria-label="Direct link to 2a. Address Not Found in Lantmäteriet" title="Direct link to 2a. Address Not Found in Lantmäteriet" translate="no">​</a></h3>
+<ol>
+<li class="">System displays a message that the property was not found</li>
+<li class="">Customer is offered manual property entry (building type, construction
+year, area)</li>
+<li class="">Manual entry requires underwriter review before binding</li>
+<li class="">Flow continues from step 3</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3a-high-risk-property-identified">3a. High-Risk Property Identified<a href="#3a-high-risk-property-identified" class="hash-link" aria-label="Direct link to 3a. High-Risk Property Identified" title="Direct link to 3a. High-Risk Property Identified" translate="no">​</a></h3>
+<ol>
+<li class="">Automated risk assessment identifies risk factors outside standard
+parameters (flood zone, old building, previous claims)</li>
+<li class="">Quote is routed to underwriter review queue</li>
+<li class="">Underwriter reviews property details, risk factors, and claims history</li>
+<li class="">Underwriter may:<!-- -->
+<ul>
+<li class="">Accept at standard terms</li>
+<li class="">Accept with conditions (premium surcharge, exclusions, inspection
+required)</li>
+<li class="">Decline with explanation</li>
+</ul>
+</li>
+<li class="">If accepted: flow continues from step 4 (with any conditions applied)</li>
+<li class="">If declined: customer is notified with decline reason</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4a-agent-assisted-quote">4a. Agent-Assisted Quote<a href="#4a-agent-assisted-quote" class="hash-link" aria-label="Direct link to 4a. Agent-Assisted Quote" title="Direct link to 4a. Agent-Assisted Quote" translate="no">​</a></h3>
+<ol>
+<li class="">Agent authenticates via BankID</li>
+<li class="">System verifies the agent&#x27;s competence certification (IDD-009)</li>
+<li class="">Agent enters the customer&#x27;s address and personnummer</li>
+<li class="">Agent completes the demands-and-needs assessment on behalf of the customer</li>
+<li class="">System records the agent&#x27;s identity and distribution channel</li>
+<li class="">Agent provides a personal recommendation with documented rationale
+(IDD-006)</li>
+<li class="">System records the distribution status disclosure (IDD-005)</li>
+<li class="">Flow continues from step 5 (Premium Calculation)</li>
+<li class="">At signing, the customer (not the agent) signs via BankID</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5a-brf-insurance-details-unavailable">5a. BRF Insurance Details Unavailable<a href="#5a-brf-insurance-details-unavailable" class="hash-link" aria-label="Direct link to 5a. BRF Insurance Details Unavailable" title="Direct link to 5a. BRF Insurance Details Unavailable" translate="no">​</a></h3>
+<ol>
+<li class="">Customer cannot provide details about their BRF&#x27;s building insurance</li>
+<li class="">System applies conservative defaults (recommending bostadsrättstillägg)</li>
+<li class="">System advises the customer to verify their BRF&#x27;s coverage</li>
+<li class="">Flow continues from step 6</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="8a-bankid-signing-fails">8a. BankID Signing Fails<a href="#8a-bankid-signing-fails" class="hash-link" aria-label="Direct link to 8a. BankID Signing Fails" title="Direct link to 8a. BankID Signing Fails" translate="no">​</a></h3>
+<ol>
+<li class="">System displays an error message indicating the signing failed</li>
+<li class="">The quote remains valid for the configured validity period</li>
+<li class="">Customer can retry signing without re-entering data</li>
+<li class="">If the failure persists, customer is offered to save the quote and
+complete later</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="8b-customer-under-18">8b. Customer Under 18<a href="#8b-customer-under-18" class="hash-link" aria-label="Direct link to 8b. Customer Under 18" title="Direct link to 8b. Customer Under 18" translate="no">​</a></h3>
+<ol>
+<li class="">System detects from personnummer that the customer is under 18</li>
+<li class="">System prevents policy binding</li>
+<li class="">System displays a message indicating that a legal guardian must be the
+policyholder</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6a-building-type-mismatch">6a. Building Type Mismatch<a href="#6a-building-type-mismatch" class="hash-link" aria-label="Direct link to 6a. Building Type Mismatch" title="Direct link to 6a. Building Type Mismatch" translate="no">​</a></h3>
+<ol>
+<li class="">System detects that the Lantmäteriet building type does not match the
+selected product type</li>
+<li class="">System alerts the customer and suggests the correct product type</li>
+<li class="">Customer either switches product type or confirms manual override</li>
+<li class="">Manual override flags the quote for underwriter review</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-rules">Business Rules<a href="#business-rules" class="hash-link" aria-label="Direct link to Business Rules" title="Direct link to Business Rules" translate="no">​</a></h2>
+<table><thead><tr><th>Rule ID</th><th>Rule</th></tr></thead><tbody><tr><td>BR-HQB-01</td><td>The demands-and-needs assessment must be completed before any quote is finalized</td></tr><tr><td>BR-HQB-02</td><td>The IPID for the selected tier must be provided before binding</td></tr><tr><td>BR-HQB-03</td><td>The customer must be informed of the 14-day cooling-off right (ångerrätt) before signing</td></tr><tr><td>BR-HQB-04</td><td>Property data from Lantmäteriet must be verified before premium calculation</td></tr><tr><td>BR-HQB-05</td><td>Quotes have a configurable validity period (default: 30 days)</td></tr><tr><td>BR-HQB-06</td><td>Minimum age for policyholder is 18 years (verified via personnummer)</td></tr><tr><td>BR-HQB-07</td><td>Add-on pricing must be itemized separately from the base premium</td></tr><tr><td>BR-HQB-08</td><td>Agent-assisted sales must record the distribution channel, advisor identity, and all disclosures</td></tr><tr><td>BR-HQB-09</td><td>Building sum insured must be calculated using a current rebuilding cost index (villa/fritidshus)</td></tr><tr><td>BR-HQB-10</td><td>High-risk properties must be reviewed by an underwriter before binding</td></tr><tr><td>BR-HQB-11</td><td>BRF coverage gap analysis must be presented for bostadsrättsförsäkring products</td></tr><tr><td>BR-HQB-12</td><td>Contents sum insured (lösöre) must meet a minimum threshold based on household size</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-functional-requirements">Non-functional Requirements<a href="#non-functional-requirements" class="hash-link" aria-label="Direct link to Non-functional Requirements" title="Direct link to Non-functional Requirements" translate="no">​</a></h2>
+<table><thead><tr><th>Requirement</th><th>Target</th></tr></thead><tbody><tr><td>Property data lookup</td><td>Response within 3 seconds (Lantmäteriet SLA)</td></tr><tr><td>Risk assessment</td><td>Complete within 2 seconds</td></tr><tr><td>Quote calculation</td><td>Complete within 5 seconds</td></tr><tr><td>BankID signing</td><td>Timeout after 2 minutes; allow retry</td></tr><tr><td>Quote validity</td><td>Configurable; default 30 days</td></tr><tr><td>Underwriter review SLA</td><td>Flagged quotes reviewed within 4 business hours</td></tr><tr><td>Audit trail</td><td>All steps logged with timestamps and actor identity</td></tr><tr><td>Availability</td><td>Quote-and-bind flow available 24/7 for digital self-service</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-compliance-summary">Regulatory Compliance Summary<a href="#regulatory-compliance-summary" class="hash-link" aria-label="Direct link to Regulatory Compliance Summary" title="Direct link to Regulatory Compliance Summary" translate="no">​</a></h2>
+<table><thead><tr><th>Regulation</th><th>Requirements Addressed</th></tr></thead><tbody><tr><td><strong>FSA-004</strong></td><td>Fair treatment through demands-and-needs assessment and transparent pricing</td></tr><tr><td><strong>FSA-005</strong></td><td>Product governance; underwriting rules align with target market</td></tr><tr><td><strong>FSA-012</strong></td><td>Pre-contractual disclosure before binding</td></tr><tr><td><strong>FSA-013</strong></td><td>Cooling-off right (ångerrätt) communicated at binding</td></tr><tr><td><strong>FSA-015</strong></td><td>Product suitability; recommended coverage matches customer situation</td></tr><tr><td><strong>FSA-016</strong></td><td>Building valuation; adequate sum insured to prevent underinsurance</td></tr><tr><td><strong>GDPR-007</strong></td><td>Personal and property data collected under Article 6(1)(b) for quote</td></tr><tr><td><strong>IDD-002</strong></td><td>IPID provided for each tier before binding</td></tr><tr><td><strong>IDD-003</strong></td><td>Pre-contractual information presented before signing</td></tr><tr><td><strong>IDD-005</strong></td><td>Distribution status disclosed for agent channel</td></tr><tr><td><strong>IDD-006</strong></td><td>Advice documented with rationale for agent channel</td></tr><tr><td><strong>IDD-007</strong></td><td>Add-on pricing itemized separately</td></tr><tr><td><strong>IDD-008</strong></td><td>All distribution records retained per retention requirements</td></tr><tr><td><strong>IDD-009</strong></td><td>Agent competence verified before quote initiation</td></tr><tr><td><strong>IDD-011</strong></td><td>Demands-and-needs assessment completed before quote finalization</td></tr><tr><td><strong>IDD-013</strong></td><td>Cross-selling of add-ons presented transparently</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-user-stories">Related User Stories<a href="#related-user-stories" class="hash-link" aria-label="Direct link to Related User Stories" title="Direct link to Related User Stories" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind#hqb-01-get-a-home-insurance-quote">HQB-01: Get a Home Insurance Quote</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind#hqb-02-compare-coverage-tiers">HQB-02: Compare Coverage Tiers</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind#hqb-03-brf-coverage-gap-analysis">HQB-03: BRF Coverage Gap Analysis</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind#hqb-04-add-allriskdrulle-coverage">HQB-04: Add Allrisk/Drulle Coverage</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind#hqb-05-sign-policy-with-bankid">HQB-05: Sign Policy with BankID</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind#hqb-06-agent-assisted-home-quote">HQB-06: Agent-Assisted Home Quote</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind#hqb-07-automatic-property-risk-assessment">HQB-07: Automatic Property Risk Assessment</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind#hqb-08-review-flagged-high-risk-quotes">HQB-08: Review Flagged High-Risk Quotes</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind#hqb-09-verify-property-address-via-lantm%C3%A4teriet">HQB-09: Verify Property Address via Lantmäteriet</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-2-home-property/user-stories/quote-and-bind#hqb-10-calculate-premium-based-on-rating-factors">HQB-10: Calculate Premium Based on Rating Factors</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Agentic-software-factory/insurance-platform-requirements/edit/main/docs/phase-2-home-property/use-cases/quote-and-bind.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Use Cases</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/insurance-platform-requirements/docs/next/phase-2-home-property/use-cases/burglary-and-theft"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Use Case: Burglary Claim Processing</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#use-case-summary" class="table-of-contents__link toc-highlight">Use Case Summary</a></li><li><a href="#stakeholders-and-interests" class="table-of-contents__link toc-highlight">Stakeholders and Interests</a></li><li><a href="#process-flow" class="table-of-contents__link toc-highlight">Process Flow</a></li><li><a href="#interaction-sequence" class="table-of-contents__link toc-highlight">Interaction Sequence</a></li><li><a href="#state-lifecycle" class="table-of-contents__link toc-highlight">State Lifecycle</a></li><li><a href="#main-success-scenario" class="table-of-contents__link toc-highlight">Main Success Scenario</a><ul><li><a href="#1-address-entry-and-product-selection" class="table-of-contents__link toc-highlight">1. Address Entry and Product Selection</a></li><li><a href="#2-property-data-retrieval" class="table-of-contents__link toc-highlight">2. Property Data Retrieval</a></li><li><a href="#3-automated-risk-assessment" class="table-of-contents__link toc-highlight">3. Automated Risk Assessment</a></li><li><a href="#4-demands-and-needs-assessment" class="table-of-contents__link toc-highlight">4. Demands-and-Needs Assessment</a></li><li><a href="#5-brf-coverage-gap-analysis-bostadsrättsförsäkring-only" class="table-of-contents__link toc-highlight">5. BRF Coverage Gap Analysis (Bostadsrättsförsäkring Only)</a></li><li><a href="#6-premium-calculation-and-coverage-comparison" class="table-of-contents__link toc-highlight">6. Premium Calculation and Coverage Comparison</a></li><li><a href="#7-coverage-selection" class="table-of-contents__link toc-highlight">7. Coverage Selection</a></li><li><a href="#8-pre-contractual-review-and-signing" class="table-of-contents__link toc-highlight">8. Pre-contractual Review and Signing</a></li><li><a href="#9-policy-issuance" class="table-of-contents__link toc-highlight">9. Policy Issuance</a></li><li><a href="#10-confirmation" class="table-of-contents__link toc-highlight">10. Confirmation</a></li></ul></li><li><a href="#extensions-alternative-flows" class="table-of-contents__link toc-highlight">Extensions (Alternative Flows)</a><ul><li><a href="#2a-address-not-found-in-lantmäteriet" class="table-of-contents__link toc-highlight">2a. Address Not Found in Lantmäteriet</a></li><li><a href="#3a-high-risk-property-identified" class="table-of-contents__link toc-highlight">3a. High-Risk Property Identified</a></li><li><a href="#4a-agent-assisted-quote" class="table-of-contents__link toc-highlight">4a. Agent-Assisted Quote</a></li><li><a href="#5a-brf-insurance-details-unavailable" class="table-of-contents__link toc-highlight">5a. BRF Insurance Details Unavailable</a></li><li><a href="#8a-bankid-signing-fails" class="table-of-contents__link toc-highlight">8a. BankID Signing Fails</a></li><li><a href="#8b-customer-under-18" class="table-of-contents__link toc-highlight">8b. Customer Under 18</a></li><li><a href="#6a-building-type-mismatch" class="table-of-contents__link toc-highlight">6a. Building Type Mismatch</a></li></ul></li><li><a href="#business-rules" class="table-of-contents__link toc-highlight">Business Rules</a></li><li><a href="#non-functional-requirements" class="table-of-contents__link toc-highlight">Non-functional Requirements</a></li><li><a href="#regulatory-compliance-summary" class="table-of-contents__link toc-highlight">Regulatory Compliance Summary</a></li><li><a href="#related-user-stories" class="table-of-contents__link toc-highlight">Related User Stories</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/insurance-platform-requirements/docs/intro">Requirements</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 TryggFörsäkring AB. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

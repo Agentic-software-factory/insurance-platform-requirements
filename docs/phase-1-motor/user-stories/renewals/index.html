@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-phase-1 docs-doc-page docs-doc-id-phase-1-motor/user-stories/renewals" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Motor Policy Renewal User Stories | TryggFörsäkring Requirements</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/phase-1-motor/user-stories/renewals"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="phase-1"><meta data-rh="true" name="docusaurus_tag" content="docs-default-phase-1"><meta data-rh="true" name="docsearch:version" content="phase-1"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-phase-1"><meta data-rh="true" property="og:title" content="Motor Policy Renewal User Stories | TryggFörsäkring Requirements"><meta data-rh="true" name="description" content="User stories for the motor insurance renewal lifecycle, covering pre-renewal premium recalculation, bonus class adjustments, renewal notices, customer response handling, automatic renewal processing, payment schedule updates, competitor switching at huvudförfallodag, and retention offers."><meta data-rh="true" property="og:description" content="User stories for the motor insurance renewal lifecycle, covering pre-renewal premium recalculation, bonus class adjustments, renewal notices, customer response handling, automatic renewal processing, payment schedule updates, competitor switching at huvudförfallodag, and retention offers."><link data-rh="true" rel="icon" href="/insurance-platform-requirements/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/phase-1-motor/user-stories/renewals"><link data-rh="true" rel="alternate" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/phase-1-motor/user-stories/renewals" hreflang="en"><link data-rh="true" rel="alternate" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/phase-1-motor/user-stories/renewals" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Phase 1 — Motor Insurance","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/phase-1-motor/"},{"@type":"ListItem","position":2,"name":"User Stories","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/phase-1-motor/user-stories/"},{"@type":"ListItem","position":3,"name":"Motor Policy Renewal User Stories","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/phase-1-motor/user-stories/renewals"}]}</script><link rel="stylesheet" href="/insurance-platform-requirements/assets/css/styles.d44ab96b.css">
+<script src="/insurance-platform-requirements/assets/js/runtime~main.5737842f.js" defer="defer"></script>
+<script src="/insurance-platform-requirements/assets/js/main.bbdc7f69.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/insurance-platform-requirements/"><b class="navbar__title text--truncate">TryggFörsäkring</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/insurance-platform-requirements/docs/intro">Requirements</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/renewals">Phase 1 — Motor Insurance</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/renewals">Phase 2 — Home &amp; Property (Draft)</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/renewals">Phase 1 — Motor Insurance</a></li></ul></div><a href="https://github.com/Agentic-software-factory/insurance-platform-requirements" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/intro"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/actors/"><span title="Actors" class="categoryLinkLabel_W154">Actors</span></a><button aria-label="Expand sidebar category &#x27;Actors&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/personas/"><span title="Personas" class="categoryLinkLabel_W154">Personas</span></a><button aria-label="Expand sidebar category &#x27;Personas&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/insurance-platform-requirements/docs/regulatory/fsa-requirements"><span title="Regulatory" class="categoryLinkLabel_W154">Regulatory</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/insurance-platform-requirements/docs/phase-1-motor/"><span title="Phase 1 — Motor Insurance" class="categoryLinkLabel_W154">Phase 1 — Motor Insurance</span></a><button aria-label="Collapse sidebar category &#x27;Phase 1 — Motor Insurance&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/"><span title="User Stories" class="categoryLinkLabel_W154">User Stories</span></a><button aria-label="Collapse sidebar category &#x27;User Stories&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/policy-administration"><span title="Policy Administration User Stories" class="linkLabel_WmDU">Policy Administration User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/quote-and-bind"><span title="Quote and Bind — User Stories" class="linkLabel_WmDU">Quote and Bind — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/renewals"><span title="Motor Policy Renewal User Stories" class="linkLabel_WmDU">Motor Policy Renewal User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/trafikforsakring"><span title="Trafikforsakring — User Stories" class="linkLabel_WmDU">Trafikforsakring — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/underwriting-bonus"><span title="Underwriting Rules and Bonus System — User Stories" class="linkLabel_WmDU">Underwriting Rules and Bonus System — User Stories</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/trafikforsakring-cross-references"><span title="Trafikforsakring — Cross-Reference Index" class="linkLabel_WmDU">Trafikforsakring — Cross-Reference Index</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-fnol"><span title="US-CLM-001: Report a Claim Online (FNOL)" class="linkLabel_WmDU">US-CLM-001: Report a Claim Online (FNOL)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-registration"><span title="US-CLM-002: Register and Manage Claims" class="linkLabel_WmDU">US-CLM-002: Register and Manage Claims</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-coverage-verification"><span title="US-CLM-003: Verify Coverage and Check Exclusions" class="linkLabel_WmDU">US-CLM-003: Verify Coverage and Check Exclusions</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-liability"><span title="US-CLM-004: Determine Liability" class="linkLabel_WmDU">US-CLM-004: Determine Liability</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-damage-assessment"><span title="US-CLM-005: Assess Vehicle Damage" class="linkLabel_WmDU">US-CLM-005: Assess Vehicle Damage</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-fraud-screening"><span title="US-CLM-006: Screen Claims for Fraud" class="linkLabel_WmDU">US-CLM-006: Screen Claims for Fraud</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-decision"><span title="US-CLM-007: Approve or Deny a Claim" class="linkLabel_WmDU">US-CLM-007: Approve or Deny a Claim</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-settlement"><span title="US-CLM-008: Calculate and Process Settlement" class="linkLabel_WmDU">US-CLM-008: Calculate and Process Settlement</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-subrogation"><span title="US-CLM-009: Recover Costs Through Subrogation" class="linkLabel_WmDU">US-CLM-009: Recover Costs Through Subrogation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-bonus-impact"><span title="US-CLM-010: Update Bonus Class After Claim" class="linkLabel_WmDU">US-CLM-010: Update Bonus Class After Claim</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-tff"><span title="US-CLM-011: Process TFF Claims" class="linkLabel_WmDU">US-CLM-011: Process TFF Claims</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-personal-injury"><span title="US-CLM-012: Handle Personal Injury Claims Under Trafikförsäkring" class="linkLabel_WmDU">US-CLM-012: Handle Personal Injury Claims Under Trafikförsäkring</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-tracking"><span title="US-CLM-013: Track Claim Status" class="linkLabel_WmDU">US-CLM-013: Track Claim Status</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-repair-authorization"><span title="US-CLM-014: Authorize Repairs at Network Shops" class="linkLabel_WmDU">US-CLM-014: Authorize Repairs at Network Shops</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/claims-closure"><span title="US-CLM-015: Close and Review Claims" class="linkLabel_WmDU">US-CLM-015: Close and Review Claims</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-cooling-off"><span title="US-CAN-001: Cancel Policy Within Cooling-Off Period (Ångerrätt)" class="linkLabel_WmDU">US-CAN-001: Cancel Policy Within Cooling-Off Period (Ångerrätt)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-huvudforfallodag"><span title="US-CAN-002: Cancel at Huvudförfallodag" class="linkLabel_WmDU">US-CAN-002: Cancel at Huvudförfallodag</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-vehicle-sold"><span title="US-CAN-003: Cancel Due to Vehicle Sold" class="linkLabel_WmDU">US-CAN-003: Cancel Due to Vehicle Sold</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-vehicle-deregistered"><span title="US-CAN-004: Cancel Due to Vehicle Scrapped or Deregistered" class="linkLabel_WmDU">US-CAN-004: Cancel Due to Vehicle Scrapped or Deregistered</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-replacement-coverage"><span title="US-CAN-005: Verify Replacement Trafikförsäkring Before Cancellation" class="linkLabel_WmDU">US-CAN-005: Verify Replacement Trafikförsäkring Before Cancellation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-transportstyrelsen"><span title="US-CAN-006: Notify Transportstyrelsen of Policy Cancellation" class="linkLabel_WmDU">US-CAN-006: Notify Transportstyrelsen of Policy Cancellation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-refund"><span title="US-CAN-007: Calculate and Process Premium Refund" class="linkLabel_WmDU">US-CAN-007: Calculate and Process Premium Refund</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-emigration"><span title="US-CAN-008: Cancel Due to Emigration" class="linkLabel_WmDU">US-CAN-008: Cancel Due to Emigration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-death"><span title="US-CAN-009: Cancel Due to Death of Policyholder" class="linkLabel_WmDU">US-CAN-009: Cancel Due to Death of Policyholder</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-insurer-initiated"><span title="US-CAN-010: Insurer-Initiated Cancellation" class="linkLabel_WmDU">US-CAN-010: Insurer-Initiated Cancellation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-eu-online-button"><span title="US-CAN-011: EU Online Cancellation Button (EU 2023/2673)" class="linkLabel_WmDU">US-CAN-011: EU Online Cancellation Button (EU 2023/2673)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/cancellation-preview-refund"><span title="US-CAN-012: View Refund Amount Before Confirming Cancellation" class="linkLabel_WmDU">US-CAN-012: View Refund Amount Before Confirming Cancellation</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/insurance-platform-requirements/docs/phase-1-motor/use-cases/"><span title="Use Cases" class="categoryLinkLabel_W154">Use Cases</span></a><button aria-label="Expand sidebar category &#x27;Use Cases&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/analysis/"><span title="Analysis" class="categoryLinkLabel_W154">Analysis</span></a><button aria-label="Expand sidebar category &#x27;Analysis&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/insurance-platform-requirements/docs/Architecture/ADR-TEMPLATE"><span title="Architecture" class="categoryLinkLabel_W154">Architecture</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/insurance-platform-requirements/docs/lessons-learned/LESSON-TEMPLATE"><span title="Lessons Learned" class="categoryLinkLabel_W154">Lessons Learned</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/glossary"><span title="Glossary" class="linkLabel_WmDU">Glossary</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/evidence-package"><span title="Evidence Package" class="linkLabel_WmDU">Evidence Package</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/insurance-platform-requirements/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/insurance-platform-requirements/docs/phase-1-motor/"><span>Phase 1 — Motor Insurance</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/"><span>User Stories</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Motor Policy Renewal User Stories</span></li></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: Phase 1 — Motor Insurance</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Motor Policy Renewal User Stories</h1></header>
+<p>User stories for the motor insurance renewal lifecycle, covering pre-renewal premium recalculation, bonus class adjustments, renewal notices, customer response handling, automatic renewal processing, payment schedule updates, competitor switching at huvudförfallodag, and retention offers.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="us-rn-001-receive-renewal-notice">US-RN-001: Receive Renewal Notice<a href="#us-rn-001-receive-renewal-notice" class="hash-link" aria-label="Direct link to US-RN-001: Receive Renewal Notice" title="Direct link to US-RN-001: Receive Renewal Notice" translate="no">​</a></h2>
+<p><strong>As a</strong> customer,
+<strong>I want to</strong> receive a renewal notice at least one month before my huvudförfallodag,
+<strong>so that</strong> I have time to review the new terms, compare alternatives, and decide whether to renew.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria">Acceptance Criteria<a href="#acceptance-criteria" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> my policy&#x27;s huvudförfallodag is approaching
+<strong>WHEN</strong> the date is at least 30 days before the huvudförfallodag
+<strong>THEN</strong> the system sends me a renewal notice by post and/or digital channel with the new premium, coverage summary, and effective date</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> I receive the renewal notice
+<strong>WHEN</strong> I review it
+<strong>THEN</strong> it clearly shows: current premium, new premium, premium change amount and percentage, bonus class, coverage tier, deductible, and the huvudförfallodag</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the renewal notice has been sent
+<strong>WHEN</strong> the system records the delivery
+<strong>THEN</strong> it logs the sent date, delivery channel, content version, and delivery confirmation status</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the renewal notice cannot be delivered (e.g., returned post, bounced email)
+<strong>WHEN</strong> the delivery failure is detected
+<strong>THEN</strong> the system retries via an alternative channel and alerts operations staff if all channels fail</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-rules">Business Rules<a href="#business-rules" class="hash-link" aria-label="Direct link to Business Rules" title="Direct link to Business Rules" translate="no">​</a></h3>
+<ul>
+<li class="">Renewal notices must be sent at least 30 days before the huvudförfallodag, per Försäkringsavtalslagen</li>
+<li class="">The notice must clearly state the customer&#x27;s right to cancel before the huvudförfallodag without penalty</li>
+<li class="">If the premium has increased, the notice must explain the reason (e.g., bonus class change, tariff adjustment, risk factor change)</li>
+<li class="">The notice must include information about how to switch to another insurer</li>
+<li class="">Notices must be available in Swedish and use plain, clear language (FSA-004)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements">Data Requirements<a href="#data-requirements" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Policy details: policy number, policyholder name, vehicle registreringsnummer, coverage tier, deductible</li>
+<li class="">Premium comparison: current annual premium, new annual premium, change amount, change percentage</li>
+<li class="">Bonus class: current bonus class, new bonus class (if changed), reason for change</li>
+<li class="">Dates: current policy period end date (huvudförfallodag), new policy period start and end dates</li>
+<li class="">Delivery tracking: channel, sent timestamp, delivery confirmation</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory">Regulatory<a href="#regulatory" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-004</strong> — Renewal notices must use clear, transparent language and present terms fairly</li>
+<li class=""><strong>FSA-012</strong> — Pre-contractual disclosure obligations apply to renewals with changed terms</li>
+<li class=""><strong>FSA-013</strong> — The notice must inform the customer of their cancellation rights before the huvudförfallodag</li>
+<li class=""><strong>GDPR-005</strong> — Renewal communications must comply with data processing rules for marketing and renewal notices</li>
+<li class=""><strong>IDD-003</strong> — If terms have changed significantly, pre-contractual information must be provided</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="us-rn-002-view-premium-change-explanation">US-RN-002: View Premium Change Explanation<a href="#us-rn-002-view-premium-change-explanation" class="hash-link" aria-label="Direct link to US-RN-002: View Premium Change Explanation" title="Direct link to US-RN-002: View Premium Change Explanation" translate="no">​</a></h2>
+<p><strong>As a</strong> customer,
+<strong>I want to</strong> see a detailed explanation of why my renewal premium has changed,
+<strong>so that</strong> I understand the factors driving the price and can make an informed decision.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-1">Acceptance Criteria<a href="#acceptance-criteria-1" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> I receive a renewal notice with a premium change
+<strong>WHEN</strong> I view the premium breakdown
+<strong>THEN</strong> I see each contributing factor: bonus class effect, tariff adjustment, vehicle age change, postcode risk zone change, and any other rating factor changes</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the premium has increased
+<strong>WHEN</strong> the breakdown is displayed
+<strong>THEN</strong> each factor shows whether it contributed to an increase or decrease, with the approximate impact in SEK</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> my bonus class has changed
+<strong>WHEN</strong> I view the bonus class section
+<strong>THEN</strong> I see the old bonus class, the new bonus class, the reason for the change (claim-free year or claims made), and the discount percentage for each class</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-rules-1">Business Rules<a href="#business-rules-1" class="hash-link" aria-label="Direct link to Business Rules" title="Direct link to Business Rules" translate="no">​</a></h3>
+<ul>
+<li class="">The premium breakdown must show all material factors, not just the net change</li>
+<li class="">Bonus class changes are the most common driver of premium changes and must be prominently displayed</li>
+<li class="">Tariff adjustments (market-wide rate changes) must be distinguished from individual risk factor changes</li>
+<li class="">The breakdown must be understandable to a non-expert customer</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-1">Data Requirements<a href="#data-requirements-1" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Rating factor breakdown: bonus class discount, base rate change, vehicle age factor, postcode factor, mileage factor, driver surcharges</li>
+<li class="">Bonus class details: old class, new class, progression reason, discount percentages</li>
+<li class="">Tariff version: current and new tariff identifiers, effective date of tariff change</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-1">Regulatory<a href="#regulatory-1" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-004</strong> — Premium calculations must be transparent; the customer must understand why the premium changed</li>
+<li class=""><strong>IDD-001</strong> — If the premium change is significant, a reassessment of demands and needs may be warranted</li>
+<li class=""><strong>GDPR-002</strong> — Premium calculation data is part of the policy administration record</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="us-rn-003-recalculate-renewal-premium">US-RN-003: Recalculate Renewal Premium<a href="#us-rn-003-recalculate-renewal-premium" class="hash-link" aria-label="Direct link to US-RN-003: Recalculate Renewal Premium" title="Direct link to US-RN-003: Recalculate Renewal Premium" translate="no">​</a></h2>
+<p><strong>As an</strong> underwriter,
+<strong>I want the</strong> system to recalculate premiums for upcoming renewals based on updated risk factors and bonus class,
+<strong>so that</strong> renewal pricing is accurate and reflects the current risk profile.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-2">Acceptance Criteria<a href="#acceptance-criteria-2" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a policy&#x27;s huvudförfallodag is within the pre-renewal processing window (configurable, e.g., 60 days)
+<strong>WHEN</strong> the renewal batch process runs
+<strong>THEN</strong> the system recalculates the premium using the current tariff, updated bonus class, and latest risk factors</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the premium recalculation is complete
+<strong>WHEN</strong> the result is stored
+<strong>THEN</strong> the renewal record includes: old annual premium, new annual premium, rating factor breakdown, tariff version, and bonus class applied</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the recalculated premium triggers a high-risk flag (e.g., premium increase above a configurable threshold)
+<strong>WHEN</strong> the flag is raised
+<strong>THEN</strong> the renewal is routed to an underwriter for manual review before the renewal notice is sent</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the recalculation completes without flags
+<strong>WHEN</strong> the renewal is approved
+<strong>THEN</strong> the system queues the renewal notice for dispatch</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-rules-2">Business Rules<a href="#business-rules-2" class="hash-link" aria-label="Direct link to Business Rules" title="Direct link to Business Rules" translate="no">​</a></h3>
+<ul>
+<li class="">Renewal premium uses the tariff version effective on the huvudförfallodag</li>
+<li class="">Bonus class is updated based on the claims history during the expiring policy period (see US-RN-004)</li>
+<li class="">All other risk factors (vehicle, address, mileage, named drivers) are taken from the current policy state at the time of recalculation</li>
+<li class="">Premium recalculation is a batch process that runs daily for policies within the pre-renewal window</li>
+<li class="">Large premium increases (above a configurable percentage threshold) require underwriter review</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-2">Data Requirements<a href="#data-requirements-2" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Rating factors: vehicle type, vehicle age, vehicle value, postcode risk zone, coverage tier, deductible level, named drivers, mileage band, bonus class</li>
+<li class="">Tariff: version identifier, effective date, base rates, factor tables</li>
+<li class="">Claims history: claim count, claim types, and total paid amounts during the expiring period</li>
+<li class="">Renewal record: old premium, new premium, factor breakdown, tariff version, review status</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-2">Regulatory<a href="#regulatory-2" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-004</strong> — Premium recalculation must be transparent and auditable</li>
+<li class=""><strong>FSA-006</strong> — Premium data must be available for supervisory reporting</li>
+<li class=""><strong>GDPR-002</strong> — Renewal calculation data stored as part of policy administration</li>
+<li class=""><strong>IDD-001</strong> — Significant premium changes may trigger a demands-and-needs reassessment</li>
+<li class=""><strong>IDD-004</strong> — Renewal pricing must be reviewed as part of product monitoring to ensure continued alignment with target market</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="us-rn-004-update-bonus-class-at-renewal">US-RN-004: Update Bonus Class at Renewal<a href="#us-rn-004-update-bonus-class-at-renewal" class="hash-link" aria-label="Direct link to US-RN-004: Update Bonus Class at Renewal" title="Direct link to US-RN-004: Update Bonus Class at Renewal" translate="no">​</a></h2>
+<p><strong>As the</strong> system,
+<strong>I want to</strong> adjust the policyholder&#x27;s bonus class at renewal based on their claims history during the expiring policy period,
+<strong>so that</strong> claim-free customers receive a higher discount and customers with claims are priced according to their risk.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-3">Acceptance Criteria<a href="#acceptance-criteria-3" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the policyholder had no claims during the expiring policy period
+<strong>WHEN</strong> the bonus class is updated at renewal
+<strong>THEN</strong> the bonus class increases by one step (up to the maximum bonus class)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the policyholder had one or more claims during the expiring policy period
+<strong>WHEN</strong> the bonus class is updated at renewal
+<strong>THEN</strong> the bonus class decreases according to the bonus scale rules (number of steps down depends on claims count and type)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the bonus class changes
+<strong>WHEN</strong> the renewal record is created
+<strong>THEN</strong> the system records the old bonus class, new bonus class, claims count, and the progression rule applied</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the policyholder&#x27;s bonus class is already at the maximum level
+<strong>WHEN</strong> they have a claim-free year
+<strong>THEN</strong> the bonus class remains at the maximum level</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-rules-3">Business Rules<a href="#business-rules-3" class="hash-link" aria-label="Direct link to Business Rules" title="Direct link to Business Rules" translate="no">​</a></h3>
+<ul>
+<li class="">Bonus class typically ranges from 1 (lowest, no discount) to 7 (highest, maximum discount), though the exact scale is configurable</li>
+<li class="">Claim-free year: move up one bonus class step</li>
+<li class="">One claim: move down a configurable number of steps (e.g., 3 steps)</li>
+<li class="">Two or more claims: move down to the lowest bonus class (class 1)</li>
+<li class="">Only claims where the insurer has paid out affect the bonus class; declined claims or claims below the deductible do not affect bonus</li>
+<li class="">Glass-only claims (glasskada) do not affect the bonus class (industry standard)</li>
+<li class="">Bonus class is tied to the policyholder, not the vehicle — if the customer changes vehicles mid-term, their bonus transfers</li>
+<li class="">New customers without prior bonus history start at a configurable default class (e.g., class 3)</li>
+<li class="">Bonus class from a previous insurer may be transferred if the customer provides proof (försäkringsbesked)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-3">Data Requirements<a href="#data-requirements-3" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Bonus class scale: class number, discount percentage, step-up rule, step-down rule</li>
+<li class="">Claims history for the expiring period: claim count, claim types, paid amounts, declined claims</li>
+<li class="">Bonus transfer: previous insurer, previous bonus class, proof document reference</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-3">Regulatory<a href="#regulatory-3" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-004</strong> — Bonus class rules and their impact on premium must be communicated clearly to customers</li>
+<li class=""><strong>FSA-005</strong> — Bonus system must be monitored as part of product governance</li>
+<li class=""><strong>GDPR-002</strong> — Bonus class history is part of the policy administration record</li>
+<li class=""><strong>GDPR-001</strong> — If bonus data is obtained from a previous insurer, the data collection must have a lawful basis</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="us-rn-005-automatically-renew-policy">US-RN-005: Automatically Renew Policy<a href="#us-rn-005-automatically-renew-policy" class="hash-link" aria-label="Direct link to US-RN-005: Automatically Renew Policy" title="Direct link to US-RN-005: Automatically Renew Policy" translate="no">​</a></h2>
+<p><strong>As the</strong> system,
+<strong>I want to</strong> automatically renew policies that are not cancelled before the huvudförfallodag,
+<strong>so that</strong> policyholders maintain continuous coverage without requiring manual action.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-4">Acceptance Criteria<a href="#acceptance-criteria-4" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> the huvudförfallodag has arrived and the customer has not cancelled the policy
+<strong>WHEN</strong> the renewal processing runs
+<strong>THEN</strong> the system creates a new policy period with the recalculated premium, updated bonus class, and current coverage terms</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the policy is automatically renewed
+<strong>WHEN</strong> the new policy period starts
+<strong>THEN</strong> the system generates an updated policy document reflecting the new terms, premium, and policy period</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the policy is renewed
+<strong>WHEN</strong> the renewal is processed
+<strong>THEN</strong> the system notifies the customer that the policy has been renewed with a link to the updated policy document</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the policy is renewed and the coverage includes trafikförsäkring
+<strong>WHEN</strong> the new policy period starts
+<strong>THEN</strong> continuous coverage is maintained with no gap — the old period ends at 00:00 and the new period starts at 00:00 on the huvudförfallodag</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-rules-4">Business Rules<a href="#business-rules-4" class="hash-link" aria-label="Direct link to Business Rules" title="Direct link to Business Rules" translate="no">​</a></h3>
+<ul>
+<li class="">Automatic renewal is the default behavior for all motor policies unless the customer explicitly cancels</li>
+<li class="">Renewal creates a new 365-day policy period starting on the huvudförfallodag</li>
+<li class="">The renewed policy uses the recalculated premium (from US-RN-003) and updated bonus class (from US-RN-004)</li>
+<li class="">Coverage tier, deductible, named drivers, and vehicle remain unchanged unless the customer requests a change</li>
+<li class="">Trafikförsäkring must always maintain continuous coverage with no gap (FSA-007)</li>
+<li class="">If the customer&#x27;s payment method is invalid or declined, the renewal proceeds but triggers the payment follow-up process (see US-PA-013 for suspension rules)</li>
+<li class="">A renewal confirmation is sent to the customer within 1 business day of the renewal date</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-4">Data Requirements<a href="#data-requirements-4" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Renewal record: old policy period, new policy period, old premium, new premium, bonus class, coverage tier, vehicle, named drivers</li>
+<li class="">Policy document: updated policy number or endorsement reference, new policy period dates, new premium</li>
+<li class="">Notification: renewal confirmation sent date, channel, delivery status</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-4">Regulatory<a href="#regulatory-4" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-007</strong> — Trafikförsäkring must remain continuous; automatic renewal prevents coverage gaps</li>
+<li class=""><strong>FSA-012</strong> — The renewed policy terms must be disclosed to the customer via the renewal notice and updated policy document</li>
+<li class=""><strong>FSA-013</strong> — Försäkringsavtalslagen governs automatic renewal rules and customer&#x27;s right to cancel</li>
+<li class=""><strong>FSA-014</strong> — Renewal records must be retained for the record-keeping period</li>
+<li class=""><strong>IDD-004</strong> — Automatic renewal must use product terms that are consistent with the defined target market and subject to ongoing governance review</li>
+<li class=""><strong>GDPR-002</strong> — Renewal data stored as part of policy administration</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="us-rn-006-cancel-policy-before-renewal">US-RN-006: Cancel Policy Before Renewal<a href="#us-rn-006-cancel-policy-before-renewal" class="hash-link" aria-label="Direct link to US-RN-006: Cancel Policy Before Renewal" title="Direct link to US-RN-006: Cancel Policy Before Renewal" translate="no">​</a></h2>
+<p><strong>As a</strong> customer,
+<strong>I want to</strong> cancel my policy before the huvudförfallodag so that I can switch to a competitor,
+<strong>so that</strong> I exercise my right to change insurer at the annual renewal date without penalty.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-5">Acceptance Criteria<a href="#acceptance-criteria-5" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> I have received my renewal notice
+<strong>WHEN</strong> I submit a cancellation request before the huvudförfallodag
+<strong>THEN</strong> the system records the cancellation effective on the huvudförfallodag and confirms the cancellation to me</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> I cancel my policy before the huvudförfallodag
+<strong>WHEN</strong> the huvudförfallodag arrives
+<strong>THEN</strong> the policy ends at the huvudförfallodag, the automatic renewal does not proceed, and Transportstyrelsen is notified</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> I cancel my policy
+<strong>WHEN</strong> the cancellation is processed
+<strong>THEN</strong> the system sends a cancellation confirmation including the end date, a reminder that trafikförsäkring coverage from another insurer must be in place, and information about TFF default coverage consequences</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> I attempt to cancel my policy after the huvudförfallodag
+<strong>WHEN</strong> the cancellation request is submitted
+<strong>THEN</strong> the system informs me that the policy has already renewed and I must follow the mid-term cancellation process instead</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-rules-5">Business Rules<a href="#business-rules-5" class="hash-link" aria-label="Direct link to Business Rules" title="Direct link to Business Rules" translate="no">​</a></h3>
+<ul>
+<li class="">Cancellation at huvudförfallodag is a customer right under Försäkringsavtalslagen — no penalty or fee applies</li>
+<li class="">Cancellation must be received before the huvudförfallodag to prevent automatic renewal</li>
+<li class="">The system must warn the customer about trafikförsäkring gap consequences if they cancel</li>
+<li class="">If the customer is switching insurers, the new insurer typically sends the cancellation on the customer&#x27;s behalf (flyttanmälan)</li>
+<li class="">Cancellation after the huvudförfallodag follows different rules (mid-term cancellation with potential pro-rata refund)</li>
+<li class="">The system must notify Transportstyrelsen when coverage ends</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-5">Data Requirements<a href="#data-requirements-5" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Cancellation request: request date, requested effective date, reason (optional), channel</li>
+<li class="">Notification to Transportstyrelsen: vehicle registreringsnummer, coverage end date</li>
+<li class="">Confirmation to customer: cancellation date, end date, trafikförsäkring warning</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-5">Regulatory<a href="#regulatory-5" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-013</strong> — Customer&#x27;s right to cancel at huvudförfallodag is protected by Försäkringsavtalslagen</li>
+<li class=""><strong>FSA-007</strong> — Customer must be warned about trafikförsäkring gap consequences</li>
+<li class=""><strong>FSA-009</strong> — Transportstyrelsen must be notified when coverage ends</li>
+<li class=""><strong>GDPR-002</strong> — Cancellation records stored as part of policy administration</li>
+<li class=""><strong>GDPR-004</strong> — Transportstyrelsen notification transmits only mandated data</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="us-rn-007-update-payment-schedule-for-renewed-policy">US-RN-007: Update Payment Schedule for Renewed Policy<a href="#us-rn-007-update-payment-schedule-for-renewed-policy" class="hash-link" aria-label="Direct link to US-RN-007: Update Payment Schedule for Renewed Policy" title="Direct link to US-RN-007: Update Payment Schedule for Renewed Policy" translate="no">​</a></h2>
+<p><strong>As the</strong> system,
+<strong>I want to</strong> update the payment schedule when a policy is renewed with a new premium,
+<strong>so that</strong> the customer is charged the correct amount on the correct dates for the new policy period.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-6">Acceptance Criteria<a href="#acceptance-criteria-6" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a policy has been renewed with a new premium
+<strong>WHEN</strong> the payment schedule is generated
+<strong>THEN</strong> the system creates installment dates and amounts based on the new annual premium and the customer&#x27;s payment frequency (monthly, quarterly, or annual)</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the renewed premium differs from the previous premium
+<strong>WHEN</strong> the first payment of the new period is due
+<strong>THEN</strong> the payment amount reflects the new premium, not the old premium</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer pays via autogiro
+<strong>WHEN</strong> the renewal is processed
+<strong>THEN</strong> the autogiro mandate is updated with the new installment amount and the customer is notified of the change</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer&#x27;s payment method is invalid or expired
+<strong>WHEN</strong> the renewal is processed
+<strong>THEN</strong> the system flags the payment issue and sends the customer a request to update their payment details</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-rules-6">Business Rules<a href="#business-rules-6" class="hash-link" aria-label="Direct link to Business Rules" title="Direct link to Business Rules" translate="no">​</a></h3>
+<ul>
+<li class="">Payment frequency options: monthly, quarterly, or annual (set at policy inception, may be changed at renewal)</li>
+<li class="">Autogiro customers receive an updated debit notification before the first new-period installment</li>
+<li class="">Invoice customers receive a new payment schedule with the renewal confirmation</li>
+<li class="">If the customer does not pay the first installment within the grace period, the standard non-payment process applies (see US-PA-013)</li>
+<li class="">Monthly payment may include a small administrative surcharge compared to annual payment</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-6">Data Requirements<a href="#data-requirements-6" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Payment schedule: installment dates, installment amounts, payment frequency, payment method</li>
+<li class="">Payment method: type (autogiro, invoice, card), account/reference details, validity status</li>
+<li class="">Renewal premium: new annual premium, payment frequency, calculated installment amount</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-6">Regulatory<a href="#regulatory-6" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-004</strong> — Payment schedule and any surcharges for installment payment must be communicated transparently</li>
+<li class=""><strong>GDPR-002</strong> — Payment schedule data stored as part of policy administration</li>
+<li class=""><strong>FSA-013</strong> — Payment terms at renewal must comply with Försäkringsavtalslagen</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="us-rn-008-handle-inbound-insurer-switch-flyttanmälan">US-RN-008: Handle Inbound Insurer Switch (Flyttanmälan)<a href="#us-rn-008-handle-inbound-insurer-switch-flyttanmälan" class="hash-link" aria-label="Direct link to US-RN-008: Handle Inbound Insurer Switch (Flyttanmälan)" title="Direct link to US-RN-008: Handle Inbound Insurer Switch (Flyttanmälan)" translate="no">​</a></h2>
+<p><strong>As the</strong> system,
+<strong>I want to</strong> process an inbound cancellation request from a new insurer (flyttanmälan) when a customer switches to a competitor at huvudförfallodag,
+<strong>so that</strong> the policy is cancelled smoothly without requiring direct customer action.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-7">Acceptance Criteria<a href="#acceptance-criteria-7" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a competitor insurer sends a flyttanmälan for one of our policyholders
+<strong>WHEN</strong> the system receives the request
+<strong>THEN</strong> it validates the request against the policy&#x27;s huvudförfallodag and processes the cancellation</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the flyttanmälan is valid and the effective date matches the huvudförfallodag
+<strong>WHEN</strong> the cancellation is processed
+<strong>THEN</strong> the policy ends on the huvudförfallodag, automatic renewal is suppressed, and Transportstyrelsen is notified</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the flyttanmälan effective date does not match the huvudförfallodag
+<strong>WHEN</strong> the system validates the request
+<strong>THEN</strong> it rejects the request and responds with the correct huvudförfallodag date</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the flyttanmälan is processed successfully
+<strong>WHEN</strong> the cancellation takes effect
+<strong>THEN</strong> the system sends the customer a confirmation of the policy ending and a reminder of their bonus class for their records</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-rules-7">Business Rules<a href="#business-rules-7" class="hash-link" aria-label="Direct link to Business Rules" title="Direct link to Business Rules" translate="no">​</a></h3>
+<ul>
+<li class="">Flyttanmälan is the standard industry process for insurer switching in Sweden</li>
+<li class="">The cancellation effective date must align with the huvudförfallodag</li>
+<li class="">The system should provide the customer&#x27;s current bonus class in the response so the new insurer can apply it (försäkringsbesked)</li>
+<li class="">If a flyttanmälan arrives for a policy that has already been cancelled, the system responds with the existing cancellation confirmation</li>
+<li class="">The system must handle flyttanmälan requests received both electronically (industry API) and manually (postal/email)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-7">Data Requirements<a href="#data-requirements-7" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Flyttanmälan request: requesting insurer, policyholder personnummer, vehicle registreringsnummer, requested effective date</li>
+<li class="">Response: confirmation/rejection, bonus class certificate, huvudförfallodag date</li>
+<li class="">Customer notification: cancellation confirmation, bonus class for records</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-7">Regulatory<a href="#regulatory-7" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-013</strong> — Insurer switching at huvudförfallodag is governed by Försäkringsavtalslagen</li>
+<li class=""><strong>FSA-009</strong> — Transportstyrelsen must be notified of the coverage change</li>
+<li class=""><strong>GDPR-002</strong> — Cancellation and switching records stored as part of policy administration</li>
+<li class=""><strong>GDPR-004</strong> — Data shared with the new insurer limited to mandated fields (bonus class, coverage dates)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="us-rn-009-offer-retention-pricing">US-RN-009: Offer Retention Pricing<a href="#us-rn-009-offer-retention-pricing" class="hash-link" aria-label="Direct link to US-RN-009: Offer Retention Pricing" title="Direct link to US-RN-009: Offer Retention Pricing" translate="no">​</a></h2>
+<p><strong>As an</strong> underwriter,
+<strong>I want to</strong> apply retention pricing to customers at risk of switching insurer at renewal,
+<strong>so that</strong> we retain profitable customers while maintaining fair pricing practices.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-8">Acceptance Criteria<a href="#acceptance-criteria-8" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a customer has been identified as at risk of leaving (e.g., premium increase above a threshold, long tenure, high bonus class)
+<strong>WHEN</strong> the renewal is being processed
+<strong>THEN</strong> the system evaluates the customer against retention eligibility rules and calculates a retention discount</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> a retention discount is applied
+<strong>WHEN</strong> the renewal notice is sent
+<strong>THEN</strong> the notice shows the standard renewal premium and the retention-adjusted premium, clearly labelled</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer accepts the retention offer
+<strong>WHEN</strong> the policy renews
+<strong>THEN</strong> the retention discount is applied for the new policy period</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the customer has received a retention offer but cancels anyway
+<strong>WHEN</strong> the cancellation is processed
+<strong>THEN</strong> no penalty or claw-back applies to the retention offer</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-rules-8">Business Rules<a href="#business-rules-8" class="hash-link" aria-label="Direct link to Business Rules" title="Direct link to Business Rules" translate="no">​</a></h3>
+<ul>
+<li class="">Retention pricing is discretionary and subject to underwriter-defined rules</li>
+<li class="">Retention eligibility criteria are configurable: minimum tenure, minimum bonus class, maximum claims count, premium increase threshold</li>
+<li class="">Retention discounts are capped at a configurable maximum percentage</li>
+<li class="">Retention offers must not be misleading — the standard premium and the discounted premium must both be shown</li>
+<li class="">Retention pricing must comply with fair treatment obligations — similar customers must be treated consistently</li>
+<li class="">Retention offers are valid only for the upcoming renewal period; they do not carry forward automatically</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-8">Data Requirements<a href="#data-requirements-8" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Retention eligibility: customer tenure, bonus class, claims history, premium change percentage</li>
+<li class="">Retention offer: standard premium, retention discount amount, adjusted premium, offer expiry date</li>
+<li class="">Decision audit: eligibility rule version, discount calculation, underwriter approval (if manual)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-8">Regulatory<a href="#regulatory-8" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>FSA-004</strong> — Retention offers must be transparent and not misleading; standard and discounted prices both shown</li>
+<li class=""><strong>FSA-005</strong> — Retention pricing must be monitored as part of product governance to ensure fair treatment</li>
+<li class=""><strong>IDD-001</strong> — Retention offers should align with the customer&#x27;s demands and needs</li>
+<li class=""><strong>IDD-006</strong> — When a retention offer includes a coverage recommendation, it constitutes advice and must be documented with rationale</li>
+<li class=""><strong>IDD-010</strong> — Complaints about renewal terms or pricing follow the distribution complaints process</li>
+<li class=""><strong>GDPR-002</strong> — Retention offer data stored as part of policy administration</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="us-rn-010-reassess-demands-and-needs-at-renewal">US-RN-010: Reassess Demands and Needs at Renewal<a href="#us-rn-010-reassess-demands-and-needs-at-renewal" class="hash-link" aria-label="Direct link to US-RN-010: Reassess Demands and Needs at Renewal" title="Direct link to US-RN-010: Reassess Demands and Needs at Renewal" translate="no">​</a></h2>
+<p><strong>As a</strong> compliance officer,
+<strong>I want</strong> the system to flag renewals where a significant change has occurred that warrants a demands-and-needs reassessment,
+<strong>so that</strong> we comply with IDD obligations and ensure customers still have appropriate coverage.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="acceptance-criteria-9">Acceptance Criteria<a href="#acceptance-criteria-9" class="hash-link" aria-label="Direct link to Acceptance Criteria" title="Direct link to Acceptance Criteria" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>GIVEN</strong> a policy renewal involves a significant premium change (above a configurable threshold)
+<strong>WHEN</strong> the renewal is processed
+<strong>THEN</strong> the system flags the renewal for a demands-and-needs reassessment before the notice is sent</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> a policy renewal involves a customer who has had a major life event (e.g., vehicle change, address change, claims)
+<strong>WHEN</strong> the renewal is processed
+<strong>THEN</strong> the system recommends a reassessment to verify the current coverage still matches the customer&#x27;s needs</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> a reassessment is required
+<strong>WHEN</strong> the system contacts the customer
+<strong>THEN</strong> the customer is offered the opportunity to review their coverage tier, deductible, and add-ons before the renewal proceeds</p>
+</li>
+<li class="">
+<p><strong>GIVEN</strong> the reassessment is completed
+<strong>WHEN</strong> the customer confirms their preferences
+<strong>THEN</strong> the system records the reassessment outcome and adjusts the renewal terms if needed</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="business-rules-9">Business Rules<a href="#business-rules-9" class="hash-link" aria-label="Direct link to Business Rules" title="Direct link to Business Rules" translate="no">​</a></h3>
+<ul>
+<li class="">Reassessment triggers: premium increase above threshold, coverage tier no longer appropriate for vehicle value, significant life event detected (vehicle change, address change, multiple claims)</li>
+<li class="">Not all renewals require a reassessment — only those meeting trigger criteria</li>
+<li class="">The reassessment can be conducted digitally (self-service questionnaire) or via agent contact</li>
+<li class="">If the customer does not respond to the reassessment request, the renewal proceeds with existing terms (auto-renewal default)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-requirements-9">Data Requirements<a href="#data-requirements-9" class="hash-link" aria-label="Direct link to Data Requirements" title="Direct link to Data Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Trigger criteria: premium change threshold, vehicle value threshold, life event indicators</li>
+<li class="">Reassessment record: trigger reason, customer contact method, customer responses, outcome (terms unchanged, terms adjusted, customer switched)</li>
+<li class="">Audit trail: reassessment completion date, assessor (system or agent), linked renewal record</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-9">Regulatory<a href="#regulatory-9" class="hash-link" aria-label="Direct link to Regulatory" title="Direct link to Regulatory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>IDD-001</strong> — Demands-and-needs assessment must be performed when significant changes occur at renewal</li>
+<li class=""><strong>IDD-002</strong> — If coverage changes as a result of the reassessment, an updated IPID must be provided</li>
+<li class=""><strong>IDD-006</strong> — Demands-and-needs reassessment at renewal that results in a coverage recommendation constitutes advice</li>
+<li class=""><strong>FSA-004</strong> — Reassessment communications must be clear and help the customer make an informed decision</li>
+<li class=""><strong>GDPR-002</strong> — Reassessment data stored as part of policy administration</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-model">Data Model<a href="#data-model" class="hash-link" aria-label="Direct link to Data Model" title="Direct link to Data Model" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="renewal-record">Renewal Record<a href="#renewal-record" class="hash-link" aria-label="Direct link to Renewal Record" title="Direct link to Renewal Record" translate="no">​</a></h3>
+<table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>renewal_id</td><td>String</td><td>Unique identifier for the renewal</td></tr><tr><td>policy_number</td><td>String</td><td>The policy being renewed</td></tr><tr><td>old_policy_period_start</td><td>Date</td><td>Start date of the expiring policy period</td></tr><tr><td>old_policy_period_end</td><td>Date</td><td>End date of the expiring policy period (huvudförfallodag)</td></tr><tr><td>new_policy_period_start</td><td>Date</td><td>Start date of the new policy period</td></tr><tr><td>new_policy_period_end</td><td>Date</td><td>End date of the new policy period</td></tr><tr><td>old_annual_premium</td><td>Decimal</td><td>Premium for the expiring period</td></tr><tr><td>new_annual_premium</td><td>Decimal</td><td>Calculated premium for the new period</td></tr><tr><td>old_bonus_class</td><td>Integer</td><td>Bonus class during the expiring period</td></tr><tr><td>new_bonus_class</td><td>Integer</td><td>Updated bonus class for the new period</td></tr><tr><td>bonus_change_reason</td><td>String</td><td>Reason for bonus class change (claim-free / claims made)</td></tr><tr><td>tariff_version</td><td>String</td><td>Tariff version used for recalculation</td></tr><tr><td>renewal_status</td><td>String</td><td>Status: pending, notice_sent, renewed, cancelled</td></tr><tr><td>retention_discount</td><td>Decimal</td><td>Retention discount applied (if any)</td></tr><tr><td>reassessment_required</td><td>Boolean</td><td>Whether a demands-and-needs reassessment was triggered</td></tr><tr><td>notice_sent_date</td><td>DateTime</td><td>When the renewal notice was dispatched</td></tr><tr><td>renewal_processed_date</td><td>DateTime</td><td>When the renewal was processed</td></tr><tr><td>cancellation_date</td><td>DateTime</td><td>When the customer cancelled (if applicable)</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="bonus-class-scale">Bonus Class Scale<a href="#bonus-class-scale" class="hash-link" aria-label="Direct link to Bonus Class Scale" title="Direct link to Bonus Class Scale" translate="no">​</a></h3>
+<table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>bonus_class</td><td>Integer</td><td>The bonus class level (e.g., 1-7)</td></tr><tr><td>discount_percent</td><td>Decimal</td><td>Premium discount percentage for this class</td></tr><tr><td>step_up_rule</td><td>String</td><td>Rule for claim-free progression (e.g., +1 step)</td></tr><tr><td>step_down_one</td><td>Integer</td><td>Steps down for one claim (e.g., -3 steps)</td></tr><tr><td>step_down_multiple</td><td>Integer</td><td>Steps down for two or more claims (e.g., to class 1)</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="renewal-process-flow">Renewal Process Flow<a href="#renewal-process-flow" class="hash-link" aria-label="Direct link to Renewal Process Flow" title="Direct link to Renewal Process Flow" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>T-60 days</strong>: Renewal batch identifies policies approaching huvudförfallodag</li>
+<li class=""><strong>T-60 to T-45 days</strong>: System recalculates premium (US-RN-003) and updates bonus class (US-RN-004)</li>
+<li class=""><strong>T-45 days</strong>: Underwriter reviews flagged renewals (high premium increase, retention candidates)</li>
+<li class=""><strong>T-30 days</strong>: Renewal notices dispatched to customers (US-RN-001)</li>
+<li class=""><strong>T-30 to T-0 days</strong>: Customer response window — accept, negotiate, or cancel (US-RN-006)</li>
+<li class=""><strong>T-0 (huvudförfallodag)</strong>: Automatic renewal for non-cancelled policies (US-RN-005)</li>
+<li class=""><strong>T+0 days</strong>: Payment schedule updated (US-RN-007), updated policy document generated</li>
+<li class=""><strong>Ongoing</strong>: Process flyttanmälan from competitor insurers (US-RN-008)</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-traceability-matrix">Regulatory Traceability Matrix<a href="#regulatory-traceability-matrix" class="hash-link" aria-label="Direct link to Regulatory Traceability Matrix" title="Direct link to Regulatory Traceability Matrix" translate="no">​</a></h2>
+<table><thead><tr><th>Requirement</th><th>US-RN-001</th><th>US-RN-002</th><th>US-RN-003</th><th>US-RN-004</th><th>US-RN-005</th><th>US-RN-006</th><th>US-RN-007</th><th>US-RN-008</th><th>US-RN-009</th><th>US-RN-010</th></tr></thead><tbody><tr><td>FSA-004</td><td>X</td><td>X</td><td>X</td><td>X</td><td></td><td></td><td>X</td><td></td><td>X</td><td>X</td></tr><tr><td>FSA-005</td><td></td><td></td><td></td><td>X</td><td></td><td></td><td></td><td></td><td>X</td><td></td></tr><tr><td>FSA-006</td><td></td><td></td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>FSA-007</td><td></td><td></td><td></td><td></td><td>X</td><td>X</td><td></td><td></td><td></td><td></td></tr><tr><td>FSA-009</td><td></td><td></td><td></td><td></td><td></td><td>X</td><td></td><td>X</td><td></td><td></td></tr><tr><td>FSA-012</td><td>X</td><td></td><td></td><td></td><td>X</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>FSA-013</td><td>X</td><td></td><td></td><td></td><td>X</td><td>X</td><td>X</td><td>X</td><td></td><td></td></tr><tr><td>FSA-014</td><td></td><td></td><td></td><td></td><td>X</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>GDPR-001</td><td></td><td></td><td></td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>GDPR-002</td><td></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr><tr><td>GDPR-004</td><td></td><td></td><td></td><td></td><td></td><td>X</td><td></td><td>X</td><td></td><td></td></tr><tr><td>GDPR-005</td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>IDD-001</td><td></td><td>X</td><td>X</td><td></td><td></td><td></td><td></td><td></td><td>X</td><td>X</td></tr><tr><td>IDD-002</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>X</td></tr><tr><td>IDD-003</td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>IDD-004</td><td></td><td></td><td>X</td><td></td><td>X</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>IDD-006</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>X</td><td>X</td></tr><tr><td>IDD-010</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>X</td><td></td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Agentic-software-factory/insurance-platform-requirements/edit/main/versioned_docs/version-phase-1/phase-1-motor/user-stories/renewals.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/quote-and-bind"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Quote and Bind — User Stories</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/insurance-platform-requirements/docs/phase-1-motor/user-stories/trafikforsakring"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Trafikforsakring — User Stories</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#us-rn-001-receive-renewal-notice" class="table-of-contents__link toc-highlight">US-RN-001: Receive Renewal Notice</a><ul><li><a href="#acceptance-criteria" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#business-rules" class="table-of-contents__link toc-highlight">Business Rules</a></li><li><a href="#data-requirements" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#us-rn-002-view-premium-change-explanation" class="table-of-contents__link toc-highlight">US-RN-002: View Premium Change Explanation</a><ul><li><a href="#acceptance-criteria-1" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#business-rules-1" class="table-of-contents__link toc-highlight">Business Rules</a></li><li><a href="#data-requirements-1" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-1" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#us-rn-003-recalculate-renewal-premium" class="table-of-contents__link toc-highlight">US-RN-003: Recalculate Renewal Premium</a><ul><li><a href="#acceptance-criteria-2" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#business-rules-2" class="table-of-contents__link toc-highlight">Business Rules</a></li><li><a href="#data-requirements-2" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-2" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#us-rn-004-update-bonus-class-at-renewal" class="table-of-contents__link toc-highlight">US-RN-004: Update Bonus Class at Renewal</a><ul><li><a href="#acceptance-criteria-3" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#business-rules-3" class="table-of-contents__link toc-highlight">Business Rules</a></li><li><a href="#data-requirements-3" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-3" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#us-rn-005-automatically-renew-policy" class="table-of-contents__link toc-highlight">US-RN-005: Automatically Renew Policy</a><ul><li><a href="#acceptance-criteria-4" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#business-rules-4" class="table-of-contents__link toc-highlight">Business Rules</a></li><li><a href="#data-requirements-4" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-4" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#us-rn-006-cancel-policy-before-renewal" class="table-of-contents__link toc-highlight">US-RN-006: Cancel Policy Before Renewal</a><ul><li><a href="#acceptance-criteria-5" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#business-rules-5" class="table-of-contents__link toc-highlight">Business Rules</a></li><li><a href="#data-requirements-5" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-5" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#us-rn-007-update-payment-schedule-for-renewed-policy" class="table-of-contents__link toc-highlight">US-RN-007: Update Payment Schedule for Renewed Policy</a><ul><li><a href="#acceptance-criteria-6" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#business-rules-6" class="table-of-contents__link toc-highlight">Business Rules</a></li><li><a href="#data-requirements-6" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-6" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#us-rn-008-handle-inbound-insurer-switch-flyttanmälan" class="table-of-contents__link toc-highlight">US-RN-008: Handle Inbound Insurer Switch (Flyttanmälan)</a><ul><li><a href="#acceptance-criteria-7" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#business-rules-7" class="table-of-contents__link toc-highlight">Business Rules</a></li><li><a href="#data-requirements-7" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-7" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#us-rn-009-offer-retention-pricing" class="table-of-contents__link toc-highlight">US-RN-009: Offer Retention Pricing</a><ul><li><a href="#acceptance-criteria-8" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#business-rules-8" class="table-of-contents__link toc-highlight">Business Rules</a></li><li><a href="#data-requirements-8" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-8" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#us-rn-010-reassess-demands-and-needs-at-renewal" class="table-of-contents__link toc-highlight">US-RN-010: Reassess Demands and Needs at Renewal</a><ul><li><a href="#acceptance-criteria-9" class="table-of-contents__link toc-highlight">Acceptance Criteria</a></li><li><a href="#business-rules-9" class="table-of-contents__link toc-highlight">Business Rules</a></li><li><a href="#data-requirements-9" class="table-of-contents__link toc-highlight">Data Requirements</a></li><li><a href="#regulatory-9" class="table-of-contents__link toc-highlight">Regulatory</a></li></ul></li><li><a href="#data-model" class="table-of-contents__link toc-highlight">Data Model</a><ul><li><a href="#renewal-record" class="table-of-contents__link toc-highlight">Renewal Record</a></li><li><a href="#bonus-class-scale" class="table-of-contents__link toc-highlight">Bonus Class Scale</a></li></ul></li><li><a href="#renewal-process-flow" class="table-of-contents__link toc-highlight">Renewal Process Flow</a></li><li><a href="#regulatory-traceability-matrix" class="table-of-contents__link toc-highlight">Regulatory Traceability Matrix</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/insurance-platform-requirements/docs/intro">Requirements</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 TryggFörsäkring AB. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

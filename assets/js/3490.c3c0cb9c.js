@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkinsurance_platform_requirements=globalThis.webpackChunkinsurance_platform_requirements||[]).push([[3490],{3490(e,r,a){a.d(r,{createInfoServices:()=>s.v});var s=a(91885);a(87960)}}]);

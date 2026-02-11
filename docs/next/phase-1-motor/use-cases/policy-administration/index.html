@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-phase-1-motor/use-cases/policy-administration" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Policy Administration Use Cases | TryggFörsäkring Requirements</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/policy-administration"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Policy Administration Use Cases | TryggFörsäkring Requirements"><meta data-rh="true" name="description" content="Detailed interaction flows for motor policy mid-term adjustments (MTAs) and"><meta data-rh="true" property="og:description" content="Detailed interaction flows for motor policy mid-term adjustments (MTAs) and"><link data-rh="true" rel="icon" href="/insurance-platform-requirements/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/policy-administration"><link data-rh="true" rel="alternate" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/policy-administration" hreflang="en"><link data-rh="true" rel="alternate" href="https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/policy-administration" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Phase 1 — Motor Insurance","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-1-motor/"},{"@type":"ListItem","position":2,"name":"Use Cases","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/"},{"@type":"ListItem","position":3,"name":"Policy Administration Use Cases","item":"https://agentic-software-factory.github.io/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/policy-administration"}]}</script><link rel="stylesheet" href="/insurance-platform-requirements/assets/css/styles.d44ab96b.css">
+<script src="/insurance-platform-requirements/assets/js/runtime~main.5737842f.js" defer="defer"></script>
+<script src="/insurance-platform-requirements/assets/js/main.bbdc7f69.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/insurance-platform-requirements/"><b class="navbar__title text--truncate">TryggFörsäkring</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/insurance-platform-requirements/docs/next/intro">Requirements</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current="page" class="navbar__link active" aria-haspopup="true" aria-expanded="false" role="button" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/policy-administration">Phase 2 — Home &amp; Property (Draft)</a><ul class="dropdown__menu"><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/policy-administration">Phase 2 — Home &amp; Property (Draft)</a></li><li><a class="dropdown__link" href="/insurance-platform-requirements/docs/phase-1-motor/use-cases/policy-administration">Phase 1 — Motor Insurance</a></li></ul></div><a href="https://github.com/Agentic-software-factory/insurance-platform-requirements" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/intro"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/actors/"><span title="Actors" class="categoryLinkLabel_W154">Actors</span></a><button aria-label="Expand sidebar category &#x27;Actors&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/personas/"><span title="Personas" class="categoryLinkLabel_W154">Personas</span></a><button aria-label="Expand sidebar category &#x27;Personas&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/insurance-platform-requirements/docs/next/regulatory/fsa-requirements"><span title="Regulatory" class="categoryLinkLabel_W154">Regulatory</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/insurance-platform-requirements/docs/next/phase-1-motor/"><span title="Phase 1 — Motor Insurance" class="categoryLinkLabel_W154">Phase 1 — Motor Insurance</span></a><button aria-label="Collapse sidebar category &#x27;Phase 1 — Motor Insurance&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/"><span title="User Stories" class="categoryLinkLabel_W154">User Stories</span></a><button aria-label="Expand sidebar category &#x27;User Stories&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/"><span title="Use Cases" class="categoryLinkLabel_W154">Use Cases</span></a><button aria-label="Collapse sidebar category &#x27;Use Cases&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/policy-administration"><span title="Policy Administration Use Cases" class="linkLabel_WmDU">Policy Administration Use Cases</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/quote-and-bind"><span title="Use Case: Quote and Bind Motor Insurance" class="linkLabel_WmDU">Use Case: Quote and Bind Motor Insurance</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/renewals"><span title="Motor Policy Renewal Use Cases" class="linkLabel_WmDU">Motor Policy Renewal Use Cases</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/trafikforsakring"><span title="Use Case: Trafikforsakring Compliance Lifecycle" class="linkLabel_WmDU">Use Case: Trafikforsakring Compliance Lifecycle</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/underwriting-bonus"><span title="Use Case: Motor Underwriting and Bonus Assessment" class="linkLabel_WmDU">Use Case: Motor Underwriting and Bonus Assessment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/uc-claims-lifecycle"><span title="UC-CLM-001: Claims Lifecycle" class="linkLabel_WmDU">UC-CLM-001: Claims Lifecycle</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/uc-fnol-processing"><span title="UC-CLM-002: FNOL Processing" class="linkLabel_WmDU">UC-CLM-002: FNOL Processing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/uc-settlement-calculation"><span title="UC-CLM-003: Settlement Calculation and Payment" class="linkLabel_WmDU">UC-CLM-003: Settlement Calculation and Payment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/uc-fraud-screening"><span title="UC-CLM-004: Fraud Screening and Investigation" class="linkLabel_WmDU">UC-CLM-004: Fraud Screening and Investigation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/uc-liability-determination"><span title="UC-CLM-005: Liability Determination" class="linkLabel_WmDU">UC-CLM-005: Liability Determination</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/uc-damage-assessment"><span title="UC-CLM-006: Damage Assessment" class="linkLabel_WmDU">UC-CLM-006: Damage Assessment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/uc-claims-closure"><span title="UC-CLM-007: Claims Closure" class="linkLabel_WmDU">UC-CLM-007: Claims Closure</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/uc-cancellation-processing"><span title="UC-CAN-001: Policy Cancellation Processing" class="linkLabel_WmDU">UC-CAN-001: Policy Cancellation Processing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/uc-refund-calculation"><span title="UC-CAN-002: Premium Refund Calculation" class="linkLabel_WmDU">UC-CAN-002: Premium Refund Calculation</span></a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/phase-2-home-property/"><span title="Phase 2 — Home &amp; Property Insurance" class="categoryLinkLabel_W154">Phase 2 — Home &amp; Property Insurance</span></a><button aria-label="Expand sidebar category &#x27;Phase 2 — Home &amp; Property Insurance&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/analysis/"><span title="Analysis" class="categoryLinkLabel_W154">Analysis</span></a><button aria-label="Expand sidebar category &#x27;Analysis&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/insurance-platform-requirements/docs/next/Architecture/ADR-TEMPLATE"><span title="Architecture" class="categoryLinkLabel_W154">Architecture</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/insurance-platform-requirements/docs/next/lessons-learned/"><span title="Lessons Learned" class="categoryLinkLabel_W154">Lessons Learned</span></a><button aria-label="Expand sidebar category &#x27;Lessons Learned&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/glossary"><span title="Glossary" class="linkLabel_WmDU">Glossary</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/insurance-platform-requirements/docs/next/evidence-package"><span title="Evidence Package" class="linkLabel_WmDU">Evidence Package</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role="alert"><div>This is unreleased documentation for <!-- -->TryggFörsäkring Requirements<!-- --> <b>Phase 2 — Home &amp; Property (Draft)</b> version.</div><div class="margin-top--md">For up-to-date documentation, see the <b><a href="/insurance-platform-requirements/docs/phase-1-motor/use-cases/policy-administration">latest version</a></b> (<!-- -->Phase 1 — Motor Insurance<!-- -->).</div></div><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/insurance-platform-requirements/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/insurance-platform-requirements/docs/next/phase-1-motor/"><span>Phase 1 — Motor Insurance</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/"><span>Use Cases</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Policy Administration Use Cases</span></li></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: Phase 2 — Home &amp; Property (Draft)</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Policy Administration Use Cases</h1></header>
+<p>Detailed interaction flows for motor policy mid-term adjustments (MTAs) and
+policy lifecycle management. Each use case describes the step-by-step process,
+preconditions, postconditions, validation rules, data model, and exception flows.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="shared-data-model-amendment-record">Shared Data Model: Amendment Record<a href="#shared-data-model-amendment-record" class="hash-link" aria-label="Direct link to Shared Data Model: Amendment Record" title="Direct link to Shared Data Model: Amendment Record" translate="no">​</a></h2>
+<p>All policy administration use cases create an amendment record. The amendment
+record entity provides a complete audit trail of every policy change.</p>
+<table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>amendment_id</code></td><td>UUID</td><td>Unique identifier for the amendment</td></tr><tr><td><code>policy_id</code></td><td>UUID</td><td>Reference to the parent policy</td></tr><tr><td><code>amendment_type</code></td><td>Enum</td><td><code>VEHICLE_CHANGE</code>, <code>COVERAGE_CHANGE</code>, <code>DRIVER_ADD</code>, <code>DRIVER_REMOVE</code>, <code>STATUS_CHANGE</code>, <code>PREMIUM_RECALC</code>, <code>UNDERWRITER_REVIEW</code></td></tr><tr><td><code>status</code></td><td>Enum</td><td><code>PENDING</code>, <code>AWAITING_REVIEW</code>, <code>APPROVED</code>, <code>DECLINED</code>, <code>COMPLETED</code>, <code>CANCELLED</code></td></tr><tr><td><code>old_value</code></td><td>JSON</td><td>Snapshot of the affected attribute(s) before the change</td></tr><tr><td><code>new_value</code></td><td>JSON</td><td>Snapshot of the affected attribute(s) after the change</td></tr><tr><td><code>effective_date</code></td><td>Date</td><td>Date the amendment takes effect</td></tr><tr><td><code>premium_old</code></td><td>Decimal</td><td>Annual premium before the amendment</td></tr><tr><td><code>premium_new</code></td><td>Decimal</td><td>Annual premium after the amendment</td></tr><tr><td><code>prorate_adjustment</code></td><td>Decimal</td><td>Pro-rata premium adjustment amount (positive = charge, negative = refund)</td></tr><tr><td><code>initiated_by</code></td><td>Enum</td><td><code>CUSTOMER</code>, <code>AGENT</code>, <code>UNDERWRITER</code>, <code>SYSTEM</code></td></tr><tr><td><code>channel</code></td><td>Enum</td><td><code>WEB</code>, <code>APP</code>, <code>PHONE</code>, <code>INTERNAL</code></td></tr><tr><td><code>bankid_reference</code></td><td>String</td><td>BankID transaction reference (if customer-initiated)</td></tr><tr><td><code>underwriter_decision</code></td><td>Enum</td><td><code>N/A</code>, <code>APPROVED</code>, <code>APPROVED_WITH_CONDITIONS</code>, <code>DECLINED</code></td></tr><tr><td><code>underwriter_rationale</code></td><td>Text</td><td>Written rationale (required when underwriter is involved)</td></tr><tr><td><code>created_at</code></td><td>Timestamp</td><td>When the amendment was created</td></tr><tr><td><code>completed_at</code></td><td>Timestamp</td><td>When the amendment was finalized</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="interaction-sequence">Interaction Sequence<a href="#interaction-sequence" class="hash-link" aria-label="Direct link to Interaction Sequence" title="Direct link to Interaction Sequence" translate="no">​</a></h2>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-pa-001-process-mid-term-vehicle-change">UC-PA-001: Process Mid-Term Vehicle Change<a href="#uc-pa-001-process-mid-term-vehicle-change" class="hash-link" aria-label="Direct link to UC-PA-001: Process Mid-Term Vehicle Change" title="Direct link to UC-PA-001: Process Mid-Term Vehicle Change" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-case-summary">Use Case Summary<a href="#use-case-summary" class="hash-link" aria-label="Direct link to Use Case Summary" title="Direct link to Use Case Summary" translate="no">​</a></h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td><strong>Use Case ID</strong></td><td>UC-PA-001</td></tr><tr><td><strong>Name</strong></td><td>Process Mid-Term Vehicle Change</td></tr><tr><td><strong>Primary Actor</strong></td><td>Customer (Privatkund)</td></tr><tr><td><strong>Secondary Actors</strong></td><td>Transportstyrelsen, Payment Provider, Underwriter (for high-risk vehicles)</td></tr><tr><td><strong>Goal</strong></td><td>Replace the insured vehicle on an active policy without a coverage gap</td></tr><tr><td><strong>Preconditions</strong></td><td>Active policy, customer authenticated via BankID, new registreringsnummer</td></tr><tr><td><strong>Postconditions</strong></td><td>Policy updated with new vehicle, Transportstyrelsen notified, premium adjusted</td></tr><tr><td><strong>Trigger</strong></td><td>Customer initiates a vehicle change from the policy management page</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stakeholders-and-interests">Stakeholders and Interests<a href="#stakeholders-and-interests" class="hash-link" aria-label="Direct link to Stakeholders and Interests" title="Direct link to Stakeholders and Interests" translate="no">​</a></h3>
+<table><thead><tr><th>Stakeholder</th><th>Interest</th></tr></thead><tbody><tr><td>Customer</td><td>Seamless vehicle swap with no coverage gap; fair premium adjustment</td></tr><tr><td>Underwriter</td><td>High-risk vehicles reviewed before acceptance</td></tr><tr><td>Transportstyrelsen</td><td>Registry updated with correct insurance status for both vehicles</td></tr><tr><td>Payment Provider</td><td>Premium adjustment collected or refunded correctly</td></tr><tr><td>TryggFörsäkring</td><td>Accurate risk data; regulatory compliance; retained customer</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preconditions">Preconditions<a href="#preconditions" class="hash-link" aria-label="Direct link to Preconditions" title="Direct link to Preconditions" translate="no">​</a></h3>
+<ol>
+<li class="">The customer has an active motor insurance policy</li>
+<li class="">The customer has the registreringsnummer of the new vehicle</li>
+<li class="">The customer is authenticated via BankID</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vehicle-change-process-flow">Vehicle Change Process Flow<a href="#vehicle-change-process-flow" class="hash-link" aria-label="Direct link to Vehicle Change Process Flow" title="Direct link to Vehicle Change Process Flow" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-success-scenario">Main Success Scenario<a href="#main-success-scenario" class="hash-link" aria-label="Direct link to Main Success Scenario" title="Direct link to Main Success Scenario" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Initiate</strong> — Customer selects &quot;Change vehicle&quot; from their policy
+management page</li>
+<li class="">Customer enters the new vehicle&#x27;s registreringsnummer</li>
+<li class=""><strong>Vehicle lookup</strong> — System looks up the vehicle in Transportstyrelsen&#x27;s
+vehicle registry and retrieves: make, model, year, engine power, weight,
+vehicle type, VIN</li>
+<li class="">System displays the vehicle details and asks the customer to confirm the
+vehicle is correct</li>
+<li class="">Customer confirms the vehicle</li>
+<li class=""><strong>Risk assessment</strong> — System evaluates the new vehicle against underwriting
+rules. If the vehicle is within standard risk parameters, continue to step 7. If the vehicle triggers a high-risk flag, see <strong>Alternative Flow A</strong>.</li>
+<li class=""><strong>Premium recalculation</strong> — System recalculates the premium using the new
+vehicle&#x27;s risk factors (vehicle type, value, engine power) while retaining
+the customer&#x27;s existing bonus class, address, and coverage tier</li>
+<li class="">System displays: current premium, new premium, pro-rata adjustment amount,
+and effective date</li>
+<li class=""><strong>Confirmation</strong> — Customer reviews and accepts the premium adjustment</li>
+<li class=""><strong>Amendment processing</strong> — System processes the amendment: updates the
+policy record with the new vehicle; sends a de-registration notification
+to Transportstyrelsen for the old vehicle; sends a registration
+notification to Transportstyrelsen for the new vehicle; creates an
+amendment record in the policy history; triggers premium adjustment via the
+payment provider (collection or refund)</li>
+<li class=""><strong>Document reissue</strong> — System generates an updated policy document and
+insurance certificate</li>
+<li class="">Customer receives confirmation with a link to the updated policy document</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="alternative-flows">Alternative Flows<a href="#alternative-flows" class="hash-link" aria-label="Direct link to Alternative Flows" title="Direct link to Alternative Flows" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-high-risk-vehicle-requires-underwriter-review">A. High-Risk Vehicle Requires Underwriter Review<a href="#a-high-risk-vehicle-requires-underwriter-review" class="hash-link" aria-label="Direct link to A. High-Risk Vehicle Requires Underwriter Review" title="Direct link to A. High-Risk Vehicle Requires Underwriter Review" translate="no">​</a></h4>
+<ol>
+<li class="">System notifies the customer that the vehicle change requires manual review
+(expected turnaround: 2 business days)</li>
+<li class="">System routes the amendment request to the underwriter queue with the
+vehicle data and risk assessment</li>
+<li class="">Underwriter reviews the request (see UC-PA-006)</li>
+<li class="">If approved: resume main flow at step 7 with any adjusted terms</li>
+<li class="">If declined: notify the customer with the reason; the original policy
+remains unchanged</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="b-vehicle-not-found-in-transportstyrelsen-registry">B. Vehicle Not Found in Transportstyrelsen Registry<a href="#b-vehicle-not-found-in-transportstyrelsen-registry" class="hash-link" aria-label="Direct link to B. Vehicle Not Found in Transportstyrelsen Registry" title="Direct link to B. Vehicle Not Found in Transportstyrelsen Registry" translate="no">​</a></h4>
+<ol>
+<li class="">System displays an error: &quot;Vehicle not found in the vehicle registry&quot;</li>
+<li class="">Customer is advised to verify the registreringsnummer</li>
+<li class="">If the vehicle is newly registered, the customer is advised to wait 24 hours
+for registry propagation and retry</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="c-transportstyrelsen-service-unavailable">C. Transportstyrelsen Service Unavailable<a href="#c-transportstyrelsen-service-unavailable" class="hash-link" aria-label="Direct link to C. Transportstyrelsen Service Unavailable" title="Direct link to C. Transportstyrelsen Service Unavailable" translate="no">​</a></h4>
+<ol>
+<li class="">System detects that Transportstyrelsen is unavailable</li>
+<li class="">System displays: &quot;Vehicle registry is temporarily unavailable. Please try
+again later.&quot;</li>
+<li class="">The amendment cannot proceed without vehicle data — no partial processing</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="d-transportstyrelsen-notification-fails-post-amendment">D. Transportstyrelsen Notification Fails (Post-Amendment)<a href="#d-transportstyrelsen-notification-fails-post-amendment" class="hash-link" aria-label="Direct link to D. Transportstyrelsen Notification Fails (Post-Amendment)" title="Direct link to D. Transportstyrelsen Notification Fails (Post-Amendment)" translate="no">​</a></h4>
+<ol>
+<li class="">System queues the notification for retry (exponential backoff: 1 min, 5 min,
+15 min, 1 hour, 4 hours)</li>
+<li class="">The amendment proceeds — the policy is updated regardless of notification
+delivery status</li>
+<li class="">Operations staff are alerted after retry exhaustion</li>
+<li class="">Manual intervention sends the notification when the integration is restored</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="e-customer-declines-premium-adjustment">E. Customer Declines Premium Adjustment<a href="#e-customer-declines-premium-adjustment" class="hash-link" aria-label="Direct link to E. Customer Declines Premium Adjustment" title="Direct link to E. Customer Declines Premium Adjustment" translate="no">​</a></h4>
+<ol>
+<li class="">Customer cancels the vehicle change</li>
+<li class="">The original policy remains unchanged</li>
+<li class="">No amendment record is created</li>
+<li class="">No notifications are sent to Transportstyrelsen</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="f-payment-processing-fails">F. Payment Processing Fails<a href="#f-payment-processing-fails" class="hash-link" aria-label="Direct link to F. Payment Processing Fails" title="Direct link to F. Payment Processing Fails" translate="no">​</a></h4>
+<ol>
+<li class="">System detects payment failure from the payment provider</li>
+<li class="">The policy amendment is rolled back — the old vehicle remains on the policy</li>
+<li class="">Customer is notified that the vehicle change could not be completed due to a
+payment issue</li>
+<li class="">Customer is advised to verify their payment method and retry</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-rules">Validation Rules<a href="#validation-rules" class="hash-link" aria-label="Direct link to Validation Rules" title="Direct link to Validation Rules" translate="no">​</a></h3>
+<table><thead><tr><th>Rule ID</th><th>Rule</th><th>Error Message</th></tr></thead><tbody><tr><td>VR-PA1-1</td><td>New vehicle must exist in Transportstyrelsen registry</td><td>&quot;Vehicle not found in the vehicle registry&quot;</td></tr><tr><td>VR-PA1-2</td><td>New vehicle must be registered in Sweden</td><td>&quot;Only vehicles registered in Sweden can be insured&quot;</td></tr><tr><td>VR-PA1-3</td><td>New vehicle type must be insurable (passenger car, MC, etc.)</td><td>&quot;This vehicle type cannot be insured under a motor policy&quot;</td></tr><tr><td>VR-PA1-4</td><td>Policy must be in Active status</td><td>&quot;Vehicle changes can only be made on active policies&quot;</td></tr><tr><td>VR-PA1-5</td><td>Trafikförsäkring must transfer without coverage gap</td><td>N/A — enforced automatically by the system</td></tr><tr><td>VR-PA1-6</td><td>Bonus class remains with the policyholder, not the vehicle</td><td>N/A — system rule</td></tr><tr><td>VR-PA1-7</td><td>Old vehicle trafikförsäkring status must be updated</td><td>N/A — system rule</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="postconditions">Postconditions<a href="#postconditions" class="hash-link" aria-label="Direct link to Postconditions" title="Direct link to Postconditions" translate="no">​</a></h3>
+<p><strong>Success:</strong></p>
+<ul>
+<li class="">The policy record reflects the new vehicle</li>
+<li class="">Transportstyrelsen has been notified (or notification is queued)</li>
+<li class="">The amendment is recorded in the policy history with full audit trail</li>
+<li class="">An updated policy document and insurance certificate are available</li>
+<li class="">The premium adjustment has been initiated</li>
+</ul>
+<p><strong>Failure:</strong></p>
+<ul>
+<li class="">The original policy remains unchanged</li>
+<li class="">No notifications are sent to Transportstyrelsen</li>
+<li class="">Customer is informed of the reason for failure</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-functional-requirements">Non-Functional Requirements<a href="#non-functional-requirements" class="hash-link" aria-label="Direct link to Non-Functional Requirements" title="Direct link to Non-Functional Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Requirement</th><th>Target</th></tr></thead><tbody><tr><td>Transportstyrelsen vehicle lookup</td><td>Response within 3 seconds</td></tr><tr><td>Premium recalculation</td><td>Complete within 2 seconds</td></tr><tr><td>Amendment processing</td><td>Complete within 5 seconds after customer confirmation</td></tr><tr><td>Transportstyrelsen notification</td><td>Sent within 1 hour of amendment completion</td></tr><tr><td>Insurance certificate reissue</td><td>Generated within 30 seconds of amendment completion</td></tr><tr><td>Audit trail</td><td>All steps logged with timestamps and actor identity</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-compliance">Regulatory Compliance<a href="#regulatory-compliance" class="hash-link" aria-label="Direct link to Regulatory Compliance" title="Direct link to Regulatory Compliance" translate="no">​</a></h3>
+<table><thead><tr><th>Regulation</th><th>Requirement</th></tr></thead><tbody><tr><td><strong>FSA-007</strong></td><td>Continuous trafikförsäkring coverage — no gap between vehicles</td></tr><tr><td><strong>FSA-009</strong></td><td>Transportstyrelsen notified of insurance status for both vehicles</td></tr><tr><td><strong>GDPR-002</strong></td><td>Policy data update follows data minimization principles</td></tr><tr><td><strong>GDPR-004</strong></td><td>Transportstyrelsen data exchange limited to mandated fields</td></tr><tr><td><strong>IDD-001</strong></td><td>If vehicle change significantly alters risk, reassess demands and needs</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-user-stories">Related User Stories<a href="#related-user-stories" class="hash-link" aria-label="Direct link to Related User Stories" title="Direct link to Related User Stories" translate="no">​</a></h3>
+<ul>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-001-change-vehicle-on-policy">US-PA-001: Change Vehicle on Policy</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-010-recalculate-premium-after-amendment">US-PA-010: Recalculate Premium After Amendment</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-011-notify-transportstyrelsen-of-policy-changes">US-PA-011: Notify Transportstyrelsen of Policy Changes</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-012-reissue-policy-document">US-PA-012: Reissue Policy Document</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-pa-002-process-coverage-tier-change">UC-PA-002: Process Coverage Tier Change<a href="#uc-pa-002-process-coverage-tier-change" class="hash-link" aria-label="Direct link to UC-PA-002: Process Coverage Tier Change" title="Direct link to UC-PA-002: Process Coverage Tier Change" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-case-summary-1">Use Case Summary<a href="#use-case-summary-1" class="hash-link" aria-label="Direct link to Use Case Summary" title="Direct link to Use Case Summary" translate="no">​</a></h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td><strong>Use Case ID</strong></td><td>UC-PA-002</td></tr><tr><td><strong>Name</strong></td><td>Process Coverage Tier Change</td></tr><tr><td><strong>Primary Actor</strong></td><td>Customer (Privatkund)</td></tr><tr><td><strong>Secondary Actors</strong></td><td>Payment Provider</td></tr><tr><td><strong>Goal</strong></td><td>Upgrade or downgrade the coverage tier on an active motor policy</td></tr><tr><td><strong>Preconditions</strong></td><td>Active policy, customer authenticated via BankID, target tier differs</td></tr><tr><td><strong>Postconditions</strong></td><td>Coverage tier updated, IPID provided, premium adjusted</td></tr><tr><td><strong>Trigger</strong></td><td>Customer initiates a coverage change from the policy management page</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stakeholders-and-interests-1">Stakeholders and Interests<a href="#stakeholders-and-interests-1" class="hash-link" aria-label="Direct link to Stakeholders and Interests" title="Direct link to Stakeholders and Interests" translate="no">​</a></h3>
+<table><thead><tr><th>Stakeholder</th><th>Interest</th></tr></thead><tbody><tr><td>Customer</td><td>Adjust coverage to match current needs; understand what changes</td></tr><tr><td>Compliance Officer</td><td>IPID provided before confirmation; demands-and-needs reassessed</td></tr><tr><td>Payment Provider</td><td>Premium adjustment collected or refunded correctly</td></tr><tr><td>Finance Company</td><td>Vehicle with finance agreement maintains required coverage</td></tr><tr><td>TryggFörsäkring</td><td>Correct coverage; regulatory compliance; customer retention</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preconditions-1">Preconditions<a href="#preconditions-1" class="hash-link" aria-label="Direct link to Preconditions" title="Direct link to Preconditions" translate="no">​</a></h3>
+<ol>
+<li class="">The customer has an active motor insurance policy</li>
+<li class="">The customer is authenticated via BankID</li>
+<li class="">The target coverage tier is different from the current tier</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-success-scenario-1">Main Success Scenario<a href="#main-success-scenario-1" class="hash-link" aria-label="Direct link to Main Success Scenario" title="Direct link to Main Success Scenario" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Initiate</strong> — Customer selects &quot;Change coverage&quot; from their policy
+management page</p>
+</li>
+<li class="">
+<p><strong>Coverage comparison</strong> — System displays the available coverage tiers with
+a comparison:</p>
+<table><thead><tr><th>Feature</th><th>Trafikförsäkring</th><th>Halvförsäkring</th><th>Helförsäkring</th></tr></thead><tbody><tr><td>Third-party liability</td><td>Included</td><td>Included</td><td>Included</td></tr><tr><td>Fire and theft</td><td>—</td><td>Included</td><td>Included</td></tr><tr><td>Glass damage</td><td>—</td><td>Included</td><td>Included</td></tr><tr><td>Roadside assistance</td><td>—</td><td>Included</td><td>Included</td></tr><tr><td>Legal expenses</td><td>—</td><td>Included</td><td>Included</td></tr><tr><td>Collision damage (vagnskada)</td><td>—</td><td>—</td><td>Included</td></tr></tbody></table>
+</li>
+<li class="">
+<p>Customer selects the desired coverage tier</p>
+</li>
+<li class="">
+<p><strong>Eligibility check</strong> — System checks eligibility: downgrade to
+trafikförsäkring is always permitted; upgrade to helförsäkring checks
+vehicle age and value thresholds. If ineligible, see <strong>Alternative Flow A</strong>.</p>
+</li>
+<li class="">
+<p><strong>IPID delivery</strong> — System provides the updated IPID for the new tier
+(IDD-002)</p>
+</li>
+<li class="">
+<p><strong>Premium recalculation</strong> — System recalculates the premium and displays:
+current tier and premium, new tier and premium, pro-rata adjustment,
+effective date</p>
+</li>
+<li class="">
+<p>Customer acknowledges the IPID and coverage changes</p>
+</li>
+<li class="">
+<p><strong>Confirmation</strong> — Customer confirms the tier change</p>
+</li>
+<li class="">
+<p><strong>Amendment processing</strong> — System processes the amendment: updates the
+coverage tier on the policy record; creates an amendment record in the
+policy history; triggers premium adjustment via the payment provider. For
+upgrades, new coverage is effective immediately. For downgrades, new
+coverage is effective from start of next day.</p>
+</li>
+<li class="">
+<p><strong>Document reissue</strong> — System generates an updated policy document</p>
+</li>
+<li class="">
+<p>Customer receives confirmation</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="alternative-flows-1">Alternative Flows<a href="#alternative-flows-1" class="hash-link" aria-label="Direct link to Alternative Flows" title="Direct link to Alternative Flows" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-helförsäkring-not-available-for-vehicle">A. Helförsäkring Not Available for Vehicle<a href="#a-helförsäkring-not-available-for-vehicle" class="hash-link" aria-label="Direct link to A. Helförsäkring Not Available for Vehicle" title="Direct link to A. Helförsäkring Not Available for Vehicle" translate="no">​</a></h4>
+<ol>
+<li class="">System informs the customer that helförsäkring is not available for their
+vehicle (e.g., vehicle too old or value below threshold)</li>
+<li class="">System displays the reason: &quot;Vehicles older than 15 years or with a market
+value below 50 000 SEK are not eligible for helförsäkring&quot;</li>
+<li class="">Customer is shown alternative options (halvförsäkring if currently on
+trafikförsäkring only)</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="b-customer-has-financed-vehicle-requiring-helförsäkring">B. Customer Has Financed Vehicle Requiring Helförsäkring<a href="#b-customer-has-financed-vehicle-requiring-helförsäkring" class="hash-link" aria-label="Direct link to B. Customer Has Financed Vehicle Requiring Helförsäkring" title="Direct link to B. Customer Has Financed Vehicle Requiring Helförsäkring" translate="no">​</a></h4>
+<ol>
+<li class="">System detects that the vehicle is subject to a finance agreement requiring
+comprehensive coverage</li>
+<li class="">System warns the customer: &quot;Your finance agreement may require
+helförsäkring. Downgrading could breach your finance terms.&quot;</li>
+<li class="">Customer may proceed at their own risk or cancel the downgrade</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="c-downgrade-would-remove-trafikförsäkring">C. Downgrade Would Remove Trafikförsäkring<a href="#c-downgrade-would-remove-trafikförsäkring" class="hash-link" aria-label="Direct link to C. Downgrade Would Remove Trafikförsäkring" title="Direct link to C. Downgrade Would Remove Trafikförsäkring" translate="no">​</a></h4>
+<ol>
+<li class="">System detects an attempt to remove trafikförsäkring coverage (impossible by
+law)</li>
+<li class="">System blocks the change: &quot;Trafikförsäkring is mandatory for all vehicles
+registered in Sweden and cannot be removed&quot;</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="d-payment-processing-fails">D. Payment Processing Fails<a href="#d-payment-processing-fails" class="hash-link" aria-label="Direct link to D. Payment Processing Fails" title="Direct link to D. Payment Processing Fails" translate="no">​</a></h4>
+<ol>
+<li class="">System detects payment failure from the payment provider</li>
+<li class="">For upgrades: the amendment is rolled back; the old coverage remains</li>
+<li class="">For downgrades: the amendment proceeds (refund is retried)</li>
+<li class="">Customer is notified of the payment status</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="e-customer-cancels-mid-amendment">E. Customer Cancels Mid-Amendment<a href="#e-customer-cancels-mid-amendment" class="hash-link" aria-label="Direct link to E. Customer Cancels Mid-Amendment" title="Direct link to E. Customer Cancels Mid-Amendment" translate="no">​</a></h4>
+<ol>
+<li class="">Customer cancels before confirmation</li>
+<li class="">The original policy remains unchanged</li>
+<li class="">No amendment record is created</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-rules-1">Validation Rules<a href="#validation-rules-1" class="hash-link" aria-label="Direct link to Validation Rules" title="Direct link to Validation Rules" translate="no">​</a></h3>
+<table><thead><tr><th>Rule ID</th><th>Rule</th><th>Error Message</th></tr></thead><tbody><tr><td>VR-PA2-1</td><td>Cannot downgrade below trafikförsäkring</td><td>&quot;Trafikförsäkring is mandatory and cannot be removed&quot;</td></tr><tr><td>VR-PA2-2</td><td>Helförsäkring requires vehicle age ≤ 15 years</td><td>&quot;Helförsäkring is not available for vehicles older than 15 years&quot;</td></tr><tr><td>VR-PA2-3</td><td>Helförsäkring requires vehicle market value ≥ 50 000 SEK</td><td>&quot;Helförsäkring is not available for vehicles valued below 50 000 SEK&quot;</td></tr><tr><td>VR-PA2-4</td><td>Policy must be in Active status</td><td>&quot;Coverage changes can only be made on active policies&quot;</td></tr><tr><td>VR-PA2-5</td><td>Target tier must differ from current tier</td><td>&quot;You already have this coverage tier&quot;</td></tr><tr><td>VR-PA2-6</td><td>IPID must be acknowledged before confirmation</td><td>N/A — UI enforced</td></tr><tr><td>VR-PA2-7</td><td>Upgrades take effect immediately; downgrades at next day</td><td>N/A — system rule</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="effective-date-rules">Effective Date Rules<a href="#effective-date-rules" class="hash-link" aria-label="Direct link to Effective Date Rules" title="Direct link to Effective Date Rules" translate="no">​</a></h3>
+<table><thead><tr><th>Direction</th><th>Effective Date</th><th>Rationale</th></tr></thead><tbody><tr><td>Upgrade</td><td>Immediately</td><td>Customer benefits from increased coverage right away</td></tr><tr><td>Downgrade</td><td>Start of next day</td><td>Prevents same-day claim-then-downgrade abuse</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="postconditions-1">Postconditions<a href="#postconditions-1" class="hash-link" aria-label="Direct link to Postconditions" title="Direct link to Postconditions" translate="no">​</a></h3>
+<p><strong>Success:</strong></p>
+<ul>
+<li class="">The policy record reflects the new coverage tier</li>
+<li class="">An updated IPID was provided and acknowledged</li>
+<li class="">The amendment is recorded in the policy history</li>
+<li class="">An updated policy document is available</li>
+<li class="">Premium adjustment has been initiated</li>
+</ul>
+<p><strong>Failure:</strong></p>
+<ul>
+<li class="">The original policy remains unchanged</li>
+<li class="">Customer is informed of the reason for failure</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-functional-requirements-1">Non-Functional Requirements<a href="#non-functional-requirements-1" class="hash-link" aria-label="Direct link to Non-Functional Requirements" title="Direct link to Non-Functional Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Requirement</th><th>Target</th></tr></thead><tbody><tr><td>Coverage comparison load</td><td>Display within 2 seconds</td></tr><tr><td>Premium recalculation</td><td>Complete within 2 seconds</td></tr><tr><td>IPID delivery</td><td>Immediate (pre-generated per tier)</td></tr><tr><td>Amendment processing</td><td>Complete within 5 seconds after customer confirmation</td></tr><tr><td>Audit trail</td><td>All steps logged with timestamps and actor identity</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-compliance-1">Regulatory Compliance<a href="#regulatory-compliance-1" class="hash-link" aria-label="Direct link to Regulatory Compliance" title="Direct link to Regulatory Compliance" translate="no">​</a></h3>
+<table><thead><tr><th>Regulation</th><th>Requirement</th></tr></thead><tbody><tr><td><strong>FSA-007</strong></td><td>Trafikförsäkring must remain as minimum coverage</td></tr><tr><td><strong>FSA-004</strong></td><td>Clear comparison of coverage tiers and transparent pricing</td></tr><tr><td><strong>FSA-012</strong></td><td>Pre-contractual disclosure for new coverage tier</td></tr><tr><td><strong>IDD-001</strong></td><td>Demands-and-needs reassessment for significant changes</td></tr><tr><td><strong>IDD-002</strong></td><td>Updated IPID provided and acknowledged before confirmation</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-user-stories-1">Related User Stories<a href="#related-user-stories-1" class="hash-link" aria-label="Direct link to Related User Stories" title="Direct link to Related User Stories" translate="no">​</a></h3>
+<ul>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-003-upgrade-coverage-tier">US-PA-003: Upgrade Coverage Tier</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-004-downgrade-coverage-tier">US-PA-004: Downgrade Coverage Tier</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-010-recalculate-premium-after-amendment">US-PA-010: Recalculate Premium After Amendment</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-pa-003-process-named-driver-change">UC-PA-003: Process Named Driver Change<a href="#uc-pa-003-process-named-driver-change" class="hash-link" aria-label="Direct link to UC-PA-003: Process Named Driver Change" title="Direct link to UC-PA-003: Process Named Driver Change" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-case-summary-2">Use Case Summary<a href="#use-case-summary-2" class="hash-link" aria-label="Direct link to Use Case Summary" title="Direct link to Use Case Summary" translate="no">​</a></h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td><strong>Use Case ID</strong></td><td>UC-PA-003</td></tr><tr><td><strong>Name</strong></td><td>Process Named Driver Change</td></tr><tr><td><strong>Primary Actor</strong></td><td>Customer (Privatkund)</td></tr><tr><td><strong>Secondary Actors</strong></td><td>Underwriter (for high-risk drivers)</td></tr><tr><td><strong>Goal</strong></td><td>Add or remove named drivers on an active motor insurance policy</td></tr><tr><td><strong>Preconditions</strong></td><td>Active policy, customer authenticated via BankID</td></tr><tr><td><strong>Postconditions</strong></td><td>Driver list updated, premium adjusted, policy document reissued</td></tr><tr><td><strong>Trigger</strong></td><td>Customer initiates a driver change from the policy management page</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stakeholders-and-interests-2">Stakeholders and Interests<a href="#stakeholders-and-interests-2" class="hash-link" aria-label="Direct link to Stakeholders and Interests" title="Direct link to Stakeholders and Interests" translate="no">​</a></h3>
+<table><thead><tr><th>Stakeholder</th><th>Interest</th></tr></thead><tbody><tr><td>Customer</td><td>Add/remove drivers easily; understand premium impact of surcharges</td></tr><tr><td>Underwriter</td><td>High-risk drivers reviewed before acceptance</td></tr><tr><td>Compliance Officer</td><td>Lawful basis for named driver data collection verified</td></tr><tr><td>TryggFörsäkring</td><td>Accurate risk data; correct premium for insured driver pool</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preconditions-2">Preconditions<a href="#preconditions-2" class="hash-link" aria-label="Direct link to Preconditions" title="Direct link to Preconditions" translate="no">​</a></h3>
+<ol>
+<li class="">The customer has an active motor insurance policy</li>
+<li class="">The customer is authenticated via BankID</li>
+<li class="">For adding a driver: the customer has the new driver&#x27;s personnummer</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-success-scenario--add-named-driver">Main Success Scenario — Add Named Driver<a href="#main-success-scenario--add-named-driver" class="hash-link" aria-label="Direct link to Main Success Scenario — Add Named Driver" title="Direct link to Main Success Scenario — Add Named Driver" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Initiate</strong> — Customer selects &quot;Add driver&quot; from their policy management
+page</li>
+<li class="">Customer enters the new driver&#x27;s personnummer</li>
+<li class=""><strong>Validation</strong> — System validates the personnummer format (Luhn check)</li>
+<li class="">System retrieves the driver&#x27;s age from the personnummer</li>
+<li class="">System verifies the driver holds a valid Swedish driving license (or EU
+equivalent)</li>
+<li class=""><strong>Risk assessment</strong> — System assesses the risk impact. Driver age ≥ 25 and
+no risk flags: continue to step 7. Driver age &lt; 25: apply young driver
+surcharge, continue to step 7. Driver age &lt; 20 or other high-risk flags:
+see <strong>Alternative Flow A</strong>.</li>
+<li class=""><strong>Premium recalculation</strong> — System recalculates the premium with the
+additional driver&#x27;s risk factors</li>
+<li class="">System displays: current premium, new premium, adjustment amount, and a
+description of any surcharges applied (see young driver surcharge tiers
+below)</li>
+<li class=""><strong>Confirmation</strong> — Customer confirms the addition</li>
+<li class=""><strong>Amendment processing</strong> — System processes the amendment: adds the named
+driver to the policy record; creates an amendment record in the policy
+history; triggers premium adjustment</li>
+<li class=""><strong>Document reissue</strong> — System generates an updated policy document</li>
+<li class="">Customer receives confirmation</li>
+</ol>
+<p><strong>Young driver surcharge tiers:</strong></p>
+<table><thead><tr><th>Driver Age</th><th>Surcharge</th></tr></thead><tbody><tr><td>18–19</td><td>+75%</td></tr><tr><td>20–22</td><td>+40%</td></tr><tr><td>23–24</td><td>+15%</td></tr><tr><td>25+</td><td>No surcharge</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-success-scenario--remove-named-driver">Main Success Scenario — Remove Named Driver<a href="#main-success-scenario--remove-named-driver" class="hash-link" aria-label="Direct link to Main Success Scenario — Remove Named Driver" title="Direct link to Main Success Scenario — Remove Named Driver" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Initiate</strong> — Customer selects &quot;Remove driver&quot; from their policy management
+page</li>
+<li class="">System displays the list of named drivers on the policy (excluding the
+policyholder)</li>
+<li class=""><strong>Selection</strong> — Customer selects the driver to remove</li>
+<li class=""><strong>Premium recalculation</strong> — System recalculates the premium without the
+removed driver</li>
+<li class="">System displays the premium adjustment</li>
+<li class=""><strong>Confirmation</strong> — Customer confirms the removal</li>
+<li class=""><strong>Amendment processing</strong> — System processes the amendment: removes the named
+driver from the active policy record; creates an amendment record in the
+policy history; triggers premium adjustment (refund if applicable)</li>
+<li class=""><strong>Document reissue</strong> — System generates an updated policy document</li>
+<li class="">Customer receives confirmation</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="alternative-flows-2">Alternative Flows<a href="#alternative-flows-2" class="hash-link" aria-label="Direct link to Alternative Flows" title="Direct link to Alternative Flows" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-high-risk-driver-requires-underwriter-review">A. High-Risk Driver Requires Underwriter Review<a href="#a-high-risk-driver-requires-underwriter-review" class="hash-link" aria-label="Direct link to A. High-Risk Driver Requires Underwriter Review" title="Direct link to A. High-Risk Driver Requires Underwriter Review" translate="no">​</a></h4>
+<ol>
+<li class="">System notifies the customer that the driver addition requires review
+(expected turnaround: 2 business days)</li>
+<li class="">System routes the request to the underwriter queue with the driver&#x27;s risk
+profile</li>
+<li class="">Underwriter reviews (see UC-PA-006): approve with standard terms (resume
+main flow at step 7), approve with adjusted terms (customer must accept),
+or decline (customer notified, policy unchanged)</li>
+</ol>
+<p><strong>High-risk driver triggers:</strong></p>
+<table><thead><tr><th>Trigger</th><th>Threshold</th></tr></thead><tbody><tr><td>Very young driver</td><td>Age &lt; 20</td></tr><tr><td>Recently licensed</td><td>License held &lt; 1 year</td></tr><tr><td>Claims history (if known)</td><td>3+ claims in 3 years</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="b-invalid-personnummer">B. Invalid Personnummer<a href="#b-invalid-personnummer" class="hash-link" aria-label="Direct link to B. Invalid Personnummer" title="Direct link to B. Invalid Personnummer" translate="no">​</a></h4>
+<ol>
+<li class="">System displays: &quot;Invalid personnummer format&quot;</li>
+<li class="">Customer is asked to re-enter</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="c-attempting-to-remove-the-only-driver-policyholder">C. Attempting to Remove the Only Driver (Policyholder)<a href="#c-attempting-to-remove-the-only-driver-policyholder" class="hash-link" aria-label="Direct link to C. Attempting to Remove the Only Driver (Policyholder)" title="Direct link to C. Attempting to Remove the Only Driver (Policyholder)" translate="no">​</a></h4>
+<ol>
+<li class="">System prevents removal: &quot;The policyholder cannot be removed as a named
+driver&quot;</li>
+<li class="">The removal form does not list the policyholder as a removable option</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="d-driver-already-on-policy">D. Driver Already on Policy<a href="#d-driver-already-on-policy" class="hash-link" aria-label="Direct link to D. Driver Already on Policy" title="Direct link to D. Driver Already on Policy" translate="no">​</a></h4>
+<ol>
+<li class="">System detects the personnummer matches an existing named driver</li>
+<li class="">System displays: &quot;This driver is already listed on your policy&quot;</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="e-customer-cancels-mid-amendment-1">E. Customer Cancels Mid-Amendment<a href="#e-customer-cancels-mid-amendment-1" class="hash-link" aria-label="Direct link to E. Customer Cancels Mid-Amendment" title="Direct link to E. Customer Cancels Mid-Amendment" translate="no">​</a></h4>
+<ol>
+<li class="">Customer cancels before confirmation</li>
+<li class="">The original policy remains unchanged</li>
+<li class="">No amendment record is created</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="f-payment-processing-fails-add-driver">F. Payment Processing Fails (Add Driver)<a href="#f-payment-processing-fails-add-driver" class="hash-link" aria-label="Direct link to F. Payment Processing Fails (Add Driver)" title="Direct link to F. Payment Processing Fails (Add Driver)" translate="no">​</a></h4>
+<ol>
+<li class="">System detects payment failure for the premium increase</li>
+<li class="">The driver addition is rolled back</li>
+<li class="">Customer is notified of the payment issue and advised to retry</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-rules-2">Validation Rules<a href="#validation-rules-2" class="hash-link" aria-label="Direct link to Validation Rules" title="Direct link to Validation Rules" translate="no">​</a></h3>
+<table><thead><tr><th>Rule ID</th><th>Rule</th><th>Error Message</th></tr></thead><tbody><tr><td>VR-PA3-1</td><td>Personnummer must pass Luhn validation</td><td>&quot;Invalid personnummer format&quot;</td></tr><tr><td>VR-PA3-2</td><td>Driver must hold a valid driving license</td><td>&quot;A valid driving license is required to be a named driver&quot;</td></tr><tr><td>VR-PA3-3</td><td>At least one driver (policyholder) must remain</td><td>&quot;The policyholder cannot be removed&quot;</td></tr><tr><td>VR-PA3-4</td><td>Driver must not already be on the policy</td><td>&quot;This driver is already listed on your policy&quot;</td></tr><tr><td>VR-PA3-5</td><td>Policy must be in Active status</td><td>&quot;Driver changes can only be made on active policies&quot;</td></tr><tr><td>VR-PA3-6</td><td>Minimum driver age is 18 (legal driving age)</td><td>&quot;Named drivers must be at least 18 years old&quot;</td></tr><tr><td>VR-PA3-7</td><td>Young driver surcharge applied for age &lt; 25</td><td>N/A — informational, shown in premium breakdown</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="postconditions-2">Postconditions<a href="#postconditions-2" class="hash-link" aria-label="Direct link to Postconditions" title="Direct link to Postconditions" translate="no">​</a></h3>
+<p><strong>Success:</strong></p>
+<ul>
+<li class="">The policy record reflects the updated driver list</li>
+<li class="">The amendment is recorded in the policy history</li>
+<li class="">An updated policy document is available</li>
+<li class="">Premium adjustment has been initiated</li>
+</ul>
+<p><strong>Failure:</strong></p>
+<ul>
+<li class="">The original driver list remains unchanged</li>
+<li class="">Customer is informed of the reason for failure</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-functional-requirements-2">Non-Functional Requirements<a href="#non-functional-requirements-2" class="hash-link" aria-label="Direct link to Non-Functional Requirements" title="Direct link to Non-Functional Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Requirement</th><th>Target</th></tr></thead><tbody><tr><td>Personnummer validation</td><td>Immediate (client-side + server-side)</td></tr><tr><td>License verification</td><td>Response within 3 seconds</td></tr><tr><td>Premium recalculation</td><td>Complete within 2 seconds</td></tr><tr><td>Amendment processing</td><td>Complete within 5 seconds after customer confirmation</td></tr><tr><td>Audit trail</td><td>All steps logged with timestamps and actor identity</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-compliance-2">Regulatory Compliance<a href="#regulatory-compliance-2" class="hash-link" aria-label="Direct link to Regulatory Compliance" title="Direct link to Regulatory Compliance" translate="no">​</a></h3>
+<table><thead><tr><th>Regulation</th><th>Requirement</th></tr></thead><tbody><tr><td><strong>GDPR-001</strong></td><td>Named driver personnummer collection requires lawful basis</td></tr><tr><td><strong>GDPR-002</strong></td><td>Driver data stored under policy administration retention rules</td></tr><tr><td><strong>FSA-004</strong></td><td>Young driver surcharges communicated transparently</td></tr><tr><td><strong>IDD-001</strong></td><td>Reassess demands and needs if risk profile changes significantly</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-user-stories-2">Related User Stories<a href="#related-user-stories-2" class="hash-link" aria-label="Direct link to Related User Stories" title="Direct link to Related User Stories" translate="no">​</a></h3>
+<ul>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-006-add-named-driver">US-PA-006: Add Named Driver</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-007-remove-named-driver">US-PA-007: Remove Named Driver</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-010-recalculate-premium-after-amendment">US-PA-010: Recalculate Premium After Amendment</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-pa-004-manage-policy-status-transitions">UC-PA-004: Manage Policy Status Transitions<a href="#uc-pa-004-manage-policy-status-transitions" class="hash-link" aria-label="Direct link to UC-PA-004: Manage Policy Status Transitions" title="Direct link to UC-PA-004: Manage Policy Status Transitions" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-case-summary-3">Use Case Summary<a href="#use-case-summary-3" class="hash-link" aria-label="Direct link to Use Case Summary" title="Direct link to Use Case Summary" translate="no">​</a></h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td><strong>Use Case ID</strong></td><td>UC-PA-004</td></tr><tr><td><strong>Name</strong></td><td>Manage Policy Status Transitions</td></tr><tr><td><strong>Primary Actor</strong></td><td>System (automated)</td></tr><tr><td><strong>Secondary Actors</strong></td><td>Underwriter, Customer, Transportstyrelsen, Payment Provider</td></tr><tr><td><strong>Goal</strong></td><td>Manage the full lifecycle of policy status changes based on payment events</td></tr><tr><td><strong>Preconditions</strong></td><td>Policy exists in the system with a known current status</td></tr><tr><td><strong>Postconditions</strong></td><td>Policy status reflects the current state; all stakeholders notified</td></tr><tr><td><strong>Trigger</strong></td><td>Payment due date passes, payment received, or reinstatement period expires</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stakeholders-and-interests-3">Stakeholders and Interests<a href="#stakeholders-and-interests-3" class="hash-link" aria-label="Direct link to Stakeholders and Interests" title="Direct link to Stakeholders and Interests" translate="no">​</a></h3>
+<table><thead><tr><th>Stakeholder</th><th>Interest</th></tr></thead><tbody><tr><td>Customer</td><td>Clear communication about status; opportunity to reinstate</td></tr><tr><td>Underwriter</td><td>Review extended suspensions before reinstatement</td></tr><tr><td>Transportstyrelsen</td><td>Accurate insurance status in the vehicle registry</td></tr><tr><td>Payment Provider</td><td>Outstanding amounts collected; refunds processed</td></tr><tr><td>TFF</td><td>Aware of uninsured vehicles for default coverage assignment</td></tr><tr><td>TryggFörsäkring</td><td>Minimize lapsed policies; regulatory compliance</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preconditions-3">Preconditions<a href="#preconditions-3" class="hash-link" aria-label="Direct link to Preconditions" title="Direct link to Preconditions" translate="no">​</a></h3>
+<ol>
+<li class="">The policy exists in the system with a known current status</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="state-machine">State Machine<a href="#state-machine" class="hash-link" aria-label="Direct link to State Machine" title="Direct link to State Machine" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="state-transition-rules">State Transition Rules<a href="#state-transition-rules" class="hash-link" aria-label="Direct link to State Transition Rules" title="Direct link to State Transition Rules" translate="no">​</a></h3>
+<table><thead><tr><th>From</th><th>To</th><th>Trigger</th><th>Guard</th><th>Action</th></tr></thead><tbody><tr><td>Active</td><td>Suspended</td><td>Grace period expires without payment</td><td>Payment reminder sent; grace period elapsed</td><td>Notify customer; notify Transportstyrelsen; log status</td></tr><tr><td>Suspended</td><td>Active</td><td>Outstanding payment received</td><td>Suspension ≤ threshold → automatic</td><td>Notify customer; notify Transportstyrelsen; log status</td></tr><tr><td>Suspended</td><td>Active</td><td>Outstanding payment received</td><td>Suspension &gt; threshold → underwriter review required</td><td>Route to underwriter; await decision</td></tr><tr><td>Suspended</td><td>Lapsed</td><td>Reinstatement period expires</td><td>No payment received within reinstatement period</td><td>Notify customer; confirm Transportstyrelsen; log status</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configurable-thresholds">Configurable Thresholds<a href="#configurable-thresholds" class="hash-link" aria-label="Direct link to Configurable Thresholds" title="Direct link to Configurable Thresholds" translate="no">​</a></h3>
+<table><thead><tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr></thead><tbody><tr><td>Payment grace period</td><td>30 days</td><td>Days after due date before suspension</td></tr><tr><td>Reinstatement period</td><td>90 days</td><td>Days after suspension before lapse</td></tr><tr><td>Auto-reinstatement threshold</td><td>30 days</td><td>Max suspension days for automatic reinstatement</td></tr><tr><td>Underwriter review threshold</td><td>30 days</td><td>Suspension days beyond which underwriter review is required</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-success-scenario--suspension-due-to-non-payment">Main Success Scenario — Suspension Due to Non-Payment<a href="#main-success-scenario--suspension-due-to-non-payment" class="hash-link" aria-label="Direct link to Main Success Scenario — Suspension Due to Non-Payment" title="Direct link to Main Success Scenario — Suspension Due to Non-Payment" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Payment overdue</strong> — The premium payment due date passes without payment</li>
+<li class="">System sends a payment reminder to the customer with the outstanding amount
+and a grace period deadline (default: 30 days from due date)</li>
+<li class=""><strong>Grace period expiry</strong> — The grace period expires without payment</li>
+<li class="">System changes the policy status from &quot;Active&quot; to &quot;Suspended&quot;</li>
+<li class=""><strong>Customer notification</strong> — System sends a suspension notification to the
+customer explaining: coverage is no longer active; the reinstatement period
+and deadline (default: 90 days); consequences for trafikförsäkring (vehicle
+may incur trafikförsäkringsavgift from TFF); how to reinstate by paying the
+outstanding amount</li>
+<li class=""><strong>Registry notification</strong> — System notifies Transportstyrelsen that the
+vehicle&#x27;s insurance coverage is suspended</li>
+<li class=""><strong>Audit</strong> — System records the status change in the amendment history</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-success-scenario--reinstatement">Main Success Scenario — Reinstatement<a href="#main-success-scenario--reinstatement" class="hash-link" aria-label="Direct link to Main Success Scenario — Reinstatement" title="Direct link to Main Success Scenario — Reinstatement" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Payment received</strong> — The customer pays the outstanding premium within the
+reinstatement period</li>
+<li class="">The payment provider confirms receipt</li>
+<li class=""><strong>Eligibility check</strong> — System evaluates reinstatement eligibility. If
+suspension ≤ auto-reinstatement threshold: automatic reinstatement (step 4).
+If suspension &gt; threshold: see <strong>Alternative Flow A</strong>.</li>
+<li class="">System changes the policy status from &quot;Suspended&quot; to &quot;Active&quot;</li>
+<li class="">System notifies Transportstyrelsen that coverage is reinstated</li>
+<li class="">System sends a reinstatement confirmation to the customer</li>
+<li class="">System records the reinstatement in the amendment history</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-success-scenario--lapse">Main Success Scenario — Lapse<a href="#main-success-scenario--lapse" class="hash-link" aria-label="Direct link to Main Success Scenario — Lapse" title="Direct link to Main Success Scenario — Lapse" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Expiry</strong> — The reinstatement period expires without payment</li>
+<li class="">System changes the policy status from &quot;Suspended&quot; to &quot;Lapsed&quot;</li>
+<li class=""><strong>Customer notification</strong> — System sends a lapse notification to the
+customer explaining: the policy is terminated; the vehicle is now uninsured;
+TFF may assign default trafikförsäkring with a penalty fee
+(trafikförsäkringsavgift); how to obtain new coverage</li>
+<li class=""><strong>Registry notification</strong> — System confirms Transportstyrelsen notification
+of coverage termination</li>
+<li class=""><strong>Audit</strong> — System records the lapse in the amendment history</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="alternative-flows-3">Alternative Flows<a href="#alternative-flows-3" class="hash-link" aria-label="Direct link to Alternative Flows" title="Direct link to Alternative Flows" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-extended-suspension-requires-underwriter-review">A. Extended Suspension Requires Underwriter Review<a href="#a-extended-suspension-requires-underwriter-review" class="hash-link" aria-label="Direct link to A. Extended Suspension Requires Underwriter Review" title="Direct link to A. Extended Suspension Requires Underwriter Review" translate="no">​</a></h4>
+<ol>
+<li class="">System routes the reinstatement request to the underwriter queue</li>
+<li class="">Underwriter reviews the policy&#x27;s claims history during the suspension period
+and any changes in risk factors</li>
+<li class="">If approved: resume reinstatement flow at step 4</li>
+<li class="">If declined: customer is notified that they must apply for a new policy; the
+policy remains in Suspended status until it lapses</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="b-transportstyrelsen-notification-failure">B. Transportstyrelsen Notification Failure<a href="#b-transportstyrelsen-notification-failure" class="hash-link" aria-label="Direct link to B. Transportstyrelsen Notification Failure" title="Direct link to B. Transportstyrelsen Notification Failure" translate="no">​</a></h4>
+<ol>
+<li class="">System queues the notification for retry (exponential backoff: 1 min, 5 min,
+15 min, 1 hour, 4 hours)</li>
+<li class="">Operations staff are alerted after retry exhaustion</li>
+<li class="">The status change proceeds on the policy record regardless</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="c-partial-payment-received">C. Partial Payment Received<a href="#c-partial-payment-received" class="hash-link" aria-label="Direct link to C. Partial Payment Received" title="Direct link to C. Partial Payment Received" translate="no">​</a></h4>
+<ol>
+<li class="">System detects that the payment amount is less than the outstanding balance</li>
+<li class="">System credits the partial payment but does not reinstate the policy</li>
+<li class="">Customer is notified of the remaining balance required for reinstatement</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-rules-3">Validation Rules<a href="#validation-rules-3" class="hash-link" aria-label="Direct link to Validation Rules" title="Direct link to Validation Rules" translate="no">​</a></h3>
+<table><thead><tr><th>Rule ID</th><th>Rule</th><th>Error Message / Action</th></tr></thead><tbody><tr><td>VR-PA4-1</td><td>Suspension requires grace period to have elapsed</td><td>N/A — system-enforced timing</td></tr><tr><td>VR-PA4-2</td><td>Reinstatement requires full outstanding premium paid</td><td>&quot;Full outstanding balance must be paid for reinstatement&quot;</td></tr><tr><td>VR-PA4-3</td><td>Lapse is irreversible — customer must apply for new policy</td><td>&quot;This policy has lapsed. Please apply for a new policy.&quot;</td></tr><tr><td>VR-PA4-4</td><td>Status transitions must follow the state machine</td><td>N/A — system-enforced</td></tr><tr><td>VR-PA4-5</td><td>Transportstyrelsen must be notified of all status changes</td><td>N/A — system-enforced with retry</td></tr><tr><td>VR-PA4-6</td><td>Customer must be notified before any adverse status change</td><td>N/A — system-enforced</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="postconditions-3">Postconditions<a href="#postconditions-3" class="hash-link" aria-label="Direct link to Postconditions" title="Direct link to Postconditions" translate="no">​</a></h3>
+<p><strong>Suspension:</strong></p>
+<ul>
+<li class="">Policy status is &quot;Suspended&quot;</li>
+<li class="">Transportstyrelsen has been notified of coverage suspension</li>
+<li class="">Customer has been notified of consequences and reinstatement options</li>
+<li class="">Status change is recorded in amendment history</li>
+</ul>
+<p><strong>Reinstatement:</strong></p>
+<ul>
+<li class="">Policy status is &quot;Active&quot;</li>
+<li class="">Transportstyrelsen has been notified of coverage reinstatement</li>
+<li class="">Customer has received reinstatement confirmation</li>
+<li class="">Status change is recorded in amendment history</li>
+</ul>
+<p><strong>Lapse:</strong></p>
+<ul>
+<li class="">Policy status is &quot;Lapsed&quot;</li>
+<li class="">Transportstyrelsen has been notified of coverage termination</li>
+<li class="">Customer has been notified of termination and next steps</li>
+<li class="">Status change is recorded in amendment history</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-functional-requirements-3">Non-Functional Requirements<a href="#non-functional-requirements-3" class="hash-link" aria-label="Direct link to Non-Functional Requirements" title="Direct link to Non-Functional Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Requirement</th><th>Target</th></tr></thead><tbody><tr><td>Payment detection</td><td>Within 1 hour of payment provider confirmation</td></tr><tr><td>Status change processing</td><td>Complete within 1 minute of trigger</td></tr><tr><td>Customer notification</td><td>Sent within 15 minutes of status change</td></tr><tr><td>Transportstyrelsen notification</td><td>Sent within 1 hour of status change</td></tr><tr><td>Grace period/reinstatement timer</td><td>Accurate to the calendar day</td></tr><tr><td>Audit trail</td><td>All transitions logged with timestamps</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-compliance-3">Regulatory Compliance<a href="#regulatory-compliance-3" class="hash-link" aria-label="Direct link to Regulatory Compliance" title="Direct link to Regulatory Compliance" translate="no">​</a></h3>
+<table><thead><tr><th>Regulation</th><th>Requirement</th></tr></thead><tbody><tr><td><strong>FSA-007</strong></td><td>Lapsed trafikförsäkring means the vehicle is uninsured</td></tr><tr><td><strong>FSA-009</strong></td><td>Transportstyrelsen notified of all coverage status changes</td></tr><tr><td><strong>FSA-004</strong></td><td>Customer clearly informed of consequences at each transition</td></tr><tr><td><strong>FSA-013</strong></td><td>Suspension and lapse procedures comply with Försäkringsavtalslagen</td></tr><tr><td><strong>GDPR-002</strong></td><td>Status changes recorded in policy administration</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-user-stories-3">Related User Stories<a href="#related-user-stories-3" class="hash-link" aria-label="Direct link to Related User Stories" title="Direct link to Related User Stories" translate="no">​</a></h3>
+<ul>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-013-manage-policy-status">US-PA-013: Manage Policy Status</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-011-notify-transportstyrelsen-of-policy-changes">US-PA-011: Notify Transportstyrelsen of Policy Changes</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-pa-005-recalculate-premium-after-amendment">UC-PA-005: Recalculate Premium After Amendment<a href="#uc-pa-005-recalculate-premium-after-amendment" class="hash-link" aria-label="Direct link to UC-PA-005: Recalculate Premium After Amendment" title="Direct link to UC-PA-005: Recalculate Premium After Amendment" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-case-summary-4">Use Case Summary<a href="#use-case-summary-4" class="hash-link" aria-label="Direct link to Use Case Summary" title="Direct link to Use Case Summary" translate="no">​</a></h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td><strong>Use Case ID</strong></td><td>UC-PA-005</td></tr><tr><td><strong>Name</strong></td><td>Recalculate Premium After Amendment</td></tr><tr><td><strong>Primary Actor</strong></td><td>System (automated)</td></tr><tr><td><strong>Secondary Actors</strong></td><td>Payment Provider</td></tr><tr><td><strong>Goal</strong></td><td>Calculate the correct premium after any mid-term policy amendment</td></tr><tr><td><strong>Preconditions</strong></td><td>Amendment submitted that changes one or more rating factors</td></tr><tr><td><strong>Postconditions</strong></td><td>New premium calculated, pro-rata adjustment initiated</td></tr><tr><td><strong>Trigger</strong></td><td>A policy amendment is submitted that changes rating factors</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stakeholders-and-interests-4">Stakeholders and Interests<a href="#stakeholders-and-interests-4" class="hash-link" aria-label="Direct link to Stakeholders and Interests" title="Direct link to Stakeholders and Interests" translate="no">​</a></h3>
+<table><thead><tr><th>Stakeholder</th><th>Interest</th></tr></thead><tbody><tr><td>Customer</td><td>Fair, transparent premium; understands why the amount changed</td></tr><tr><td>Payment Provider</td><td>Correct adjustment amount; timely collection or refund</td></tr><tr><td>Compliance Officer</td><td>Calculation is auditable; rating factors documented</td></tr><tr><td>TryggFörsäkring</td><td>Accurate pricing; regulatory compliance; no revenue leakage</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preconditions-4">Preconditions<a href="#preconditions-4" class="hash-link" aria-label="Direct link to Preconditions" title="Direct link to Preconditions" translate="no">​</a></h3>
+<ol>
+<li class="">A policy amendment has been submitted that changes one or more rating factors</li>
+<li class="">The current premium and rating factors are known</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="premium-recalculation-process-flow">Premium Recalculation Process Flow<a href="#premium-recalculation-process-flow" class="hash-link" aria-label="Direct link to Premium Recalculation Process Flow" title="Direct link to Premium Recalculation Process Flow" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-success-scenario-2">Main Success Scenario<a href="#main-success-scenario-2" class="hash-link" aria-label="Direct link to Main Success Scenario" title="Direct link to Main Success Scenario" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Identify changed factors</strong> — System identifies which rating factors have
+changed: vehicle (type, age, value, engine power), address (postcode risk
+zone), coverage tier, deductible level, named drivers (count, ages,
+experience), mileage band</li>
+<li class=""><strong>Retrieve tariff</strong> — System retrieves the current tariff and rating tables
+effective at the amendment date</li>
+<li class=""><strong>Calculate new premium</strong> — System calculates the new annual premium using:
+base rate for the vehicle type and coverage tier; bonus class discount
+(unchanged by mid-term amendments); postcode risk zone factor; driver
+surcharges (age, experience); mileage factor; deductible adjustment factor</li>
+<li class=""><strong>Pro-rata adjustment</strong> — System calculates the pro-rata adjustment using
+the formula: <code>remaining_days = policy_end_date - amendment_effective_date</code>,
+<code>old_daily = old_annual / 365</code>, <code>new_daily = new_annual / 365</code>,
+<code>adjustment = (new_daily - old_daily) × remaining_days</code></li>
+<li class=""><strong>Minimum threshold</strong> — If the absolute adjustment is below the minimum
+threshold (configurable, default: 50 SEK), the adjustment is waived and the
+system skips to step 8</li>
+<li class=""><strong>Return result</strong> — System returns the calculation result: new annual
+premium, pro-rata adjustment, effective date, rating factor breakdown</li>
+<li class=""><strong>Payment processing</strong> — After customer confirmation: if adjustment &gt; 0
+(additional premium), initiate collection via payment provider; if
+adjustment &lt; 0 (refund), initiate refund or credit to next installment</li>
+<li class=""><strong>Audit</strong> — System records the premium calculation details in the amendment
+record, including full rating factor breakdown</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="alternative-flows-4">Alternative Flows<a href="#alternative-flows-4" class="hash-link" aria-label="Direct link to Alternative Flows" title="Direct link to Alternative Flows" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-tariff-data-unavailable">A. Tariff Data Unavailable<a href="#a-tariff-data-unavailable" class="hash-link" aria-label="Direct link to A. Tariff Data Unavailable" title="Direct link to A. Tariff Data Unavailable" translate="no">​</a></h4>
+<ol>
+<li class="">System logs the error and alerts operations</li>
+<li class="">The amendment is paused; the customer is informed of a temporary delay</li>
+<li class="">When tariff data is available, the system resumes calculation automatically</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="b-payment-collection-fails">B. Payment Collection Fails<a href="#b-payment-collection-fails" class="hash-link" aria-label="Direct link to B. Payment Collection Fails" title="Direct link to B. Payment Collection Fails" translate="no">​</a></h4>
+<ol>
+<li class="">System detects payment failure for additional premium</li>
+<li class="">System retries collection according to payment provider retry policy</li>
+<li class="">If retries exhausted: amendment is rolled back; customer is notified</li>
+<li class="">Operations staff are alerted</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="c-refund-processing-fails">C. Refund Processing Fails<a href="#c-refund-processing-fails" class="hash-link" aria-label="Direct link to C. Refund Processing Fails" title="Direct link to C. Refund Processing Fails" translate="no">​</a></h4>
+<ol>
+<li class="">System detects refund failure</li>
+<li class="">System queues the refund for retry</li>
+<li class="">If retries exhausted: credit is applied to the next premium installment</li>
+<li class="">Customer is notified of the alternative refund method</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rating-factor-breakdown">Rating Factor Breakdown<a href="#rating-factor-breakdown" class="hash-link" aria-label="Direct link to Rating Factor Breakdown" title="Direct link to Rating Factor Breakdown" translate="no">​</a></h3>
+<table><thead><tr><th>Factor</th><th>Source</th><th>Impact</th></tr></thead><tbody><tr><td>Vehicle type</td><td>Transportstyrelsen</td><td>Base rate varies by segment</td></tr><tr><td>Vehicle age</td><td>Transportstyrelsen</td><td>Older vehicles = lower comprehensive rate</td></tr><tr><td>Vehicle value</td><td>Market data / declared</td><td>Higher value = higher comprehensive rate</td></tr><tr><td>Engine power (kW)</td><td>Transportstyrelsen</td><td>Higher power = higher rate</td></tr><tr><td>Coverage tier</td><td>Customer selection</td><td>Trafik &lt; Halv &lt; Hel</td></tr><tr><td>Bonus class</td><td>Claims history</td><td>0–75% discount (unchanged mid-term)</td></tr><tr><td>Postcode risk zone</td><td>Customer address</td><td>Urban/high-crime areas = higher rate</td></tr><tr><td>Named driver ages</td><td>Personnummer</td><td>Young driver surcharge applied</td></tr><tr><td>Mileage band</td><td>Customer declaration</td><td>Higher mileage = higher rate</td></tr><tr><td>Deductible level</td><td>Customer selection</td><td>Higher deductible = lower premium</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-rules-4">Validation Rules<a href="#validation-rules-4" class="hash-link" aria-label="Direct link to Validation Rules" title="Direct link to Validation Rules" translate="no">​</a></h3>
+<table><thead><tr><th>Rule ID</th><th>Rule</th><th>Error Message / Action</th></tr></thead><tbody><tr><td>VR-PA5-1</td><td>Bonus class does not change mid-term</td><td>N/A — system rule</td></tr><tr><td>VR-PA5-2</td><td>Tariff version must match the amendment effective date</td><td>N/A — system rule</td></tr><tr><td>VR-PA5-3</td><td>Minimum adjustment threshold (default 50 SEK) applies</td><td>N/A — adjustment waived below threshold</td></tr><tr><td>VR-PA5-4</td><td>All premium calculations must store the full factor breakdown</td><td>N/A — audit requirement</td></tr><tr><td>VR-PA5-5</td><td>Pro-rata calculation uses 365-day year</td><td>N/A — system rule</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="postconditions-4">Postconditions<a href="#postconditions-4" class="hash-link" aria-label="Direct link to Postconditions" title="Direct link to Postconditions" translate="no">​</a></h3>
+<p><strong>Success:</strong></p>
+<ul>
+<li class="">The new premium is calculated and recorded</li>
+<li class="">The pro-rata adjustment has been initiated with the payment provider</li>
+<li class="">The premium calculation breakdown is stored for audit</li>
+</ul>
+<p><strong>Failure:</strong></p>
+<ul>
+<li class="">The amendment is paused or rolled back</li>
+<li class="">Customer and operations staff are notified</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-functional-requirements-4">Non-Functional Requirements<a href="#non-functional-requirements-4" class="hash-link" aria-label="Direct link to Non-Functional Requirements" title="Direct link to Non-Functional Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Requirement</th><th>Target</th></tr></thead><tbody><tr><td>Premium calculation</td><td>Complete within 2 seconds</td></tr><tr><td>Pro-rata calculation</td><td>Complete within 1 second</td></tr><tr><td>Payment initiation</td><td>Within 5 minutes of customer confirmation</td></tr><tr><td>Tariff data availability</td><td>99.9% uptime</td></tr><tr><td>Audit trail</td><td>Full factor breakdown stored for every calculation</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-compliance-4">Regulatory Compliance<a href="#regulatory-compliance-4" class="hash-link" aria-label="Direct link to Regulatory Compliance" title="Direct link to Regulatory Compliance" translate="no">​</a></h3>
+<table><thead><tr><th>Regulation</th><th>Requirement</th></tr></thead><tbody><tr><td><strong>FSA-004</strong></td><td>Premium calculation must be transparent and explainable</td></tr><tr><td><strong>FSA-006</strong></td><td>Premium data available for regulatory reporting</td></tr><tr><td><strong>GDPR-002</strong></td><td>Calculation data retained as part of policy record</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-user-stories-4">Related User Stories<a href="#related-user-stories-4" class="hash-link" aria-label="Direct link to Related User Stories" title="Direct link to Related User Stories" translate="no">​</a></h3>
+<ul>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-010-recalculate-premium-after-amendment">US-PA-010: Recalculate Premium After Amendment</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-005-adjust-deductible-level">US-PA-005: Adjust Deductible Level</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-008-update-annual-mileage-estimate">US-PA-008: Update Annual Mileage Estimate</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-pa-006-underwriter-review-of-high-risk-amendment">UC-PA-006: Underwriter Review of High-Risk Amendment<a href="#uc-pa-006-underwriter-review-of-high-risk-amendment" class="hash-link" aria-label="Direct link to UC-PA-006: Underwriter Review of High-Risk Amendment" title="Direct link to UC-PA-006: Underwriter Review of High-Risk Amendment" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-case-summary-5">Use Case Summary<a href="#use-case-summary-5" class="hash-link" aria-label="Direct link to Use Case Summary" title="Direct link to Use Case Summary" translate="no">​</a></h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td><strong>Use Case ID</strong></td><td>UC-PA-006</td></tr><tr><td><strong>Name</strong></td><td>Underwriter Review of High-Risk Amendment</td></tr><tr><td><strong>Primary Actor</strong></td><td>Underwriter (Riskbedömare)</td></tr><tr><td><strong>Secondary Actors</strong></td><td>Customer, System</td></tr><tr><td><strong>Goal</strong></td><td>Evaluate and decide on amendments that exceed automated risk thresholds</td></tr><tr><td><strong>Preconditions</strong></td><td>Amendment flagged as high-risk; request in underwriter queue</td></tr><tr><td><strong>Postconditions</strong></td><td>Decision recorded; amendment processed, adjusted, or declined</td></tr><tr><td><strong>Trigger</strong></td><td>Automated risk assessment flags an amendment as requiring manual review</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stakeholders-and-interests-5">Stakeholders and Interests<a href="#stakeholders-and-interests-5" class="hash-link" aria-label="Direct link to Stakeholders and Interests" title="Direct link to Stakeholders and Interests" translate="no">​</a></h3>
+<table><thead><tr><th>Stakeholder</th><th>Interest</th></tr></thead><tbody><tr><td>Customer</td><td>Timely decision; fair outcome; clear communication</td></tr><tr><td>Underwriter</td><td>Complete risk information; ability to set appropriate terms</td></tr><tr><td>Senior Underwriter</td><td>Escalated cases handled within SLA</td></tr><tr><td>Compliance Officer</td><td>All decisions documented with rationale; fair treatment</td></tr><tr><td>TryggFörsäkring</td><td>Balanced risk acceptance; profitable portfolio; regulatory compliance</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preconditions-5">Preconditions<a href="#preconditions-5" class="hash-link" aria-label="Direct link to Preconditions" title="Direct link to Preconditions" translate="no">​</a></h3>
+<ol>
+<li class="">A policy amendment has been flagged as high-risk by the automated risk
+assessment</li>
+<li class="">The amendment is in the underwriter queue</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="referral-triggers">Referral Triggers<a href="#referral-triggers" class="hash-link" aria-label="Direct link to Referral Triggers" title="Direct link to Referral Triggers" translate="no">​</a></h3>
+<table><thead><tr><th>Trigger Category</th><th>Threshold</th><th>Example</th></tr></thead><tbody><tr><td>Very young driver</td><td>Driver age &lt; 20</td><td>18-year-old named driver</td></tr><tr><td>High-value vehicle</td><td>Vehicle market value &gt; 800 000 SEK</td><td>Luxury or performance vehicle</td></tr><tr><td>High-performance</td><td>Engine power &gt; 200 kW</td><td>Sports car</td></tr><tr><td>Claims history</td><td>3+ at-fault claims in the past 3 years</td><td>Frequent claimant</td></tr><tr><td>Vehicle age anomaly</td><td>Helförsäkring requested for vehicle &gt; 12 years</td><td>Old vehicle with comprehensive cover</td></tr><tr><td>Combined risk factors</td><td>2+ moderate risk flags on the same amendment</td><td>Young driver + high-value vehicle</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-success-scenario-3">Main Success Scenario<a href="#main-success-scenario-3" class="hash-link" aria-label="Direct link to Main Success Scenario" title="Direct link to Main Success Scenario" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Queue assignment</strong> — Underwriter opens the amendment request from the
+queue</li>
+<li class=""><strong>Risk review</strong> — System displays: current policy details (coverage,
+vehicle, drivers, premium); proposed amendment details; risk assessment
+(flagged triggers, risk score change, historical data); customer&#x27;s claims
+history (past 5 years); similar policy portfolio performance data
+(anonymized)</li>
+<li class=""><strong>Decision</strong> — Underwriter evaluates the risk and decides: <strong>Approve</strong> (the
+amendment proceeds with standard terms), <strong>Approve with adjusted terms</strong>
+(the underwriter specifies adjustments such as higher deductible, additional
+exclusion, or premium loading), or <strong>Decline</strong> (the amendment is rejected)</li>
+<li class=""><strong>Document decision</strong> — Underwriter records the decision with a written
+rationale (mandatory)</li>
+<li class=""><strong>Process decision</strong> — System processes the decision. Approved: triggers the
+standard amendment flow (premium recalculation, policy update). Approved
+with adjustments: the customer is presented with the adjusted terms and must
+accept before the amendment proceeds. Declined: the customer is notified
+with the reason; the original policy remains unchanged.</li>
+<li class=""><strong>Audit</strong> — System records the underwriting decision in the amendment history</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="alternative-flows-5">Alternative Flows<a href="#alternative-flows-5" class="hash-link" aria-label="Direct link to Alternative Flows" title="Direct link to Alternative Flows" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-customer-rejects-adjusted-terms">A. Customer Rejects Adjusted Terms<a href="#a-customer-rejects-adjusted-terms" class="hash-link" aria-label="Direct link to A. Customer Rejects Adjusted Terms" title="Direct link to A. Customer Rejects Adjusted Terms" translate="no">​</a></h4>
+<ol>
+<li class="">Customer declines the underwriter&#x27;s adjusted terms</li>
+<li class="">The amendment is cancelled; the original policy remains unchanged</li>
+<li class="">System records the customer&#x27;s rejection in the amendment history</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="b-sla-breach--review-not-completed-within-2-business-days">B. SLA Breach — Review Not Completed Within 2 Business Days<a href="#b-sla-breach--review-not-completed-within-2-business-days" class="hash-link" aria-label="Direct link to B. SLA Breach — Review Not Completed Within 2 Business Days" title="Direct link to B. SLA Breach — Review Not Completed Within 2 Business Days" translate="no">​</a></h4>
+<ol>
+<li class="">System detects the review has exceeded the 2-business-day SLA</li>
+<li class="">System escalates the amendment to a senior underwriter</li>
+<li class="">Customer is notified of the delay with a revised expected timeline</li>
+<li class="">System logs the SLA breach for operational reporting</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="c-underwriter-requests-additional-information">C. Underwriter Requests Additional Information<a href="#c-underwriter-requests-additional-information" class="hash-link" aria-label="Direct link to C. Underwriter Requests Additional Information" title="Direct link to C. Underwriter Requests Additional Information" translate="no">​</a></h4>
+<ol>
+<li class="">Underwriter determines that additional information is needed before a
+decision can be made</li>
+<li class="">System sends an information request to the customer (e.g., recent vehicle
+inspection report, proof of driving experience)</li>
+<li class="">The SLA clock pauses while awaiting customer response</li>
+<li class="">Customer submits the requested information</li>
+<li class="">Resume main flow at step 2 with the additional data</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="d-customer-does-not-respond-to-adjusted-terms">D. Customer Does Not Respond to Adjusted Terms<a href="#d-customer-does-not-respond-to-adjusted-terms" class="hash-link" aria-label="Direct link to D. Customer Does Not Respond to Adjusted Terms" title="Direct link to D. Customer Does Not Respond to Adjusted Terms" translate="no">​</a></h4>
+<ol>
+<li class="">Customer does not accept or reject adjusted terms within 14 days</li>
+<li class="">System automatically cancels the amendment</li>
+<li class="">Customer is notified that the amendment has expired</li>
+<li class="">The original policy remains unchanged</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="underwriter-decision-options">Underwriter Decision Options<a href="#underwriter-decision-options" class="hash-link" aria-label="Direct link to Underwriter Decision Options" title="Direct link to Underwriter Decision Options" translate="no">​</a></h3>
+<table><thead><tr><th>Decision</th><th>Customer Impact</th><th>Premium Impact</th></tr></thead><tbody><tr><td>Approve</td><td>Amendment proceeds with standard terms</td><td>Standard recalculation</td></tr><tr><td>Approve with higher deductible</td><td>Amendment proceeds; deductible increased</td><td>May reduce premium increase</td></tr><tr><td>Approve with exclusion</td><td>Amendment proceeds; specific exclusion added</td><td>May reduce premium increase</td></tr><tr><td>Approve with premium loading</td><td>Amendment proceeds; additional risk premium applied</td><td>Premium increase above standard</td></tr><tr><td>Decline</td><td>Amendment rejected; policy unchanged</td><td>No change</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-rules-5">Validation Rules<a href="#validation-rules-5" class="hash-link" aria-label="Direct link to Validation Rules" title="Direct link to Validation Rules" translate="no">​</a></h3>
+<table><thead><tr><th>Rule ID</th><th>Rule</th><th>Error Message / Action</th></tr></thead><tbody><tr><td>VR-PA6-1</td><td>Underwriter decision must include written rationale</td><td>&quot;A written rationale is required for all decisions&quot;</td></tr><tr><td>VR-PA6-2</td><td>SLA: decision within 2 business days</td><td>Auto-escalation to senior underwriter on breach</td></tr><tr><td>VR-PA6-3</td><td>Customer must explicitly accept adjusted terms</td><td>&quot;Please review and accept the adjusted terms to proceed&quot;</td></tr><tr><td>VR-PA6-4</td><td>Adjusted terms offer expires after 14 days</td><td>Auto-cancellation of amendment</td></tr><tr><td>VR-PA6-5</td><td>Decline reason must be communicable to the customer</td><td>N/A — underwriter must provide customer-facing explanation</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="postconditions-5">Postconditions<a href="#postconditions-5" class="hash-link" aria-label="Direct link to Postconditions" title="Direct link to Postconditions" translate="no">​</a></h3>
+<p><strong>Approved:</strong></p>
+<ul>
+<li class="">The underwriter decision is recorded with rationale</li>
+<li class="">The amendment is processed with standard or adjusted terms</li>
+<li class="">The customer has been notified of the approval</li>
+</ul>
+<p><strong>Declined:</strong></p>
+<ul>
+<li class="">The underwriter decision is recorded with rationale</li>
+<li class="">The original policy remains unchanged</li>
+<li class="">The customer has been notified with the reason for decline</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-functional-requirements-5">Non-Functional Requirements<a href="#non-functional-requirements-5" class="hash-link" aria-label="Direct link to Non-Functional Requirements" title="Direct link to Non-Functional Requirements" translate="no">​</a></h3>
+<table><thead><tr><th>Requirement</th><th>Target</th></tr></thead><tbody><tr><td>Queue assignment</td><td>Within 1 minute of referral</td></tr><tr><td>Risk data display</td><td>Load within 3 seconds</td></tr><tr><td>Decision SLA</td><td>2 business days from queue entry</td></tr><tr><td>Customer notification</td><td>Within 15 minutes of decision</td></tr><tr><td>Escalation</td><td>Automatic at SLA breach</td></tr><tr><td>Audit trail</td><td>Complete decision record with rationale</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regulatory-compliance-5">Regulatory Compliance<a href="#regulatory-compliance-5" class="hash-link" aria-label="Direct link to Regulatory Compliance" title="Direct link to Regulatory Compliance" translate="no">​</a></h3>
+<table><thead><tr><th>Regulation</th><th>Requirement</th></tr></thead><tbody><tr><td><strong>FSA-004</strong></td><td>Fair treatment; decisions justified and communicated to customer</td></tr><tr><td><strong>FSA-005</strong></td><td>Product governance; high-risk amendments monitored</td></tr><tr><td><strong>FSA-014</strong></td><td>Underwriting decisions retained for record-keeping period</td></tr><tr><td><strong>IDD-001</strong></td><td>Demands-and-needs reassessment if significant risk change</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-user-stories-5">Related User Stories<a href="#related-user-stories-5" class="hash-link" aria-label="Direct link to Related User Stories" title="Direct link to Related User Stories" translate="no">​</a></h3>
+<ul>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-014-review-high-risk-amendments">US-PA-014: Review High-Risk Amendments</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-006-add-named-driver">US-PA-006: Add Named Driver</a></li>
+<li class=""><a class="" href="/insurance-platform-requirements/docs/next/phase-1-motor/user-stories/policy-administration#us-pa-001-change-vehicle-on-policy">US-PA-001: Change Vehicle on Policy</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Agentic-software-factory/insurance-platform-requirements/edit/main/docs/phase-1-motor/use-cases/policy-administration.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Use Cases</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/insurance-platform-requirements/docs/next/phase-1-motor/use-cases/quote-and-bind"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Use Case: Quote and Bind Motor Insurance</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#shared-data-model-amendment-record" class="table-of-contents__link toc-highlight">Shared Data Model: Amendment Record</a></li><li><a href="#interaction-sequence" class="table-of-contents__link toc-highlight">Interaction Sequence</a></li><li><a href="#uc-pa-001-process-mid-term-vehicle-change" class="table-of-contents__link toc-highlight">UC-PA-001: Process Mid-Term Vehicle Change</a><ul><li><a href="#use-case-summary" class="table-of-contents__link toc-highlight">Use Case Summary</a></li><li><a href="#stakeholders-and-interests" class="table-of-contents__link toc-highlight">Stakeholders and Interests</a></li><li><a href="#preconditions" class="table-of-contents__link toc-highlight">Preconditions</a></li><li><a href="#vehicle-change-process-flow" class="table-of-contents__link toc-highlight">Vehicle Change Process Flow</a></li><li><a href="#main-success-scenario" class="table-of-contents__link toc-highlight">Main Success Scenario</a></li><li><a href="#alternative-flows" class="table-of-contents__link toc-highlight">Alternative Flows</a></li><li><a href="#validation-rules" class="table-of-contents__link toc-highlight">Validation Rules</a></li><li><a href="#postconditions" class="table-of-contents__link toc-highlight">Postconditions</a></li><li><a href="#non-functional-requirements" class="table-of-contents__link toc-highlight">Non-Functional Requirements</a></li><li><a href="#regulatory-compliance" class="table-of-contents__link toc-highlight">Regulatory Compliance</a></li><li><a href="#related-user-stories" class="table-of-contents__link toc-highlight">Related User Stories</a></li></ul></li><li><a href="#uc-pa-002-process-coverage-tier-change" class="table-of-contents__link toc-highlight">UC-PA-002: Process Coverage Tier Change</a><ul><li><a href="#use-case-summary-1" class="table-of-contents__link toc-highlight">Use Case Summary</a></li><li><a href="#stakeholders-and-interests-1" class="table-of-contents__link toc-highlight">Stakeholders and Interests</a></li><li><a href="#preconditions-1" class="table-of-contents__link toc-highlight">Preconditions</a></li><li><a href="#main-success-scenario-1" class="table-of-contents__link toc-highlight">Main Success Scenario</a></li><li><a href="#alternative-flows-1" class="table-of-contents__link toc-highlight">Alternative Flows</a></li><li><a href="#validation-rules-1" class="table-of-contents__link toc-highlight">Validation Rules</a></li><li><a href="#effective-date-rules" class="table-of-contents__link toc-highlight">Effective Date Rules</a></li><li><a href="#postconditions-1" class="table-of-contents__link toc-highlight">Postconditions</a></li><li><a href="#non-functional-requirements-1" class="table-of-contents__link toc-highlight">Non-Functional Requirements</a></li><li><a href="#regulatory-compliance-1" class="table-of-contents__link toc-highlight">Regulatory Compliance</a></li><li><a href="#related-user-stories-1" class="table-of-contents__link toc-highlight">Related User Stories</a></li></ul></li><li><a href="#uc-pa-003-process-named-driver-change" class="table-of-contents__link toc-highlight">UC-PA-003: Process Named Driver Change</a><ul><li><a href="#use-case-summary-2" class="table-of-contents__link toc-highlight">Use Case Summary</a></li><li><a href="#stakeholders-and-interests-2" class="table-of-contents__link toc-highlight">Stakeholders and Interests</a></li><li><a href="#preconditions-2" class="table-of-contents__link toc-highlight">Preconditions</a></li><li><a href="#main-success-scenario--add-named-driver" class="table-of-contents__link toc-highlight">Main Success Scenario — Add Named Driver</a></li><li><a href="#main-success-scenario--remove-named-driver" class="table-of-contents__link toc-highlight">Main Success Scenario — Remove Named Driver</a></li><li><a href="#alternative-flows-2" class="table-of-contents__link toc-highlight">Alternative Flows</a></li><li><a href="#validation-rules-2" class="table-of-contents__link toc-highlight">Validation Rules</a></li><li><a href="#postconditions-2" class="table-of-contents__link toc-highlight">Postconditions</a></li><li><a href="#non-functional-requirements-2" class="table-of-contents__link toc-highlight">Non-Functional Requirements</a></li><li><a href="#regulatory-compliance-2" class="table-of-contents__link toc-highlight">Regulatory Compliance</a></li><li><a href="#related-user-stories-2" class="table-of-contents__link toc-highlight">Related User Stories</a></li></ul></li><li><a href="#uc-pa-004-manage-policy-status-transitions" class="table-of-contents__link toc-highlight">UC-PA-004: Manage Policy Status Transitions</a><ul><li><a href="#use-case-summary-3" class="table-of-contents__link toc-highlight">Use Case Summary</a></li><li><a href="#stakeholders-and-interests-3" class="table-of-contents__link toc-highlight">Stakeholders and Interests</a></li><li><a href="#preconditions-3" class="table-of-contents__link toc-highlight">Preconditions</a></li><li><a href="#state-machine" class="table-of-contents__link toc-highlight">State Machine</a></li><li><a href="#state-transition-rules" class="table-of-contents__link toc-highlight">State Transition Rules</a></li><li><a href="#configurable-thresholds" class="table-of-contents__link toc-highlight">Configurable Thresholds</a></li><li><a href="#main-success-scenario--suspension-due-to-non-payment" class="table-of-contents__link toc-highlight">Main Success Scenario — Suspension Due to Non-Payment</a></li><li><a href="#main-success-scenario--reinstatement" class="table-of-contents__link toc-highlight">Main Success Scenario — Reinstatement</a></li><li><a href="#main-success-scenario--lapse" class="table-of-contents__link toc-highlight">Main Success Scenario — Lapse</a></li><li><a href="#alternative-flows-3" class="table-of-contents__link toc-highlight">Alternative Flows</a></li><li><a href="#validation-rules-3" class="table-of-contents__link toc-highlight">Validation Rules</a></li><li><a href="#postconditions-3" class="table-of-contents__link toc-highlight">Postconditions</a></li><li><a href="#non-functional-requirements-3" class="table-of-contents__link toc-highlight">Non-Functional Requirements</a></li><li><a href="#regulatory-compliance-3" class="table-of-contents__link toc-highlight">Regulatory Compliance</a></li><li><a href="#related-user-stories-3" class="table-of-contents__link toc-highlight">Related User Stories</a></li></ul></li><li><a href="#uc-pa-005-recalculate-premium-after-amendment" class="table-of-contents__link toc-highlight">UC-PA-005: Recalculate Premium After Amendment</a><ul><li><a href="#use-case-summary-4" class="table-of-contents__link toc-highlight">Use Case Summary</a></li><li><a href="#stakeholders-and-interests-4" class="table-of-contents__link toc-highlight">Stakeholders and Interests</a></li><li><a href="#preconditions-4" class="table-of-contents__link toc-highlight">Preconditions</a></li><li><a href="#premium-recalculation-process-flow" class="table-of-contents__link toc-highlight">Premium Recalculation Process Flow</a></li><li><a href="#main-success-scenario-2" class="table-of-contents__link toc-highlight">Main Success Scenario</a></li><li><a href="#alternative-flows-4" class="table-of-contents__link toc-highlight">Alternative Flows</a></li><li><a href="#rating-factor-breakdown" class="table-of-contents__link toc-highlight">Rating Factor Breakdown</a></li><li><a href="#validation-rules-4" class="table-of-contents__link toc-highlight">Validation Rules</a></li><li><a href="#postconditions-4" class="table-of-contents__link toc-highlight">Postconditions</a></li><li><a href="#non-functional-requirements-4" class="table-of-contents__link toc-highlight">Non-Functional Requirements</a></li><li><a href="#regulatory-compliance-4" class="table-of-contents__link toc-highlight">Regulatory Compliance</a></li><li><a href="#related-user-stories-4" class="table-of-contents__link toc-highlight">Related User Stories</a></li></ul></li><li><a href="#uc-pa-006-underwriter-review-of-high-risk-amendment" class="table-of-contents__link toc-highlight">UC-PA-006: Underwriter Review of High-Risk Amendment</a><ul><li><a href="#use-case-summary-5" class="table-of-contents__link toc-highlight">Use Case Summary</a></li><li><a href="#stakeholders-and-interests-5" class="table-of-contents__link toc-highlight">Stakeholders and Interests</a></li><li><a href="#preconditions-5" class="table-of-contents__link toc-highlight">Preconditions</a></li><li><a href="#referral-triggers" class="table-of-contents__link toc-highlight">Referral Triggers</a></li><li><a href="#main-success-scenario-3" class="table-of-contents__link toc-highlight">Main Success Scenario</a></li><li><a href="#alternative-flows-5" class="table-of-contents__link toc-highlight">Alternative Flows</a></li><li><a href="#underwriter-decision-options" class="table-of-contents__link toc-highlight">Underwriter Decision Options</a></li><li><a href="#validation-rules-5" class="table-of-contents__link toc-highlight">Validation Rules</a></li><li><a href="#postconditions-5" class="table-of-contents__link toc-highlight">Postconditions</a></li><li><a href="#non-functional-requirements-5" class="table-of-contents__link toc-highlight">Non-Functional Requirements</a></li><li><a href="#regulatory-compliance-5" class="table-of-contents__link toc-highlight">Regulatory Compliance</a></li><li><a href="#related-user-stories-5" class="table-of-contents__link toc-highlight">Related User Stories</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/insurance-platform-requirements/docs/intro">Requirements</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 TryggFörsäkring AB. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
