@@ -25,10 +25,11 @@ Key questions addressed:
 
 ## Documents
 
-| Document                                                       | Description                                         |
-| -------------------------------------------------------------- | --------------------------------------------------- |
-| [Priskonsoliderad känslighetsmatris](price-sensitivity-matrix) | Priskänslighetsanalys över samtliga 13 kundpersonas |
-| [Detaljerade prisprofiler](persona-pricing-profiles.md)        | Djupanalys av priskänslighet per persona (alla 13)  |
+| Document                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| [Priskonsoliderad känslighetsmatris](price-sensitivity-matrix)           | Priskänslighetsanalys över samtliga 13 kundpersonas                      |
+| [Detaljerade prisprofiler](persona-pricing-profiles.md)                  | Djupanalys av priskänslighet per persona (alla 13)                       |
+| [Strategiska prisrekommendationer](strategic-pricing-recommendations.md) | Segmenterad prisstrategi baserad på priskänslighetsanalys av 13 personas |
 
 ## How Analysis Documents Are Used
 
