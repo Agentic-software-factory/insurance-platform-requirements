@@ -25,6 +25,7 @@ support across all product lines.
 | [Lars Svensson](lars-svensson)                   | 55    | Claims Handler        | Modern tools to replace legacy workarounds    |
 | [Niklas Bergman](niklas-bergman)                 | 35    | Claims Reporter       | Smooth first-time claims experience           |
 | [Lina Eriksson](lina-eriksson)                   | 28    | EV Owner              | Clarity on EV-specific coverage and pricing   |
+| [Henrik & Wilma Nilsson](henrik-wilma-nilsson)   | 48/17 | Teen Driver Family    | Safe, affordable coverage for a young driver  |
 
 ## Phase 2 — Home & Property
 
