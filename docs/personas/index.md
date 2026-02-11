@@ -23,6 +23,7 @@ support across all product lines.
 | [Gunnar Pettersson](gunnar-pettersson)           | 72    | Senior Policyholder   | Transparent renewals and accessible service   |
 | [Sofia Chen](sofia-chen)                         | 32    | Recent Immigrant      | Smooth onboarding with foreign claims history |
 | [Lars Svensson](lars-svensson)                   | 55    | Claims Handler        | Modern tools to replace legacy workarounds    |
+| [Niklas Bergman](niklas-bergman)                 | 35    | Claims Reporter       | Smooth first-time claims experience           |
 
 ## Phase 2 — Home & Property
 
