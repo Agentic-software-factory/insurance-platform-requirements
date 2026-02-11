@@ -28,6 +28,7 @@ TryggFörsäkring platform must support.
 | [Henrik & Wilma Nilsson](henrik-wilma-nilsson)   | 48/17 | Teen Driver Family    | Safe, affordable coverage for a young driver   |
 | [David Lindgren](david-lindgren)                 | 30    | Leasing Customer      | Best price within leasing constraints          |
 | [Mohammed Hassan](mohammed-hassan)               | 42    | Insurer Switcher      | Seamless bonus transfer when switching insurer |
+| [Maja Andersson](maja-andersson)                 | 52    | Estate Executor       | Guided estate policy cancellation and refund   |
 | [Oscar Wallin](oscar-wallin)                     | 26    | Gig Economy Driver    | Clarity on coverage for ride-hailing use       |
 | [Karin Ström](karin-strom)                       | 45    | Divorce Transfer      | Smooth ownership transfer with bonus history   |
 
